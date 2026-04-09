@@ -1,0 +1,9 @@
+@if(control?.touched && control?.invalid){
+  <p class="form-error">
+    {{ errorMessage }}
+  </p>
+} @else {
+  <p class="form-error-placeholder">
+    &nbsp;
+  </p>
+}

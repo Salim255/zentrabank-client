@@ -11,6 +11,10 @@
           class="form__input"
           type="text"
           id="loginId" placeholder="Enter your client ID">
+        <app-form-error
+          [control]="authForm.get('loginId')"
+          field="loginId">
+        </app-form-error>
     </div>
     <div class="form__group">
       <label for="password" class="form__label">Password</label>
@@ -20,6 +24,10 @@
           type="password"
           id="password"
           placeholder="Enter your password">
+          <app-form-error
+          [control]="authForm.get('password')"
+          field="password">
+          </app-form-error>
     </div>
     <div class="form__group">
       <button type="submit" class="form__button">Login</button>

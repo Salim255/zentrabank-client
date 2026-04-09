@@ -1,8 +1,8 @@
 export const FORM_ERRORS: Record<string, any> = {
   loginId: {
-    required: 'Login ID is required.',
-    pattern: 'Login ID must be exactly 9 digits.',
-    maxlength: 'Login ID cannot exceed 9 digits.'
+    required: 'Client ID is required.',
+    pattern: 'Client ID must be exactly 9 digits.',
+    maxlength: 'Client ID cannot exceed 9 digits.'
   },
   password: {
     required: 'Password is required.',

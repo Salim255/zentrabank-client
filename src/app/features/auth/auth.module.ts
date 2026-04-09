@@ -6,12 +6,13 @@ import { LoginPage } from "./pages/login/login.page";
 import { AuthFormComponent } from "./components/auth-form/auth-form.component";
 import { SignupPage } from "./pages/signup/signup.page";
 import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
-
+import { SharedModule } from "../../shared/shared.module";
 
 @NgModule({
   imports: [
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
     CommonModule,
     AuthRoutingModule
   ],

@@ -5,7 +5,9 @@ import { FORM_ERRORS } from '../../utils/form-errors';
 
 @Component({
   selector: 'app-form-error',
-  templateUrl: './form-error.component.html'
+  templateUrl: './form-error.component.html',
+  styleUrls: ['./form-error.component.scss'],
+  standalone: false
 })
 export class FormErrorComponent {
   @Input() control!: AbstractControl | null;
