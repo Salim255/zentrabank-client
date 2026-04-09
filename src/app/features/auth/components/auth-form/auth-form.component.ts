@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthService } from "../../services/auth.service";
+import { Subscription } from "rxjs";
 
 
 @Component({
@@ -11,6 +12,7 @@ import { AuthService } from "../../services/auth.service";
 })
 export class AuthFormComponent implements OnInit {
   authForm!: FormGroup;
+  userSubscription!: Subscription;
 
   constructor(
     private authService: AuthService,
@@ -21,6 +23,13 @@ export class AuthFormComponent implements OnInit {
     this.buildAuthForm();
     this.authForm.valueChanges.subscribe(value => {
       console.log(value);
+    });
+    this.subscribeToUser();
+  }
+
+  subscribeToUser() {
+    this.userSubscription = this.authService.user$.subscribe(user => {
+      console.log('Current user:', );
     });
   }
 
@@ -54,7 +63,6 @@ export class AuthFormComponent implements OnInit {
 }
 
   onSubmit(){
-
     this.authService.login(this.authForm.value).subscribe({
       next: (response) => {
         console.log('Login successful:', response);
@@ -64,5 +72,10 @@ export class AuthFormComponent implements OnInit {
       }
     });
     console.log(this.authForm.value);
+  }
+
+
+  ngOnDestroy(): void {
+   this.userSubscription?.unsubscribe();
   }
 }

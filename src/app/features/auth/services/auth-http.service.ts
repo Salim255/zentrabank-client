@@ -3,6 +3,7 @@ import { Observable } from "rxjs";
 import { LoginDto } from "../dto/login-dto";
 import { environment } from "../../../../environments/environments.prod";
 import { HttpClient } from "@angular/common/http";
+import { LoginResponseDto } from "../dto/login-response-dto";
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,11 @@ export class AuthHttpService {
   private apiBaseUrl:string = `${this.ENV.apiBaseUrl}/auth`;
   constructor(private http: HttpClient) { }
 
-  login(credentials: LoginDto):Observable<any> {
-    return this.http.post<any>(`${this.apiBaseUrl}/login`, credentials);
+  login(credentials: LoginDto):Observable<LoginResponseDto> {
+    return this.http.post<LoginResponseDto>(
+      `${this.apiBaseUrl}/login`, credentials,
+      {withCredentials: true}
+    );
   }
 
   signup(details: { loginId: string; password: string }):Observable<any> {

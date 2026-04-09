@@ -8,27 +8,27 @@ export class User {
   private userId: string
   ) {}
 
-  get Email(): string {
+  get _email(): string {
     return this.email;
   }
 
-  get FirstLogin(): boolean {
+  get _firstLogin(): boolean {
     return this.firstLogin;
   }
 
-  get FirstName(): string {
+  get _firstName(): string {
     return this.firstName;
   }
 
-  get LastName(): string {
+  get _lastName(): string {
     return this.lastName;
   }
 
-  get Role(): string {
+  get _role(): string {
     return this.role;
   }
 
-  get UserId(): string {
+  get _userId(): string {
     return this.userId;
   }
 }
