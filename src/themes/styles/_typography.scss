@@ -1,36 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
-$font-primary: 'Inter', sans-serif;
+/* =========================
+   Font Family
+   ========================= */
+:root {
+  --font-primary: 'Inter', sans-serif;
 
-// Sizes
-$fs-xs: 0.75rem;   // 12px
-$fs-sm: 0.875rem;  // 14px
-$fs-md: 1rem;      // 16px
-$fs-lg: 1.125rem;  // 18px
-$fs-xl: 1.25rem;   // 20px
-$fs-2xl: 1.5rem;   // 24px
+  /* Font sizes */
+  --fs-xs: 0.75rem;   /* 12px */
+  --fs-sm: 0.875rem;  /* 14px */
+  --fs-md: 1rem;      /* 16px */
+  --fs-lg: 1.125rem;  /* 18px */
+  --fs-xl: 1.25rem;   /* 20px */
+  --fs-2xl: 1.5rem;   /* 24px */
 
-// Weights
-$fw-regular: 400;
-$fw-medium: 500;
-$fw-semibold: 600;
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
 
-// Line heights
-$lh-tight: 1.2;
-$lh-normal: 1.5;
-$lh-relaxed: 1.7;
-
-// Headings
-h1, h2, h3, h4 {
-  font-family: $font-primary;
-  font-weight: $fw-semibold;
-  color: $color-text-primary;
-  line-height: $lh-tight;
+  /* Line heights */
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.7;
 }
 
+/* =========================
+   Headings
+   ========================= */
+h1, h2, h3, h4 {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+  margin-bottom: 0.5rem;
+}
+
+h1 { font-size: var(--fs-2xl); }
+h2 { font-size: var(--fs-xl); }
+h3 { font-size: var(--fs-lg); }
+h4 { font-size: var(--fs-md); }
+
+/* =========================
+   Body Text
+   ========================= */
 p, span, label {
-  font-family: $font-primary;
-  font-size: $fs-md;
-  color: $color-text-secondary;
-  line-height: $lh-normal;
+  font-family: var(--font-primary);
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+}
+
+/* =========================
+   Small Text
+   ========================= */
+.small {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+}
+
+/* =========================
+   Muted Text
+   ========================= */
+.muted {
+  color: var(--text-muted);
+}
+
+/* =========================
+   Strong Text
+   ========================= */
+strong {
+  font-weight: var(--fw-medium);
 }

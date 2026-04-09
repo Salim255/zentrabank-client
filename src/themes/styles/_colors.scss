@@ -1,69 +1,61 @@
-// -------------------------
-// Base backgrounds
-// -------------------------
-$bg-body-dark: #062b60;          // Dark main body
-$bg-header-dark: #01132d;        // Header/nav background
-$bg-card: #ffffff;               // Form / card background
-$bg-sidebar-dark: #01132d;       // Sidebar dark background
+:root {
+  // =========================
+  // Backgrounds
+  // =========================
+  --bg-body: #f7f8fa;          // Main app background (light fintech)
+  --bg-surface: #ffffff;       // Cards, forms, panels
+  --bg-header: #01132d;        // Top navigation
+  --bg-sidebar: #01132d;       // Sidebar background
 
-// -------------------------
-// Text colors
-// -------------------------
-$text-primary-dark: #ffffff;     // Main text on dark backgrounds
-$text-secondary-dark: #9bb4e4;   // Subtle secondary text
+  // =========================
+  // Text
+  // =========================
+  --text-primary: #1e1f26;     // Main text
+  --text-secondary: #5e6c84;   // Subtle text
+  --text-on-dark: #ffffff;     // Text on dark header/sidebar
+  --text-on-dark-muted: #9bb4e4;
 
-$text-primary-light: #1e1f26;    // For text on light cards
-$text-secondary-light: #5e6c84;
+  // =========================
+  // Brand / Interactive
+  // =========================
+  --primary: #00bfff;          // IBKR-style blue
+  --primary-hover: #29ccff;
 
-// -------------------------
-// Interactive / Buttons
-// -------------------------
-$btn-primary-bg: #00bfff;        // Main interactive buttons
-$btn-primary-hover: darken(#00bfff, 10%);
-$btn-primary-text: #ffffff;
+  --link: #00bfff;
 
-$link-color: #00bfff;
-$link-hover-color: darken(#00bfff, 10%);
+  // =========================
+  // Inputs
+  // =========================
+  --input-bg: #ffffff;
+  --input-border: #c2c2c2;
+  --input-border-focus: #00bfff;
+  --input-placeholder: #9ca3af;
 
-// -------------------------
-// Alerts / Feedback
-// -------------------------
-$alert-error-bg: #fdecea;
-$alert-error-text: #d90a1c;
 
-$alert-success-bg: #e6f4ea;
-$alert-success-text: #43a047;
 
-$alert-warning-bg: #fff8e1;
-$alert-warning-text: #fbc02d;
+  // =========================
+  // Alerts
+  // =========================
+  --alert-error-bg: #fdecea;
+  --alert-error-text: #d90a1c;
 
-$alert-info-bg: #e1f3fd;
-$alert-info-text: #0288d1;
+  --alert-success-bg: #e6f4ea;
+  --alert-success-text: #43a047;
 
-// -------------------------
-// Borders / Inputs
-// -------------------------
-$input-bg: #ffffff;
-$input-border: #c2c2c2;
-$input-border-focus: #00bfff;
-$input-placeholder: #9ca3af;
+  --alert-warning-bg: #fff8e1;
+  --alert-warning-text: #fbc02d;
 
-// -------------------------
-// Tables / Lists
-// -------------------------
-$table-header-bg: #01132d;
-$table-header-text: #ffffff;
-$table-row-hover: #062b60;
-$table-row-alt: #0a366d;
-$table-border: #c2c2c2;
+  --alert-info-bg: #e1f3fd;
+  --alert-info-text: #0288d1;
 
-// -------------------------
-// Shadows / depth
-// -------------------------
-$shadow-light: 0 1px 3px rgba(0,0,0,0.1);
-$shadow-medium: 0 4px 6px rgba(0,0,0,0.15);
+  // =========================
+  // Shadows
+  // =========================
+  --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.12);
 
-// -------------------------
-// Gradients / highlights (optional)
-// -------------------------
-$gradient-primary: linear-gradient(90deg, #062b60, #01132d);
+  // =========================
+  // Gradients
+  // =========================
+  --gradient-primary: linear-gradient(90deg, #062b60, #01132d);
+}

@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@forward "themes/styles/colors";
+@forward "themes/styles/typography";
+@forward "themes/styles/mixins";
+@forward "themes/styles/base";

@@ -1,4 +1,6 @@
+// =========================
 // Flex utilities
+// =========================
 @mixin flex-center {
   display: flex;
   align-items: center;
@@ -11,19 +13,23 @@
   justify-content: space-between;
 }
 
+// =========================
 // Card (IBKR account style)
+// =========================
 @mixin card {
-  background: $color-surface;
-  border: 1px solid $color-border;
+  background: var(--bg-surface);
+  border: 1px solid var(--color-border, #e5e7eb);
   border-radius: 8px;
   padding: 1.25rem;
-  box-shadow: $shadow-soft;
+  box-shadow: var(--shadow-light);
 }
 
+// =========================
 // Button base
+// =========================
 @mixin btn-base {
-  font-family: $font-primary;
-  font-weight: $fw-medium;
+  font-family: var(--font-primary, 'Inter', sans-serif);
+  font-weight: 500;
   padding: 0.65rem 1.4rem;
   border-radius: 6px;
   border: none;
@@ -31,30 +37,38 @@
   transition: 0.2s ease;
 }
 
+// =========================
 // Primary button
+// =========================
 @mixin btn-primary {
   @include btn-base;
-  background: $color-primary;
-  color: white;
+  background: var(--primary);
+  color: #ffffff;
 
   &:hover {
-    background: $color-primary-hover;
+    background: var(--primary-hover);
   }
 }
 
+// =========================
 // Input
+// =========================
 @mixin input {
   width: 100%;
   padding: 0.65rem 0.75rem;
   border-radius: 6px;
-  border: 1px solid $color-border;
-  background: $color-surface;
-  color: $color-text-primary;
-  font-family: $font-primary;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-family: var(--font-primary, 'Inter', sans-serif);
+
+  &::placeholder {
+    color: var(--input-placeholder);
+  }
 
   &:focus {
     outline: none;
-    border-color: $color-primary;
-    box-shadow: 0 0 0 2px rgba(41, 121, 255, 0.2);
+    border-color: var(--input-border-focus);
+    box-shadow: 0 0 0 2px rgba(0, 191, 255, 0.25); // matches --primary
   }
 }
