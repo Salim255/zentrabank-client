@@ -1,13 +1,15 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { AuthHttpService } from "./auth-http.service";
+import { LoginDto } from "../dto/login-dto";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthHttpService {
+export class AuthService {
   constructor(private authHttp: AuthHttpService) { }
 
-  login(credentials: { loginId: string; password: string }):Observable<any> {
+  login(credentials: LoginDto):Observable<any> {
     return this.authHttp.login(credentials);
   }
 

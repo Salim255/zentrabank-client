@@ -4,6 +4,10 @@ export const FORM_ERRORS: Record<string, any> = {
     pattern: 'Client ID must be exactly 9 digits.',
     maxlength: 'Client ID cannot exceed 9 digits.'
   },
+  email: {
+    required: 'Email is required.',
+    email: 'Please enter a valid email address.'
+  },
   password: {
     required: 'Password is required.',
     minlength: 'Password must be at least 8 characters.',

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { AuthHttpService } from "../../services/auth.service";
+import { AuthService } from "../../services/auth.service";
+
 
 @Component({
   selector: 'app-auth-form',
@@ -12,7 +13,7 @@ export class AuthFormComponent implements OnInit {
   authForm!: FormGroup;
 
   constructor(
-    private authService: AuthHttpService,
+    private authService: AuthService,
     private buildForm: FormBuilder
   ) { }
 
@@ -25,12 +26,11 @@ export class AuthFormComponent implements OnInit {
 
  buildAuthForm() {
   this.authForm = this.buildForm.group({
-    loginId: [
+    email: [
       '',
       [
         Validators.required,
-        Validators.pattern(/^\d{9}$/), // 9 digits only
-        Validators.maxLength(9)
+        Validators.email
       ]
     ],
     password: [
@@ -41,10 +41,20 @@ export class AuthFormComponent implements OnInit {
         Validators.maxLength(64)
       ]
     ]
+    ,
+    loginId: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(/^\d{9}$/), // 9 digits only
+        Validators.maxLength(9)
+      ]
+    ],
   });
 }
 
   onSubmit(){
+
     this.authService.login(this.authForm.value).subscribe({
       next: (response) => {
         console.log('Login successful:', response);

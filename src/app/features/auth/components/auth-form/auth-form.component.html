@@ -5,15 +5,15 @@
       <h2 class="form__title">Login</h2>
     </div>
     <div class="form__group">
-      <label for="loginId" class="form__labal">Client ID</label>
+      <label for="email" class="form__labal">Email</label>
       <input
-          formControlName="loginId"
+          formControlName="email"
           class="form__input"
-          type="text"
-          id="loginId" placeholder="Enter your client ID">
+          type="email"
+          id="email" placeholder="Enter your email">
         <app-form-error
-          [control]="authForm.get('loginId')"
-          field="loginId">
+          [control]="authForm.get('email')"
+          field="email">
         </app-form-error>
     </div>
     <div class="form__group">
