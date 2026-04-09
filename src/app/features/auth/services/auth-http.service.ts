@@ -1,17 +1,19 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { LoginDto } from "../dto/LoginDto";
+import { environment } from "../../../../environments/environments.prod";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthHttpService {
-  constructor() { }
+  private ENV = environment;
+  private apiBaseUrl:string = `${this.ENV.apiBaseUrl}/auth`;
+  constructor(private http: HttpClient) { }
 
   login(credentials: LoginDto):Observable<any> {
-    // Implement actual HTTP request to backend for login
-    console.log('Logging in with credentials:', credentials);
-    return new Observable();
+    return this.http.post<any>(`${this.apiBaseUrl}/login`, credentials);
   }
 
   signup(details: { loginId: string; password: string }):Observable<any> {
