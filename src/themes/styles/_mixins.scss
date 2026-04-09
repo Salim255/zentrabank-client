@@ -1,0 +1,60 @@
+// Flex utilities
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Card (IBKR account style)
+@mixin card {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: $shadow-soft;
+}
+
+// Button base
+@mixin btn-base {
+  font-family: $font-primary;
+  font-weight: $fw-medium;
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+// Primary button
+@mixin btn-primary {
+  @include btn-base;
+  background: $color-primary;
+  color: white;
+
+  &:hover {
+    background: $color-primary-hover;
+  }
+}
+
+// Input
+@mixin input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid $color-border;
+  background: $color-surface;
+  color: $color-text-primary;
+  font-family: $font-primary;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 2px rgba(41, 121, 255, 0.2);
+  }
+}
