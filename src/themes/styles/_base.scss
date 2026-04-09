@@ -1,0 +1,42 @@
+@import './colors';
+@import './typography';
+@import './mixins';
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: $color-bg;
+  color: $color-text-primary;
+  font-family: $font-primary;
+  height: 100%;
+}
+
+// Links
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Inputs
+input, select, textarea {
+  @include input;
+}
+
+// Buttons
+button.primary {
+  @include btn-primary;
+}
+
+// Cards
+.card {
+  @include card;
+}
