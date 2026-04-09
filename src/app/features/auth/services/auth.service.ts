@@ -30,4 +30,10 @@ export class AuthService {
   signup(details: { loginId: string; password: string }):Observable<any> {
     return this.authHttp.signup(details);
   }
+
+  get userIsAuthenticated(): Observable<boolean> {
+    return this.user$.pipe(
+      map(user => !!user)
+    );
+  }
 }
