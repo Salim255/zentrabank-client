@@ -1,0 +1,77 @@
+@use '../../../../../themes/styles/mixins' as *;
+
+.form {
+  width: 100%;
+  width: 40rem ;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  // Header
+  &__header {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-semibold);
+    color: var(--text-primary);
+  }
+
+  // Form groups
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  // Labels
+  &__label {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--text-secondary);
+  }
+
+  // Inputs
+  &__input {
+    @include input;
+    font-size: var(--fs-md);
+  }
+
+  // Button
+  &__button {
+    @include btn-primary;
+    width: 100%;
+    font-size: var(--fs-md);
+    padding: 0.75rem;
+  }
+
+  // Footer
+  &__footer {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  &__text {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+  }
+
+  &__link {
+    color: var(--primary);
+    font-weight: var(--fw-medium);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

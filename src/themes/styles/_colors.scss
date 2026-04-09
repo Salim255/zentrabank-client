@@ -1,61 +1,38 @@
 :root {
-  // =========================
-  // Backgrounds
-  // =========================
-  --bg-body: #f7f8fa;          // Main app background (light fintech)
-  --bg-surface: #ffffff;       // Cards, forms, panels
-  --bg-header: #01132d;        // Top navigation
-  --bg-sidebar: #01132d;       // Sidebar background
+  /* Primary IBKR Blue */
+  --primary: #0055D4;
+  --primary-hover: #093D8C;
 
-  // =========================
-  // Text
-  // =========================
-  --text-primary: #1e1f26;     // Main text
-  --text-secondary: #5e6c84;   // Subtle text
-  --text-on-dark: #ffffff;     // Text on dark header/sidebar
-  --text-on-dark-muted: #9bb4e4;
+  /* Neutral background system */
+  --bg-body: #F7F8FA;
+  --bg-surface: #FFFFFF;
 
-  // =========================
-  // Brand / Interactive
-  // =========================
-  --primary: #00bfff;          // IBKR-style blue
-  --primary-hover: #29ccff;
+  /* Text */
+  --text-primary: #16191F;
+  --text-secondary: #727579;
+  --text-muted: #A2A3A5;
 
-  --link: #00bfff;
+  /* Borders */
+  --color-border: #D0D1D2;
 
-  // =========================
-  // Inputs
-  // =========================
-  --input-bg: #ffffff;
-  --input-border: #c2c2c2;
-  --input-border-focus: #00bfff;
-  --input-placeholder: #9ca3af;
+  /* Shadows */
+  --shadow-light: 0px 2px 2px rgba(0,0,0,0.1);
 
+  /* Inputs */
+  --input-bg: #FFFFFF;
+  --input-border: #D0D1D2;
+  --input-border-focus: #307EF2;
+  --input-placeholder: #6D767E;
 
+  /* Buttons */
+  --btn-primary-bg: #0055D4;
+  --btn-primary-bg-hover: #093D8C;
+  --btn-primary-color: #FFFFFF;
 
-  // =========================
-  // Alerts
-  // =========================
-  --alert-error-bg: #fdecea;
-  --alert-error-text: #d90a1c;
+  /* Alerts */
+  --alert-error-bg: #D912221A;
+  --alert-error-text: #D91222;
 
-  --alert-success-bg: #e6f4ea;
-  --alert-success-text: #43a047;
-
-  --alert-warning-bg: #fff8e1;
-  --alert-warning-text: #fbc02d;
-
-  --alert-info-bg: #e1f3fd;
-  --alert-info-text: #0288d1;
-
-  // =========================
-  // Shadows
-  // =========================
-  --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.12);
-
-  // =========================
-  // Gradients
-  // =========================
-  --gradient-primary: linear-gradient(90deg, #062b60, #01132d);
+  --alert-success-bg: #0EB35B1A;
+  --alert-success-text: #0EB35B;
 }
