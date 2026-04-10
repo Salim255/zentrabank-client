@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-sub-header",
@@ -7,5 +8,9 @@ import { Component } from "@angular/core";
   standalone: false
 })
 export class SubHeaderComponent {
-  constructor() { }
+  constructor(private router: Router) { }
+
+  onNav(){
+    this.router.navigate(["/accounts"])
+  }
 }

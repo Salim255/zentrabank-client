@@ -5,7 +5,13 @@ import { NgModule } from "@angular/core";
 const routes: Routes = [
   {
     path: "",
-    component: Dashboard
+    component: Dashboard,
+    children: [
+      {
+        path: "accounts",
+        loadChildren:() => import("../accounts/accounts.module").then((m) =>m.AccountsModule)
+      }
+    ]
   }
 ];
 
