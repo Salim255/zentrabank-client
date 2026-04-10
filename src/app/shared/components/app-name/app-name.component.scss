@@ -1,0 +1,40 @@
+.app-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  margin: 0;
+
+  /* Gradient rouge → bleu */
+  background: linear-gradient(
+    120deg,
+    #930f0f 0%,
+    #ff005d 20%,
+    #005dff 80%,
+    #000 100%
+  );
+
+  /* Text clip */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* Smooth animation */
+  background-size: 200% auto;
+  animation: gradientShift 4s ease-in-out infinite;
+
+  /* Optional: slight 3D crispness */
+  letter-spacing: -0.5px;
+}
+
+/* Gradient movement */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
