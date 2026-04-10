@@ -1,1 +1,11 @@
-<canvas #chart width="500" height="250"></canvas>
+<div class="chart-page">
+  <div class="chart-container">
+    <canvas #chart width="800" height="300"></canvas>
+  </div>
+
+  <div class="chart-scale">
+    <div *ngFor="let v of scaleValues" class="scale-value">
+      {{ v }}
+    </div>
+  </div>
+</div>
