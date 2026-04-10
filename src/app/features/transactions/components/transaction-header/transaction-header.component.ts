@@ -6,4 +6,4 @@ import { Component } from "@angular/core";
   styleUrls: ["./transaction-header.component.scss"],
   standalone: false
 })
-export class transactionHeaderComponent {}
+export class TransactionHeaderComponent {}

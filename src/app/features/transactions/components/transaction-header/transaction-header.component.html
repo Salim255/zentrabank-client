@@ -1,21 +1,15 @@
 <ul class="transaction-header">
+    <li class="transaction-header__item">
+    <a
+      routerLink="/dashboard/transactions"
+      routerLinkActive="transaction-header__link--active"
+      class="transaction-header__link">Create transaction</a>
+  </li>
   <li
     class="transaction-header__item">
     <a
-      routerLink="/dashboard/accounts/history"
+      routerLink="/dashboard/transactions/history"
       routerLinkActive="transaction-header__link--active"
       class="transaction-header__link">History</a>
-  </li>
-  <li class="transaction-header__item">
-    <a
-      routerLink="/dashboard/accounts/manage"
-      routerLinkActive="transaction-header__link--active"
-      class="transaction-header__link">Manage</a>
-  </li>
-  <li class="transaction-header__item">
-    <a
-      routerLink="/dashboard/accounts/details"
-      routerLinkActive="transaction-header__link--active"
-      class="transaction-header__link">Details</a>
   </li>
 </ul>
