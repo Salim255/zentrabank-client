@@ -11,6 +11,10 @@ const routes: Routes = [
         path: "",
         pathMatch: "full",
         loadChildren: () => import("./pages/trans-options/trans-options.module").then((m) => m.TransOptionsModule)
+      },
+      {
+        path: "transfer",
+        loadChildren: () => import("./pages/transfer/transfer.module").then((m) => m.TransferModule)
       }
     ]
   }
