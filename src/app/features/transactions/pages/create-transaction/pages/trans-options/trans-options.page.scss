@@ -14,7 +14,7 @@
   .trans-card__figure {
     background: var(--bg-surface);
     border: 1px solid var(--color-border);
-    border-radius: 16px;
+    border-radius: 4px;
     padding: 2rem 1.4rem 3.2rem;
     display: flex;
     flex-direction: column;
@@ -26,16 +26,16 @@
     cursor: pointer;
 
     &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-      border-color: var(--primary);
+      //transform: translateY(-4px);
+      box-shadow: 0 4px 11px rgba(0,0,0,0.08);
+      //border-color: var(--primary);
     }
   }
 
   .trans-card__icon svg {
-    width: 54px;
-    height: 54px;
-    color: var(--primary);
+    width: 100px;
+    height: 100px;
+    color: var(--text-secondary);
     transition: color 0.25s ease;
   }
 
@@ -62,29 +62,26 @@
 
   /* Footer with real button */
   .trans-card__footer {
-    position: absolute;
-    bottom: 1rem;
-    left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
   }
 
   .trans-card__btn {
-    background: var(--btn-primary-bg);
-    color: var(--btn-primary-color);
-    border: none;
+    border: 1px  solid var(--text-secondary) ;
+    color: var(--text-secondary);
+    background-color: transparent;
     padding: 0.55rem 1.4rem;
-    border-radius: 8px;
+    border-radius: 2px;
     font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.25s ease;
-
+    width: 80%;
     &:hover {
       background: var(--btn-primary-bg-hover);
-      transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0,85,212,0.3);
+      color: var(--btn-primary-color);
     }
 
     &:active {
