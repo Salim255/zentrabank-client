@@ -2,12 +2,18 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { Accounts } from "./accounts";
 import { DetailsPage } from "./pages/details/details.page";
+import { AccountPage } from "./pages/account/account.page";
 
 const routes:Routes = [
   {
     path: "",
     component: Accounts,
     children: [
+      {
+        path: "",
+        pathMatch: "full",
+        component: AccountPage
+      },
       {
         path: "details",
         loadChildren: () => import("./pages/details/details.module").then((m) =>m.DetailsModule)
