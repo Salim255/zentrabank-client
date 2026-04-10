@@ -11,6 +11,10 @@ const routes: Routes = [
         path: "",
         pathMatch: "full",
         loadChildren: () => import("./pages/create-transaction/create-transaction.module").then((m) => m.CreateTransactionModule)
+      },
+      {
+        path: "history",
+        loadChildren: () => import("./pages//transactions-history/transactions-history.module").then((m) => m.TransactionsHistoryModule)
       }
     ]
   }
