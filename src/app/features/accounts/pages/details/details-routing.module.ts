@@ -1,11 +1,11 @@
 import { RouterModule, Routes } from "@angular/router";
-import { Details } from "./details";
+import { DetailsPage } from "./details.page";
 import { NgModule } from "@angular/core";
 
 const routes: Routes = [
   {
     path: "",
-    component: Details
+    component: DetailsPage
   }
 ]
 

@@ -2,8 +2,8 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "app-details",
-  templateUrl: "./details.html",
-  styleUrls: ["./details.scss"],
+  templateUrl: "./details.page.html",
+  styleUrls: ["./details.page.scss"],
   standalone: false
 })
-export class Details {}
+export class DetailsPage {}
