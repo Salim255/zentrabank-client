@@ -5,7 +5,14 @@ import { NgModule } from "@angular/core";
 const routes: Routes = [
   {
     path: "",
-    component: CreateTransactionPage
+    component: CreateTransactionPage,
+    children: [
+      {
+        path: "",
+        pathMatch: "full",
+        loadChildren: () => import("./pages/trans-options/trans-options.module").then((m) => m.TransOptionsModule)
+      }
+    ]
   }
 ]
 
