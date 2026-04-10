@@ -1,5 +1,6 @@
-import { Routes } from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
 import { TransOptionsPage } from "./trans-options.page";
+import { NgModule } from "@angular/core";
 
 const routes: Routes = [
   {
@@ -7,3 +8,10 @@ const routes: Routes = [
     component: TransOptionsPage
   }
 ]
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+
+export class TransOptionsRoutingModule{}
