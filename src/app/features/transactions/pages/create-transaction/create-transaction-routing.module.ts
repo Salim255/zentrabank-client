@@ -8,6 +8,7 @@ const routes: Routes = [
     component: CreateTransactionPage,
     children: [
       {
+
         path: "",
         pathMatch: "full",
         loadChildren: () => import("./pages/trans-options/trans-options.module").then((m) => m.TransOptionsModule)
@@ -15,6 +16,14 @@ const routes: Routes = [
       {
         path: "transfer",
         loadChildren: () => import("./pages/transfer/transfer.module").then((m) => m.TransferModule)
+      },
+      {
+        path: "deposit",
+        loadChildren:() => import("./pages//deposit/deposit.module").then((m) => m.DepositModule)
+      },
+      {
+        path: "withdraw",
+        loadChildren: () => import("./pages/withdraw/withdraw.module").then((m) => m.WithdrawModule)
       }
     ]
   }

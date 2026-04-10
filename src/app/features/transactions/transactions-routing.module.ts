@@ -8,8 +8,7 @@ const routes: Routes = [
     component: Transactions,
     children: [
       {
-        path: "",
-        pathMatch: "full",
+        path: "transfer",
         loadChildren: () => import("./pages/create-transaction/create-transaction.module").then((m) => m.CreateTransactionModule)
       },
       {
