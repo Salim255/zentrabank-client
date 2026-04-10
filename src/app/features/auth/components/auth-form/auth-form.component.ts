@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthService } from "../../services/auth.service";
 import { Subscription } from "rxjs";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -15,6 +16,7 @@ export class AuthFormComponent implements OnInit {
   userSubscription!: Subscription;
 
   constructor(
+    private router: Router,
     private authService: AuthService,
     private buildForm: FormBuilder
   ) { }
@@ -29,7 +31,10 @@ export class AuthFormComponent implements OnInit {
 
   subscribeToUser() {
     this.userSubscription = this.authService.user$.subscribe(user => {
-      console.log('Current user:', );
+      console.log('Current user:', user);
+      if (user) {
+        this.router.navigate(['/dashboard']);
+      }
     });
   }
 
