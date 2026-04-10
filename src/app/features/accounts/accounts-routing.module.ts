@@ -10,7 +10,11 @@ const routes:Routes = [
     children: [
       {
         path: "details",
-        component: DetailsPage
+        loadChildren: () => import("./pages/details/details.module").then((m) =>m.DetailsModule)
+      },
+      {
+        path: "history",
+        loadChildren: () => import("./pages/history/history.module").then((m) => m.HistoryModule)
       }
     ]
   }
