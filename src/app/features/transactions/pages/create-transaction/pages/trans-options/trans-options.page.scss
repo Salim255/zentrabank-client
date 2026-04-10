@@ -1,0 +1,120 @@
+.trans-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.6rem;
+  padding: 2rem 1rem;
+  background: var(--bg-body);
+}
+
+.trans-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+
+  .trans-card__figure {
+    background: var(--bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 2rem 1.4rem 3.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+    transition: all 0.25s ease;
+    position: relative;
+    box-shadow: var(--shadow-light);
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+      border-color: var(--primary);
+    }
+  }
+
+  .trans-card__icon svg {
+    width: 54px;
+    height: 54px;
+    color: var(--primary);
+    transition: color 0.25s ease;
+  }
+
+  &:hover .trans-card__icon svg {
+    color: var(--primary-hover);
+  }
+
+  .trans-card__caption {
+    text-align: center;
+  }
+
+  .trans-card__title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    color: var(--text-primary);
+  }
+
+  .trans-card__text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.35;
+  }
+
+  /* Footer with real button */
+  .trans-card__footer {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .trans-card__btn {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-color);
+    border: none;
+    padding: 0.55rem 1.4rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    &:hover {
+      background: var(--btn-primary-bg-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,85,212,0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+  }
+}
+
+/* Optional dark mode */
+@media (prefers-color-scheme: dark) {
+  .trans-card__figure {
+    background: #1c212b;
+    border-color: rgba(255,255,255,0.08);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  }
+
+  .trans-card__title {
+    color: #ffffff;
+  }
+
+  .trans-card__text {
+    color: rgba(255,255,255,0.6);
+  }
+
+  .trans-card__btn {
+    background: var(--primary);
+
+    &:hover {
+      background: var(--primary-hover);
+    }
+  }
+}

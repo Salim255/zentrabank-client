@@ -1,29 +1,85 @@
 <div class="trans-options">
-  <div class="trans-options__depostit">
-    <a   routerLink="/dashboard/transactions/transfer/deposit">
-      <figure>
-        <figcaption>
-          deposit
-        </figcaption>
-      </figure>
-    </a>
-  </div>
-  <div class="trans-options__withdraw">
-     <a   routerLink="/dashboard/transactions/transfer/withdraw">
-      <figure>
-        <figcaption>
-           withdraw
-        </figcaption>
-      </figure>
-    </a>
-  </div>
-  <div class="trans-options__transfer">
-     <a   routerLink="/dashboard/transactions/transfer/transfer">
-      <figure>
-        <figcaption>
-            transfer
-        </figcaption>
-      </figure>
-    </a>
-  </div>
+
+  <a class="trans-card" routerLink="/dashboard/transactions/transfer/deposit">
+    <figure class="trans-card__figure">
+
+      <div class="trans-card__icon">
+        <!-- SVG Deposit -->
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="54" height="54" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-banknote-arrow-down-icon lucide-banknote-arrow-down">
+          <path d="M12 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5"/>
+          <path d="m16 19 3 3 3-3"/><path d="M18 12h.01"/><path d="M19 16v6"/>
+          <path d="M6 12h.01"/><circle cx="12" cy="12" r="2"/>
+        </svg>
+      </div>
+
+      <figcaption class="trans-card__caption">
+        <h3 class="trans-card__title">Deposit Funds</h3>
+        <p class="trans-card__text">Move cash into your trading account.</p>
+      </figcaption>
+
+      <footer class="trans-card__footer">
+        <button class="trans-card__btn">Select</button>
+      </footer>
+
+    </figure>
+  </a>
+
+  <a class="trans-card" routerLink="/dashboard/transactions/transfer/withdraw">
+    <figure class="trans-card__figure">
+
+      <div class="trans-card__icon">
+        <!-- SVG Withdraw -->
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="54" height="54" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="1.25"
+          stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-banknote-arrow-up-icon lucide-banknote-arrow-up">
+          <path d="M12 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5"/>
+          <path d="M18 12h.01"/><path d="M19 22v-6"/><path d="m22 19-3-3-3 3"/>
+          <path d="M6 12h.01"/><circle cx="12" cy="12" r="2"/>
+        </svg>
+      </div>
+
+      <figcaption class="trans-card__caption">
+        <h3 class="trans-card__title">Withdraw Funds</h3>
+        <p class="trans-card__text">Move cash out of your trading account.</p>
+      </figcaption>
+
+      <footer class="trans-card__footer">
+        <button class="trans-card__btn">Select</button>
+      </footer>
+
+    </figure>
+  </a>
+
+  <a class="trans-card" routerLink="/dashboard/transactions/transfer/transfer">
+    <figure class="trans-card__figure">
+
+      <div class="trans-card__icon">
+        <!-- SVG Transfer -->
+         <svg xmlns="http://www.w3.org/2000/svg"
+          width="54" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor"
+          stroke-width="1.25" stroke-linecap="round"
+          stroke-linejoin="round" class="lucide lucide-arrow-right-left-icon lucide-arrow-right-left">
+          <path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/>
+        </svg>
+      </div>
+
+      <figcaption class="trans-card__caption">
+        <h3 class="trans-card__title">Internal Transfer</h3>
+        <p class="trans-card__text">Between Interactive Brokers accounts.</p>
+      </figcaption>
+
+      <footer class="trans-card__footer">
+        <button class="trans-card__btn">Select</button>
+      </footer>
+
+    </figure>
+  </a>
+
 </div>
