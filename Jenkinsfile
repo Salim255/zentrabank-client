@@ -11,7 +11,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs "NODE20"
+        nodejs "NODE20.19"
     }
 
     // ===========================================================
