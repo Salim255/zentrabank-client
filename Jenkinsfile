@@ -89,7 +89,7 @@ pipeline {
                 // WHY:
                 // Produces optimized static files (dist/)
                 // ready for Nginx production server
-                sh 'npm run build --configuration production'
+                sh 'npm run build'
             }
         }
 
