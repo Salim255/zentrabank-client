@@ -1,0 +1,77 @@
+# =========================
+# DEPENDENCIES
+# =========================
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# =========================
+# BUILD OUTPUT
+# =========================
+dist
+dist/**
+build
+out-tsc
+coverage
+
+# =========================
+# ANGULAR CACHE / TEMP FILES
+# =========================
+.angular
+.cache
+.parcel-cache
+
+# =========================
+# IDE / EDITORS
+# =========================
+.vscode
+.idea
+*.swp
+*.swo
+.DS_Store
+
+# =========================
+# VERSION CONTROL
+# =========================
+.git
+.gitignore
+
+# =========================
+# ENV FILES (IMPORTANT)
+# =========================
+.env
+.env.*
+*.local
+
+# =========================
+# DOCKER FILES
+# =========================
+Dockerfile
+docker-compose.yml
+docker-compose*.yml
+
+# =========================
+# TEST / CI FILES
+# =========================
+coverage
+cypress
+e2e
+
+# =========================
+# DOCUMENTATION (OPTIONAL)
+# =========================
+README.md
+*.md
+
+# =========================
+# LOGS
+# =========================
+logs
+*.log
+
+# =========================
+# ANGULAR SPECIFIC
+# =========================
+tsconfig.tsbuildinfo
+angular-errors.log

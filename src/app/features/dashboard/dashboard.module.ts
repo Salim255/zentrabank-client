@@ -5,9 +5,11 @@ import { CommonModule } from "@angular/common";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { Dashboard } from "./dashboard";
 import { SubHeaderComponent } from "./components/sub-header/sub-header.component";
+import { HeroComponent } from "./components/hero/hero.component";
 
 @NgModule({
   declarations: [
+    HeroComponent,
     SubHeaderComponent,
     Dashboard,
     NavbarComponent

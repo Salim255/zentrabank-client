@@ -1,5 +1,5 @@
 .app-name {
-  font-size: 1.4rem;
+  font-size: 2.4rem;
   font-weight: 700;
   text-transform: lowercase;
   margin: 0;
@@ -8,9 +8,9 @@
   background: linear-gradient(
     120deg,
     #930f0f 0%,
-    #ff005d 20%,
-    #005dff 80%,
-    #000 100%
+    #032d95 20%,
+    #0fc302 80%,
+    #f97a7a 100%
   );
 
   /* Text clip */
@@ -20,7 +20,7 @@
 
   /* Smooth animation */
   background-size: 200% auto;
-  animation: gradientShift 4s ease-in-out infinite;
+  animation: gradientShift 8s ease-in-out infinite;
 
   /* Optional: slight 3D crispness */
   letter-spacing: -0.5px;

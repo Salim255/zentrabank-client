@@ -7,6 +7,11 @@ const routes: Routes = [
     path: "",
     component: Transactions,
     children: [
+        {
+        path: "",
+        redirectTo: "history",
+        pathMatch: "full"
+      },
       {
         path: "transfer",
         loadChildren: () => import("./pages/create-transaction/create-transaction.module").then((m) => m.CreateTransactionModule)
