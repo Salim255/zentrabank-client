@@ -53,6 +53,20 @@ pipeline {
         }
 
 
+        stage('Debug Lock File') {
+            steps {
+                sh '''
+                    echo "=== package.json hash ==="
+                    sha256sum package.json || true
+
+                    echo "=== package-lock.json hash ==="
+                    sha256sum package-lock.json || true
+
+                    echo "=== lock file preview ==="
+                    head -50 package-lock.json
+                '''
+            }
+        }
         // =======================================================
         // 2) INSTALL DEPENDENCIES
         // =======================================================
