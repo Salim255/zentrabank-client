@@ -16,7 +16,7 @@ RUN npm ci
 COPY . .
 
 # Build Angular production bundle
-RUN npm run build --configuration=production
+RUN npm run build
 
 
 # =========================
