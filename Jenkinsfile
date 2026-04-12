@@ -53,17 +53,11 @@ pipeline {
         }
 
 
-        stage('Debug Lock File') {
+        stage('Node Debug') {
             steps {
                 sh '''
-                    echo "=== package.json hash ==="
-                    sha256sum package.json || true
-
-                    echo "=== package-lock.json hash ==="
-                    sha256sum package-lock.json || true
-
-                    echo "=== lock file preview ==="
-                    head -50 package-lock.json
+                    node -v
+                    npm -v
                 '''
             }
         }
