@@ -46,6 +46,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
 
+                cleanWs()
                 // WHY:
                 // Pull latest code from GitHub before building
                 checkout scm
