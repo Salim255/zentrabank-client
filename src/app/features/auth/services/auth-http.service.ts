@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { LoginDto } from "../dto/login-dto";
-import { environment } from "../../../../environments/environments.prod";
+import { environment } from "../../../../environments/environment.prod";
 import { HttpClient } from "@angular/common/http";
 import { LoginResponseDto } from "../dto/login-response-dto";
 
