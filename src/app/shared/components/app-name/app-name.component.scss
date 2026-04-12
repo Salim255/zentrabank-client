@@ -7,10 +7,9 @@
   /* Gradient rouge → bleu */
   background: linear-gradient(
     120deg,
-    #930f0f 0%,
-    #032d95 20%,
-    #0fc302 80%,
-    #f97a7a 100%
+   #3568e8 30%,
+     #930f0f  20%,
+    #410202 100%
   );
 
   /* Text clip */
@@ -20,7 +19,7 @@
 
   /* Smooth animation */
   background-size: 200% auto;
-  animation: gradientShift 8s ease-in-out infinite;
+  //animation: gradientShift 8s ease-in-out infinite;
 
   /* Optional: slight 3D crispness */
   letter-spacing: -0.5px;
