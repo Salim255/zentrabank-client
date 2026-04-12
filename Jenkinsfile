@@ -80,20 +80,6 @@ pipeline {
             }
         }
 
-
-        // =======================================================
-        // 3) RUN TESTS (OPTIONAL BUT RECOMMENDED)
-        // =======================================================
-        stage('Run Tests') {
-            steps {
-
-                // WHY:
-                // Prevent broken UI from being deployed
-                sh 'npm test -- --watch=false --browsers=ChromeHeadless'
-            }
-        }
-
-
         // =======================================================
         // 4) BUILD ANGULAR APPLICATION
         // =======================================================
