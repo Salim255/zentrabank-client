@@ -58,6 +58,11 @@ pipeline {
                 sh '''
                     node -v
                     npm -v
+
+                    echo "Upgrading npm to v11..."
+                    npm install -g npm@11.6.1
+
+                    npm -v
                 '''
             }
         }
