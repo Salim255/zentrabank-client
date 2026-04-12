@@ -10,13 +10,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies (clean & CI-safe)
-RUN npm ci
+RUN npm install
 
 # Copy full project source code
 COPY . .
 
 # Build Angular production bundle
-RUN npm run build
+RUN npm run build -- --configuration production
 
 
 # =========================
