@@ -76,7 +76,7 @@ pipeline {
                 // WHY:
                 // Ensures clean dependency installation
                 // avoids CI/CD "works on my machine" issues
-                sh 'npm ci'
+                sh 'npm install'
             }
         }
 
