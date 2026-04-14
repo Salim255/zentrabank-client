@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-signup-form',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup-form.component.scss'],
   standalone: false
 })
-export class SignupFormComponent {}
+export class SignupFormComponent {
+  signupForm!:FormGroup;
+
+  onSubmit(){}
+}

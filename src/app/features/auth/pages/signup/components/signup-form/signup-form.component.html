@@ -1,19 +1,118 @@
-<div>
-  Create a Username and Password
-Email Address
-Required
-Username
-Required
-Password
-Required
- Show
-Confirm Password
-Required
-Country
-Marketing Preferences
-Do you want to be contacted by Interactive Brokers about features, products and offers?
+<form
+  [formGroup]="signupForm"
+  (ngSubmit)="onSubmit()"
+  class="signup-form">
 
-Yes
-No
-Create Account
-</div>
+  <h2 class="signup-form__title">Create a Username and Password</h2>
+
+  <!-- Email -->
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input
+      id="email"
+      type="email"
+      formControlName="email"
+      class="form-input" />
+
+    <div class="form-error" *ngIf="submitted && signupForm.get('email')?.invalid">
+      Required
+    </div>
+  </div>
+
+  <!-- Username -->
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input
+      id="username"
+      type="text"
+      formControlName="username"
+      class="form-input" />
+
+    <div class="form-error" *ngIf="submitted && signupForm.get('username')?.invalid">
+      Required
+    </div>
+  </div>
+
+  <!-- Password -->
+  <div class="form-group">
+    <label for="password">Password</label>
+
+    <div class="password-wrapper">
+      <input
+        id="password"
+        type="{{ showPassword ? 'text' : 'password' }}"
+        formControlName="password"
+        class="form-input" />
+
+      <button
+        type="button"
+        class="show-btn"
+        (click)="showPassword = !showPassword">
+        {{ showPassword ? 'Hide' : 'Show' }}
+      </button>
+    </div>
+
+    <div class="form-error" *ngIf="submitted && signupForm.get('password')?.invalid">
+      Required
+    </div>
+  </div>
+
+  <!-- Confirm Password -->
+  <div class="form-group">
+    <label for="confirmPassword">Confirm Password</label>
+    <input
+      id="confirmPassword"
+      type="password"
+      formControlName="confirmPassword"
+      class="form-input" />
+
+    <div class="form-error" *ngIf="submitted && signupForm.get('confirmPassword')?.invalid">
+      Required
+    </div>
+  </div>
+
+  <!-- Country -->
+  <div class="form-group">
+    <label for="country">Country</label>
+    <select
+      id="country"
+      formControlName="country"
+      class="form-select">
+      <option value="">Select a country</option>
+      <option *ngFor="let c of countries" [value]="c">{{ c }}</option>
+    </select>
+
+    <div class="form-error" *ngIf="submitted && signupForm.get('country')?.invalid">
+      Required
+    </div>
+  </div>
+
+  <!-- Marketing Preferences -->
+  <div class="form-group">
+    <label class="form-label">Marketing Preferences</label>
+    <p class="form-description">
+      Do you want to be contacted by Interactive Brokers about features, products and offers?
+    </p>
+
+    <div class="radio-group">
+      <label>
+        <input type="radio" formControlName="marketing" value="yes" />
+        Yes
+      </label>
+
+      <label>
+        <input type="radio" formControlName="marketing" value="no" />
+        No
+      </label>
+    </div>
+
+    <div class="form-error" *ngIf="submitted && signupForm.get('marketing')?.invalid">
+      Required
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <button type="submit" class="submit-btn">
+    Create Account
+  </button>
+</form>
