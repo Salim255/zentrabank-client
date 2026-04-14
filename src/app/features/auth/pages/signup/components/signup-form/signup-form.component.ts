@@ -4,5 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-signup-form',
   templateUrl: './signup-form.component.html',
   styleUrls: ['./signup-form.component.scss'],
+  standalone: false
 })
 export class SignupFormComponent {}

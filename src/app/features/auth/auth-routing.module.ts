@@ -2,6 +2,7 @@ import { Route, RouterModule } from "@angular/router";
 import { Auth } from "./auth";
 import { NgModule } from "@angular/core";
 import { LoginPage } from "./pages/login/login.page";
+import { SignupPage } from "./pages/signup/signup.page";
 
 const routes: Route[] = [
   {
@@ -17,6 +18,10 @@ const routes: Route[] = [
         path: 'login',
         component: LoginPage
       },
+      {
+        path: 'signup',
+        component: SignupPage
+      }
     ]
   }
 ];

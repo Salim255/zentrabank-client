@@ -8,6 +8,8 @@ import { SignupPage } from "./pages/signup/signup.page";
 import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
 import { SharedModule } from "../../shared/shared.module";
 import { IonicModule } from "@ionic/angular";
+import { SignupFormComponent } from "./pages/signup/components/signup-form/signup-form.component";
+import { InstructionsComponent } from "./pages/signup/components/instructions/instructions.component";
 
 @NgModule({
   imports: [
@@ -16,10 +18,13 @@ import { IonicModule } from "@ionic/angular";
     ReactiveFormsModule,
     SharedModule,
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    SharedModule
   ],
   declarations: [
     AuthFormComponent,
+    SignupFormComponent,
+    InstructionsComponent,
     SignupPage,
     LoginPage,
     Auth
