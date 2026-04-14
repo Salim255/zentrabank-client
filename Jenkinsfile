@@ -41,61 +41,18 @@ pipeline {
 
 
         // =======================================================
-        // 1) CHECKOUT SOURCE CODE
+        // CHECKOUT SOURCE CODE
         // =======================================================
         stage('Checkout Code') {
             steps {
-
-                cleanWs()
                 // WHY:
                 // Pull latest code from GitHub before building
                 checkout scm
             }
         }
 
-
-        stage('Node Debug') {
-            steps {
-                sh '''
-                    node -v
-                    npm -v
-
-                    echo "Upgrading npm to v11..."
-                    npm install -g npm@11.6.1
-
-                    npm -v
-                '''
-            }
-        }
         // =======================================================
-        // 2) INSTALL DEPENDENCIES
-        // =======================================================
-        stage('Install Dependencies') {
-            steps {
-
-                // WHY:
-                // Ensures clean dependency installation
-                // avoids CI/CD "works on my machine" issues
-                sh 'npm install'
-            }
-        }
-
-        // =======================================================
-        // 4) BUILD ANGULAR APPLICATION
-        // =======================================================
-        stage('Build Angular App') {
-            steps {
-
-                // WHY:
-                // Produces optimized static files (dist/)
-                // ready for Nginx production server
-                sh 'npm run build'
-            }
-        }
-
-
-        // =======================================================
-        // 5) BUILD DOCKER IMAGE
+        // BUILD DOCKER IMAGE
         // =======================================================
         stage('Build Docker Image') {
             steps {
@@ -147,18 +104,6 @@ pipeline {
             }
         }
 
-
-        // =======================================================
-        // 8) CLEANUP WORKSPACE
-        // =======================================================
-        stage('Cleanup') {
-            steps {
-
-                // WHY:
-                // Prevents disk space issues on Jenkins VPS
-                cleanWs()
-            }
-        }
     }
 
 
@@ -168,11 +113,19 @@ pipeline {
     post {
 
         success {
-            echo "✅ Zentrabank Client built and pushed successfully!"
+            // Runs if pipeline succeeds
+            echo 'Pipeline completed successfully 🚀'
         }
 
         failure {
-            echo "❌ Build failed — check logs"
+            // Runs if pipeline fails
+            echo 'Pipeline failed ❌'
+        }
+
+        always {
+            // Always runs (cleanup, logs, etc.)
+            echo 'Cleaning up...'
+            sh "docker system prune -af || true" // 🔥 ADDED cleanup
         }
     }
 }
