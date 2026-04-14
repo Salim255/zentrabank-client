@@ -22,7 +22,8 @@ export class AuthFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.buildAuthForm();
+    //this.buildAuthForm();
+    this.authForm = this.authFormService.buildAuthForm();
       this.authForm.valueChanges.subscribe(value => {
       console.log(value);
     });
@@ -38,7 +39,7 @@ export class AuthFormComponent implements OnInit {
   }
 
  buildAuthForm() {
-  this.authForm = this.authFormService.buildLoginForm();
+
 }
 
   onSubmit(){
