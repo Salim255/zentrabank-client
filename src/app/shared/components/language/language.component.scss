@@ -1,0 +1,25 @@
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  &__icon {
+    font-size: 1.2rem;
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: #d0b2b2;
+    }
+  }
+  &__select {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+  }
+}

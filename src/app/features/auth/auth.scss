@@ -1,6 +1,13 @@
 .auth-layout {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  &__header {
+    text-align: center;
+    margin-bottom: 1rem;
+    width: 100%;
+    position: sticky;
+  }
+  &__content {
+    width: 100%;
+    width: 100%;
+  }
 }
