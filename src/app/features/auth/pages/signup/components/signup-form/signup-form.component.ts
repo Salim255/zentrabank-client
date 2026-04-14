@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal, Signal } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,7 @@ import { FormGroup } from '@angular/forms';
   standalone: false
 })
 export class SignupFormComponent {
+  showPassword = signal<boolean>(false);
   signupForm!:FormGroup;
 
   onSubmit(){}

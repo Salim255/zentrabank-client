@@ -1,0 +1,8 @@
+.signup-page {
+  display: flex;
+  min-height: 100vh;
+
+  > * {
+    flex: 1;
+  }
+}

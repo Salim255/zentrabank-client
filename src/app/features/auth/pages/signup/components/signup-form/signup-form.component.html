@@ -14,9 +14,9 @@
       formControlName="email"
       class="form-input" />
 
-    <div class="form-error" *ngIf="submitted && signupForm.get('email')?.invalid">
+   <!--  <div class="form-error" *ngIf="submitted && signupForm.get('email')?.invalid">
       Required
-    </div>
+    </div> -->
   </div>
 
   <!-- Username -->
@@ -28,9 +28,9 @@
       formControlName="username"
       class="form-input" />
 
-    <div class="form-error" *ngIf="submitted && signupForm.get('username')?.invalid">
+  <!--   <div class="form-error" *ngIf="submitted && signupForm.get('username')?.invalid">
       Required
-    </div>
+    </div> -->
   </div>
 
   <!-- Password -->
@@ -40,21 +40,21 @@
     <div class="password-wrapper">
       <input
         id="password"
-        type="{{ showPassword ? 'text' : 'password' }}"
+        type="{{ showPassword() ? 'text' : 'password' }}"
         formControlName="password"
         class="form-input" />
 
       <button
         type="button"
         class="show-btn"
-        (click)="showPassword = !showPassword">
-        {{ showPassword ? 'Hide' : 'Show' }}
+        (click)="showPassword.set(!showPassword())">
+        {{ showPassword() ? 'Hide' : 'Show' }}
       </button>
     </div>
 
-    <div class="form-error" *ngIf="submitted && signupForm.get('password')?.invalid">
+   <!--  <div class="form-error" *ngIf="submitted && signupForm.get('password')?.invalid">
       Required
-    </div>
+    </div> -->
   </div>
 
   <!-- Confirm Password -->
@@ -66,9 +66,6 @@
       formControlName="confirmPassword"
       class="form-input" />
 
-    <div class="form-error" *ngIf="submitted && signupForm.get('confirmPassword')?.invalid">
-      Required
-    </div>
   </div>
 
   <!-- Country -->
@@ -79,12 +76,10 @@
       formControlName="country"
       class="form-select">
       <option value="">Select a country</option>
-      <option *ngFor="let c of countries" [value]="c">{{ c }}</option>
+      <option value="fr">
+        france
+      </option>
     </select>
-
-    <div class="form-error" *ngIf="submitted && signupForm.get('country')?.invalid">
-      Required
-    </div>
   </div>
 
   <!-- Marketing Preferences -->
@@ -104,10 +99,6 @@
         <input type="radio" formControlName="marketing" value="no" />
         No
       </label>
-    </div>
-
-    <div class="form-error" *ngIf="submitted && signupForm.get('marketing')?.invalid">
-      Required
     </div>
   </div>
 
