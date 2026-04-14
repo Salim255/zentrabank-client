@@ -13,10 +13,10 @@
       type="email"
       formControlName="email"
       class="form-input" />
-
-   <!--  <div class="form-error" *ngIf="submitted && signupForm.get('email')?.invalid">
-      Required
-    </div> -->
+    <app-form-error
+        [control]="signupForm.get('email')"
+        field="email">
+    </app-form-error>
   </div>
 
   <!-- Username -->
@@ -28,9 +28,10 @@
       formControlName="username"
       class="form-input" />
 
-  <!--   <div class="form-error" *ngIf="submitted && signupForm.get('username')?.invalid">
-      Required
-    </div> -->
+    <app-form-error
+          [control]="signupForm.get('username')"
+          field="username">
+    </app-form-error>
   </div>
 
   <!-- Password -->
@@ -52,9 +53,10 @@
       </button>
     </div>
 
-   <!--  <div class="form-error" *ngIf="submitted && signupForm.get('password')?.invalid">
-      Required
-    </div> -->
+    <app-form-error
+      [control]="signupForm.get('password')"
+      field="password">
+    </app-form-error>
   </div>
 
   <!-- Confirm Password -->
