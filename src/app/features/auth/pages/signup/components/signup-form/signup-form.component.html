@@ -67,7 +67,10 @@
       type="password"
       formControlName="confirmPassword"
       class="form-input" />
-
+    <app-form-error
+      [control]="signupForm.get('confirmPassword')"
+      field="confirmPassword">
+    </app-form-error>
   </div>
 
   <!-- Country -->
