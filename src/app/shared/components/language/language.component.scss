@@ -12,10 +12,5 @@
   &__label {
     color: var(--text-clear);
     align-self: center;
-    cursor: pointer;
-    &:focus {
-      outline: none;
-      border-color: #007bff;
-    }
   }
 }
