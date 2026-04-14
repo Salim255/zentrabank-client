@@ -2,8 +2,74 @@
   background-color: #062b60;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   height: 100%;
-  h2 {
-    margin-bottom: 1rem;}
+  gap: 24px;
+  padding: 4rem;
+  // Title
+  &__title {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--text-clear);
+    margin: 0;
+  }
+
+  // Steps
+  &__steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &-item {
+      font-size: 1.5rem;
+      color: var(--text-clear);
+      padding-left: 0;
+    }
+  }
+
+  // Subtitle
+  &__subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-clear);
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+
+  // Requirements
+  &__requirements {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    &-item {
+      font-size: 0.95rem;
+      color: #cacaca;
+    }
+  }
+
+  // Footer
+  &__footer {
+    margin-top: 12px;
+    padding-top: 16px;
+    gap: 6px;
+
+    &-text {
+      font-size: 0.9rem;
+      color: #cacaca;
+    }
+  }
+
+  &__link {
+    font-size: 0.95rem;
+    color: #cacaca;
+    text-decoration: underline;
+  }
 }
+
