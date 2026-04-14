@@ -14,12 +14,12 @@ export class SignupFormComponent {
   constructor(private authFormService: AuthFormService) {}
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     this.signupForm = this.authFormService.buildForm('signup');
      this.signupForm.valueChanges.subscribe(value => {
       console.log(value);
     });
   }
-  onSubmit(){}
+  onSubmit(){
+    console.log(this.signupForm.value);
+  }
 }

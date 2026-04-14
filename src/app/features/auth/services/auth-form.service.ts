@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthMode } from "../dto/auth.interface";
+import { passwordMatchValidator } from "../../../shared/utils/form-errors";
 
 
 @Injectable ({
@@ -31,8 +32,12 @@ export class AuthFormService {
       confirmPassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],
       country: ['', [Validators.required]],
       marketing: [null, [Validators.required]],
-      loginId: ['', [Validators.required, Validators.pattern(/^\d{9}$/), Validators.maxLength(9)]]
-    });
+      loginId: ['', [Validators.required, Validators.pattern(/^\d{9}$/), Validators.maxLength(9)]],
+    },
+    {
+      validators: passwordMatchValidator('password', 'confirmPassword')
+    }
+  );
   }
 
   // -----------------------------------

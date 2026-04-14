@@ -65,6 +65,7 @@
     <input
       id="confirmPassword"
       type="password"
+      type="{{ showPassword() ? 'text' : 'password' }}"
       formControlName="confirmPassword"
       class="form-input" />
     <app-form-error
