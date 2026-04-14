@@ -2,20 +2,16 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  background: transparent;
+  border: none;
   &__icon {
-    font-size: 1.2rem;
     svg {
-      width: 1.5rem;
-      height: 1.5rem;
-      fill: #d0b2b2;
+      color: var(--text-clear);
     }
   }
-  &__select {
-    padding: 0.25rem 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    font-size: 1rem;
+  &__label {
+    color: var(--text-clear);
+    align-self: center;
     cursor: pointer;
     &:focus {
       outline: none;
