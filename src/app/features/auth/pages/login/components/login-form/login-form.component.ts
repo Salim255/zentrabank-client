@@ -1,17 +1,17 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { AuthService } from "../../services/auth.service";
+import { FormGroup } from "@angular/forms";
+import { AuthService } from "../../../../services/auth.service";
 import { Subscription } from "rxjs";
 import { Router } from "@angular/router";
-import { AuthFormService } from "../../services/auth-form.service";
+import { AuthFormService } from "../../../../services/auth-form.service";
 
 @Component({
-  selector: 'app-auth-form',
-  templateUrl: './auth-form.component.html',
-  styleUrls: ['./auth-form.component.scss'],
+  selector: 'app-login-form',
+  templateUrl: './login-form.component.html',
+  styleUrls: ['./login-form.component.scss'],
   standalone: false
 })
-export class AuthFormComponent implements OnInit {
+export class LoginFormComponent implements OnInit {
   authForm!: FormGroup;
   userSubscription!: Subscription;
 
@@ -22,7 +22,6 @@ export class AuthFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.buildAuthForm();
     this.authForm = this.authFormService.buildAuthForm('login');
       this.authForm.valueChanges.subscribe(value => {
       console.log(value);
@@ -49,7 +48,6 @@ export class AuthFormComponent implements OnInit {
     });
     console.log(this.authForm.value);
   }
-
 
   ngOnDestroy(): void {
    this.userSubscription?.unsubscribe();

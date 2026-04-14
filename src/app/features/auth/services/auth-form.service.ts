@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { AuthMode } from "../interfaces/auth.interface";
+import { AuthMode } from "../dto/auth.interface";
 
 
 @Injectable ({
