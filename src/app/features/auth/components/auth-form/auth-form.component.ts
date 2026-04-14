@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthService } from "../../services/auth.service";
 import { Subscription } from "rxjs";
 import { Router } from "@angular/router";
-
+import { AuthFormService } from "../../services/auth-form.service";
 
 @Component({
   selector: 'app-auth-form',
@@ -16,14 +16,14 @@ export class AuthFormComponent implements OnInit {
   userSubscription!: Subscription;
 
   constructor(
+    private authFormService: AuthFormService,
     private router: Router,
     private authService: AuthService,
-    private buildForm: FormBuilder
   ) { }
 
   ngOnInit(): void {
     this.buildAuthForm();
-    this.authForm.valueChanges.subscribe(value => {
+      this.authForm.valueChanges.subscribe(value => {
       console.log(value);
     });
     this.subscribeToUser();
@@ -31,7 +31,6 @@ export class AuthFormComponent implements OnInit {
 
   subscribeToUser() {
     this.userSubscription = this.authService.user$.subscribe(user => {
-      console.log('Current user:', user);
       if (user) {
         this.router.navigate(['/dashboard']);
       }
@@ -39,32 +38,7 @@ export class AuthFormComponent implements OnInit {
   }
 
  buildAuthForm() {
-  this.authForm = this.buildForm.group({
-    email: [
-      '',
-      [
-        Validators.required,
-        Validators.email
-      ]
-    ],
-    password: [
-      '',
-      [
-        Validators.required,
-        Validators.minLength(8),
-        Validators.maxLength(64)
-      ]
-    ]
-    ,
-    loginId: [
-      '',
-      [
-        Validators.required,
-        Validators.pattern(/^\d{9}$/), // 9 digits only
-        Validators.maxLength(9)
-      ]
-    ],
-  });
+  this.authForm = this.authFormService.buildLoginForm();
 }
 
   onSubmit(){
