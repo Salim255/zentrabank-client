@@ -1,40 +1,7 @@
-.balance-chart {
+.balance-chart-container {
   width: 100%;
-  height: 360px;
-  display: flex;
-  gap: 1rem;
-
-  /* LEFT: scrollable chart */
-  &__canvas-wrapper {
-    flex: 1;
-    overflow-x: auto;
-    overflow-y: hidden;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    background: #ffffff;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
-
-    /* Smooth scroll */
-    scroll-behavior: smooth;
-
-    canvas {
-      display: block;
-    }
-  }
-
-  /* RIGHT: fixed scale */
-  &__scale {
-    width: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0.5rem 0;
-  }
-
-  &__scale-value {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #475569;
-    text-align: right;
-  }
+  height: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1.5rem;
 }

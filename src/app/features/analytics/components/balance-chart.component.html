@@ -1,15 +1,13 @@
-<div class="balance-chart">
-
-  <!-- LEFT: scrollable chart -->
-  <div class="balance-chart__canvas-wrapper">
-    <canvas #chart width="1400" height="360"></canvas>
-  </div>
-
-  <!-- RIGHT: fixed scale -->
-  <div class="balance-chart__scale">
-    <div *ngFor="let v of scaleValues" class="balance-chart__scale-value">
-      {{ v }}
-    </div>
-  </div>
-
+<div class="balance-chart-container">
+  <apx-chart
+    #chart
+    [series]="chartOptions.series!"
+    [chart]="chartOptions.chart!"
+    [xaxis]="chartOptions.xaxis!"
+    [stroke]="chartOptions.stroke!"
+    [fill]="chartOptions.fill!"
+    [grid]="chartOptions.grid!"
+    [tooltip]="chartOptions.tooltip!"
+    [yaxis]="chartOptions.yaxis!"
+  ></apx-chart>
 </div>
