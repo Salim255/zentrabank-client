@@ -1,1 +1,61 @@
-<h1>Hello from transaction history</h1>
+<section class="transactions-history">
+
+  <!-- Page Title -->
+  <h1 class="transactions-history__title">Transactions History</h1>
+
+  <!-- Filters -->
+  <div class="transactions-history__filters">
+    <select class="transactions-history__filter">
+      <option value="all">All Types</option>
+      <option value="TRANSFER">Transfers</option>
+      <option value="DEPOSIT">Deposits</option>
+      <option value="WITHDRAW">Withdrawals</option>
+    </select>
+
+    <select class="transactions-history__filter">
+      <option value="30">Last 30 days</option>
+      <option value="90">Last 3 months</option>
+      <option value="365">Last year</option>
+    </select>
+  </div>
+
+  <!-- Table -->
+  <div class="transactions-history__table">
+
+    <div class="transactions-history__header">
+      <span>Date</span>
+      <span>Type</span>
+      <span>Counterparty</span>
+      <span>Status</span>
+      <span>Amount</span>
+    </div>
+
+    <!-- Row -->
+    <div class="transactions-history__row">
+      <span>12 Apr 2026</span>
+      <span class="transactions-history__badge transactions-history__badge--transfer">Transfer</span>
+      <span>test@gmail.com</span>
+      <span class="transactions-history__status transactions-history__status--success">Completed</span>
+      <span class="transactions-history__amount transactions-history__amount--negative">- €1666.60</span>
+    </div>
+
+    <div class="transactions-history__row">
+      <span>10 Apr 2026</span>
+      <span class="transactions-history__badge transactions-history__badge--deposit">Deposit</span>
+      <span>Salary</span>
+      <span class="transactions-history__status transactions-history__status--success">Completed</span>
+      <span class="transactions-history__amount transactions-history__amount--positive">+ €2500.00</span>
+    </div>
+
+    <div class="transactions-history__row">
+      <span>08 Apr 2026</span>
+      <span class="transactions-history__badge transactions-history__badge--withdraw">Withdraw</span>
+      <span>ATM Withdrawal</span>
+      <span class="transactions-history__status transactions-history__status--pending">Pending</span>
+      <span class="transactions-history__amount transactions-history__amount--negative">- €120.00</span>
+    </div>
+
+  </div>
+
+</section>
+
