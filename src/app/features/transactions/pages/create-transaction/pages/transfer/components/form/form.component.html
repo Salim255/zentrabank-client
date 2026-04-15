@@ -2,7 +2,7 @@
 
   <h2 class="transaction-form__title">Transfer Details</h2>
 
-  <!-- Description -->
+  <!-- Recipient Email / Description -->
   <div class="transaction-form__group">
     <label class="transaction-form__label">Description</label>
     <input
@@ -13,9 +13,9 @@
     />
   </div>
 
-  <!-- Amount -->
+  <!-- Transfer Amount -->
   <div class="transaction-form__group">
-    <label class="transaction-form__label">Amount</label>
+    <label class="transaction-form__label">Transfer Amount (€)</label>
     <input
       type="number"
       name="amount"
@@ -25,24 +25,14 @@
     />
   </div>
 
-  <!-- Type -->
+  <!-- Receiver Account Number -->
   <div class="transaction-form__group">
-    <label class="transaction-form__label">Transaction Type</label>
-    <select name="type" class="transaction-form__select">
-      <option value="TRANSFER">Transfer</option>
-      <option value="DEPOSIT">Deposit</option>
-      <option value="WITHDRAW">Withdraw</option>
-    </select>
-  </div>
-
-  <!-- Reference Account -->
-  <div class="transaction-form__group">
-    <label class="transaction-form__label">Reference Account Number</label>
+    <label class="transaction-form__label">Receiver Account Number</label>
     <input
       type="text"
       name="referenceAccountNumber"
       class="transaction-form__input"
-      placeholder="Enter account number"
+      placeholder="Enter receiver account number"
     />
   </div>
 
