@@ -1,5 +1,18 @@
 import { Component, ElementRef, ViewChild } from "@angular/core";
 import { balanceData } from "../data/data";
+import { ApexAxisChartSeries, ApexChart, ApexDataLabels, ApexFill, ApexGrid, ApexStroke, ApexTooltip, ApexXAxis, ApexYAxis } from "apexcharts";
+
+export type ChartOptions = {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  xaxis: ApexXAxis;
+  stroke: ApexStroke;
+  dataLabels: ApexDataLabels;
+  grid: ApexGrid;
+  fill: ApexFill;
+  tooltip: ApexTooltip;
+  yaxis: ApexYAxis;
+};
 
 @Component({
   selector: "app-balance-chart",
