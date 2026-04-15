@@ -1,1 +1,56 @@
-<h1>Hello from history page</h1>
+<section class="expenses-history">
+
+  <!-- Page Title -->
+  <h1 class="expenses-history__title">Dépenses History</h1>
+
+  <!-- Filters -->
+  <div class="expenses-history__filters">
+    <select class="expenses-history__filter">
+      <option value="all">All Categories</option>
+      <option value="food">Food & Restaurants</option>
+      <option value="transport">Transport</option>
+      <option value="shopping">Shopping</option>
+      <option value="subscriptions">Subscriptions</option>
+    </select>
+
+    <select class="expenses-history__filter">
+      <option value="30">Last 30 days</option>
+      <option value="90">Last 3 months</option>
+      <option value="365">Last year</option>
+    </select>
+  </div>
+
+  <!-- Table -->
+  <div class="expenses-history__table">
+
+    <div class="expenses-history__header">
+      <span>Date</span>
+      <span>Description</span>
+      <span>Category</span>
+      <span>Amount</span>
+    </div>
+
+    <div class="expenses-history__row">
+      <span>12 Apr 2026</span>
+      <span>Uber Ride</span>
+      <span>Transport</span>
+      <span class="expenses-history__amount expenses-history__amount--negative">- €18.50</span>
+    </div>
+
+    <div class="expenses-history__row">
+      <span>10 Apr 2026</span>
+      <span>Amazon Purchase</span>
+      <span>Shopping</span>
+      <span class="expenses-history__amount expenses-history__amount--negative">- €42.99</span>
+    </div>
+
+    <div class="expenses-history__row">
+      <span>08 Apr 2026</span>
+      <span>Spotify Subscription</span>
+      <span>Subscriptions</span>
+      <span class="expenses-history__amount expenses-history__amount--negative">- €9.99</span>
+    </div>
+
+  </div>
+
+</section>
