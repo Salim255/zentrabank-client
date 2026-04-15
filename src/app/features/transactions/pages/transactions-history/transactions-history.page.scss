@@ -1,0 +1,129 @@
+.transactions-history {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f172a;
+    text-align: center;
+  }
+
+  /* Filters */
+  &__filters {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+  }
+
+  &__filter {
+    padding: 0.65rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #f9fafb;
+    font-size: 0.95rem;
+    color: #0f172a;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+  }
+
+  /* Table */
+  &__table {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+
+  &__header,
+  &__row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 2fr 1fr 1fr;
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  &__header {
+    background: #f8fafc;
+    font-weight: 600;
+    color: #475569;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  &__row {
+    color: #0f172a;
+    border-bottom: 1px solid #f1f5f9;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background: #f9fafb;
+    }
+  }
+
+  /* Amounts */
+  &__amount {
+    font-weight: 600;
+
+    &--negative {
+      color: #dc2626;
+    }
+
+    &--positive {
+      color: #16a34a;
+    }
+  }
+
+  /* Status */
+  &__status {
+    font-weight: 600;
+
+    &--success {
+      color: #16a34a;
+    }
+
+    &--pending {
+      color: #d97706;
+    }
+
+    &--failed {
+      color: #dc2626;
+    }
+  }
+
+  /* Type badges */
+  &__badge {
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: capitalize;
+
+    &--transfer {
+      background: #2563eb;
+    }
+
+    &--deposit {
+      background: #16a34a;
+    }
+
+    &--withdraw {
+      background: #dc2626;
+    }
+  }
+}
