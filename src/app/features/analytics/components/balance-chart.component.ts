@@ -46,25 +46,16 @@ export class BalanceChartComponent{
         }
       ],
       chart: {
-        type: 'line',
+        //type: "donut",
+        type: "line",
         height: 350,
         toolbar: { show: false },
-        zoom: { enabled: false }
+        zoom: { enabled: false },
       },
       stroke: {
         curve: 'smooth',
         width: 3,
-        colors: ['#2563eb']
-      },
-      fill: {
-        type: 'gradient',
-        gradient: {
-          shadeIntensity: 1,
-          opacityFrom: 0.4,
-          opacityTo: 0,
-          stops: [0, 90, 100],
-          colorStops: []
-        }
+        colors: ["#1485c6"]
       },
       xaxis: {
         type: 'category',
@@ -76,7 +67,7 @@ export class BalanceChartComponent{
         }
       },
       grid: {
-        borderColor: '#e2e8f0',
+        borderColor: '#f0e6e2',
         strokeDashArray: 4
       },
       tooltip: {
