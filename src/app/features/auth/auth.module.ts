@@ -10,6 +10,7 @@ import { SharedModule } from "../../shared/shared.module";
 import { IonicModule } from "@ionic/angular";
 import { SignupFormComponent } from "./pages/signup/components/signup-form/signup-form.component";
 import { InstructionsComponent } from "./pages/signup/components/instructions/instructions.component";
+import { CreateAccountFormComponent } from "../accounts/components/create-account-form/create-account-form.component";
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { InstructionsComponent } from "./pages/signup/components/instructions/in
     SharedModule
   ],
   declarations: [
+    CreateAccountFormComponent,
     LoginFormComponent,
     SignupFormComponent,
     InstructionsComponent,
