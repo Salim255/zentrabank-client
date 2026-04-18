@@ -1,0 +1,159 @@
+.review {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 8px;
+  }
+
+  &__block {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 4px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #f2f2f2;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #444;
+  }
+
+  &__value {
+    font-size: 0.95rem;
+    color: #222;
+    font-weight: 500;
+    text-align: right;
+    max-width: 60%;
+  }
+
+  &__checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      color: #333;
+
+      input {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.45;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input {
+      padding: 10px 12px;
+      border: 1px solid #dcdcdc;
+      border-radius: 8px;
+      background: #fafafa;
+      font-size: 0.95rem;
+      transition: border-color 0.2s ease;
+
+      &:focus {
+        border-color: #0066cc;
+        background: #fff;
+        outline: none;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+}
+
+/* BUTTONS */
+.btn {
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s ease;
+
+  &--primary {
+    background: #0066cc;
+    color: #fff;
+
+    &:hover {
+      background: #0055aa;
+    }
+  }
+
+  &--secondary {
+    background: #f2f2f2;
+    color: #333;
+
+    &:hover {
+      background: #e6e6e6;
+    }
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .review__item {
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+  }
+
+  .review__value {
+    max-width: 100%;
+    text-align: left;
+  }
+}
