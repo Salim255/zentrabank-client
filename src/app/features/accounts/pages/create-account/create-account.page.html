@@ -1,0 +1,248 @@
+<section class="about">
+
+  <h2 class="about__title">About You</h2>
+
+  <form class="about__form">
+
+    <!-- CONTACT INFORMATION -->
+    <div class="about__block">
+      <h3 class="about__subtitle">Contact Information</h3>
+
+      <div class="form__row">
+        <div class="form__field">
+          <label for="title">Title</label>
+          <select id="title" name="title">
+            <option value="">Select</option>
+            <option>Mr</option>
+            <option>Mrs</option>
+            <option>Ms</option>
+          </select>
+        </div>
+
+        <div class="form__field">
+          <label for="firstName">First Name *</label>
+          <input id="firstName" name="firstName" type="text" required>
+        </div>
+
+        <div class="form__field">
+          <label for="middleName">Middle Name(s)</label>
+          <input id="middleName" name="middleName" type="text">
+        </div>
+
+        <div class="form__field">
+          <label for="lastName">Last Name *</label>
+          <input id="lastName" name="lastName" type="text" required>
+        </div>
+      </div>
+
+      <div class="form__row">
+        <div class="form__field form__field--wide">
+          <label for="address1">Address Line One</label>
+          <input id="address1" name="address1" type="text">
+        </div>
+
+        <div class="form__field form__field--wide">
+          <label for="address2">Address Line Two</label>
+          <input id="address2" name="address2" type="text">
+        </div>
+      </div>
+
+      <div class="form__row">
+        <div class="form__field">
+          <label for="city">City *</label>
+          <input id="city" name="city" type="text" required>
+        </div>
+
+        <div class="form__field">
+          <label for="state">State / Province</label>
+          <select id="state" name="state">
+            <option value="">Select</option>
+          </select>
+        </div>
+
+        <div class="form__field">
+          <label for="zip">Zip / Postal Code *</label>
+          <input id="zip" name="zip" type="text" required>
+        </div>
+      </div>
+
+      <div class="form__checkboxes">
+        <label><input type="checkbox"> I have a different mailing address.</label>
+        <label><input type="checkbox"> I have a different citizenship.</label>
+        <label><input type="checkbox"> I was born outside of the United States.</label>
+      </div>
+
+      <div class="form__row">
+        <div class="form__field">
+          <label for="phoneType">Phone Type</label>
+          <select id="phoneType" name="phoneType">
+            <option>Mobile</option>
+            <option>Home</option>
+            <option>Work</option>
+          </select>
+        </div>
+
+        <div class="form__field">
+          <label for="phoneLocation">Location</label>
+          <select id="phoneLocation" name="phoneLocation">
+            <option>United States</option>
+          </select>
+        </div>
+
+        <div class="form__field">
+          <label for="phone">Phone Number *</label>
+          <input id="phone" name="phone" type="text" required>
+        </div>
+      </div>
+
+      <button type="button" class="about__add">+ Add Additional Phone Number</button>
+    </div>
+
+    <!-- PERSONAL INFORMATION -->
+    <div class="about__block">
+      <h3 class="about__subtitle">Personal Information</h3>
+
+      <div class="form__row">
+        <div class="form__field">
+          <label for="dob">Date of Birth</label>
+          <input id="dob" name="dob" type="date">
+        </div>
+
+        <div class="form__field">
+          <label for="marital">Marital Status</label>
+          <select id="marital" name="marital">
+            <option value="">Select</option>
+          </select>
+        </div>
+
+        <div class="form__field">
+          <label for="dependents">Dependents</label>
+          <select id="dependents" name="dependents">
+            <option value="">0</option>
+            <option>1</option>
+            <option>2</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form__row">
+        <div class="form__field">
+          <label for="taxResidency">Tax Residency</label>
+          <select id="taxResidency" name="taxResidency">
+            <option>United States</option>
+          </select>
+        </div>
+
+        <div class="form__field">
+          <label for="ssn">Social Security Number *</label>
+          <input id="ssn" name="ssn" type="text" required>
+        </div>
+      </div>
+
+      <button type="button" class="about__add">+ Add Additional Tax Residency</button>
+    </div>
+
+    <!-- EMPLOYMENT -->
+    <div class="about__block">
+      <h3 class="about__subtitle">Employment</h3>
+
+      <div class="form__field form__field--wide">
+        <label for="employment">Employment Status</label>
+        <select id="employment" name="employment">
+          <option value="">Select</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- SOURCE OF WEALTH -->
+    <div class="about__block">
+      <h3 class="about__subtitle">Source of Wealth</h3>
+
+      <div class="form__checkboxes form__checkboxes--grid">
+        <label><input type="checkbox"> Income from Employment</label>
+        <label><input type="checkbox"> Market Investments / Trading</label>
+        <label><input type="checkbox"> Interest / Dividend Income</label>
+        <label><input type="checkbox"> Property / Real Estate</label>
+        <label><input type="checkbox"> Allowance / Spousal Income</label>
+        <label><input type="checkbox"> Inheritance / Gift</label>
+        <label><input type="checkbox"> Pension / Retirement Benefit</label>
+        <label><input type="checkbox"> Disability / Severance / Unemployment</label>
+        <label><input type="checkbox"> Other</label>
+      </div>
+    </div>
+
+    <!-- SECURITY QUESTIONS -->
+    <div class="about__block">
+      <h3 class="about__subtitle">Security Questions</h3>
+
+      <div class="form__row">
+        <div class="form__field">
+          <label for="q1">Security Question One</label>
+          <select id="q1" name="q1"></select>
+        </div>
+        <div class="form__field">
+          <label for="a1">Answer One *</label>
+          <input id="a1" name="a1" type="text" required>
+        </div>
+      </div>
+
+      <div class="form__row">
+        <div class="form__field">
+          <label for="q2">Security Question Two</label>
+          <select id="q2" name="q2"></select>
+        </div>
+        <div class="form__field">
+          <label for="a2">Answer Two *</label>
+          <input id="a2" name="a2" type="text" required>
+        </div>
+      </div>
+
+      <div class="form__row">
+        <div class="form__field">
+          <label for="q3">Security Question Three</label>
+          <select id="q3" name="q3"></select>
+        </div>
+        <div class="form__field">
+          <label for="a3">Answer Three *</label>
+          <input id="a3" name="a3" type="text" required>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="about__actions">
+      <button type="button" class="btn btn--secondary">Back</button>
+      <button type="submit" class="btn btn--primary">Continue</button>
+    </div>
+
+  </form>
+
+  <!-- RIGHT INFO PANEL -->
+  <aside class="about__info">
+    <div class="info__block">
+      <h4>Why do we collect this information?</h4>
+      <p>We comply with government anti‑money laundering regulations and privacy requirements.</p>
+    </div>
+
+    <div class="info__block">
+      <h4>Why do I need a mobile number?</h4>
+      <p>We use it to confirm your identity and secure your account.</p>
+    </div>
+
+    <div class="info__block">
+      <h4>Why do we collect Employment Information?</h4>
+      <p>Regulations require us to understand your employment background.</p>
+    </div>
+
+    <div class="info__block">
+      <h4>What is Source of Wealth?</h4>
+      <p>It describes how you accumulated your assets over time.</p>
+    </div>
+
+    <div class="info__block">
+      <h4>Why do we collect Security Questions?</h4>
+      <p>They help verify your identity and protect your account.</p>
+    </div>
+  </aside>
+
+</section>
