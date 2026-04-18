@@ -3,6 +3,7 @@ import { SignupPage } from "./signup.page";
 import { NgModule } from "@angular/core";
 import { SignupFormComponent } from "./components/signup-form/signup-form.component";
 import { CreateAccountFormComponent } from "../../../accounts/components/create-account-form/create-account-form.component";
+import { ReviewComponent } from "./components/review/review.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: "application",
         component: CreateAccountFormComponent
+      },
+      {
+        path: "review",
+        component: ReviewComponent
       }
     ]
   }

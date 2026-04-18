@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-create-account-form",
@@ -6,4 +7,10 @@ import { Component } from "@angular/core";
   styleUrls: ["./create-account-form.component.scss"],
   standalone: false
 })
-export class CreateAccountFormComponent {}
+export class CreateAccountFormComponent {
+  constructor(private router: Router){}
+
+  onContinue(){
+    this.router.navigate(["/auth/signup/review"])
+  }
+}
