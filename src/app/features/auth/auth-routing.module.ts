@@ -20,7 +20,7 @@ const routes: Route[] = [
       },
       {
         path: 'signup',
-        component: SignupPage
+        loadChildren: () =>import("./pages/signup/signup.module").then((m) => m.SignupModule)
       }
     ]
   }
