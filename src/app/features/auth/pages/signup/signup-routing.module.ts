@@ -21,12 +21,8 @@ const routes: Routes = [
       },
       {
         path: "application",
-        component: CreateAccountFormComponent
+        loadChildren: () => import("../../../application/application.module").then((m) => m.ApplicationModule)
       },
-      {
-        path: "review",
-        component: ReviewComponent
-      }
     ]
   }
 ]

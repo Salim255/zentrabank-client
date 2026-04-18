@@ -1,11 +1,23 @@
 import { RouterModule, Routes } from "@angular/router";
 import { ApplicationPage } from "./application.page";
 import { NgModule } from "@angular/core";
+import { CreateAccountFormComponent } from "./components/create-account-form/create-account-form.component";
+import { ReviewComponent } from "./components/review/review.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: ApplicationPage
+    component: ApplicationPage,
+    children: [
+       {
+        path: "application",
+        component: CreateAccountFormComponent
+      },
+      {
+        path: "review",
+        component: ReviewComponent
+      }
+    ]
   }
 ]
 
