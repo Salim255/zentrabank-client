@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { AuthFormService } from '../../../../services/auth-form.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup-form',
@@ -11,7 +12,11 @@ import { AuthFormService } from '../../../../services/auth-form.service';
 export class SignupFormComponent {
   signupForm!: FormGroup;
   showPassword = signal<boolean>(false);
-  constructor(private authFormService: AuthFormService) {}
+
+  constructor(
+    private authFormService: AuthFormService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.signupForm = this.authFormService.buildForm('signup');
@@ -21,5 +26,6 @@ export class SignupFormComponent {
   }
   onSubmit(){
     console.log(this.signupForm.value);
+    this.router.navigate(["/auth/signup/application"])
   }
 }
