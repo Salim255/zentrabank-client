@@ -1,6 +1,4 @@
 .review {
-  max-width: 820px;
-  margin: 0 auto;
   padding: 32px 0;
   display: flex;
   flex-direction: column;
@@ -14,14 +12,10 @@
   }
 
   &__block {
-    background: #fff;
-    border: 1px solid #e6e6e6;
-    border-radius: 12px;
     padding: 24px 28px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
   }
 
   &__subtitle {

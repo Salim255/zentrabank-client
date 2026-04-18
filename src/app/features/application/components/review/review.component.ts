@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-review",
@@ -6,4 +7,10 @@ import { Component } from "@angular/core";
   styleUrls: ["./review.component.scss"],
   standalone: false
 })
-export class ReviewComponent {}
+export class ReviewComponent {
+  constructor(private router: Router){}
+
+  onBack(){
+    this.router.navigate(["/auth/signup/application"])
+  }
+}

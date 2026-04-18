@@ -7,7 +7,7 @@ import { LoginFormComponent } from "./pages/login/components/login-form/login-fo
 import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
 import { SharedModule } from "../../shared/shared.module";
 import { IonicModule } from "@ionic/angular";
-import { CreateAccountFormComponent } from "../accounts/components/create-account-form/create-account-form.component";
+import { CreateAccountFormComponent } from "../application/components/create-account-form/create-account-form.component";
 
 @NgModule({
   imports: [
