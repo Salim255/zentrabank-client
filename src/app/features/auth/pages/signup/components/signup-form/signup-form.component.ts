@@ -26,6 +26,6 @@ export class SignupFormComponent {
   }
   onSubmit(){
     console.log(this.signupForm.value);
-    this.router.navigate(["/auth/signup/application"])
+    this.router.navigate(["/application"])
   }
 }

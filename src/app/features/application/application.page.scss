@@ -9,5 +9,14 @@
   &__content {
     width: 100%;
     width: 100%;
+
+    display: flex;
+    min-height: 100vh;
+    > * {
+      flex: 1;
+    }
+    div {
+      padding: 0 4rem;
+    }
   }
 }
