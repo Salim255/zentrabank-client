@@ -9,8 +9,9 @@ const routes: Routes = [
     path: "",
     component: ApplicationPage,
     children: [
-       {
-        path: "application",
+      {
+        path: "",
+        pathMatch: "full",
         component: CreateAccountFormComponent
       },
       {
