@@ -8,7 +8,8 @@ import { CommonModule } from "@angular/common";
     ApplicationRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    SharedWorker
   ]
 })
 
