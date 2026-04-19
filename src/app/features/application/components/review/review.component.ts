@@ -11,6 +11,6 @@ export class ReviewComponent {
   constructor(private router: Router){}
 
   onBack(){
-    this.router.navigate(["/auth/signup/application"])
+    this.router.navigate(["/application"])
   }
 }

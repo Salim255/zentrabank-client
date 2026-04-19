@@ -11,6 +11,6 @@ export class CreateAccountFormComponent {
   constructor(private router: Router){}
 
   onContinue(){
-    this.router.navigate(["/auth/signup/application/review"])
+    this.router.navigate(["/application/review"])
   }
 }
