@@ -12,16 +12,8 @@ const routes: Routes = [
     children: [
        {
         path: '',
-        redirectTo: 'register',
+        component: SignupFormComponent,
         pathMatch: 'full'
-      },
-      {
-        path: "register",
-        component: SignupFormComponent
-      },
-      {
-        path: "application",
-        loadChildren: () => import("../../../application/application.module").then((m) => m.ApplicationModule)
       },
     ]
   }
