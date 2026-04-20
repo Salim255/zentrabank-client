@@ -2,12 +2,12 @@ import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
-  selector: "app-create-account-form",
-  templateUrl: "./create-account-form.component.html",
-  styleUrls: ["./create-account-form.component.scss"],
+  selector: "app-application-form",
+  templateUrl: "./application-form.component.html",
+  styleUrls: ["./application-form.component.scss"],
   standalone: false
 })
-export class CreateAccountFormComponent {
+export class ApplicationFormComponent {
 
   constructor(private router: Router){}
 

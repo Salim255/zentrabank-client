@@ -6,7 +6,7 @@ import { InstructionsComponent } from "../../../../shared/components/instruction
 import { SharedModule } from "../../../../shared/shared.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
-import { CreateAccountFormComponent } from "../../../application/components/create-account-form/create-account-form.component";
+import { CreateAccountFormComponent } from "../../../application/components/application-form/application-form.component";
 
 @NgModule({
   declarations: [
