@@ -27,12 +27,9 @@ export class AuthFormService {
   private buildBaseSignupForm(): FormGroup {
     return this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]],
+      userName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]],
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],
       confirmPassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],
-      country: ['', [Validators.required]],
-      marketing: [null, [Validators.required]],
-      loginId: ['', [Validators.required, Validators.pattern(/^\d{9}$/), Validators.maxLength(9)]],
     },
     {
       validators: passwordMatchValidator('password', 'confirmPassword')
@@ -44,7 +41,7 @@ export class AuthFormService {
   // REMOVE FIELDS FOR LOGIN MODE
   // -----------------------------------
   private stripSignupFields(form: FormGroup) {
-    form.removeControl('username');
+    form.removeControl('userName');
     form.removeControl('confirmPassword');
     form.removeControl('country');
     form.removeControl('marketing');
