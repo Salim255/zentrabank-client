@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { AuthFormService } from '../../../../services/auth-form.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../../services/auth.service';
 
 @Component({
   selector: 'app-signup-form',
@@ -14,6 +15,7 @@ export class SignupFormComponent {
   showPassword = signal<boolean>(false);
 
   constructor(
+    private authService: AuthService,
     private authFormService: AuthFormService,
     private router: Router
   ) {}
@@ -26,6 +28,14 @@ export class SignupFormComponent {
   }
   onSubmit(){
     console.log(this.signupForm.value);
-    this.router.navigate(["/application"])
+    if (this.signupForm.invalid) return;
+    this.authService.signup(this.signupForm.value).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.router.navigate(["/application"])
+      },
+      error: () => {}
+    })
+
   }
 }
