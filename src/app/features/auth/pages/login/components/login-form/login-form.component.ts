@@ -46,7 +46,6 @@ export class LoginFormComponent implements OnInit {
         console.error('Login failed:', error);
       }
     });
-    console.log(this.authForm.value);
   }
 
   ngOnDestroy(): void {

@@ -1,28 +1,16 @@
-import { Component } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
 
-@Component({
-  selector: "app-application-form",
-  templateUrl: "./application-form.component.html",
-  styleUrls: ["./application-form.component.scss"],
-  standalone: false
+
+@Injectable ({
+  providedIn: "root"
 })
-export class ApplicationFormComponent {
+export class ApplicationFormService {
+  authForm!: FormGroup;
+  constructor(  private fb: FormBuilder) {}
 
-  applicationForm!: FormGroup;
-
-  constructor(
-    private fb: FormBuilder,
-    private router: Router
-  ){}
-
-  onContinue(){
-    this.router.navigate(["/application/review"])
-  }
-
-  buildForm() {
-    this.applicationForm = this.fb.group({
+  buildForm(): FormGroup {
+    return this.fb.group({
 
       // CONTACT INFORMATION
       title: this.fb.control<string | null>(null, [
@@ -96,9 +84,4 @@ export class ApplicationFormComponent {
 
     });
   }
-
-  onSubmit(){
-
-  }
-
 }

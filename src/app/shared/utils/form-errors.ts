@@ -1,11 +1,8 @@
 import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 
 export const FORM_ERRORS: Record<string, any> = {
-  loginId: {
-    required: 'Client ID is required.',
-    pattern: 'Client ID must be exactly 9 digits.',
-    maxlength: 'Client ID cannot exceed 9 digits.'
-  },
+
+  // LOGIN / AUTH
   email: {
     required: 'Email is required.',
     email: 'Please enter a valid email address.'
@@ -25,6 +22,66 @@ export const FORM_ERRORS: Record<string, any> = {
     minlength: 'Username must be at least 3 characters.',
     maxlength: 'Username cannot exceed 64 characters.'
   },
+  passwordMismatch: 'Passwords do not match.',
+
+
+  // APPLICATION FORM — CONTACT INFORMATION
+  title: {
+    required: 'Please select a title.'
+  },
+  firstName: {
+    required: 'First name is required.',
+    minlength: 'First name must be at least 2 characters.',
+    maxlength: 'First name cannot exceed 50 characters.',
+    pattern: 'First name contains invalid characters.'
+  },
+  lastName: {
+    required: 'Last name is required.',
+    minlength: 'Last name must be at least 2 characters.',
+    maxlength: 'Last name cannot exceed 50 characters.',
+    pattern: 'Last name contains invalid characters.'
+  },
+  address: {
+    maxlength: 'Address cannot exceed 120 characters.'
+  },
+  city: {
+    required: 'City is required.',
+    minlength: 'City must be at least 2 characters.',
+    maxlength: 'City cannot exceed 80 characters.'
+  },
+  zip: {
+    required: 'Postal code is required.',
+    pattern: 'Postal code format is invalid.'
+  },
+  phoneType: {
+    required: 'Please select a phone type.'
+  },
+  phone: {
+    required: 'Phone number is required.',
+    pattern: 'Phone number format is invalid.'
+  },
+
+  // PERSONAL INFORMATION
+  dob: {
+    required: 'Date of birth is required.'
+  },
+
+  // EMPLOYMENT
+  employment: {
+    required: 'Please select your employment status.'
+  },
+
+  // ACCOUNT TYPE
+  accountType: {
+    required: 'Please select an account type.'
+  },
+
+  // SOURCE OF WEALTH (checkbox group)
+  sourceOfWealth: {
+    required: 'Please select at least one source of wealth.'
+  },
+
+  // COUNTRY / MARKETING (from your previous config)
   country: {
     required: 'Country selection is required.'
   },

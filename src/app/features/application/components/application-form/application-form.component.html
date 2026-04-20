@@ -2,66 +2,102 @@
 
   <h2 class="about__title">About You</h2>
 
-  <form class="about__form">
+  <form [formGroup]="applicationForm"
+        (ngSubmit)="onSubmit()"
+        class="about__form">
 
     <!-- CONTACT INFORMATION -->
     <div class="about__block">
       <h3 class="about__subtitle">Contact Information</h3>
 
       <div class="form__row">
+
         <div class="form__field">
           <label for="title">Title</label>
-          <select id="title" name="title">
+          <select id="title" formControlName="title">
             <option value="">Select</option>
             <option>Mr</option>
             <option>Mrs</option>
             <option>Ms</option>
           </select>
+          <app-form-error
+            [control]="applicationForm.get('title')"
+            field="title">
+          </app-form-error>
         </div>
 
         <div class="form__field">
           <label for="firstName">First Name *</label>
-          <input id="firstName" name="firstName" type="text" required>
+          <input id="firstName" type="text" formControlName="firstName">
+          <app-form-error
+            [control]="applicationForm.get('firstName')"
+            field="firstName">
+          </app-form-error>
         </div>
 
         <div class="form__field">
           <label for="lastName">Last Name *</label>
-          <input id="lastName" name="lastName" type="text" required>
+          <input id="lastName" type="text" formControlName="lastName">
+          <app-form-error
+            [control]="applicationForm.get('lastName')"
+            field="lastName">
+          </app-form-error>
         </div>
       </div>
 
       <div class="form__row">
         <div class="form__field form__field--wide">
-          <label for="address1">Address Line</label>
-          <input id="address1" name="address1" type="text">
+          <label for="address">Address Line</label>
+          <input id="address" type="text" formControlName="address">
+          <app-form-error
+            [control]="applicationForm.get('address')"
+            field="address">
+          </app-form-error>
         </div>
       </div>
 
       <div class="form__row">
+
         <div class="form__field">
           <label for="city">City *</label>
-          <input id="city" name="city" type="text" required>
+          <input id="city" type="text" formControlName="city">
+          <app-form-error
+            [control]="applicationForm.get('city')"
+            field="city">
+          </app-form-error>
         </div>
 
         <div class="form__field">
-          <label for="zip">Zip / Postal Code *</label>
-          <input id="zip" name="zip" type="text" required>
+          <label for="zipCode">Zip / Postal Code *</label>
+          <input id="zip" type="text" formControlName="zipCode">
+          <app-form-error
+            [control]="applicationForm.get('zipCode')"
+            field="zipCode">
+          </app-form-error>
         </div>
       </div>
 
       <div class="form__row">
         <div class="form__field">
           <label for="phoneType">Phone Type</label>
-          <select id="phoneType" name="phoneType">
+          <select id="phoneType" formControlName="phoneType">
             <option>Mobile</option>
             <option>Home</option>
             <option>Work</option>
           </select>
+          <app-form-error
+            [control]="applicationForm.get('phoneType')"
+            field="phoneType">
+          </app-form-error>
         </div>
 
         <div class="form__field">
           <label for="phone">Phone Number *</label>
-          <input id="phone" name="phone" type="text" required>
+          <input id="phone" type="text" formControlName="phone">
+          <app-form-error
+            [control]="applicationForm.get('phone')"
+            field="phone">
+          </app-form-error>
         </div>
       </div>
     </div>
@@ -73,7 +109,11 @@
       <div class="form__row">
         <div class="form__field">
           <label for="dob">Date of Birth</label>
-          <input id="dob" name="dob" type="date">
+          <input id="dob" type="date" formControlName="dob">
+          <app-form-error
+            [control]="applicationForm.get('dob')"
+            field="dob">
+          </app-form-error>
         </div>
       </div>
     </div>
@@ -84,7 +124,7 @@
 
       <div class="form__field form__field--wide">
         <label for="employment">Employment Status</label>
-        <select id="employment" name="employment">
+        <select id="employment" formControlName="employment">
           <option value="">Select</option>
           <option value="employed">Employed</option>
           <option value="self-employed">Self‑Employed</option>
@@ -93,6 +133,10 @@
           <option value="retired">Retired</option>
           <option value="other">Other</option>
         </select>
+        <app-form-error
+            [control]="applicationForm.get('employment')"
+            field="employment">
+        </app-form-error>
       </div>
     </div>
 
@@ -102,37 +146,77 @@
 
       <div class="form__field form__field--wide">
         <label for="accountType">Bank Account Type</label>
-        <select id="accountType" name="accountType">
+        <select id="accountType" formControlName="accountType">
           <option value="">Select</option>
           <option value="checking">Checking Account</option>
           <option value="savings">Savings Account</option>
           <option value="credit">Credit Account</option>
           <option value="loan">Loan Account</option>
         </select>
+        <app-form-error
+            [control]="applicationForm.get('accountType')"
+            field="accountType">
+        </app-form-error>
       </div>
     </div>
 
-
     <!-- SOURCE OF WEALTH -->
-    <div class="about__block">
+    <div class="about__block" formGroupName="sourceOfWealth">
       <h3 class="about__subtitle">Source of Wealth</h3>
 
       <div class="form__checkboxes form__checkboxes--grid">
-        <label><input type="checkbox"> Income from Employment</label>
-        <label><input type="checkbox"> Market Investments / Trading</label>
-        <label><input type="checkbox"> Interest / Dividend Income</label>
-        <label><input type="checkbox"> Property / Real Estate</label>
-        <label><input type="checkbox"> Inheritance / Gift</label>
-        <label><input type="checkbox"> Pension / Retirement Benefit</label>
-        <label><input type="checkbox"> Disability / Severance / Unemployment</label>
-        <label><input type="checkbox"> Other</label>
+
+        <label>
+          <input type="checkbox" formControlName="employmentIncome">
+          Income from Employment
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="marketInvestments">
+          Market Investments / Trading
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="interestDividend">
+          Interest / Dividend Income
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="realEstate">
+          Property / Real Estate
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="inheritanceGift">
+          Inheritance / Gift
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="pension">
+          Pension / Retirement Benefit
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="disabilityUnemployment">
+          Disability / Severance / Unemployment
+        </label>
+
+        <label>
+          <input type="checkbox" formControlName="other">
+          Other
+        </label>
+
       </div>
+      <app-form-error
+          [control]="applicationForm.get('sourceOfWealth')"
+          field="sourceOfWealth">
+      </app-form-error>
     </div>
 
     <!-- ACTIONS -->
     <div class="about__actions">
       <button type="button" class="btn btn--secondary">Back</button>
-      <button type="submit" class="btn btn--primary" (click)="onContinue()">Continue</button>
+      <button type="submit" class="btn btn--primary">Continue</button>
     </div>
 
   </form>
