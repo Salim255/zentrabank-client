@@ -1,25 +1,140 @@
 export class ApplicationInstance {
-  title: string | null;
-  firstName: string;
-  lastName: string;
-  addressLine: string | null;
-  city: string;
-  zipCode: string;
-  phoneType: string;
-  phoneNumber: string;
-  dob: string | null;
-  employment: string | null;
-  accountType: string | null;
-  sourceOfWealth: {
-    employmentIncome: boolean;
-    marketInvestments: boolean;
-    interestDividend: boolean;
-    realEstate: boolean;
-    inheritanceGift: boolean;
-    pension: boolean;
-    disabilityUnemployment: boolean;
-    other: boolean;
-  };
-}
 
+  // -------------------------
+  // PRIVATE FIELDS
+  // -------------------------
+  private _title: string | null = null;
+  private _firstName = '';
+  private _lastName = '';
+  private _addressLine: string | null = null;
+  private _city = '';
+  private _zipCode = '';
+  private _phoneType = 'Mobile';
+  private _phoneNumber = '';
+  private _dob: string | null = null;
+  private _employment: string | null = null;
+  private _accountType: string | null = null;
+
+  private _sourceOfWealth = {
+    employmentIncome: false,
+    marketInvestments: false,
+    interestDividend: false,
+    realEstate: false,
+    inheritanceGift: false,
+    pension: false,
+    disabilityUnemployment: false,
+    other: false
+  };
+
+  // -------------------------
+  // GETTERS
+  // -------------------------
+  get title() { return this._title; }
+  get firstName() { return this._firstName; }
+  get lastName() { return this._lastName; }
+  get addressLine() { return this._addressLine; }
+  get city() { return this._city; }
+  get zipCode() { return this._zipCode; }
+  get phoneType() { return this._phoneType; }
+  get phoneNumber() { return this._phoneNumber; }
+  get dob() { return this._dob; }
+  get employment() { return this._employment; }
+  get accountType() { return this._accountType; }
+  get sourceOfWealth() { return this._sourceOfWealth; }
+
+  // -------------------------
+  // SETTERS (CONTROLLED)
+  // -------------------------
+  setTitle(value: string | null) {
+    this._title = value;
+  }
+
+  setFirstName(value: string) {
+    if (!value || value.length < 2) throw new Error('Invalid first name');
+    this._firstName = value;
+  }
+
+  setLastName(value: string) {
+    if (!value || value.length < 2) throw new Error('Invalid last name');
+    this._lastName = value;
+  }
+
+  setAddressLine(value: string | null) {
+    this._addressLine = value;
+  }
+
+  setCity(value: string) {
+    if (!value) throw new Error('City required');
+    this._city = value;
+  }
+
+  setZipCode(value: string) {
+    this._zipCode = value;
+  }
+
+  setPhoneType(value: string) {
+    this._phoneType = value;
+  }
+
+  setPhoneNumber(value: string) {
+    this._phoneNumber = value;
+  }
+
+  setDob(value: string | null) {
+    this._dob = value;
+  }
+
+  setEmployment(value: string | null) {
+    this._employment = value;
+  }
+
+  setAccountType(value: string | null) {
+    this._accountType = value;
+  }
+
+  setSourceOfWealth(value: any) {
+    this._sourceOfWealth = { ...value };
+  }
+
+  // -------------------------
+  // FACTORY: from form
+  // -------------------------
+  static fromForm(formValue: any): ApplicationInstance {
+    const instance = new ApplicationInstance();
+
+    instance.setTitle(formValue.title);
+    instance.setFirstName(formValue.firstName);
+    instance.setLastName(formValue.lastName);
+    instance.setAddressLine(formValue.addressLine);
+    instance.setCity(formValue.city);
+    instance.setZipCode(formValue.zipCode);
+    instance.setPhoneType(formValue.phoneType);
+    instance.setPhoneNumber(formValue.phoneNumber);
+    instance.setDob(formValue.dob);
+    instance.setEmployment(formValue.employment);
+    instance.setAccountType(formValue.accountType);
+    instance.setSourceOfWealth(formValue.sourceOfWealth);
+
+    return instance;
+  }
+
+  // -------------------------
+  // SERIALIZER: to backend
+  // -------------------------
+  toPayload() {
+    return {
+      title: this._title,
+      firstName: this._firstName,
+      lastName: this._lastName,
+      addressLine: this._addressLine,
+      city: this._city,
+      zipCode: this._zipCode,
+      phoneType: this._phoneType,
+      phoneNumber: this._phoneNumber,
+      dob: this._dob,
+      employment: this._employment,
+      accountType: this._accountType,
+      sourceOfWealth: this._sourceOfWealth
+    };
+  }
 }
