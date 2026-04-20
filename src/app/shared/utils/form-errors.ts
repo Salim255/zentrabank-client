@@ -41,7 +41,8 @@ export const FORM_ERRORS: Record<string, any> = {
     maxlength: 'Last name cannot exceed 50 characters.',
     pattern: 'Last name contains invalid characters.'
   },
-  address: {
+  addressLine: {
+    required: 'Address is required',
     maxlength: 'Address cannot exceed 120 characters.'
   },
   city: {
@@ -49,14 +50,14 @@ export const FORM_ERRORS: Record<string, any> = {
     minlength: 'City must be at least 2 characters.',
     maxlength: 'City cannot exceed 80 characters.'
   },
-  zip: {
+  zipCode: {
     required: 'Postal code is required.',
     pattern: 'Postal code format is invalid.'
   },
   phoneType: {
     required: 'Please select a phone type.'
   },
-  phone: {
+  phoneNumber: {
     required: 'Phone number is required.',
     pattern: 'Phone number format is invalid.'
   },

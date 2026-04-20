@@ -17,6 +17,7 @@ export class FormErrorComponent {
     if (!this.control || !this.control.errors) return null;
 
     const errors = this.control.errors;
+
     const fieldErrors = FORM_ERRORS[this.field];
 
     for (const key of Object.keys(errors)) {
@@ -24,6 +25,7 @@ export class FormErrorComponent {
         return fieldErrors[key];
       }
     }
+
 
     return 'Invalid field';
   }

@@ -3,7 +3,6 @@
   <h2 class="about__title">About You</h2>
 
   <form [formGroup]="applicationForm"
-        (ngSubmit)="onSubmit()"
         class="about__form">
 
     <!-- CONTACT INFORMATION -->
@@ -47,11 +46,11 @@
 
       <div class="form__row">
         <div class="form__field form__field--wide">
-          <label for="address">Address Line</label>
-          <input id="address" type="text" formControlName="address">
+          <label for="addressLine">Address Line</label>
+          <input id="addressLine" type="text" formControlName="addressLine">
           <app-form-error
-            [control]="applicationForm.get('address')"
-            field="address">
+            [control]="applicationForm.get('addressLine')"
+            field="addressLine">
           </app-form-error>
         </div>
       </div>
@@ -69,7 +68,7 @@
 
         <div class="form__field">
           <label for="zipCode">Zip / Postal Code *</label>
-          <input id="zip" type="text" formControlName="zipCode">
+          <input id="zipCode" type="text" formControlName="zipCode">
           <app-form-error
             [control]="applicationForm.get('zipCode')"
             field="zipCode">
@@ -92,11 +91,11 @@
         </div>
 
         <div class="form__field">
-          <label for="phone">Phone Number *</label>
-          <input id="phone" type="text" formControlName="phone">
+          <label for="phoneNumber">Phone Number *</label>
+          <input id="phoneNumber" type="text" formControlName="phoneNumber">
           <app-form-error
-            [control]="applicationForm.get('phone')"
-            field="phone">
+            [control]="applicationForm.get('phoneNumber')"
+            field="phoneNumber">
           </app-form-error>
         </div>
       </div>
@@ -216,8 +215,7 @@
     <!-- ACTIONS -->
     <div class="about__actions">
       <button type="button" class="btn btn--secondary">Back</button>
-      <button type="submit" class="btn btn--primary">Continue</button>
+      <button type="submit" class="btn btn--primary" (click)="onContinue()">Continue</button>
     </div>
-
   </form>
 </section>

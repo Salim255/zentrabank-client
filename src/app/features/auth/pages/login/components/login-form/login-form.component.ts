@@ -38,6 +38,8 @@ export class LoginFormComponent implements OnInit {
   }
 
   onSubmit(){
+    if (this.authForm.invalid) return;
+
     this.authService.login(this.authForm.value).subscribe({
       next: (response) => {
         console.log('Login successful:', response);

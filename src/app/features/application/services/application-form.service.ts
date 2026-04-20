@@ -14,7 +14,8 @@ export class ApplicationFormService {
 
       // CONTACT INFORMATION
       title: this.fb.control<string | null>(null, [
-        Validators.required
+        Validators.required,
+        Validators.maxLength(10)
       ]),
 
       firstName: this.fb.control<string>('', [
@@ -31,7 +32,8 @@ export class ApplicationFormService {
         Validators.pattern(/^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$/)
       ]),
 
-      address: this.fb.control<string | null>(null, [
+      addressLine: this.fb.control<string | null>(null, [
+        Validators.required,
         Validators.maxLength(120)
       ]),
 
@@ -41,17 +43,20 @@ export class ApplicationFormService {
         Validators.maxLength(80)
       ]),
 
-      zip: this.fb.control<string>('', [
+      zipCode: this.fb.control<string>('', [
         Validators.required,
+        Validators.maxLength(20),
         Validators.pattern(/^[0-9]{4,10}$/) // flexible for international
       ]),
 
       phoneType: this.fb.control<string>('Mobile', [
-        Validators.required
+        Validators.required,
+        Validators.maxLength(20)
       ]),
 
-      phone: this.fb.control<string>('', [
+      phoneNumber: this.fb.control<string>('', [
         Validators.required,
+        Validators.maxLength(30),
         Validators.pattern(/^[0-9+() -]{6,20}$/)
       ]),
 
