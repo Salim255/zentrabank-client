@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { ApplicationService } from "./application.service";
 
 
 @Injectable ({
@@ -7,10 +8,13 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 })
 export class ApplicationFormService {
   authForm!: FormGroup;
-  constructor(  private fb: FormBuilder) {}
+  constructor(
+    private applicationService: ApplicationService,
+    private fb: FormBuilder,
+  ) {}
 
   buildForm(): FormGroup {
-    return this.fb.group({
+    const form = this.fb.group({
 
       // CONTACT INFORMATION
       title: this.fb.control<string | null>(null, [
@@ -88,5 +92,15 @@ export class ApplicationFormService {
       })
 
     });
+
+   // -----------------------------------------------------
+    // HYDRATE FORM FROM APPLICATION INSTANCE
+    // -----------------------------------------------------
+    const instance = this.applicationService.getSnapshot();
+    if (instance) {
+      form.patchValue(instance.toPayload(), { emitEvent: false });
+    }
+
+    return form;
   }
 }

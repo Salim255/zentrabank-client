@@ -1,3 +1,19 @@
+export interface ApplicationReviewDto {
+  title: string;
+  firstName: string;
+  lastName: string;
+  addressLine: string;
+  city: string;
+  zipCode: string;
+  phoneType: string;
+  phoneNumber: string;
+  dob: Date | null;
+  employment: string;
+  accountType: string;
+  sourceOfWealth: string[];
+}
+
+
 export class ApplicationInstance {
 
   // -------------------------
