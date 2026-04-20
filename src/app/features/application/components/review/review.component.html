@@ -13,38 +13,39 @@
 
     <div class="review__item">
       <span class="review__label">Account Title</span>
-      <span class="review__value">{{applicationReviewDto?.firstName }} {{ applicationReviewDto?.lastName}}</span>
+      <span class="review__value">
+        {{ applicationReviewDto?.firstName }} {{ applicationReviewDto?.lastName }}
+      </span>
     </div>
 
-    <!-- NEW: ACCOUNT TYPE -->
     <div class="review__item">
       <span class="review__label">Account Type</span>
-      <span class="review__value">Checking Account</span>
-    </div>
-
-    <div class="review__item">
-      <span class="review__label">Email</span>
-      <span class="review__value">john.doe@example.com</span>
+      <span class="review__value">
+        {{ applicationReviewDto?.accountType }}
+      </span>
     </div>
 
     <div class="review__item">
       <span class="review__label">Phone</span>
-      <span class="review__value">+1 555‑123‑4567</span>
+      <span class="review__value">
+        {{ applicationReviewDto?.phoneNumber }}
+      </span>
     </div>
 
     <div class="review__item">
       <span class="review__label">Address</span>
-      <span class="review__value">123 Main Street, New York, NY 10001</span>
+      <span class="review__value">
+        {{ applicationReviewDto?.addressLine }},
+        {{ applicationReviewDto?.city }},
+        {{ applicationReviewDto?.zipCode }}
+      </span>
     </div>
 
     <div class="review__item">
       <span class="review__label">Date of Birth</span>
-      <span class="review__value">1988‑05‑12</span>
-    </div>
-
-    <div class="review__item">
-      <span class="review__label">Citizenship</span>
-      <span class="review__value">United States</span>
+      <span class="review__value">
+        {{ applicationReviewDto?.dob | date:'yyyy-MM-dd' }}
+      </span>
     </div>
   </div>
 
@@ -52,8 +53,8 @@
   <div class="review__block">
     <h3 class="review__subtitle">Source of Funds</h3>
 
-    <div class="review__item">
-      <span class="review__label">Income from Employment</span>
+    <div class="review__item" *ngFor="let source of applicationReviewDto?.sourceOfWealth">
+      <span class="review__label">{{ source }}</span>
       <span class="review__value">Yes</span>
     </div>
   </div>
@@ -63,9 +64,9 @@
     <h3 class="review__subtitle">Agreements & Disclosures</h3>
 
     <div class="review__checkboxes">
-      <label><input type="checkbox"> Client Agreement</label>
-      <label><input type="checkbox"> Privacy Policy</label>
-      <label><input type="checkbox"> Cookie Policy</label>
+      <label><input type="checkbox" checked disabled> Client Agreement</label>
+      <label><input type="checkbox" checked disabled> Privacy Policy</label>
+      <label><input type="checkbox" checked disabled> Cookie Policy</label>
     </div>
   </div>
 
@@ -79,12 +80,16 @@
 
     <div class="review__item">
       <span class="review__label">Account Title</span>
-      <span class="review__value">John Doe</span>
+      <span class="review__value">
+        {{ applicationReviewDto?.firstName }} {{ applicationReviewDto?.lastName }}
+      </span>
     </div>
 
     <div class="review__item">
       <span class="review__label">Date</span>
-      <span class="review__value">2023‑11‑18 3:15 PM EST</span>
+      <span class="review__value">
+        {{ today | date:'yyyy-MM-dd HH:mm' }}
+      </span>
     </div>
 
     <div class="review__field">

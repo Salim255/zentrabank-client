@@ -10,6 +10,7 @@ import { ApplicationReviewDto } from "../../model/application.model";
   standalone: false
 })
 export class ReviewComponent {
+  today = new Date();
   applicationReviewDto: ApplicationReviewDto | null = null;
   constructor(
     private applicationService: ApplicationService,

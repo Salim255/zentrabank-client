@@ -104,3 +104,12 @@ export function passwordMatchValidator(
     return password === confirm ? null : { passwordMismatch: true };
   };
 }
+
+export function signatureValidator(expectedFullName: string): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const value = (control.value || '').trim();
+    if (!value) return { required: true };
+
+    return value === expectedFullName ? null : { signatureMismatch: true };
+  };
+}

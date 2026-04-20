@@ -5,6 +5,7 @@ import { CommonModule } from "@angular/common";
 import { ApplicationPage } from "./application.page";
 import { SharedModule } from "../../shared/shared.module";
 import { ApplicationFormComponent } from "./components/application-form/application-form.component";
+import { ReviewComponent } from "./components/review/review.component";
 
 @NgModule({
   imports: [
@@ -14,7 +15,11 @@ import { ApplicationFormComponent } from "./components/application-form/applicat
     CommonModule,
     SharedModule
   ],
-  declarations: [ApplicationFormComponent, ApplicationPage],
+  declarations: [
+    ApplicationFormComponent,
+    ApplicationPage,
+    ReviewComponent
+  ],
 })
 
 export class ApplicationModule {}
