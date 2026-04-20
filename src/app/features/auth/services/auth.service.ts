@@ -4,6 +4,7 @@ import { AuthHttpService } from "./auth-http.service";
 import { LoginDto } from "../dto/login-dto";
 import { LoginResponseDto } from "../dto/login-response-dto";
 import { User } from "../models/user.model";
+import { RegisterDto } from "../dto/registerDto";
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class AuthService {
     this.user.next(user);
   }
 
-  signup(details: { loginId: string; password: string }):Observable<any> {
+  signup(details: RegisterDto):Observable<any> {
     return this.authHttp.signup(details);
   }
 

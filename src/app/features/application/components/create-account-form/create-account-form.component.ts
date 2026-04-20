@@ -8,6 +8,7 @@ import { Router } from "@angular/router";
   standalone: false
 })
 export class CreateAccountFormComponent {
+
   constructor(private router: Router){}
 
   onContinue(){
