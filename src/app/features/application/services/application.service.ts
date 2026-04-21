@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, map, Observable } from "rxjs";
+import { BehaviorSubject, map, Observable, tap } from "rxjs";
 import { ApplicationInstance, ApplicationResponseDto, ApplicationReviewDto } from "../model/application.model";
 import { ApplicationHttpService } from "./application-http.service";
+import { ProfileService } from "../../profile/services/profile.service";
+import { Profile } from "../../profile/model/profile.model";
 
 
 @Injectable({providedIn: "root"})
@@ -9,7 +11,10 @@ export class ApplicationService {
   private applicationInstanceSubject = new BehaviorSubject<ApplicationInstance | null>(null);
   applicationInstanceSubject$ = this.applicationInstanceSubject.asObservable();
 
-  constructor(private applicationHttpService: ApplicationHttpService){}
+  constructor(
+    private profileService: ProfileService,
+    private applicationHttpService: ApplicationHttpService,
+  ){}
 
   setApplicationInstance(formValue: any){
     const applicationInstance: ApplicationInstance = ApplicationInstance.fromForm(formValue);
@@ -62,7 +67,13 @@ export class ApplicationService {
       ...payload,
       employmentStatus: this.employmentStatusMap[payload.employmentStatus]
     }
-    return this.applicationHttpService.createApplication(payLoadToSubmit)
+    return this.applicationHttpService.createApplication(payLoadToSubmit).pipe(
+      tap(res => {
+        const profileDto = res.data.profile;
+        const profileInstance = new Profile(profileDto);
+        this.profileService.setProfile(profileInstance);
+      })
+    )
   }
 
   private employmentStatusMap: Record<string, string> = {
