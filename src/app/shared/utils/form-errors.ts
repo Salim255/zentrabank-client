@@ -2,6 +2,11 @@ import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 
 export const FORM_ERRORS: Record<string, any> = {
 
+  signature: {
+    required: 'Signature is required.',
+    signatureMismatch: 'Signature must match your full legal name.'
+  }
+  ,
   // LOGIN / AUTH
   email: {
     required: 'Email is required.',

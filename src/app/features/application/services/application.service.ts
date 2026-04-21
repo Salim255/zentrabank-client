@@ -44,11 +44,15 @@ export class ApplicationService {
   }
 
   getReviewDto(): Observable<ApplicationReviewDto | null> {
-  return this.applicationInstanceSubject$.pipe(
-    map(instance => {
-      if (!instance) return null;
-      return this.mapToReviewDto(instance.toPayload());
-    })
-  );
-}
+    return this.applicationInstanceSubject$.pipe(
+      map(instance => {
+        if (!instance) return null;
+        return this.mapToReviewDto(instance.toPayload());
+      })
+    );
+  }
+
+  createApplication():Observable<any>{
+
+  }
 }

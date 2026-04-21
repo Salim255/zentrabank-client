@@ -94,14 +94,25 @@
 
     <div class="review__field">
       <label for="signature">Accepted Signature</label>
-      <input id="signature" type="text" placeholder="Type your full name">
+      <input id="signature" type="text" placeholder="Type your full name"
+         [formControl]="signatureControl"
+        >
+      <app-form-error
+        [control]="signatureControl"
+        field="signature">
+      </app-form-error>
     </div>
   </div>
 
   <!-- ACTIONS -->
   <div class="review__actions">
     <button class="btn btn--secondary" (click)="onBack()">Back</button>
-    <button class="btn btn--primary">Confirm</button>
+    <button
+      class="btn btn--primary"
+      (click)="onSubmit()"
+      [disabled]="signatureControl.invalid">
+      Confirm
+    </button>
   </div>
 
 </section>
