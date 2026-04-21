@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { applicationGuard } from './core/guards/application.guard';
 
 export const routes: Routes = [
   {
@@ -12,6 +13,7 @@ export const routes: Routes = [
   },
   {
     path: "application",
+    canActivate: [applicationGuard],
     loadChildren: () => import('./features/application/application.module').then((m) => m.ApplicationModule)
   },
   {

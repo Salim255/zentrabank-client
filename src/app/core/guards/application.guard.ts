@@ -1,11 +1,23 @@
-import { ActivatedRouteSnapshot, CanActivateFn, RouterStateSnapshot } from "@angular/router";
-import { inject } from "@angular/core";
+import { ActivatedRouteSnapshot, CanActivate, CanActivateFn, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
+import { inject, Injectable } from "@angular/core";
 import { ProfileService } from "../../features/profile/services/profile.service";
+import { map, Observable } from "rxjs";
 
-export const applicationGard: CanActivateFn = (
-  route: ActivatedRouteSnapshot, // Contains information about the route being activated
-  state: RouterStateSnapshot // Contains the router's current state
-)=> {
-  const profileService = inject(ProfileService);
-  return profileService.hasProfile();
+@Injectable({providedIn: "root"})
+export class ApplicationGuard implements CanActivate {
+  constructor(
+    private router: Router,
+    private profileService: ProfileService,
+  ){}
+
+  canActivate(): Observable<boolean | UrlTree>{
+    return this.profileService.profileSubject$.pipe(
+      map((profile) => {
+        if (!profile)  return true
+        const url: UrlTree = this.router.createUrlTree(['/dashboard']);
+        return url;
+      })
+    )
+  }
 }
+
