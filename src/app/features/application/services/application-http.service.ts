@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { ApplicationReviewDto } from "../model/application.model";
+import { ApplicationResponseDto, ApplicationReviewDto } from "../model/application.model";
 import { Observable } from "rxjs";
 import { environment } from "../../../../environments/environment.prod";
 
@@ -10,7 +10,7 @@ export class ApplicationHttpService {
   private apiBaseUrl:string = `${this.ENV.apiBaseUrl}/applications`;
   constructor(private http: HttpClient) {}
 
-  createApplication(payload: ApplicationReviewDto): Observable<any> {
-    return this.http.post<any>(`${this.apiBaseUrl}`, payload, { withCredentials: true });
+  createApplication(payload: ApplicationReviewDto): Observable<ApplicationResponseDto> {
+    return this.http.post<ApplicationResponseDto>(`${this.apiBaseUrl}`, payload, { withCredentials: true });
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, map, Observable } from "rxjs";
-import { ApplicationInstance, ApplicationReviewDto } from "../model/application.model";
+import { ApplicationInstance, ApplicationResponseDto, ApplicationReviewDto } from "../model/application.model";
 import { ApplicationHttpService } from "./application-http.service";
 
 
@@ -57,7 +57,7 @@ export class ApplicationService {
   }
 
 
-  submitApplication(payload: ApplicationReviewDto): Observable<any>{
+  submitApplication(payload: ApplicationReviewDto): Observable<ApplicationResponseDto>{
     const payLoadToSubmit: ApplicationReviewDto = {
       ...payload,
       employmentStatus: this.employmentStatusMap[payload.employmentStatus]

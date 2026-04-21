@@ -1,4 +1,4 @@
-export interface CreateApplicationResponseDto {
+export interface ApplicationResponseDto {
   status: string;
   data: {
     account: AccountDto;
