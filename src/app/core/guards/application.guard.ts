@@ -10,10 +10,13 @@ export class ApplicationGuard implements CanActivate {
     private profileService: ProfileService,
   ){}
 
-  canActivate(): Observable<boolean | UrlTree>{
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<boolean | UrlTree>{
     return this.profileService.profileSubject$.pipe(
       map((profile) => {
-        if (!profile)  return true
+        if (!profile)  return true;
         const url: UrlTree = this.router.createUrlTree(['/dashboard']);
         return url;
       })
