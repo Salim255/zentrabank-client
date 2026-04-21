@@ -1,4 +1,15 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { environment } from "../../../../environments/environment.prod";
 
 @Injectable({providedIn: "root"})
-export class ProfileHttpService {}
+export class ProfileHttpService {
+  private ENV = environment;
+  private apiBaseUrl:string = `${this.ENV.apiBaseUrl}/profile`;
+  constructor(private http: HttpClient){}
+
+  fetchProfile(): Observable<any>{
+    return this.http.get<any>(`${this.apiBaseUrl}`, {withCredentials: true});
+  }
+}

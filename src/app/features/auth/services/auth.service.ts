@@ -5,6 +5,7 @@ import { LoginDto } from "../dto/login-dto";
 import { LoginResponseDto } from "../dto/login-response-dto";
 import { User } from "../models/user.model";
 import { RegisterDto } from "../dto/registerDto";
+import { ProfileService } from "../../profile/services/profile.service";
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,16 @@ export class AuthService {
   private user = new BehaviorSubject<User | null>(null);
   user$ = this.user.asObservable();
 
-  constructor(private authHttp: AuthHttpService) { }
+  constructor(
+    private profileService: ProfileService,
+    private authHttp: AuthHttpService,
+  ) { }
 
   login(credentials: LoginDto):Observable<LoginResponseDto> {
     return this.authHttp.login(credentials).pipe(
       map(response => {
         this.setUser(response.data.user);
+        this.profileService.fetchProfile().subscribe();
         return response;
       })
     );
