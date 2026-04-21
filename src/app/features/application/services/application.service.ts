@@ -53,7 +53,8 @@ export class ApplicationService {
     );
   }
 
-  createApplication(payload: ApplicationReviewDto):Observable<any>{
+
+  submitApplication(payload: ApplicationReviewDto): Observable<any>{
     return this.applicationHttpService.createApplication(payload)
   }
 }
