@@ -1,9 +1,70 @@
+export interface CreateApplicationResponseDto {
+  status: string;
+  data: {
+    account: AccountDto;
+    profile: ProfileDto;
+  };
+}
+
+export interface ProfileDto {
+  id: string;
+  title: "MR" | "MRS" | "MS";
+  firstName: string;
+  lastName: string;
+  dateOfBirth: string; // "YYYY-MM-DD"
+  addressLine: string;
+  city: string;
+  country: string;
+  zipCode: string;
+  phoneNumber: string;
+  phoneType: "MOBILE" | "HOME" | "WORK";
+  employmentStatus:
+    | "EMPLOYED"
+    | "SELF_EMPLOYED"
+    | "UNEMPLOYED"
+    | "STUDENT"
+    | "RETIRED"
+    | "OTHER";
+}
+
+export interface AccountDto {
+  id: string;
+  accountNumber: string;
+  balance: number;
+  type: "CHECKING" | "SAVINGS" | "CREDIT" | "LOAN";
+  status: "ACTIVE" | "INACTIVE" | "CLOSED";
+  currency: string;
+  iban: string;
+  bic: string;
+  overdraftEnabled: boolean;
+  overdraftLimit: number;
+  createdAt: string;   // ISO timestamp
+  updatedAt: string;   // ISO timestamp
+}
+
+export interface AccountDto {
+  id: string;
+  accountNumber: string;
+  balance: number;
+  type: "CHECKING" | "SAVINGS" | "CREDIT" | "LOAN";
+  status: "ACTIVE" | "INACTIVE" | "CLOSED";
+  currency: string;
+  iban: string;
+  bic: string;
+  overdraftEnabled: boolean;
+  overdraftLimit: number;
+  createdAt: string;   // ISO timestamp
+  updatedAt: string;   // ISO timestamp
+}
+
+
 export interface ApplicationReviewDto {
   title: string;
   firstName: string;
   lastName: string;
   dob: Date | null;
   addressLine: string;
+  country: string;
   city: string;
   zipCode: string;
   phoneType: string;
@@ -45,6 +106,7 @@ export class ApplicationInstance {
   private _lastName = '';
   private _addressLine: string | null = null;
   private _city = '';
+  private _country: string | null = null;
   private _zipCode = '';
   private _phoneType = 'Mobile';
   private _phoneNumber = '';
@@ -71,6 +133,7 @@ export class ApplicationInstance {
   get firstName() { return this._firstName; }
   get lastName() { return this._lastName; }
   get addressLine() { return this._addressLine; }
+  get country() {return this._country; }
   get city() { return this._city; }
   get zipCode() { return this._zipCode; }
   get phoneType() { return this._phoneType; }
@@ -137,6 +200,9 @@ export class ApplicationInstance {
   setSourceOfWealth(value: any) {
     this._sourceOfWealth = { ...value };
   }
+  setCountry(value:  string | null){
+    this._country = value;
+  }
 
   // -------------------------
   // FACTORY: from form
@@ -147,6 +213,7 @@ export class ApplicationInstance {
     instance.setTitle(formValue.title);
     instance.setFirstName(formValue.firstName);
     instance.setLastName(formValue.lastName);
+    instance.setCountry(formValue.country);
     instance.setAddressLine(formValue.addressLine);
     instance.setCity(formValue.city);
     instance.setZipCode(formValue.zipCode);
@@ -169,6 +236,7 @@ export class ApplicationInstance {
       title: this._title,
       firstName: this._firstName,
       lastName: this._lastName,
+      country: this._country,
       addressLine: this._addressLine,
       city: this._city,
       zipCode: this._zipCode,

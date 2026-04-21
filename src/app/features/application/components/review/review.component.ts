@@ -38,6 +38,7 @@ export class ReviewComponent implements OnInit {
 
   onSubmit(){
     if (this.signatureControl.invalid || !this.applicationReviewDto) return;
+    this.applicationReviewDto.signature = this.signatureControl.value;
     this.applicationService.submitApplication(this.applicationReviewDto).subscribe({
       next: (response) => {console.log("response", response)},
       error: (err) => {

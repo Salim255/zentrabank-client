@@ -3,6 +3,7 @@ import { BehaviorSubject, map, Observable } from "rxjs";
 import { ApplicationInstance, ApplicationReviewDto } from "../model/application.model";
 import { ApplicationHttpService } from "./application-http.service";
 
+
 @Injectable({providedIn: "root"})
 export class ApplicationService {
   private applicationInstanceSubject = new BehaviorSubject<ApplicationInstance | null>(null);
@@ -31,6 +32,7 @@ export class ApplicationService {
       firstName: payload.firstName,
       lastName: payload.lastName,
       addressLine: payload.addressLine ?? '',
+      country: payload.country ?? '',
       city: payload.city,
       zipCode: payload.zipCode,
       phoneType: payload.phoneType,
@@ -56,7 +58,21 @@ export class ApplicationService {
 
 
   submitApplication(payload: ApplicationReviewDto): Observable<any>{
-    console.log(payload)
-    return this.applicationHttpService.createApplication(payload)
+    const payLoadToSubmit: ApplicationReviewDto = {
+      ...payload,
+      employmentStatus: this.employmentStatusMap[payload.employmentStatus]
+    }
+    return this.applicationHttpService.createApplication(payLoadToSubmit)
   }
+
+  private employmentStatusMap: Record<string, string> = {
+    employed: "EMPLOYED",
+    selfEmployed: "SELF_EMPLOYED",
+    unemployed: "UNEMPLOYED",
+    student: "STUDENT",
+    retired: "RETIRED",
+    homemaker: "HOMEMAKER",
+    military: "MILITARY",
+    other: "OTHER"
+  };
 }

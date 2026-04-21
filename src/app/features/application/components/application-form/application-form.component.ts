@@ -25,7 +25,6 @@ export class ApplicationFormComponent {
   }
 
   onContinue(){
-    console.log(this.applicationForm.value);
     if (this.applicationForm.invalid) return;
     this.applicationService.setApplicationInstance(this.applicationForm.value);
     this.router.navigate(["/application/review"])
