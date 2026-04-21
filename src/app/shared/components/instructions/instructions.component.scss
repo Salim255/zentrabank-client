@@ -63,6 +63,11 @@
     &-text {
       font-size: 0.9rem;
       color: #cacaca;
+      span {
+        &:hover{
+          cursor: pointer;
+        }
+      }
     }
   }
 

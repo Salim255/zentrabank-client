@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-instructions",
@@ -6,4 +7,9 @@ import { Component } from "@angular/core";
   styleUrls: ["./instructions.component.scss"],
   standalone: false
 })
-export class InstructionsComponent {}
+export class InstructionsComponent {
+  constructor(private router:Router){}
+  onNavigate(){
+    this.router.navigate(["/auth/login"]);
+  }
+}

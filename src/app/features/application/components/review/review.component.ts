@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { ApplicationService } from "../../services/application.service";
 import { ApplicationReviewDto } from "../../model/application.model";
@@ -10,7 +10,7 @@ import { AbstractControl, FormBuilder, FormControl, Validators } from "@angular/
   styleUrls: ["./review.component.scss"],
   standalone: false
 })
-export class ReviewComponent {
+export class ReviewComponent implements OnInit {
   today = new Date();
   applicationReviewDto: ApplicationReviewDto | null = null;
   // Signature control (local to this component)
@@ -23,8 +23,6 @@ export class ReviewComponent {
   ){}
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
    this.applicationService.getReviewDto().subscribe(dto => {
       if(!dto) return;
       this.applicationReviewDto = dto;
