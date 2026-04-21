@@ -26,6 +26,7 @@ export class AuthFormService {
   // -----------------------------------
   private buildBaseSignupForm(): FormGroup {
     return this.fb.group({
+      marketing: [''],
       email: ['', [Validators.required, Validators.email]],
       userName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]],
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],

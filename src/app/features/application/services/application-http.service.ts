@@ -11,6 +11,6 @@ export class ApplicationHttpService {
   constructor(private http: HttpClient) {}
 
   createApplication(payload: ApplicationReviewDto): Observable<any> {
-    return this.http.post<any>(`${this.apiBaseUrl}`, payload);
+    return this.http.post<any>(`${this.apiBaseUrl}`, payload, { withCredentials: true });
   }
 }

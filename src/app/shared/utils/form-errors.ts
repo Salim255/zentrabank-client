@@ -73,7 +73,7 @@ export const FORM_ERRORS: Record<string, any> = {
   },
 
   // EMPLOYMENT
-  employment: {
+  employmentStatus: {
     required: 'Please select your employment status.'
   },
 

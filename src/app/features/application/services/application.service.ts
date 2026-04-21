@@ -36,8 +36,9 @@ export class ApplicationService {
       phoneType: payload.phoneType,
       phoneNumber: payload.phoneNumber,
       dob: payload.dob ? new Date(payload.dob) : null,
-      employment: payload.employment ?? '',
+      employmentStatus: payload.employmentStatus ?? '',
       accountType: payload.accountType ?? '',
+      signature: payload.signature ?? "signature",
       sourceOfWealth: Object.entries(payload.sourceOfWealth)
         .filter(([_, v]) => v === true)
         .map(([k]) => k)
@@ -55,6 +56,7 @@ export class ApplicationService {
 
 
   submitApplication(payload: ApplicationReviewDto): Observable<any>{
+    console.log(payload)
     return this.applicationHttpService.createApplication(payload)
   }
 }

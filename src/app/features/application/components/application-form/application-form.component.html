@@ -2,12 +2,11 @@
 
   <h2 class="about__title">About You</h2>
 
-  <form [formGroup]="applicationForm"
-        class="about__form">
+  <form [formGroup]="applicationForm" class="about__form">
 
-    <!-- CONTACT INFORMATION -->
+    <!-- 1. IDENTITY INFORMATION -->
     <div class="about__block">
-      <h3 class="about__subtitle">Contact Information</h3>
+      <h3 class="about__subtitle">Identity Information</h3>
 
       <div class="form__row">
 
@@ -15,64 +14,67 @@
           <label for="title">Title</label>
           <select id="title" formControlName="title">
             <option value="">Select</option>
-            <option>Mr</option>
-            <option>Mrs</option>
-            <option>Ms</option>
+            <option>MR</option>
+            <option>MRS</option>
+            <option>MS</option>
           </select>
-          <app-form-error
-            [control]="applicationForm.get('title')"
-            field="title">
-          </app-form-error>
+          <app-form-error [control]="applicationForm.get('title')" field="title"></app-form-error>
         </div>
 
         <div class="form__field">
           <label for="firstName">First Name *</label>
           <input id="firstName" type="text" formControlName="firstName">
-          <app-form-error
-            [control]="applicationForm.get('firstName')"
-            field="firstName">
-          </app-form-error>
+          <app-form-error [control]="applicationForm.get('firstName')" field="firstName"></app-form-error>
         </div>
 
         <div class="form__field">
           <label for="lastName">Last Name *</label>
           <input id="lastName" type="text" formControlName="lastName">
-          <app-form-error
-            [control]="applicationForm.get('lastName')"
-            field="lastName">
-          </app-form-error>
+          <app-form-error [control]="applicationForm.get('lastName')" field="lastName"></app-form-error>
         </div>
       </div>
+
+      <div class="form__row">
+        <div class="form__field">
+          <label for="dob">Date of Birth *</label>
+          <input id="dob" type="date" formControlName="dob">
+          <app-form-error [control]="applicationForm.get('dob')" field="dob"></app-form-error>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. CONTACT INFORMATION -->
+    <div class="about__block">
+      <h3 class="about__subtitle">Contact Information</h3>
 
       <div class="form__row">
         <div class="form__field form__field--wide">
           <label for="addressLine">Address Line</label>
           <input id="addressLine" type="text" formControlName="addressLine">
-          <app-form-error
-            [control]="applicationForm.get('addressLine')"
-            field="addressLine">
-          </app-form-error>
+          <app-form-error [control]="applicationForm.get('addressLine')" field="addressLine"></app-form-error>
         </div>
       </div>
 
       <div class="form__row">
+        <div class="form__field">
+          <label for="country">Country</label>
+          <select id="country" formControlName="country">
+            <option value="">Select a country</option>
+            <option value="france">France</option>
+          </select>
+          <app-form-error [control]="applicationForm.get('country')" field="country"></app-form-error>
+        </div>
 
         <div class="form__field">
           <label for="city">City *</label>
           <input id="city" type="text" formControlName="city">
-          <app-form-error
-            [control]="applicationForm.get('city')"
-            field="city">
-          </app-form-error>
+          <app-form-error [control]="applicationForm.get('city')" field="city"></app-form-error>
         </div>
 
         <div class="form__field">
           <label for="zipCode">Zip / Postal Code *</label>
           <input id="zipCode" type="text" formControlName="zipCode">
-          <app-form-error
-            [control]="applicationForm.get('zipCode')"
-            field="zipCode">
-          </app-form-error>
+          <app-form-error [control]="applicationForm.get('zipCode')" field="zipCode"></app-form-error>
         </div>
       </div>
 
@@ -84,46 +86,24 @@
             <option>Home</option>
             <option>Work</option>
           </select>
-          <app-form-error
-            [control]="applicationForm.get('phoneType')"
-            field="phoneType">
-          </app-form-error>
+          <app-form-error [control]="applicationForm.get('phoneType')" field="phoneType"></app-form-error>
         </div>
 
         <div class="form__field">
           <label for="phoneNumber">Phone Number *</label>
           <input id="phoneNumber" type="text" formControlName="phoneNumber">
-          <app-form-error
-            [control]="applicationForm.get('phoneNumber')"
-            field="phoneNumber">
-          </app-form-error>
+          <app-form-error [control]="applicationForm.get('phoneNumber')" field="phoneNumber"></app-form-error>
         </div>
       </div>
     </div>
 
-    <!-- PERSONAL INFORMATION -->
+    <!-- 3. EMPLOYMENT & FINANCIAL PROFILE -->
     <div class="about__block">
-      <h3 class="about__subtitle">Personal Information</h3>
-
-      <div class="form__row">
-        <div class="form__field">
-          <label for="dob">Date of Birth</label>
-          <input id="dob" type="date" formControlName="dob">
-          <app-form-error
-            [control]="applicationForm.get('dob')"
-            field="dob">
-          </app-form-error>
-        </div>
-      </div>
-    </div>
-
-    <!-- EMPLOYMENT -->
-    <div class="about__block">
-      <h3 class="about__subtitle">Employment</h3>
+      <h3 class="about__subtitle">Employment & Financial Profile</h3>
 
       <div class="form__field form__field--wide">
-        <label for="employment">Employment Status</label>
-        <select id="employment" formControlName="employment">
+        <label for="employmentStatus">Employment Status</label>
+        <select id="employmentStatus" formControlName="employmentStatus">
           <option value="">Select</option>
           <option value="employed">Employed</option>
           <option value="self-employed">Self‑Employed</option>
@@ -132,14 +112,29 @@
           <option value="retired">Retired</option>
           <option value="other">Other</option>
         </select>
-        <app-form-error
-            [control]="applicationForm.get('employment')"
-            field="employment">
-        </app-form-error>
+        <app-form-error [control]="applicationForm.get('employmentStatus')" field="employmentStatus"></app-form-error>
+      </div>
+
+      <div class="about__block" formGroupName="sourceOfWealth">
+        <h4 class="about__subtitle">Source of Wealth</h4>
+
+        <div class="form__checkboxes form__checkboxes--grid">
+
+          <label><input type="checkbox" formControlName="employmentIncome"> Income from Employment</label>
+          <label><input type="checkbox" formControlName="marketInvestments"> Market Investments / Trading</label>
+          <label><input type="checkbox" formControlName="interestDividend"> Interest / Dividend Income</label>
+          <label><input type="checkbox" formControlName="realEstate"> Property / Real Estate</label>
+          <label><input type="checkbox" formControlName="inheritanceGift"> Inheritance / Gift</label>
+          <label><input type="checkbox" formControlName="pension"> Pension / Retirement Benefit</label>
+          <label><input type="checkbox" formControlName="disabilityUnemployment"> Disability / Severance / Unemployment</label>
+          <label><input type="checkbox" formControlName="other"> Other</label>
+
+        </div>
+        <app-form-error [control]="applicationForm.get('sourceOfWealth')" field="sourceOfWealth"></app-form-error>
       </div>
     </div>
 
-    <!-- ACCOUNT TYPE -->
+    <!-- 4. ACCOUNT SETUP -->
     <div class="about__block">
       <h3 class="about__subtitle">Account Type</h3>
 
@@ -152,64 +147,8 @@
           <option value="credit">Credit Account</option>
           <option value="loan">Loan Account</option>
         </select>
-        <app-form-error
-            [control]="applicationForm.get('accountType')"
-            field="accountType">
-        </app-form-error>
+        <app-form-error [control]="applicationForm.get('accountType')" field="accountType"></app-form-error>
       </div>
-    </div>
-
-    <!-- SOURCE OF WEALTH -->
-    <div class="about__block" formGroupName="sourceOfWealth">
-      <h3 class="about__subtitle">Source of Wealth</h3>
-
-      <div class="form__checkboxes form__checkboxes--grid">
-
-        <label>
-          <input type="checkbox" formControlName="employmentIncome">
-          Income from Employment
-        </label>
-
-        <label>
-          <input type="checkbox" formControlName="marketInvestments">
-          Market Investments / Trading
-        </label>
-
-        <label>
-          <input type="checkbox" formControlName="interestDividend">
-          Interest / Dividend Income
-        </label>
-
-        <label>
-          <input type="checkbox" formControlName="realEstate">
-          Property / Real Estate
-        </label>
-
-        <label>
-          <input type="checkbox" formControlName="inheritanceGift">
-          Inheritance / Gift
-        </label>
-
-        <label>
-          <input type="checkbox" formControlName="pension">
-          Pension / Retirement Benefit
-        </label>
-
-        <label>
-          <input type="checkbox" formControlName="disabilityUnemployment">
-          Disability / Severance / Unemployment
-        </label>
-
-        <label>
-          <input type="checkbox" formControlName="other">
-          Other
-        </label>
-
-      </div>
-      <app-form-error
-          [control]="applicationForm.get('sourceOfWealth')"
-          field="sourceOfWealth">
-      </app-form-error>
     </div>
 
     <!-- ACTIONS -->
@@ -217,5 +156,6 @@
       <button type="button" class="btn btn--secondary">Back</button>
       <button type="submit" class="btn btn--primary" (click)="onContinue()">Continue</button>
     </div>
+
   </form>
 </section>

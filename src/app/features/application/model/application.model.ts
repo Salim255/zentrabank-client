@@ -2,15 +2,36 @@ export interface ApplicationReviewDto {
   title: string;
   firstName: string;
   lastName: string;
+  dob: Date | null;
   addressLine: string;
   city: string;
   zipCode: string;
   phoneType: string;
   phoneNumber: string;
-  dob: Date | null;
-  employment: string;
+  employmentStatus: string;
   accountType: string;
   sourceOfWealth: string[];
+  signature: string;
+}
+
+export enum EmploymentStatus {
+  OTHER,
+  HOMEMAKER,
+  UNEMPLOYED,
+  RETIRED,
+  STUDENT,
+  MILITARY,
+  SELF_EMPLOYED,
+  EMPLOYED
+}
+export enum SourceOfFunds {
+    SALARY,
+    BUSINESS_REVENUE,
+    TRANSFER_FROM_OTHER_BANK,
+    CASH_DEPOSIT,
+    INVESTMENT_PROCEEDS,
+    LOAN_DISBURSEMENT,
+    OTHER
 }
 
 
@@ -28,8 +49,9 @@ export class ApplicationInstance {
   private _phoneType = 'Mobile';
   private _phoneNumber = '';
   private _dob: string | null = null;
-  private _employment: string | null = null;
+  private _employmentStatus: string | null = null;
   private _accountType: string | null = null;
+  private _signature: string | null = null;
 
   private _sourceOfWealth = {
     employmentIncome: false,
@@ -54,9 +76,10 @@ export class ApplicationInstance {
   get phoneType() { return this._phoneType; }
   get phoneNumber() { return this._phoneNumber; }
   get dob() { return this._dob; }
-  get employment() { return this._employment; }
+  get employmentStatus() { return this._employmentStatus; }
   get accountType() { return this._accountType; }
   get sourceOfWealth() { return this._sourceOfWealth; }
+  get signature() {return this._signature; }
 
   // -------------------------
   // SETTERS (CONTROLLED)
@@ -101,7 +124,10 @@ export class ApplicationInstance {
   }
 
   setEmployment(value: string | null) {
-    this._employment = value;
+    this._employmentStatus = value;
+  }
+  setSignature(value: string | null) {
+    this._signature = value;
   }
 
   setAccountType(value: string | null) {
@@ -127,7 +153,8 @@ export class ApplicationInstance {
     instance.setPhoneType(formValue.phoneType);
     instance.setPhoneNumber(formValue.phoneNumber);
     instance.setDob(formValue.dob);
-    instance.setEmployment(formValue.employment);
+    instance.setEmployment(formValue.employmentStatus);
+    instance.setSignature(formValue.signature);
     instance.setAccountType(formValue.accountType);
     instance.setSourceOfWealth(formValue.sourceOfWealth);
 
@@ -148,9 +175,10 @@ export class ApplicationInstance {
       phoneType: this._phoneType,
       phoneNumber: this._phoneNumber,
       dob: this._dob,
-      employment: this._employment,
+      employmentStatus: this._employmentStatus,
       accountType: this._accountType,
-      sourceOfWealth: this._sourceOfWealth
+      sourceOfWealth: this._sourceOfWealth,
+      signature: this._signature
     };
   }
 }

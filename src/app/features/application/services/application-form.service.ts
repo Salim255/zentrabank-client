@@ -41,6 +41,12 @@ export class ApplicationFormService {
         Validators.maxLength(120)
       ]),
 
+      country: this.fb.control<string>('', [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(80)
+      ]),
+
       city: this.fb.control<string>('', [
         Validators.required,
         Validators.minLength(2),
@@ -70,7 +76,7 @@ export class ApplicationFormService {
       ]),
 
       // EMPLOYMENT
-      employment: this.fb.control<string | null>(null, [
+      employmentStatus: this.fb.control<string | null>(null, [
         Validators.required
       ]),
 
@@ -79,6 +85,7 @@ export class ApplicationFormService {
         Validators.required
       ]),
 
+      signature: ["signature"],
       // SOURCE OF WEALTH (checkboxes)
       sourceOfWealth: this.fb.group({
         employmentIncome: this.fb.control<boolean>(false),
@@ -104,3 +111,11 @@ export class ApplicationFormService {
     return form;
   }
 }
+
+
+
+
+
+
+
+
