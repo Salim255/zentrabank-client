@@ -12,4 +12,8 @@ export class ProfileService {
   setProfile(profile: Profile | null){
     this.profileSubject.next(profile);
   }
+
+  hasProfile(): boolean{
+    return !!this.profileSubject.value;
+  }
 }
