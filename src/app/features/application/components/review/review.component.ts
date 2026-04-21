@@ -39,8 +39,13 @@ export class ReviewComponent {
   }
 
   onSubmit(){
-    if (this.signatureControl.invalid) return;
-
+    if (this.signatureControl.invalid || !this.applicationReviewDto) return;
+    this.applicationService.submitApplication(this.applicationReviewDto).subscribe({
+      next: (response) => {console.log("response", response)},
+      error: (err) => {
+        console.log(err)
+      }
+    })
   }
 
   private setupSignatureValidator(dto: ApplicationReviewDto) {
