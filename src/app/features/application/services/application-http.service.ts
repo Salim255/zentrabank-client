@@ -12,5 +12,5 @@ export class ApplicationHttpService {
 
   createApplication(payload: ApplicationReviewDto): Observable<any> {
     return this.http.post<any>(`${this.apiBaseUrl}`, payload);
-}
+  }
 }

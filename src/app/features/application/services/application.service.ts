@@ -1,13 +1,14 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, map, Observable } from "rxjs";
 import { ApplicationInstance, ApplicationReviewDto } from "../model/application.model";
+import { ApplicationHttpService } from "./application-http.service";
 
 @Injectable({providedIn: "root"})
 export class ApplicationService {
   private applicationInstanceSubject = new BehaviorSubject<ApplicationInstance | null>(null);
   applicationInstanceSubject$ = this.applicationInstanceSubject.asObservable();
 
-  constructor(){}
+  constructor(private applicationHttpService: ApplicationHttpService){}
 
   setApplicationInstance(formValue: any){
     const applicationInstance: ApplicationInstance = ApplicationInstance.fromForm(formValue);
@@ -52,7 +53,7 @@ export class ApplicationService {
     );
   }
 
-  createApplication():Observable<any>{
-
+  createApplication(payload: ApplicationReviewDto):Observable<any>{
+    return this.applicationHttpService.createApplication(payload)
   }
 }
