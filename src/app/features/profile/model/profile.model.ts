@@ -1,3 +1,10 @@
+export interface ProfileResponseDto {
+  success: string;
+  data: {
+    profile: Profile
+  };
+
+}
 export class Profile {
   public id!: string;
   public title!: "MR" | "MRS" | "MS";

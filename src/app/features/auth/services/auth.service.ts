@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, map, Observable } from "rxjs";
+import { BehaviorSubject, map, Observable, switchMap } from "rxjs";
 import { AuthHttpService } from "./auth-http.service";
 import { LoginDto } from "../dto/login-dto";
 import { LoginResponseDto } from "../dto/login-response-dto";
 import { User } from "../models/user.model";
 import { RegisterDto } from "../dto/registerDto";
 import { ProfileService } from "../../profile/services/profile.service";
+import { ProfileResponseDto } from "../../profile/model/profile.model";
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +20,13 @@ export class AuthService {
     private authHttp: AuthHttpService,
   ) { }
 
-  login(credentials: LoginDto):Observable<LoginResponseDto> {
+  login(credentials: LoginDto):Observable<ProfileResponseDto> {
     return this.authHttp.login(credentials).pipe(
       map(response => {
-        this.setUser(response.data.user);
-        this.profileService.fetchProfile().subscribe();
-        return response;
+         this.setUser(response.data.user);
+      }),
+      switchMap(() => {
+        return this.profileService.fetchProfile();
       })
     );
   }

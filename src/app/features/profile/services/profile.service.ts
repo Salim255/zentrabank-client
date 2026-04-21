@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, map, Observable } from "rxjs";
-import { Profile } from "../model/profile.model";
+import { BehaviorSubject, map, Observable, tap } from "rxjs";
+import { Profile, ProfileResponseDto } from "../model/profile.model";
 import { ProfileHttpService } from "./profile-http.service";
 
 @Injectable({providedIn: "root"})
@@ -10,13 +10,15 @@ export class ProfileService {
 
   constructor(private profileHttpService: ProfileHttpService){}
 
-  fetchProfile():Observable<any>{
-    return this.profileHttpService.fetchProfile().pipe(
-      map((response) => {
-
+  fetchProfile():Observable<ProfileResponseDto>{
+    return this.profileHttpService.fetchUserProfile().pipe(
+      tap((response) => {
+        const profileDto = response.data.profile;
+        this.setProfile(profileDto);
       })
     );
   }
+
   setProfile(profile: Profile | null){
     this.profileSubject.next(profile);
   }
