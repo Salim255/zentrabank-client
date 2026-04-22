@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { AccountService } from "./services/account.service";
+import { Subscription } from "rxjs";
 
 @Component({
     selector: "app-accounts",
@@ -7,5 +9,20 @@ import { Component } from "@angular/core";
     standalone: false
 })
 export class Accounts {
-  constructor() {}
+  accountsSubscription!: Subscription;
+  constructor(private accountService: AccountService) {}
+
+  ngOnInit(): void {
+    this.subscribeToAccounts();
+  }
+
+  subscribeToAccounts(){
+    this.accountsSubscription = this.accountService.getUserAccounts().subscribe(
+      accounts => console.log(accounts, "Hello")
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.accountsSubscription?.unsubscribe();
+  }
 }

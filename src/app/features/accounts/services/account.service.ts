@@ -7,7 +7,6 @@ import { Account, AccountAdapter, AccountsResponseDto } from "../model/account.m
 export class AccountService {
   private accountsSubject = new BehaviorSubject<Account [] >([])
 
-
   constructor(
     private accountHttpService: AccountHttpService,
   ){}
