@@ -6,9 +6,11 @@ import { NavbarComponent } from "../../shared/components/navbar/navbar.component
 import { Dashboard } from "./dashboard";
 import { SubHeaderComponent } from "./components/sub-header/sub-header.component";
 import { HeroComponent } from "./components/hero/hero.component";
+import { HeroNavbarComponent } from "./components/hero-navbar/hero-navbar.component";
 
 @NgModule({
   declarations: [
+    HeroNavbarComponent,
     HeroComponent,
     SubHeaderComponent,
     Dashboard,

@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { AuthService } from "../../../auth/services/auth.service";
 
 @Component({
   selector: "app-dashboard-hero",
@@ -6,4 +7,10 @@ import { Component } from "@angular/core";
   styleUrls: ["./hero.component.scss"],
   standalone: false
 })
-export class HeroComponent {}
+export class HeroComponent {
+
+  constructor(private authservice: AuthService){}
+  onHero(){
+
+  }
+}
