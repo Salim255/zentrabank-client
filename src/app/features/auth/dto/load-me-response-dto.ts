@@ -1,6 +1,6 @@
 import { User } from "../models/user.model";
 
-export interface LoadMeDto {
+export interface LoadMeResponseDto {
   status: 'success';
   data: {
     user: User;
