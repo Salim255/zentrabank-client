@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { Accounts } from "./accounts";
-import { DetailsPage } from "./pages/details/details.page";
-import { AccountPage } from "./pages/account/account.page";
+import { AccountsListPage } from "./pages/accounts-list/accounts-list.page";
+
 
 const routes:Routes = [
   {
@@ -12,20 +12,8 @@ const routes:Routes = [
       {
         path: "",
         pathMatch: "full",
-        component: AccountPage
+        component: AccountsListPage
       },
-      {
-        path: "details",
-        loadChildren: () => import("./pages/details/details.module").then((m) =>m.DetailsModule)
-      },
-      {
-        path: "history",
-        loadChildren: () => import("./pages/history/history.module").then((m) => m.HistoryModule)
-      },
-      {
-        path: "manage",
-        loadChildren: () => import("./pages/manage/manage.module").then((m) =>m.ManageModule)
-      }
     ]
   }
 ]

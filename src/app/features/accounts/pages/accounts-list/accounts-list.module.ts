@@ -7,6 +7,4 @@ import { AccountsListPage } from "./accounts-list.page";
   declarations: [AccountsListPage]
 })
 
-export class AccountsListModule {
-
-}
+export class AccountsListModule {}
