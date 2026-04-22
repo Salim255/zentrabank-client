@@ -1,0 +1,17 @@
+<section class="accounts-page">
+
+  <!-- Page Title -->
+  <h1 class="accounts-page__title">Your Accounts</h1>
+
+  <!-- Accounts List -->
+  <div class="accounts-page__list">
+
+    <!-- Account Card -->
+    @for (item of  accounts; track $index) {
+      <app-account-item [account]="item"></app-account-item>
+    }
+
+  </div>
+
+</section>
+

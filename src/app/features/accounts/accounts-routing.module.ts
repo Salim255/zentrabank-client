@@ -1,20 +1,14 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { Accounts } from "./accounts";
-import { AccountsListPage } from "./pages/accounts-list/accounts-list.page";
+import { AccountsListComponent } from "./components/accounts-list/accounts-list.component";
+
 
 
 const routes:Routes = [
   {
     path: "",
-    component: Accounts,
-    children: [
-      {
-        path: "",
-        pathMatch: "full",
-        component: AccountsListPage
-      },
-    ]
+    component: Accounts
   }
 ]
 

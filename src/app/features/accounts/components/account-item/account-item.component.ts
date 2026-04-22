@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { AccountDto } from "../../../accounts/model/account.model";
+import { AccountDto } from "../../model/account.model";
 
 @Component({
   selector: "app-account-item",

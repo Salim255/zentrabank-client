@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { AccountService } from "./services/account.service";
 import { Subscription } from "rxjs";
+import { AccountDto } from "./model/account.model";
 
 @Component({
     selector: "app-accounts",
@@ -9,6 +10,7 @@ import { Subscription } from "rxjs";
     standalone: false
 })
 export class Accounts {
+  accounts: AccountDto[] = [];
   accountsSubscription!: Subscription;
   constructor(private accountService: AccountService) {}
 
@@ -18,7 +20,9 @@ export class Accounts {
 
   subscribeToAccounts(){
     this.accountsSubscription = this.accountService.getUserAccounts().subscribe(
-      accounts => console.log(accounts, "Hello")
+      accounts =>{
+        this.accounts = [...accounts];
+      }
     );
   }
 
