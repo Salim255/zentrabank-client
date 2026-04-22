@@ -1,0 +1,49 @@
+<div class="account-item">
+  <div class="account-item__header">
+    <div class="account-item__type">{{ account.type }}</div>
+    <div class="account-item__status" [class.active]="account.status === 'ACTIVE'">
+      {{ account.status }}
+    </div>
+  </div>
+
+  <div class="account-item__body">
+    <div class="account-item__row">
+      <span class="label">Account Number</span>
+      <span class="value">{{ account.accountNumber }}</span>
+    </div>
+
+    <div class="account-item__row">
+      <span class="label">IBAN</span>
+      <span class="value">{{ account.iban }}</span>
+    </div>
+
+    <div class="account-item__row">
+      <span class="label">BIC</span>
+      <span class="value">{{ account.bic }}</span>
+    </div>
+
+    <div class="account-item__row">
+      <span class="label">Currency</span>
+      <span class="value">{{ account.currency }}</span>
+    </div>
+
+    <div class="account-item__row balance">
+      <span class="label">Balance</span>
+      <span class="value amount">{{ account.balance | currency: account.currency }}</span>
+    </div>
+
+    <div class="account-item__row">
+      <span class="label">Overdraft</span>
+      <span class="value">
+        <ng-container *ngIf="account.overdraftEnabled; else noOverdraft">
+          Enabled ({{ account.overdraftLimit | currency: account.currency }})
+        </ng-container>
+        <ng-template #noOverdraft>Disabled</ng-template>
+      </span>
+    </div>
+  </div>
+
+  <div class="account-item__footer">
+    <span class="date">Created: {{ account.createdAt | date:'mediumDate' }}</span>
+  </div>
+</div>
