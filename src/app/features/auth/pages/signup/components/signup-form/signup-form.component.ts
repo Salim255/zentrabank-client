@@ -22,16 +22,11 @@ export class SignupFormComponent {
 
   ngOnInit(): void {
     this.signupForm = this.authFormService.buildForm('signup');
-     this.signupForm.valueChanges.subscribe(value => {
-      console.log(value);
-    });
   }
   onSubmit(){
-    console.log(this.signupForm.value);
     if (this.signupForm.invalid) return;
     this.authService.signup(this.signupForm.value).subscribe({
       next: (res) => {
-        console.log(res);
         this.router.navigate(["/application"])
       },
       error: () => {}

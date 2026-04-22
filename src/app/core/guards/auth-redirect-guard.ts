@@ -16,7 +16,7 @@ export class AuthRedirectGuard implements CanMatch {
         if(!auth) {
           return true;
         }
-        const url: UrlTree = this.router.parseUrl('/dashboard/accounts');
+        const url: UrlTree = this.router.parseUrl('/application');
         return url;
       })
     )

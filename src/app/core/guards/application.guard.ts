@@ -14,7 +14,7 @@ export class ApplicationGuard implements CanActivate {
     return this.profileService.profileSubject$.pipe(
       map((profile) => {
         if (!profile)  return true;
-        const url: UrlTree = this.router.createUrlTree(['/auth/login']);
+        const url: UrlTree = this.router.createUrlTree(['/dashboard/accounts']);
         return url;
       })
     )

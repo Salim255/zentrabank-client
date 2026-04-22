@@ -24,7 +24,6 @@ export class AuthHttpService {
 
   signup(payload: RegisterDto):Observable<RegisterResponseDto> {
     // Implement actual HTTP request to backend for signup
-    console.log('Signing up with details:', payload);
     return this.http.post<RegisterResponseDto>(
       `${this.apiBaseUrl}/register`,
       payload,

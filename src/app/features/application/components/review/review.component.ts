@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { ApplicationService } from "../../services/application.service";
 import { ApplicationReviewDto } from "../../model/application.model";
-import { AbstractControl, FormBuilder, FormControl, Validators } from "@angular/forms";
+import { AbstractControl, FormControl, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-review",
@@ -18,9 +18,7 @@ export class ReviewComponent implements OnInit {
 
   constructor(
     private applicationService: ApplicationService,
-    private router: Router,
-    private fb: FormBuilder
-  ){}
+    private router: Router){}
 
   ngOnInit(): void {
    this.applicationService.getReviewDto().subscribe(dto => {
@@ -40,7 +38,9 @@ export class ReviewComponent implements OnInit {
     if (this.signatureControl.invalid || !this.applicationReviewDto) return;
     this.applicationReviewDto.signature = this.signatureControl.value;
     this.applicationService.submitApplication(this.applicationReviewDto).subscribe({
-      next: (response) => {console.log("response", response)},
+      next: (response) => {
+        this.router.navigate(["/dashboard/accounts"]);
+      },
       error: (err) => {
         console.log(err)
       }

@@ -22,7 +22,6 @@ export class AccountsListComponent {
     this.accountsSubscription = this.accountService.getUserAccounts().subscribe(
       accounts =>{
         this.accounts.set([...accounts]);
-        console.log(this.accounts(), "hello");
       }
     );
   }

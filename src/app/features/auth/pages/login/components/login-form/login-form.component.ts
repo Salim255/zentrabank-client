@@ -23,16 +23,13 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.authForm = this.authFormService.buildForm('login');
-      this.authForm.valueChanges.subscribe(value => {
-      console.log(value);
-    });
     this.subscribeToUser();
   }
 
   subscribeToUser() {
     this.userSubscription = this.authService.user$.subscribe(user => {
       if (user) {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/application']);
       }
     });
   }
@@ -41,12 +38,10 @@ export class LoginFormComponent implements OnInit {
     if (this.authForm.invalid) return;
 
     this.authService.login(this.authForm.value).subscribe({
-      next: (response) => {
-        this.router.navigate(['/dashboard/accounts']);
+      next: () => {
+
       },
-      error: (error) => {
-        console.error('Login failed:', error);
-      }
+      error: (error) => {}
     });
   }
 
