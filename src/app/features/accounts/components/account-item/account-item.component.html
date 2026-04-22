@@ -1,4 +1,4 @@
-<div class="account-item">
+<div class="account-item" (click)="onOverview()">
   <div class="account-item__header">
     <div class="account-item__type">{{ account.type }}</div>
     <div class="account-item__status" [class.active]="account.status === 'ACTIVE'">

@@ -1,5 +1,7 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, signal, SimpleChanges } from "@angular/core";
 import { AccountDto } from "../../model/account.model";
+import { Subscription } from "rxjs";
+import { AccountService } from "../../services/account.service";
 
 @Component({
   selector: "app-accounts-list",
@@ -8,7 +10,24 @@ import { AccountDto } from "../../model/account.model";
   standalone: false
 })
 export class AccountsListComponent {
-  @Input() accounts!: AccountDto [];
-  constructor(){}
+  accounts = signal<AccountDto[]>([]);
+  accountsSubscription!: Subscription;
+  constructor(private accountService: AccountService) {}
 
+  ngOnInit(): void {
+    this.subscribeToAccounts();
+  }
+
+  subscribeToAccounts(){
+    this.accountsSubscription = this.accountService.getUserAccounts().subscribe(
+      accounts =>{
+        this.accounts.set([...accounts]);
+        console.log(this.accounts(), "hello");
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.accountsSubscription?.unsubscribe();
+  }
 }

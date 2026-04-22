@@ -8,6 +8,11 @@ const routes: Routes = [
     component: AccountPage,
     children: [
       {
+        path: "",
+        pathMatch:"full",
+        redirectTo: "details"
+      },
+      {
         path: "details",
         loadChildren: () => import("./pages/details/details.module").then((m) =>m.DetailsModule)
       },
