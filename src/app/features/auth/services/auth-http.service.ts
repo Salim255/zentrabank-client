@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http";
 import { LoginResponseDto } from "../dto/login-response-dto";
 import { RegisterDto } from "../dto/registerDto";
 import { RegisterResponseDto } from "../dto/register-response-dto";
-import { LoadMeDto, LoadMeResponseDto } from "../dto/load-me-response-dto";
+import {LoadMeResponseDto } from "../dto/load-me-response-dto";
 
 @Injectable({
   providedIn: 'root'

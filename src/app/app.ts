@@ -20,6 +20,7 @@ export class App {
   ) { }
 
   ngOnInit(): void {
+    this.authService.triggerloadM().subscribe();
     this.subscribeToAuth();
   }
 

@@ -7,6 +7,7 @@ import { RegisterDto } from "../dto/registerDto";
 import { ProfileService } from "../../profile/services/profile.service";
 import { ProfileResponseDto } from "../../profile/model/profile.model";
 import { LoginResponseDto } from "../dto/login-response-dto";
+import { LoadMeResponseDto } from "../dto/load-me-response-dto";
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +46,21 @@ export class AuthService {
         const user = response.data.user;
         this.user.next(user);
       })
+    );
+  }
+
+  triggerloadM(): Observable<ProfileResponseDto>{
+    return this.authHttp.loadMe().pipe(
+     switchMap(res => {
+        // store user basic info (id, email, role)
+        const user = res.data.user;
+        return this.profileService.fetchProfile().pipe(
+          tap(() => {
+            // now update both states together
+            this.setUser(user);
+          })
+        );
+     })
     );
   }
 
