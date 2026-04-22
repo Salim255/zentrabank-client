@@ -1,3 +1,5 @@
+import { AccountDto } from "../../accounts/model/account.model";
+
 export interface ApplicationResponseDto {
   status: string;
   data: {
@@ -26,37 +28,6 @@ export interface ProfileDto {
     | "RETIRED"
     | "OTHER";
 }
-
-export interface AccountDto {
-  id: string;
-  accountNumber: string;
-  balance: number;
-  type: "CHECKING" | "SAVINGS" | "CREDIT" | "LOAN";
-  status: "ACTIVE" | "INACTIVE" | "CLOSED";
-  currency: string;
-  iban: string;
-  bic: string;
-  overdraftEnabled: boolean;
-  overdraftLimit: number;
-  createdAt: string;   // ISO timestamp
-  updatedAt: string;   // ISO timestamp
-}
-
-export interface AccountDto {
-  id: string;
-  accountNumber: string;
-  balance: number;
-  type: "CHECKING" | "SAVINGS" | "CREDIT" | "LOAN";
-  status: "ACTIVE" | "INACTIVE" | "CLOSED";
-  currency: string;
-  iban: string;
-  bic: string;
-  overdraftEnabled: boolean;
-  overdraftLimit: number;
-  createdAt: string;   // ISO timestamp
-  updatedAt: string;   // ISO timestamp
-}
-
 
 export interface ApplicationReviewDto {
   title: string;

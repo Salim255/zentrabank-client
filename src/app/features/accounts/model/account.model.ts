@@ -1,4 +1,19 @@
-import { AccountDto } from "../../application/model/application.model";
+
+export interface AccountDto {
+  id: string;
+  accountNumber: string;
+  balance: number;
+  type: "CHECKING" | "SAVINGS" | "CREDIT" | "LOAN";
+  status: "ACTIVE" | "INACTIVE" | "CLOSED";
+  currency: string;
+  iban: string;
+  bic: string;
+  overdraftEnabled: boolean;
+  overdraftLimit: number;
+  createdAt: string;   // ISO timestamp
+  updatedAt: string;   // ISO timestamp
+}
+
 
 export interface AccountsResponseDto {
   status: string;
@@ -6,6 +21,7 @@ export interface AccountsResponseDto {
     accounts: AccountDto []
   }
 }
+
 export class Account {
   // ─────────────────────────────────────────────
   // Private fields (no direct access from outside)
@@ -103,5 +119,24 @@ export class Account {
   /** Computed: overdraft available */
   get hasOverdraft(): boolean {
     return this._overdraftEnabled && this._overdraftLimit > 0;
+  }
+}
+
+export class AccountAdapter {
+  static fromDto(dto: AccountDto): Account {
+    return new Account({
+      id: dto.id,
+      accountNumber: dto.accountNumber,
+      balance: dto.balance,
+      type: dto.type,
+      status: dto.status,
+      currency: dto.currency,
+      iban: dto.iban,
+      bic: dto.bic,
+      overdraftEnabled: dto.overdraftEnabled,
+      overdraftLimit: dto.overdraftLimit,
+      createdAt: dto.createdAt,
+      updatedAt: dto.updatedAt
+    });
   }
 }
