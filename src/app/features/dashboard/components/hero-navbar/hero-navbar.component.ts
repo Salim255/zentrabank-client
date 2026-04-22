@@ -2,6 +2,7 @@ import { Component, signal } from "@angular/core";
 import { HeroService } from "../../service/hero.service";
 import { Subscription } from "rxjs";
 import { AuthService } from "../../../auth/services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-hero-navbar",
@@ -12,7 +13,9 @@ import { AuthService } from "../../../auth/services/auth.service";
 export class HeroNavbarComponent {
   subscribeToHeroModal!: Subscription;
   isOpen= signal<boolean>(false);
+
   constructor(
+    private router: Router,
     private authService: AuthService,
     private heroService: HeroService,
   ){}
@@ -34,7 +37,8 @@ export class HeroNavbarComponent {
   }
 
   logout(){
-    this.authService.logout();
+    this.authService.logout().subscribe();
+
     this.heroService.setHerModal(false);
   }
 

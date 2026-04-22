@@ -64,6 +64,14 @@ export class AuthService {
     );
   }
 
+  logout(): Observable<{status: 'success', data: null}>{
+    return this.authHttp.logout().pipe(
+      tap(res =>{
+        this.setUser(null);
+      } )
+    );
+  }
+
   get userIsAuthenticated(): Observable<boolean> {
     return this.user$.pipe(
       map(user => !!user)
