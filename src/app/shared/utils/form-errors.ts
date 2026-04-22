@@ -22,7 +22,7 @@ export const FORM_ERRORS: Record<string, any> = {
     minlength: 'Password must be at least 8 characters.',
     maxlength: 'Password cannot exceed 64 characters.'
   },
-  username: {
+  userName: {
     required: 'Username is required.',
     minlength: 'Username must be at least 3 characters.',
     maxlength: 'Username cannot exceed 64 characters.'

@@ -12,6 +12,7 @@
       id="email"
       type="email"
       formControlName="email"
+      placeholder="Enter email"
       class="form-input" />
     <app-form-error
         [control]="signupForm.get('email')"
@@ -25,6 +26,7 @@
     <input
       id="userName"
       type="text"
+      placeholder="Enter username"
       formControlName="userName"
       class="form-input" />
 
@@ -41,6 +43,7 @@
     <div class="password-wrapper">
       <input
         id="password"
+        placeholder="Enter password"
         type="{{ showPassword() ? 'text' : 'password' }}"
         formControlName="password"
         class="form-input" />
@@ -65,6 +68,7 @@
     <input
       id="confirmPassword"
       type="password"
+      placeholder="Confirm password"
       type="{{ showPassword() ? 'text' : 'password' }}"
       formControlName="confirmPassword"
       class="form-input" />
