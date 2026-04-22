@@ -9,6 +9,11 @@
     justify-content: space-between;
     align-items: center;
     &__item {
+      app-dashboard-hero{
+        &:hover {
+          cursor: pointer;
+        }
+      }
         app-hero-navbar {
           position: absolute;
           right: 0;

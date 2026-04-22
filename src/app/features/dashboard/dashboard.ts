@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { HeroService } from "./service/hero.service";
 
 @Component({
   selector: "app-dashboard",
@@ -8,5 +9,13 @@ import { Component } from "@angular/core";
 })
 
 export class Dashboard {
-  constructor() {}
+  constructor(private heroService: HeroService){}
+
+  triggerHeroModal() {
+    this.heroService.setHerModal(true);
+  }
+
+  onHero(){
+    this.heroService.setHerModal(true);
+  }
 }

@@ -38,4 +38,11 @@ export class AuthHttpService {
        {withCredentials: true}
     )
   }
+
+  logout(): Observable<any>{
+    return this.http.get<any>(
+       `${this.ENV.apiBaseUrl}/users/logout`,
+       {withCredentials: true}
+    )
+  }
 }
