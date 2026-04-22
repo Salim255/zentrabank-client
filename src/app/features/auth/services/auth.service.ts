@@ -23,7 +23,7 @@ export class AuthService {
   login(credentials: LoginDto):Observable<ProfileResponseDto> {
     return this.authHttp.login(credentials).pipe(
       map(response => {
-         this.setUser(response.data.user);
+        this.setUser(response.data.user);
       }),
       switchMap(() => {
         return this.profileService.fetchProfile();

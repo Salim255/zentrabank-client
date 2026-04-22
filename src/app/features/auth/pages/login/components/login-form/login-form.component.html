@@ -3,17 +3,18 @@
     <div class="form__header">
       <app-name></app-name>
     </div>
-    <div class="form__group">
-      <label for="email" class="form__labal">Email</label>
+    <div class="form-group">
+      <label for="userName">Username</label>
       <input
-          formControlName="email"
-          class="form__input"
-          type="email"
-          id="email" placeholder="Enter your email">
-        <app-form-error
-          [control]="authForm.get('email')"
-          field="email">
-        </app-form-error>
+        id="userName"
+        type="text"
+        formControlName="userName"
+        class="form-input" />
+
+      <app-form-error
+            [control]="authForm.get('userName')"
+            field="userName">
+      </app-form-error>
     </div>
     <div class="form__group">
       <label for="password" class="form__label">Password</label>

@@ -42,7 +42,7 @@ export class AuthFormService {
   // REMOVE FIELDS FOR LOGIN MODE
   // -----------------------------------
   private stripSignupFields(form: FormGroup) {
-    form.removeControl('userName');
+    form.removeControl('email');
     form.removeControl('confirmPassword');
     form.removeControl('country');
     form.removeControl('marketing');
