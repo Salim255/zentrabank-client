@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 
 @Injectable({providedIn: "root"})
-export class AccountService {
+export class AccountHttpService {
 
   private ENV = environment;
   private basUrl: string = `${this.ENV.apiBaseUrl}/users/accounts`;
