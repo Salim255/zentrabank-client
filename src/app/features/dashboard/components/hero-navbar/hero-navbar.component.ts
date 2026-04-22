@@ -6,4 +6,7 @@ import { Component } from "@angular/core";
   styleUrls: ["./hero-navbar.component.scss"],
   standalone: false
 })
-export class HeroNavbarComponent {}
+export class HeroNavbarComponent {
+  goToProfile(){}
+  logout(){}
+}

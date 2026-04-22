@@ -2,11 +2,19 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  position: relative;
   .dashboard-navbar {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    &__item {
+        app-hero-navbar {
+          position: absolute;
+          right: 0;
+
+        }
+    }
   }
   &__children {
 
