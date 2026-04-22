@@ -1,3 +1,11 @@
+import { AccountDto } from "../../application/model/application.model";
+
+export interface AccountsResponseDto {
+  status: string;
+  data: {
+    accounts: AccountDto []
+  }
+}
 export class Account {
   // ─────────────────────────────────────────────
   // Private fields (no direct access from outside)

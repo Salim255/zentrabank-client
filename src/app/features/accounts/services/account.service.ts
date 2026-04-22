@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AccountHttpService } from "./account-http.service";
-import { BehaviorSubject, Observable } from "rxjs";
+import { BehaviorSubject, map, Observable } from "rxjs";
 import { Account } from "../model/account.model";
 
 @Injectable({providedIn: "root"})
@@ -15,7 +15,11 @@ export class AccountService {
   }
 
   getUserAccounts(): Observable<any>{
-    return this.accountHttpService.fetchAccounts()
+    return this.accountHttpService.fetchAccounts().pipe(
+      map((res) => {
+        const
+      })
+    )
   }
 
   get getAccounts(): Observable<Account[]> {
