@@ -17,4 +17,8 @@ export class AccountService {
   getUserAccounts(): Observable<any>{
     return this.accountHttpService.fetchAccounts()
   }
+
+  get getAccounts(): Observable<Account[]> {
+    return this.accountsSubject.asObservable();
+  }
 }
