@@ -1,0 +1,21 @@
+<section class="modal-backdrop" (click)="close()"></section>
+  <div class="bg-modal">
+    <header class="bg-modal__header">
+      <h2 class="bg-modal__title">{{ title }}</h2>
+      <button class="bg-modal__close" (click)="close()">✕</button>
+    </header>
+
+    <section class="bg-modal__body">
+      <ng-content></ng-content>
+    </section>
+
+    <footer class="bg-modal__footer">
+      <button class="bg-modal__btn bg-modal__btn--cancel" (click)="close()">
+        Cancel
+      </button>
+
+      <button class="bg-modal__btn bg-modal__btn--confirm" (click)="confirm()">
+        Confirm
+      </button>
+    </footer>
+</div>
