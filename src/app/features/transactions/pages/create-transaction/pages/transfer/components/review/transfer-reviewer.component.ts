@@ -13,6 +13,7 @@ import { CommonModule, CurrencyPipe } from "@angular/common";
 })
 export class TransferReviewerComponent {
   private transferFromSubscription!: Subscription;
+
   constructor(
     private transForm: TransferFromService,
   ){}
@@ -29,6 +30,7 @@ export class TransferReviewerComponent {
   subscribeToForm(){
     this.transferFromSubscription = this.transForm.getValue.subscribe((value) => {
       this.data = value;
+      console.log(value, "data")
     });
   }
 

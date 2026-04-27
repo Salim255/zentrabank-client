@@ -53,9 +53,10 @@ export class TransferFromService {
 
   }
 
-  set transValue(value: any){
+  setTransValue(value: any){
     this.transferValueSubject.next(value);
   }
+
   get getValue(): Observable<any>{
     return this.transferValueSubject.asObservable();
   }

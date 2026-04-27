@@ -6,32 +6,32 @@
 
     <li class="transfer-review__item">
       <span class="transfer-review__label">Recipient Name</span>
-      <span class="transfer-review__value">{{ data.recipientName }}</span>
+      <span class="transfer-review__value">{{ data?.recipientName }}</span>
     </li>
 
     <li class="transfer-review__item">
       <span class="transfer-review__label">Recipient IBAN</span>
-      <span class="transfer-review__value">{{ data.iban }}</span>
+      <span class="transfer-review__value">{{ data?.iban }}</span>
     </li>
 
     <li class="transfer-review__item">
       <span class="transfer-review__label">Recipient BIC</span>
-      <span class="transfer-review__value">{{ data.bic }}</span>
+      <span class="transfer-review__value">{{ data?.bic }}</span>
     </li>
 
     <li class="transfer-review__item">
       <span class="transfer-review__label">Amount</span>
-      <span class="transfer-review__value">{{ data.amount | currency:'EUR' }}</span>
+      <span class="transfer-review__value">{{ data?.amount | currency:'EUR' }}</span>
     </li>
 
     <li class="transfer-review__item">
       <span class="transfer-review__label">Transaction Type</span>
-      <span class="transfer-review__value">{{ data.type }}</span>
+      <span class="transfer-review__value">{{ data?.type }}</span>
     </li>
 
-    <li class="transfer-review__item" *ngIf="data.referenceAccountNumber">
+    <li class="transfer-review__item" *ngIf="data?.referenceAccountNumber">
       <span class="transfer-review__label">Reference Account</span>
-      <span class="transfer-review__value">{{ data.referenceAccountNumber }}</span>
+      <span class="transfer-review__value">{{ data?.referenceAccountNumber }}</span>
     </li>
 
   </ul>

@@ -26,6 +26,7 @@ export class FormComponent implements OnInit {
   }
 
   onTransfer(): void{
+    this.formService.setTransValue(this.transForm.value)
     this.openReview();
     if (this.transForm.invalid) return;
   }
