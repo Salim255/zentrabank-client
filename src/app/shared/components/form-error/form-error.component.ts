@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import { FORM_ERRORS } from '../../utils/form-errors';
+import { ERROR_REGISTRY } from '../../utils/error-registry';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class FormErrorComponent {
 
     const errors = this.control.errors;
 
-    const fieldErrors = FORM_ERRORS[this.field];
+    const fieldErrors = ERROR_REGISTRY[this.field];;
 
     for (const key of Object.keys(errors)) {
       if (fieldErrors && fieldErrors[key]) {
