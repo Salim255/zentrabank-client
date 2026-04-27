@@ -8,10 +8,10 @@ export interface TransferDto {
   amount: BigInt;
   currency: string;
   status: TransferStatus;
-  "referenceId": "TRF-20260427-231016-0D0516AA",
-  "description": "Invoice payment",
-  "createdAt": "2026-04-27T23:10:16.790718Z",
-  "completedAt": "2026-04-27T23:10:16.792125Z"
+  referenceId: string;
+  description: string;
+  createdAt: Date;
+  completedAt: Date;
 }
 
 export enum TransferStatus {
