@@ -1,6 +1,8 @@
 import { Injectable, Injector } from "@angular/core";
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from "@angular/forms";
 import { BehaviorSubject, Observable } from "rxjs";
+import { ibanChecksumValidator } from "../../../../../../../shared/utils/iban-checks";
+import { amountStepValidator } from "../../../../../../../shared/utils/amount-validator";
 
 @Injectable({ providedIn: "root" })
 export class TransferFromService {
