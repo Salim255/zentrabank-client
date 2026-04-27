@@ -8,7 +8,7 @@ export class TransferFromService {
   constructor(private fb: FormBuilder){}
 
 
-  buildForm() {
+  buildForm(): FormGroup {
     return this.fb.group({
       // Recipient Name
       recipientName: this.fb.control<string>('', [

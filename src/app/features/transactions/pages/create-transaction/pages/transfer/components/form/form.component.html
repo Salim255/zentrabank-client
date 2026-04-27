@@ -1,24 +1,16 @@
-<form class="transaction-form">
+<form class="transaction-form" [formGroup]="transForm">
 
   <h2 class="transaction-form__title">Transfer Details</h2>
 
-  <!-- Receiver Name -->
-  <div class="transaction-form__group">
-    <label class="transaction-form__label">Recipient Name</label>
-    <input
-      type="text"
-      name="recipientName"
-      class="transaction-form__input"
-      placeholder="Enter recipient full name"
-    />
-  </div>
+
 
   <!-- Recipient IBAN -->
   <div class="transaction-form__group">
-    <label class="transaction-form__label">Recipient IBAN</label>
+    <label for="iban" class="transaction-form__label">Recipient IBAN</label>
     <input
       type="text"
       name="iban"
+      formControlName="iban"
       class="transaction-form__input"
       placeholder="Enter recipient IBAN"
     />
@@ -26,22 +18,36 @@
 
   <!-- Recipient BIC -->
   <div class="transaction-form__group">
-    <label class="transaction-form__label">Recipient BIC (SWIFT)</label>
+    <label for="bic" class="transaction-form__label">Recipient BIC (SWIFT)</label>
     <input
       type="text"
       name="bic"
+      formControlName="bic"
       class="transaction-form__input"
       placeholder="Enter recipient BIC"
     />
   </div>
 
+   <!-- Receiver Name -->
+  <div class="transaction-form__group">
+    <label  for="recipientName" class="transaction-form__label">Recipient Name</label>
+    <input
+      type="text"
+      name="recipientName"
+      formControlName="recipientName"
+      class="transaction-form__input"
+      placeholder="Enter recipient full name"
+    />
+  </div>
+
   <!-- Transfer Amount -->
   <div class="transaction-form__group">
-    <label class="transaction-form__label">Transfer Amount (€)</label>
+    <label for="amount" class="transaction-form__label">Transfer Amount (€)</label>
     <input
       type="number"
       name="amount"
       step="0.01"
+      formControlName="amount"
       class="transaction-form__input"
       placeholder="0.00"
     />
@@ -49,28 +55,29 @@
 
   <!-- Transaction Type -->
   <div class="transaction-form__group">
-    <label class="transaction-form__label">Transaction Type</label>
-    <select name="type" class="transaction-form__select">
+    <label for="type" class="transaction-form__label">Transaction Type</label>
+    <select name="type" formControlName="type" class="transaction-form__select">
       <option value="TRANSFER">Transfer</option>
-      <option value="DEPOSIT">Deposit</option>
-      <option value="WITHDRAW">Withdraw</option>
     </select>
   </div>
 
   <!-- Optional: Receiver Account Number -->
   <div class="transaction-form__group">
-    <label class="transaction-form__label">Receiver Account Number</label>
+    <label for="referenceAccountNumber" class="transaction-form__label">Receiver Account Number</label>
     <input
       type="text"
       name="referenceAccountNumber"
+      formControlName="referenceAccountNumber"
       class="transaction-form__input"
       placeholder="Enter receiver account number"
     />
   </div>
 
   <!-- Submit -->
-  <button type="submit" class="transaction-form__button">
-    Submit Transfer
+  <button
+    type="btn"
+    class="transaction-form__button">
+    Transfer
   </button>
 
 </form>
