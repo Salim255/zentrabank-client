@@ -2,14 +2,36 @@
 
   <h2 class="transaction-form__title">Transfer Details</h2>
 
-  <!-- Recipient Email / Description -->
+  <!-- Receiver Name -->
   <div class="transaction-form__group">
-    <label class="transaction-form__label">Description</label>
+    <label class="transaction-form__label">Recipient Name</label>
     <input
       type="text"
-      name="description"
+      name="recipientName"
       class="transaction-form__input"
-      placeholder="Enter description"
+      placeholder="Enter recipient full name"
+    />
+  </div>
+
+  <!-- Recipient IBAN -->
+  <div class="transaction-form__group">
+    <label class="transaction-form__label">Recipient IBAN</label>
+    <input
+      type="text"
+      name="iban"
+      class="transaction-form__input"
+      placeholder="Enter recipient IBAN"
+    />
+  </div>
+
+  <!-- Recipient BIC -->
+  <div class="transaction-form__group">
+    <label class="transaction-form__label">Recipient BIC (SWIFT)</label>
+    <input
+      type="text"
+      name="bic"
+      class="transaction-form__input"
+      placeholder="Enter recipient BIC"
     />
   </div>
 
@@ -25,7 +47,17 @@
     />
   </div>
 
-  <!-- Receiver Account Number -->
+  <!-- Transaction Type -->
+  <div class="transaction-form__group">
+    <label class="transaction-form__label">Transaction Type</label>
+    <select name="type" class="transaction-form__select">
+      <option value="TRANSFER">Transfer</option>
+      <option value="DEPOSIT">Deposit</option>
+      <option value="WITHDRAW">Withdraw</option>
+    </select>
+  </div>
+
+  <!-- Optional: Receiver Account Number -->
   <div class="transaction-form__group">
     <label class="transaction-form__label">Receiver Account Number</label>
     <input
