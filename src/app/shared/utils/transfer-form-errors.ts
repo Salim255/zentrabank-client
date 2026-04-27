@@ -1,3 +1,5 @@
+import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
+
 export const TRANSFER_FORM_ERRORS: Record<string, any> = {
 
   // ACCOUNT SELECTION
@@ -44,3 +46,15 @@ export const TRANSFER_FORM_ERRORS: Record<string, any> = {
     signatureMismatch: 'Signature must match your full legal name.'
   }
 };
+
+export function amountValidator(min: number, max: number): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const value = Number(control.value);
+
+    if (!value) return { required: true };
+    if (value < min) return { min: true };
+    if (value > max) return { max: true };
+
+    return null;
+  };
+}
