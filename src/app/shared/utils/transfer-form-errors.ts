@@ -26,10 +26,11 @@ export const TRANSFER_FORM_ERRORS: Record<string, any> = {
   },
 
   // TRANSFER DETAILS
-  amount: {
+ amount: {
     required: 'Amount is required.',
     min: 'Amount must be greater than zero.',
-    max: 'Amount exceeds the allowed transfer limit.'
+    max: 'Amount exceeds the allowed transfer limit.',
+    pattern: 'Amount must be in 0.00 format.'
   },
 
   transferType: {

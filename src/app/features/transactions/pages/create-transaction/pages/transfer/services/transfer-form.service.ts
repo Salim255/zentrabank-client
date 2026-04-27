@@ -37,11 +37,11 @@ export class TransferFromService {
       ]),
 
       // 💸 Amount (anti‑fraude)
-      amount: this.fb.control<number | null>(null, [
+      amount: this.fb.control<string>('0.00', [
         Validators.required,
-        Validators.min(1),
-        Validators.max(1000000),
-        amountStepValidator(0.01) // pas de montant bizarre
+        Validators.pattern(/^\d+(\.\d{1,2})?$/),
+        Validators.min(0.01),
+        Validators.max(1000000)
       ]),
 
       // 🔄 Transfer Type

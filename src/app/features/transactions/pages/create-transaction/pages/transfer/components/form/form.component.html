@@ -30,6 +30,10 @@
       class="transaction-form__input"
       placeholder="Enter recipient BIC"
     />
+     <app-form-error
+        [control]="transForm.get('bic')"
+        field="bic">
+    </app-form-error>
   </div>
 
    <!-- Receiver Name -->
@@ -42,19 +46,29 @@
       class="transaction-form__input"
       placeholder="Enter recipient full name"
     />
+     <app-form-error
+        [control]="transForm.get('recipientName')"
+        field="recipientName">
+    </app-form-error>
   </div>
 
   <!-- Transfer Amount -->
   <div class="transaction-form__group">
     <label for="amount" class="transaction-form__label">Transfer Amount (€)</label>
     <input
-      type="number"
-      name="amount"
-      step="0.01"
+      type="text"
       formControlName="amount"
       class="transaction-form__input"
       placeholder="0.00"
+      (input)="formatAmount($event)"
+      (blur)="finalizeAmount($event)"
+      (keydown)="blockInvalidKeys($event)"
+      (paste)="blockInvalidPaste($event)"
     />
+    <app-form-error
+      [control]="transForm.get('amount')"
+      field="amount">
+    </app-form-error>
   </div>
 
   <!-- Transaction Type -->
@@ -66,16 +80,31 @@
   </div>
 
   <!-- Optional: Receiver Account Number -->
-  <div class="transaction-form__group">
-    <label for="referenceAccountNumber" class="transaction-form__label">Receiver Account Number</label>
-    <input
-      type="text"
-      name="referenceAccountNumber"
-      formControlName="referenceAccountNumber"
-      class="transaction-form__input"
-      placeholder="Enter receiver account number"
-    />
-  </div>
+<div class="transaction-form__group">
+  <label for="referenceAccountNumber" class="transaction-form__label">
+    Debit Account
+  </label>
+
+  <select
+    name="referenceAccountNumber"
+    formControlName="referenceAccountNumber"
+    class="transaction-form__input transaction-form__select"
+  >
+    <option value="" disabled>Select an account</option>
+
+    <option
+      *ngFor="let acc of userAccounts"
+      [value]="acc.accountNumber"
+    >
+      {{ acc.accountNumber }} — {{ acc.balance | currency:'EUR' }}
+    </option>
+  </select>
+
+  <app-form-error
+    [control]="transForm.get('referenceAccountNumber')"
+    field="referenceAccountNumber">
+  </app-form-error>
+</div>
 
   <!-- Submit -->
   <button
