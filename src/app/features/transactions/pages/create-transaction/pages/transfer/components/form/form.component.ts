@@ -30,9 +30,13 @@ export class FormComponent implements OnInit {
   }
 
   onTransfer(): void{
+    if (this.transForm.invalid) {
+      this.transForm.markAllAsTouched();
+      this.transForm.updateValueAndValidity({ onlySelf: false, emitEvent: true });
+      return
+    };
     this.formService.setTransValue(this.transForm.value)
     this.openReview();
-    if (this.transForm.invalid) return;
   }
 
   openReview() {
