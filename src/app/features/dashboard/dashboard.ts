@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, signal } from "@angular/core";
 import { HeroService } from "./service/hero.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-dashboard",
@@ -9,7 +10,14 @@ import { HeroService } from "./service/hero.service";
 })
 
 export class Dashboard {
-  constructor(private heroService: HeroService){}
+  constructor(
+    private router: Router,
+    private heroService: HeroService
+  ){}
+
+  get isProfilePage(): boolean {
+    return this.router.url === '/dashboard/profile';
+  }
 
   triggerHeroModal() {
     this.heroService.setHerModal(true);

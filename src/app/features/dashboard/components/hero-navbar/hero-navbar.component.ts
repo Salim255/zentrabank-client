@@ -34,6 +34,7 @@ export class HeroNavbarComponent {
 
   goToProfile(){
     this.heroService.setHerModal(false);
+    this.router.navigate(["/dashboard/profile"]);
   }
 
   logout(){

@@ -4,12 +4,15 @@
       <div class="dashboard-navbar__logo">
         <app-name></app-name>
       </div>
-      <ul class="dashboard-navbar__links">
-        <li class="dashboard-navbar__item">
-          <app-dashboard-hero (click)="onHero()"></app-dashboard-hero>
-          <app-hero-navbar></app-hero-navbar>
-        </li>
-      </ul>
+      @if(!isProfilePage) {
+        <ul class="dashboard-navbar__links">
+          <li class="dashboard-navbar__item">
+            <app-dashboard-hero (click)="onHero()"></app-dashboard-hero>
+            <app-hero-navbar></app-hero-navbar>
+          </li>
+        </ul>
+      }
+
     </nav>
   </app-navbar>
   <app-sub-header></app-sub-header>
