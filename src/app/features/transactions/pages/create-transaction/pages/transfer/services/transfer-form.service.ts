@@ -1,10 +1,12 @@
 import { Injectable } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({providedIn: "root"})
 export class TransferFromService {
   transForm!: FormGroup;
 
+  private transferValueSubject = new BehaviorSubject<any>(null);
   constructor(private fb: FormBuilder){}
 
 
@@ -49,5 +51,12 @@ export class TransferFromService {
 
     });
 
+  }
+
+  set transValue(value: any){
+    this.transferValueSubject.next(value);
+  }
+  get getValue(): Observable<any>{
+    return this.transferValueSubject.asObservable();
   }
 }

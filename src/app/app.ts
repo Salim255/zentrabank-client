@@ -2,11 +2,12 @@ import { Component, signal } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { AuthService } from './features/auth/services/auth.service';
 import { Subscription } from 'rxjs';
+import { SharedModule } from './shared/shared.module';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, SharedModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

@@ -8,7 +8,9 @@ import { TransactionHeaderComponent } from "./components/transaction-header/tran
     TransactionHeaderComponent,
     Transactions
   ],
-  imports: [TransactionsRoutingModule]
+  imports: [
+    TransactionsRoutingModule
+  ]
 })
 
 export class TransactionsModule {}

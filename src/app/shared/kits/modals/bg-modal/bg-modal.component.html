@@ -1,4 +1,7 @@
-<section class="modal-backdrop" (click)="close()"></section>
+
+@if((modal.modalState$ | async)?.isOpen ){
+  <ng-container >
+      <section class="modal-backdrop" (click)="close()"></section>
   <div class="bg-modal">
     <header class="bg-modal__header">
       <h2 class="bg-modal__title">{{ title }}</h2>
@@ -19,3 +22,8 @@
       </button>
     </footer>
 </div>
+
+  </ng-container>
+}
+
+
