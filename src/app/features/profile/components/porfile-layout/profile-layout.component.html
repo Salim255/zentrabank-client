@@ -1,0 +1,29 @@
+<section class="profile-layout">
+
+  <!-- Header / Title -->
+  <header class="profile-layout__header">
+    <h1 class="profile-layout__title">Profile</h1>
+    <p class="profile-layout__subtitle">Manage your personal information and account settings</p>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <div class="profile-layout__content">
+
+    <!-- Left Sidebar (Navigation) -->
+    <aside class="profile-layout__sidebar">
+      <ul class="profile-layout__menu">
+        <li class="profile-layout__menu-item" [class.active]="isSection('personal')">Personal Info</li>
+        <li class="profile-layout__menu-item" [class.active]="isSection('security')">Security</li>
+        <li class="profile-layout__menu-item" [class.active]="isSection('preferences')">Preferences</li>
+        <li class="profile-layout__menu-item" [class.active]="isSection('accounts')">Linked Accounts</li>
+      </ul>
+    </aside>
+
+    <!-- Right Content Area -->
+    <div class="profile-layout__panel">
+      <ng-content></ng-content>
+    </div>
+
+  </div>
+
+</section>

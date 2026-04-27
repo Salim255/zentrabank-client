@@ -1,0 +1,57 @@
+.profile-layout {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+
+  &__header {
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  &__subtitle {
+    color: #6b7280;
+    margin-top: .25rem;
+  }
+
+  &__content {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__sidebar {
+    width: 220px;
+  }
+
+  &__menu {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__menu-item {
+    padding: .75rem 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: background .2s;
+
+    &.active {
+      background: #f3f4f6;
+      font-weight: 600;
+    }
+
+    &:hover {
+      background: #f9fafb;
+    }
+  }
+
+  &__panel {
+    flex: 1;
+    background: white;
+    padding: 2rem;
+    border-radius: .75rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  }
+}
