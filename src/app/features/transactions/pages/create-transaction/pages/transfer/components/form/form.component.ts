@@ -31,8 +31,9 @@ export class FormComponent implements OnInit {
   }
 
   openReview() {
-    this.bgModal.open('Review Transfer', {
-      component: TransferReviewerComponent
-    });
+    this.bgModal.open(
+      'Review Transfer',
+      TransferReviewerComponent
+    );
   }
 }

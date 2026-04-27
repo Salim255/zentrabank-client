@@ -1,10 +1,11 @@
-import { Component, Injectable } from "@angular/core";
+import { Component, Injectable, Injector } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 
 export interface ModalState {
   isOpen: boolean;
   title?: string;
-  data?: any;
+  component?: any;
+  injector?: Injector;
 }
 
 @Injectable({providedIn: "root"})
@@ -17,13 +18,22 @@ export class BgModalService {
 
   modalState$ = this.modalState.asObservable();
 
-  open(title: string, data?: any) {
-    console.log(title)
+  open(title: string, component: any, data?: any) {
+    const injector = Injector.create({
+      providers: [
+        { provide: 'MODAL_DATA', useValue: data }
+      ]
+    });
+
+
     this.modalState.next({
       isOpen: true,
       title,
-      data
+      component,
+      injector
     });
+
+    console.log(this.modalState.value)
   }
 
   close() {

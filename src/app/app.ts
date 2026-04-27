@@ -3,11 +3,12 @@ import { Router, RouterOutlet } from '@angular/router';
 import { AuthService } from './features/auth/services/auth.service';
 import { Subscription } from 'rxjs';
 import { SharedModule } from './shared/shared.module';
+import { BgModalComponent } from "./shared/kits/modals/bg-modal/bg-modal.component";
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SharedModule],
+  imports: [RouterOutlet, SharedModule, BgModalComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

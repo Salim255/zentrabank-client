@@ -2,17 +2,18 @@ import { Component } from "@angular/core";
 import { Subscription } from "rxjs";
 import { TransferFromService } from "../../services/transfer-form.service";
 import { BgModalService } from "../../../../../../../../shared/kits/modals/services/bg-modal.service";
+import { CommonModule, CurrencyPipe } from "@angular/common";
 
 @Component({
   selector: "app-trans-reviewer",
   templateUrl: "./transfer-reviewer.component.html",
   styleUrl: "./transfer-reviewer.component.scss",
-  standalone: false
+  imports: [CurrencyPipe, CommonModule],
+  standalone: true
 })
 export class TransferReviewerComponent {
   private transferFromSubscription!: Subscription;
   constructor(
-    private bgModalService: BgModalService,
     private transForm: TransferFromService,
   ){}
 
@@ -20,7 +21,8 @@ export class TransferReviewerComponent {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-
+    this.subscribeToForm();
+    console.log(this.data, "hello");
   }
 
 

@@ -1,15 +1,17 @@
 
-@if((modal.modalState$ | async)?.isOpen ){
+@if(state()?.isOpen ){
   <ng-container >
       <section class="modal-backdrop" (click)="close()"></section>
   <div class="bg-modal">
     <header class="bg-modal__header">
-      <h2 class="bg-modal__title">{{ title }}</h2>
+      <h2 class="bg-modal__title">{{ state()?.title }}</h2>
       <button class="bg-modal__close" (click)="close()">✕</button>
     </header>
 
     <section class="bg-modal__body">
-      <ng-content></ng-content>
+      <ng-container
+        *ngComponentOutlet="state()!.component; injector: state()!.injector">
+      </ng-container>
     </section>
 
     <footer class="bg-modal__footer">
