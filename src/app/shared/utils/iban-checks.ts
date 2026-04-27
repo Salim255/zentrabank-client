@@ -9,7 +9,7 @@ export function ibanChecksumValidator() {
     const rearranged = iban.slice(4) + iban.slice(0, 4);
 
     // Replace letters with numbers (A=10, B=11, ...)
-    const numeric = rearranged.replace(/[A-Z]/g, c => (c.charCodeAt(0) - 55).toString());
+    const numeric = rearranged.replace(/[A-Z]/g, (c: any) => (c.charCodeAt(0) - 55).toString());
 
     // Mod 97 check
     let remainder = '';
