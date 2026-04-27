@@ -92,12 +92,14 @@
   >
     <option value="" disabled>Select an account</option>
 
-    <option
-      *ngFor="let acc of userAccounts"
-      [value]="acc.accountNumber"
-    >
-      {{ acc.accountNumber }} — {{ acc.balance | currency:'EUR' }}
-    </option>
+    @for (acc of userAccounts; track $index) {
+      <option
+        [value]="acc.accountNumber"
+      >
+        {{ acc.accountNumber }} — {{ acc.balance | currency:'EUR' }}
+      </option>
+    }
+
   </select>
 
   <app-form-error

@@ -15,7 +15,7 @@ export class TransferFromService {
   buildForm(): FormGroup {
     return this.fb.group({
 
-      // 👤 Recipient Name
+      // Recipient Name
       recipientName: this.fb.control<string>('', [
         Validators.required,
         Validators.minLength(2),
@@ -23,20 +23,20 @@ export class TransferFromService {
         Validators.pattern(/^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$/)
       ]),
 
-      // 🇪🇺 IBAN (SEPA + checksum)
+      // IBAN (SEPA + checksum)
       iban: this.fb.control<string>('', [
         Validators.required,
         Validators.pattern(/^[A-Z]{2}[0-9A-Z]{13,30}$/),
         ibanChecksumValidator()
       ]),
 
-      // 🏦 BIC / SWIFT
+      // BIC / SWIFT
       bic: this.fb.control<string>('', [
         Validators.required,
         Validators.pattern(/^[A-Z]{4}[A-Z]{2}[A-Z0-9]{2}([A-Z0-9]{3})?$/)
       ]),
 
-      // 💸 Amount (anti‑fraude)
+      // Amount (anti‑fraude)
       amount: this.fb.control<string>("", [
         Validators.required,
         Validators.pattern(/^\d+(\.\d{1,2})?$/),
@@ -44,14 +44,15 @@ export class TransferFromService {
         Validators.max(1000000)
       ]),
 
-      // 🔄 Transfer Type
+      // Transfer Type
       type: this.fb.control<string>('TRANSFER', [
         Validators.required
       ]),
 
-      // 🧾 Internal account reference
+      // Internal account reference
       referenceAccountNumber: this.fb.control<string | null>(null, [
-        Validators.maxLength(34)
+        Validators.maxLength(34),
+        Validators.required
       ])
 
     }, {
