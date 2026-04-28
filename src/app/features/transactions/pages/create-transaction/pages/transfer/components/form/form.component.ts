@@ -20,6 +20,7 @@ export class FormComponent implements OnInit {
     private bgModal: BgModalService,
     private formService:TransferFromService) {
     this.transForm = this.formService.buildForm();
+    this.formService.initForm(this.transForm);
   }
 
 
@@ -30,13 +31,14 @@ export class FormComponent implements OnInit {
   }
 
   onTransfer(): void{
+    this.formService.setTransValue(this.transForm.value)
+    this.openReview();
     if (this.transForm.invalid) {
       this.transForm.markAllAsTouched();
       this.transForm.updateValueAndValidity({ onlySelf: false, emitEvent: true });
       return
     };
-    this.formService.setTransValue(this.transForm.value)
-    this.openReview();
+
   }
 
   openReview() {

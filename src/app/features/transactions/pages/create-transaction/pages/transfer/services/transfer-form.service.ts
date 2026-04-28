@@ -5,6 +5,7 @@ import { ibanChecksumValidator } from "../../../../../../../shared/utils/iban-ch
 import { ibanBicCountryMatchValidator } from "./iban-bic-validator";
 import { TransferPostDto } from "../dto/transfer-post.dto";
 import { TransferService } from "./transfer.service";
+import { TextValueAccessor } from "@ionic/angular";
 
 export interface TransferFormValue {
   recipientName: string;
@@ -12,19 +13,30 @@ export interface TransferFormValue {
   bic: string;
   amount: string;
   type: string;
-  referenceAccountNumber: string | null;
+  fromAccountNumber: string;
 }
 
 
 @Injectable({ providedIn: "root" })
 export class TransferFromService {
-
+  private form!: FormGroup;
   private transferValueSubject = new BehaviorSubject<TransferFormValue| null>(null);
 
   constructor(
     private transferService: TransferService,
     private fb: FormBuilder,
   ) {}
+
+   // ----------------------------------------------------
+  // INIT FORM (called from the form component)
+  // ----------------------------------------------------
+  initForm(form: FormGroup) {
+    this.form = form;
+  }
+
+  get formGroup(): FormGroup {
+    return this.form;
+  }
 
   buildForm(): FormGroup {
     return this.fb.group({
@@ -64,7 +76,7 @@ export class TransferFromService {
       ]),
 
       // Internal account reference
-      referenceAccountNumber: this.fb.control<string | null>(null, [
+      fromAccountNumber: this.fb.control<string | null>(null, [
         Validators.maxLength(34),
         Validators.required
       ])
@@ -76,29 +88,29 @@ export class TransferFromService {
     });
   }
 
-  setTransValue(value: any) {
+  setTransValue(value: TransferFormValue | null) {
     this.transferValueSubject.next(value);
   }
 
-  submitTransferForm(){
-    const dto: TransferPostDto = this.buildTransferPostDto();
+  submitTransferForm(value: TransferFormValue){
+    const dto: TransferPostDto = this.buildTransferPostDto(value);
     this.transferService.createTransfer(dto).subscribe()
   }
 
-  buildTransferPostDto(): TransferPostDto {
-    const form = this.transferValueSubject.value;
+  buildTransferPostDto(value: TransferFormValue): TransferPostDto {
+    const formValue = value;
     return {
-      fromAccountNumber: form?.referenceAccountNumber!,
-      externalIban: form?.iban!,
-      externalBic: form?.bic!,
-      externalRecipientName: form?.recipientName!,
-      amount: Number(form?.amount),
+      fromAccountNumber: formValue?.fromAccountNumber!,
+      externalIban: formValue?.iban!,
+      externalBic: formValue?.bic!,
+      externalRecipientName: formValue?.recipientName!,
+      amount: Number(formValue?.amount),
       currency: "USD",
       description: ""
     };
   }
 
-  get getValue(): Observable<any> {
+  get getValue(): Observable<TransferFormValue | null> {
     return this.transferValueSubject.asObservable();
   }
 }

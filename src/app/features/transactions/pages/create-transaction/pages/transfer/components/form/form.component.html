@@ -86,8 +86,8 @@
   </label>
 
   <select
-    name="referenceAccountNumber"
-    formControlName="referenceAccountNumber"
+    name="fromAccountNumber"
+    formControlName="fromAccountNumber"
     class="transaction-form__input transaction-form__select"
   >
     <option value="" disabled>Select an account</option>
@@ -103,8 +103,8 @@
   </select>
 
   <app-form-error
-    [control]="transForm.get('referenceAccountNumber')"
-    field="referenceAccountNumber">
+    [control]="transForm.get('fromAccountNumber')"
+    field="fromAccountNumber">
   </app-form-error>
 </div>
 

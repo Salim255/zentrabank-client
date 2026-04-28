@@ -29,9 +29,9 @@
       <span class="transfer-review__value">{{ data?.type }}</span>
     </li>
 
-    <li class="transfer-review__item" *ngIf="data?.referenceAccountNumber">
-      <span class="transfer-review__label">Reference Account</span>
-      <span class="transfer-review__value">{{ data?.referenceAccountNumber }}</span>
+    <li class="transfer-review__item">
+      <span class="transfer-review__label">Debit Account</span>
+      <span class="transfer-review__value">{{ data?.fromAccountNumber }}</span>
     </li>
 
   </ul>
@@ -43,7 +43,7 @@
     </button>
 
     <button class="transfer-review__button transfer-review__button--confirm"
-            (click)="onConfirm()">
+      (click)="onConfirm()">
       Confirm Transfer
     </button>
   </div>

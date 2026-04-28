@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
 import { Subscription } from "rxjs";
-import { TransferFromService } from "../../services/transfer-form.service";
+import { TransferFormValue, TransferFromService } from "../../services/transfer-form.service";
 import { BgModalService } from "../../../../../../../../shared/kits/modals/services/bg-modal.service";
 import { CommonModule, CurrencyPipe } from "@angular/common";
+import { FormGroup } from "@angular/forms";
 
 @Component({
   selector: "app-trans-reviewer",
@@ -13,15 +14,16 @@ import { CommonModule, CurrencyPipe } from "@angular/common";
 })
 export class TransferReviewerComponent {
   private transferFromSubscription!: Subscription;
-
+   form!: FormGroup;
   constructor(
     private transForm: TransferFromService,
-  ){}
+  ){
+    this.form = this.transForm.formGroup;
+  }
 
-  data: any;
+  data!: TransferFormValue | null;
+
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     this.subscribeToForm();
     console.log(this.data, "hello");
   }
@@ -39,7 +41,8 @@ export class TransferReviewerComponent {
   }
 
   onConfirm(){
-
+    if(this.form.invalid) return;
+    this.transForm.submitTransferForm(this.form.value);
   }
 
   onEdit(){}

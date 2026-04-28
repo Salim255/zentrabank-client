@@ -3,7 +3,7 @@ import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 export const TRANSFER_FORM_ERRORS: Record<string, any> = {
 
   // ACCOUNT SELECTION
-  referenceAccountNumber: {
+  fromAccountNumber: {
     required: 'Please select an account to debit.'
   },
 
@@ -41,7 +41,7 @@ export const TRANSFER_FORM_ERRORS: Record<string, any> = {
     maxlength: 'Description cannot exceed 140 characters.'
   },
 
-  // 🖊 SIGNATURE (review modal)
+  // SIGNATURE (review modal)
   signature: {
     required: 'Signature is required.',
     signatureMismatch: 'Signature must match your full legal name.'
