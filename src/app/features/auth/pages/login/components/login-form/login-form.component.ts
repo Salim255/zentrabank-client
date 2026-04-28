@@ -38,7 +38,11 @@ export class LoginFormComponent implements OnInit {
   }
 
   onSubmit(){
-    if (this.authForm.invalid) return;
+    if (this.authForm.invalid) {
+      this.authForm.markAllAsTouched();
+      this.authForm.updateValueAndValidity({ onlySelf: false, emitEvent: true });
+      return;
+    };
 
     this.authService.login(this.authForm.value).subscribe({
       next: () => {
@@ -55,6 +59,7 @@ export class LoginFormComponent implements OnInit {
           message,
           'Sign in failed',
           {
+            positionClass: 'toast-top-center',
             timeOut: 3000,
             progressBar: true,
             closeButton: true

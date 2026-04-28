@@ -27,7 +27,12 @@ export class SignupFormComponent {
     this.signupForm = this.authFormService.buildForm('signup');
   }
   onSubmit(){
-    if (this.signupForm.invalid) return;
+    if (this.signupForm.invalid) {
+      this.signupForm.markAllAsTouched();
+      this.signupForm.updateValueAndValidity({ onlySelf: false, emitEvent: true });
+      return;
+    };
+
     this.authService.signup(this.signupForm.value).subscribe({
       next: (res) => {
         this.router.navigate(["/application"])
@@ -43,6 +48,7 @@ export class SignupFormComponent {
           message,
           'Signup in failed',
           {
+            positionClass: 'toast-top-center',
             timeOut: 3000,
             progressBar: true,
             closeButton: true
