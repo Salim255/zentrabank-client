@@ -4,6 +4,7 @@ import { TransactionsHistoryRoutingModule } from "./transactions-history-routing
 import { HistoryHeaderComponent } from "./components/history-header/history-header.component";
 import { HistoryFilterComponent } from "./components/history-filter/history-filter.component";
 import { HistoryItemComponent } from "./components/history-item/history-item.component";
+import { CurrencyPipe } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -12,7 +13,10 @@ import { HistoryItemComponent } from "./components/history-item/history-item.com
     HistoryHeaderComponent,
     TransactionsHistoryPage,
   ],
-  imports: [TransactionsHistoryRoutingModule]
+  imports: [
+    CurrencyPipe,
+    TransactionsHistoryRoutingModule
+  ]
 })
 
 export class TransactionsHistoryModule {}

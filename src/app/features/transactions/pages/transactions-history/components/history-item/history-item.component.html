@@ -1,7 +1,9 @@
  <div class="history-item">
     <span>12 Apr 2026</span>
-    <span class="history-item__badge history-item__badge--transfer">Transfer</span>
-    <span>test@gmail.com</span>
-    <span class="history-item__status history-item__status--success">Completed</span>
-    <span class="history-item__amount history-item__amount--negative">{{transaction()?.amount}}</span>
+    <span class="history-item__badge"> {{transformTransferText()}}</span>
+    <span class="history-item__name">{{ transaction()?.toClientName }}</span>
+    <span class="history-item__status history-item__status--success">{{transaction()?.status}}</span>
+    <span class="history-item__amount history-item__amount--negative">
+      {{ transaction()?.amount | currency:'EUR':'symbol':'1.2-2' }} €
+    </span>
   </div>

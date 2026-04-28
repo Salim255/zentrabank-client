@@ -5,6 +5,8 @@
   grid-template-columns: 1.2fr 1fr 2fr 1fr 1fr;
   padding: 1rem 1.25rem;
   font-size: 0.95rem;
+
+  gap: 1rem;
   &:last-child {
     border-bottom: none;
   }
@@ -16,7 +18,7 @@
     font-weight: 600;
 
     &--negative {
-      color: #dc2626;
+      //color: #dc2626;
     }
 
     &--positive {
@@ -29,25 +31,28 @@
     font-weight: 600;
 
     &--success {
-      color: #16a34a;
+      //color: #16a34a;
     }
 
     &--pending {
-      color: #d97706;
+      //color: #d97706;
     }
 
     &--failed {
-      color: #dc2626;
+      //color: #dc2626;
     }
   }
 
+  &__name {
+
+  }
   /* Type badges */
   &__badge {
     padding: 0.25rem 0.6rem;
     border-radius: 6px;
     font-size: 0.8rem;
     font-weight: 600;
-    color: #ffffff;
+    //color: #ffffff;
     text-transform: capitalize;
 
     &--transfer {

@@ -35,7 +35,6 @@ export class FormComponent implements OnInit {
   subscribeToAccounts(){
     this.accountsSubscription = this.accountsService.getAccounts.subscribe(accounts => {
       this.userAccounts.set(accounts);
-      console.log(accounts);
     })
   }
 

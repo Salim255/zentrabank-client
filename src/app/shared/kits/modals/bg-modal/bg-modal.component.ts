@@ -17,7 +17,6 @@ export class BgModalComponent{
 
   ngOnInit(): void {
     this.modal.modalState$.subscribe(v=> this.state.set(v));
-    console.log(this.state())
   }
 
   close() {

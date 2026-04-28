@@ -1,6 +1,6 @@
 export interface TransactionDto {
   id: string;
-  type: string;
+  type: TransferType;
   amount: string;
   reason: string;
   postTransactionBalance: number;
@@ -8,6 +8,13 @@ export interface TransactionDto {
   toAccountIbn: string;
   status: TransferStatus,
   createdAt: Date;
+}
+
+export enum TransferType {
+    DEPOSIT,            // +amount
+    WITHDRAWAL,         // -amount
+    TRANSFER_DEBIT,     // -amount (sender)
+    TRANSFER_CREDIT     // +amount (receiver)
 }
 
 export enum TransferStatus {
