@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, input } from "@angular/core";
+import { TransactionDto } from "../../dto/transaction.dto";
 
 @Component({
   selector: "app-history-item",
@@ -6,4 +7,6 @@ import { Component } from "@angular/core";
   styleUrl: "./history-item.component.scss",
   standalone: false,
 })
-export class HistoryItemComponent {}
+export class HistoryItemComponent {
+  transaction = input<TransactionDto>();
+}

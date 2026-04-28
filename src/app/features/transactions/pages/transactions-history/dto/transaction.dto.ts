@@ -6,9 +6,15 @@ export interface TransactionDto {
   postTransactionBalance: number;
   toClientName: string;
   toAccountIbn: string;
+  status: TransferStatus,
   createdAt: Date;
 }
 
+export enum TransferStatus {
+    PENDING,     // Created but not completed yet
+    COMPLETED,   // Successfully executed
+    FAILED       // Failed (insufficient funds, etc.)
+}
 export interface GetTransactionsResponseDto {
   status: string;
   data: {

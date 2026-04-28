@@ -8,12 +8,10 @@
   <!-- Table -->
   <div class="transactions-history__table">
     <app-history-header></app-history-header>
-    <!-- Row -->
-    <app-history-item></app-history-item>
-    <app-history-item></app-history-item>
-    <app-history-item></app-history-item>
-    <app-history-item></app-history-item>
+    <!-- Rows -->
+    @for (item of transactions(); track $index) {
+      <app-history-item [transaction]="item"></app-history-item>
+    }
   </div>
-
 </section>
 
