@@ -3,26 +3,11 @@
   <!-- Page Title -->
   <h1 class="transactions-history__title">Transactions History</h1>
 
-  <!-- Filters -->
-  <div class="transactions-history__filters">
-    <select class="transactions-history__filter">
-      <option value="all">All Types</option>
-      <option value="TRANSFER">Transfers</option>
-      <option value="DEPOSIT">Deposits</option>
-      <option value="WITHDRAW">Withdrawals</option>
-    </select>
-
-    <select class="transactions-history__filter">
-      <option value="30">Last 30 days</option>
-      <option value="90">Last 3 months</option>
-      <option value="365">Last year</option>
-    </select>
-  </div>
+  <app-history-filter></app-history-filter>
 
   <!-- Table -->
   <div class="transactions-history__table">
-
-
+    <app-history-header></app-history-header>
     <!-- Row -->
     <div class="transactions-history__row">
       <span>12 Apr 2026</span>
