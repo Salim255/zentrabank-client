@@ -4,6 +4,8 @@ import { AuthService } from "../../../../services/auth.service";
 import { Subscription } from "rxjs";
 import { Router } from "@angular/router";
 import { AuthFormService } from "../../../../services/auth-form.service";
+import { ToastrService } from "ngx-toastr";
+import { ApiErrorResponse } from "../../../../../../core/models/api-error-response.model";
 
 @Component({
   selector: 'app-login-form',
@@ -16,6 +18,7 @@ export class LoginFormComponent implements OnInit {
   userSubscription!: Subscription;
 
   constructor(
+    private toastr: ToastrService,
     private authFormService: AuthFormService,
     private router: Router,
     private authService: AuthService,
@@ -41,7 +44,23 @@ export class LoginFormComponent implements OnInit {
       next: () => {
 
       },
-      error: (error) => {}
+      error: (error: { error?: ApiErrorResponse }) => {
+        const apiError = error.error;
+
+        const message =
+          apiError?.message ||
+          'Something went wrong. Please try again later.';
+
+        this.toastr.error(
+          message,
+          'Sign in failed',
+          {
+            timeOut: 3000,
+            progressBar: true,
+            closeButton: true
+          }
+        );
+      }
     });
   }
 
