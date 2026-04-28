@@ -2,15 +2,29 @@ import { Injectable } from "@angular/core";
 import { FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { BehaviorSubject, Observable } from "rxjs";
 import { ibanChecksumValidator } from "../../../../../../../shared/utils/iban-checks";
-import { amountStepValidator } from "../../../../../../../shared/utils/amount-validator";
 import { ibanBicCountryMatchValidator } from "./iban-bic-validator";
+import { TransferPostDto } from "../dto/transfer-post.dto";
+import { TransferService } from "./transfer.service";
+
+export interface TransferFormValue {
+  recipientName: string;
+  iban: string;
+  bic: string;
+  amount: string;
+  type: string;
+  referenceAccountNumber: string | null;
+}
+
 
 @Injectable({ providedIn: "root" })
 export class TransferFromService {
 
-  private transferValueSubject = new BehaviorSubject<any>(null);
+  private transferValueSubject = new BehaviorSubject<TransferFormValue| null>(null);
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private transferService: TransferService,
+    private fb: FormBuilder,
+  ) {}
 
   buildForm(): FormGroup {
     return this.fb.group({
@@ -64,6 +78,24 @@ export class TransferFromService {
 
   setTransValue(value: any) {
     this.transferValueSubject.next(value);
+  }
+
+  submitTransferForm(){
+    const dto: TransferPostDto = this.buildTransferPostDto();
+    this.transferService.createTransfer(dto).subscribe()
+  }
+
+  buildTransferPostDto(): TransferPostDto {
+    const form = this.transferValueSubject.value;
+    return {
+      fromAccountNumber: form?.referenceAccountNumber!,
+      externalIban: form?.iban!,
+      externalBic: form?.bic!,
+      externalRecipientName: form?.recipientName!,
+      amount: Number(form?.amount),
+      currency: "USD",
+      description: ""
+    };
   }
 
   get getValue(): Observable<any> {

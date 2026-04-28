@@ -3,7 +3,7 @@ export interface TransferPostDto {
   externalIban: string;
   externalBic: string;
   externalRecipientName: string;
-  amount: bigint,
+  amount: number,
   currency: string,
   description: string
 }
