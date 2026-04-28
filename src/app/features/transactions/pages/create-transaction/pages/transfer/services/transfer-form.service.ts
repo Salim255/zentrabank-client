@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
 import { FormBuilder, FormGroup, Validators} from "@angular/forms";
-import { BehaviorSubject, Observable } from "rxjs";
+import { BehaviorSubject, Observable, tap } from "rxjs";
 import { ibanChecksumValidator } from "../../../../../../../shared/utils/iban-checks";
 import { ibanBicCountryMatchValidator } from "./iban-bic-validator";
 import { TransferPostDto } from "../dto/transfer-post.dto";
 import { TransferService } from "./transfer.service";
 import { TextValueAccessor } from "@ionic/angular";
+import { TransferPostResponseDto } from "../dto/transfer-post-response.dto";
 
 export interface TransferFormValue {
   recipientName: string;
@@ -92,9 +93,9 @@ export class TransferFromService {
     this.transferValueSubject.next(value);
   }
 
-  submitTransferForm(value: TransferFormValue){
+  submitTransferForm(value: TransferFormValue): Observable<TransferPostResponseDto>{
     const dto: TransferPostDto = this.buildTransferPostDto(value);
-    this.transferService.createTransfer(dto).subscribe()
+    return this.transferService.createTransfer(dto);
   }
 
   buildTransferPostDto(value: TransferFormValue): TransferPostDto {

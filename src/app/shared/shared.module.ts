@@ -6,7 +6,6 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 import { LanguageComponent } from "./components/language/language.component";
 import { InstructionsComponent } from "./components/instructions/instructions.component";
 
-
 @NgModule({
   declarations: [
     InstructionsComponent,
@@ -14,7 +13,9 @@ import { InstructionsComponent } from "./components/instructions/instructions.co
     NavbarComponent,
     AppNameComponent,
     LanguageComponent],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+  ],
   exports: [
     NgComponentOutlet,
     InstructionsComponent,

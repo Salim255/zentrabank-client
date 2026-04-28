@@ -92,7 +92,7 @@
   >
     <option value="" disabled>Select an account</option>
 
-    @for (acc of userAccounts; track $index) {
+    @for (acc of userAccounts(); track $index) {
       <option
         [value]="acc.accountNumber"
       >
