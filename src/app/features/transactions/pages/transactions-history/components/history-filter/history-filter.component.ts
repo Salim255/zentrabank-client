@@ -6,6 +6,4 @@ import { Component } from "@angular/core";
   styleUrl: "./history-filter.component.scss",
   standalone: false
 })
-export class HistoryFilterComponent {
-
-}
+export class HistoryFilterComponent {}
