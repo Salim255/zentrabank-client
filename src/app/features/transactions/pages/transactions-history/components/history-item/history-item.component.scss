@@ -1,0 +1,66 @@
+.history-item {
+  color: #0f172a;
+  border-bottom: 1px solid #f1f5f9;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 2fr 1fr 1fr;
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  &:last-child {
+    border-bottom: none;
+  }
+  &:hover {
+    background: #f9fafb;
+  }
+    /* Amounts */
+  &__amount {
+    font-weight: 600;
+
+    &--negative {
+      color: #dc2626;
+    }
+
+    &--positive {
+      color: #16a34a;
+    }
+  }
+
+  /* Status */
+  &__status {
+    font-weight: 600;
+
+    &--success {
+      color: #16a34a;
+    }
+
+    &--pending {
+      color: #d97706;
+    }
+
+    &--failed {
+      color: #dc2626;
+    }
+  }
+
+  /* Type badges */
+  &__badge {
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: capitalize;
+
+    &--transfer {
+      background: #2563eb;
+    }
+
+    &--deposit {
+      background: #16a34a;
+    }
+
+    &--withdraw {
+      background: #dc2626;
+    }
+}
+}
+

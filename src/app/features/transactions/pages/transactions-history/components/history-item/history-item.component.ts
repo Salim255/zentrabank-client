@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "app-History-item",
+  selector: "app-history-item",
   templateUrl: "./history-item.component.html",
   styleUrl: "./history-item.component.scss",
   standalone: false,
