@@ -1,5 +1,294 @@
+@use "../../../../themes/styles/mixins" as *;
+
 /* ==========================================================
    APP BUTTON
+========================================================== */
+
+.app-button {
+     --button-height:
+        4.4rem;
+
+    --button-padding:
+        var(--space-6);
+
+    --button-radius:
+        var(--radius-lg);
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        var(--space-2);
+
+
+
+    height:
+        var(--button-height);
+
+    padding-inline:
+        var(--button-padding);
+
+
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        var(--button-radius);
+
+
+
+    background:
+        transparent;
+
+    color:
+        var(--text-primary);
+
+
+
+    font-size:
+        var(--body-md-size);
+
+    font-weight:
+        var(--font-weight-semibold);
+
+    line-height:
+        1;
+
+
+
+    white-space:
+        nowrap;
+
+    text-decoration:
+        none;
+
+
+
+    cursor:
+        pointer;
+
+    user-select:
+        none;
+
+
+
+    -webkit-tap-highlight-color:
+        transparent;
+
+
+
+    transition:
+
+        background var(--motion-fast),
+
+        color var(--motion-fast),
+
+        border-color var(--motion-fast),
+
+        box-shadow var(--motion-normal),
+
+        transform var(--motion-normal);
+
+}
+
+/* ==========================================================
+   APP BUTTON — SIZE VARIANTS
+========================================================== */
+
+.app-button {
+
+
+    &--sm {
+
+        --button-height:
+            3.2rem;
+
+        --button-padding:
+            var(--space-3);
+
+        --button-radius:
+            var(--radius-md);
+
+
+        font-size:
+            var(--body-sm-size);
+
+    }
+
+
+
+    &--md {
+
+        --button-height:
+            4rem;
+
+        --button-padding:
+            var(--space-4);
+
+        --button-radius:
+            var(--radius-lg);
+
+    }
+
+
+
+    &--lg {
+
+        --button-height:
+            4.8rem;
+
+        --button-padding:
+            var(--space-5);
+
+        --button-radius:
+            var(--radius-xl);
+
+
+        font-size:
+            var(--body-lg-size);
+
+    }
+
+
+}
+
+/* ==========================================================
+   APP BUTTON — ICON SUPPORT
+========================================================== */
+
+.app-button__icon {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+
+    flex-shrink:
+        0;
+
+
+    width:
+        1.8rem;
+
+
+    height:
+        1.8rem;
+
+
+    svg {
+
+        width:
+            100%;
+
+
+        height:
+            100%;
+
+    }
+
+}
+
+
+/* ==========================================================
+   ICON SIZE BY BUTTON SIZE
+========================================================== */
+
+.app-button--sm .app-button__icon {
+
+    width:
+        1.4rem;
+
+    height:
+        1.4rem;
+
+}
+
+
+
+.app-button--lg .app-button__icon {
+
+    width:
+        2rem;
+
+    height:
+        2rem;
+
+}
+
+/* ==========================================================
+   ICON ONLY
+========================================================== */
+
+.app-button--icon-only {
+
+    aspect-ratio:
+        1;
+
+
+    padding-inline:
+        0;
+
+
+    justify-content:
+        center;
+
+
+}
+
+/* ==========================================================
+   ICON ONLY SIZE
+========================================================== */
+
+.app-button--icon-only.app-button--sm {
+
+    width:
+        3.2rem;
+
+}
+
+
+
+.app-button--icon-only.app-button--md {
+
+    width:
+        4rem;
+
+}
+
+
+
+.app-button--icon-only.app-button--lg {
+
+    width:
+        4.8rem;
+
+}
+
+/* ==========================================================
+   FULL WIDTH
+========================================================== */
+
+.app-button--full {
+
+    width:
+        100%;
+
+}
+
+/* ==========================================================
+   APP BUTTON — BASE EFFECT LAYER
 ========================================================== */
 
 .app-button {
@@ -10,228 +299,409 @@
 
     overflow: hidden;
 
-    display: inline-flex;
 
-    align-items: center;
+    &::after {
 
-    justify-content: center;
+        content: "";
 
-    gap: var(--space-3);
+        position: absolute;
 
-    min-height: 4rem;
+        inset: 0;
 
-    padding: 1.5rem 3rem;
+        border-radius: inherit;
 
+        z-index: -1;
 
+        opacity: 0;
 
-    border-radius:
-        var(--radius-xl);
+        transform: scale(.8);
 
-    background:
-        transparent;
+        transition:
+            transform var(--motion-base),
+            opacity var(--motion-base);
 
-    color:
-        var(--text-primary);
-
-    font-family:
-        var(--font-base);
-
-    font-size:
-        var(--fs-base);
-
-    font-weight:
-        var(--fw-medium);
-
-    line-height: 1;
-
-    text-decoration: none;
-
-    white-space: nowrap;
-
-    cursor: pointer;
-
-    user-select: none;
-
-    -webkit-tap-highlight-color: transparent;
-
-    transition:
-        all .2s ease-in;
-    box-shadow: var(--box-shadow-light);
-
-    border-radius: 999px;
-}
-
-
-
-/* ==========================================================
-   RIPPLE LAYER
-========================================================== */
-
-.app-button::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    border-radius: inherit;
-
-    transition: all .4s ease;
-
-    z-index: -1;
+    }
 
 }
-
-
-
-/* ==========================================================
-   FULL WIDTH
-========================================================== */
-
-.app-button--full {
-
-    width: 100%;
-
-}
-
-
 
 /* ==========================================================
    PRIMARY
 ========================================================== */
 
 /* ==========================================================
-   PRIMARY
+   APP BUTTON — PRIMARY
 ========================================================== */
 
 .app-button--primary {
 
-    position: relative;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    overflow: visible;
-
     background:
-        var(--color-primary);
+        var(--primary-600);
 
     color:
         var(--text-inverse);
 
-    border:
-        none;
-
-    border-radius: 999px;
-}
-
-
-
-/* ==========================================================
-   PRIMARY EFFECT LAYER
-========================================================== */
-
-.app-button--primary::after {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 100%;
-
-    display: block;
-
-    border-radius:
-        inherit;
-
-    background:
-        var(--color-primary);
-
-    z-index: -1;
-
-    transition:
-        all .4s ease;
+    box-shadow:
+        var(--shadow-sm);
 
 }
 
 
 
-/* ==========================================================
-   PRIMARY HOVER
-========================================================== */
+/* ----------------------------------------------------------
+   Hover
+---------------------------------------------------------- */
 
 .app-button--primary:hover:not(:disabled) {
 
-    transform:
-        translateY(-2px);
+    background:
+        var(--primary-700);
 
-     box-shadow:
+    transform:
+        translateY(-4px);
+
+    box-shadow:
         var(--shadow-lg);
 
 }
 
 
 
-.app-button--primary:hover:not(:disabled)::after {
-
-    transform:
-        scaleX(1.1)
-        scaleY(1.4);
-
-    opacity: 0;
-
-}
-
-
-
-/* ==========================================================
-   PRIMARY ACTIVE
-========================================================== */
+/* ----------------------------------------------------------
+   Active
+---------------------------------------------------------- */
 
 .app-button--primary:active:not(:disabled) {
+
+    background:
+        var(--primary-800);
 
     transform:
         translateY(-1px);
 
     box-shadow:
         var(--shadow-sm);
+
 }
 
 
 
-/* ==========================================================
-   PRIMARY FOCUS
-========================================================== */
+/* ----------------------------------------------------------
+   Focus
+---------------------------------------------------------- */
 
 .app-button--primary:focus-visible {
 
-    outline: none;
+    outline:
+        2px solid var(--border-focus);
+
+    outline-offset:
+        .3rem;
+
+}
+/* ==========================================================
+   SECONDARY
+========================================================== */
+/* ==========================================================
+   APP BUTTON — SECONDARY
+========================================================== */
+
+.app-button--secondary {
+
+    background:
+        var(--surface-primary);
+
+    color:
+        var(--text-primary);
+
+    border-color:
+        var(--border-default);
+
+    box-shadow:
+        var(--shadow-xs);
 
 }
 
 
 
-/* ==========================================================
-   PRIMARY DISABLED
-========================================================== */
+/* ----------------------------------------------------------
+   Hover
+---------------------------------------------------------- */
 
-.app-button--primary:disabled {
+.app-button--secondary:hover:not(:disabled) {
 
     background:
-        var(--grey-300);
+        var(--surface-hover);
+
+    border-color:
+        var(--border-strong);
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        var(--shadow-md);
+
+}
+
+
+
+/* ----------------------------------------------------------
+   Active
+---------------------------------------------------------- */
+
+.app-button--secondary:active:not(:disabled) {
+
+    background:
+        var(--surface-secondary);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        var(--shadow-xs);
+
+}
+
+
+
+/* ----------------------------------------------------------
+   Focus
+---------------------------------------------------------- */
+
+.app-button--secondary:focus-visible {
+
+    outline:
+        2px solid var(--border-focus);
+
+    outline-offset:
+        .3rem;
+
+}
+
+/* ==========================================================
+   GHOST
+========================================================== */
+/* ==========================================================
+   APP BUTTON — GHOST
+========================================================== */
+
+.app-button--ghost {
+
+    background:
+        transparent;
 
     color:
-        var(--grey-500);
+        var(--text-secondary);
+
+}
+
+
+
+/* ----------------------------------------------------------
+   Hover
+---------------------------------------------------------- */
+
+.app-button--ghost:hover:not(:disabled) {
+
+    background:
+        var(--state-hover);
+
+    color:
+        var(--text-primary);
+
+}
+
+
+
+/* ----------------------------------------------------------
+   Active
+---------------------------------------------------------- */
+
+.app-button--ghost:active:not(:disabled) {
+
+    background:
+        var(--state-active);
+
+}
+
+
+
+/* ----------------------------------------------------------
+   Focus
+---------------------------------------------------------- */
+
+.app-button--ghost:focus-visible {
+
+    outline:
+        2px solid var(--border-focus);
+
+    outline-offset:
+        .3rem;
+
+}
+
+/* ==========================================================
+   APP BUTTON — OUTLINE
+========================================================== */
+
+.app-button--outline {
+
+    background:
+        transparent;
+
+    color:
+        var(--primary-600);
+
+    border-color:
+        var(--primary-600);
+
+}
+
+
+
+/* ----------------------------------------------------------
+   Hover
+---------------------------------------------------------- */
+
+.app-button--outline:hover:not(:disabled) {
+
+    background:
+        var(--primary-600);
+
+    color:
+        var(--text-inverse);
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        var(--shadow-md);
+
+}
+
+
+
+/* ----------------------------------------------------------
+   Active
+---------------------------------------------------------- */
+
+.app-button--outline:active:not(:disabled) {
+
+    background:
+        var(--primary-700);
+
+    color:
+        var(--text-inverse);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        var(--shadow-sm);
+
+}
+
+
+
+/* ----------------------------------------------------------
+   Focus
+---------------------------------------------------------- */
+
+.app-button--outline:focus-visible {
+
+    outline:
+        2px solid var(--border-focus);
+
+    outline-offset:
+        .3rem;
+
+}
+
+/* ==========================================================
+   APP BUTTON — DANGER
+========================================================== */
+
+.app-button--danger {
+
+    background:
+        var(--danger-600);
+
+    color:
+        var(--text-inverse);
+
+    box-shadow:
+        var(--shadow-sm);
+
+}
+
+
+
+/* ----------------------------------------------------------
+   Hover
+---------------------------------------------------------- */
+
+.app-button--danger:hover:not(:disabled) {
+
+    background:
+        var(--danger-700);
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        var(--shadow-lg);
+
+}
+
+
+
+/* ----------------------------------------------------------
+   Active
+---------------------------------------------------------- */
+
+.app-button--danger:active:not(:disabled) {
+
+    background:
+        var(--danger-800);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        var(--shadow-sm);
+
+}
+
+
+
+/* ----------------------------------------------------------
+   Focus
+---------------------------------------------------------- */
+
+.app-button--danger:focus-visible {
+
+    outline:
+        2px solid var(--danger-300);
+
+    outline-offset:
+        .3rem;
+
+}
+
+/* ==========================================================
+   APP BUTTON — DISABLED
+========================================================== */
+
+.app-button:disabled {
+
+    background:
+        var(--surface-disabled);
+
+    color:
+        var(--text-disabled);
+
+    border-color:
+        var(--border-disabled);
 
     box-shadow:
         none;
@@ -244,267 +714,119 @@
 
 }
 
+/* ==========================================================
+   APP BUTTON — DISABLED EFFECT RESET
+========================================================== */
 
+.app-button:disabled::after {
 
-.app-button--primary:disabled::after {
+    display:
+        none;
 
-    display: none;
+}
+
+/* ==========================================================
+   VARIANT DISABLED OVERRIDES
+========================================================== */
+
+.app-button--primary:disabled,
+.app-button--danger:disabled {
+
+    opacity:
+        .6;
 
 }
 
 
 
-/* ==========================================================
-   SECONDARY
-========================================================== */
-
-.app-button--secondary {
-
-    position: relative;
-
-    overflow: visible;
-
-    z-index: 1;
-
-    background: var(--bg-main);
-
-    color: var(--text-primary);
-
-    border-color: var(--border-default);
-
-    box-shadow: var(--shadow-sm);
-    border-radius: 999px;
-}
-
-
-
-/* ==========================================================
-   RIPPLE
-========================================================== */
-
-.app-button--secondary::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: -1;
-
-    border-radius: inherit;
-
-    background: var(--bg-main);
-
-    border: inherit;
-
-    transition:
-        transform .4s ease,
-        opacity .4s ease,
-        background-color .4s ease;
-
-}
-
-
-
-/* ==========================================================
-   HOVER
-========================================================== */
-
-.app-button--secondary:hover:not(:disabled) {
-
-    background: var(--bg-secondary);
-
-    border-color: var(--border-strong);
-
-    transform: translateY(-2px);
-
-    box-shadow: var(--shadow-md);
-
-}
-
-
-
-.app-button--secondary:hover:not(:disabled)::after {
-
-    background: var(--bg-secondary);
-
-    transform: scaleX(1.1) scaleY(1.4);
-
-    opacity: 0;
-
-}
-
-
-
-/* ==========================================================
-   ACTIVE
-========================================================== */
-
-.app-button--secondary:active:not(:disabled) {
-
-    transform: translateY(-1px);
-
-    box-shadow: var(--shadow-sm);
-
-}
-
-
-
-/* ==========================================================
-   FOCUS
-========================================================== */
-
-.app-button--secondary:focus-visible {
-
-    outline: none;
-
-    box-shadow:
-        0 0 0 .3rem var(--color-primary-soft),
-        var(--shadow-md);
-}
-
-
-/* ==========================================================
-   OUTLINE
-========================================================== */
-/* ==========================================================
-   OUTLINE
-========================================================== */
-
-.app-button--outline {
-
-    position: relative;
-
-    overflow: visible;
+.app-button--outline:disabled {
 
     background:
-        var(--bg-main);
-
-    color:
-        var(--color-primary);
-
-    border:
-        1px solid var(--color-primary);
+        transparent;
 
 }
 
 
 
+.app-button--ghost:disabled {
+
+    background:
+        transparent;
+
+}
+
 /* ==========================================================
-   EFFECT LAYER
+   APP BUTTON — LOADING
 ========================================================== */
 
-.app-button--outline::after {
+.app-button--loading {
 
-    content: "";
+    pointer-events:
+        none;
 
-    position: absolute;
-
-    inset: 0;
-
-    border-radius: inherit;
-
-    background: var(--color-primary);
-
-    opacity: 0;
-
-    z-index: -1;
-
-    transition:
-        transform .4s ease,
-        opacity .4s ease;
-
-}
-
-
-
-/* ==========================================================
-   HOVER
-========================================================== */
-
-.app-button--outline:hover:not(:disabled) {
-
-    color:
-        var(--text-inverse);
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        var(--shadow-lg);
-
-}
-
-
-
-.app-button--outline:hover:not(:disabled)::after {
-
-    opacity: 1;
-
-    transform:
-        scale(1);
-
-}
-
-
-
-/* ==========================================================
-   ACTIVE
-========================================================== */
-
-.app-button--outline:active:not(:disabled) {
-
-    transform:
-        translateY(-1px);
-
-    box-shadow:
-        var(--shadow-sm);
+    cursor:
+        wait;
 
 }
 
 /* ==========================================================
-   DISABLED
-========================================================== */
-
-.app-button--secondary:disabled {
-
-    background: var(--grey-100);
-
-    color: var(--grey-400);
-
-    border-color: var(--grey-200);
-
-    box-shadow: none;
-
-    cursor: not-allowed;
-
-}
-
-
-
-.app-button--secondary:disabled::after {
-
-    display: none;
-
-}
-
-
-
-/* ==========================================================
-   LABEL
+   APP BUTTON — LABEL
 ========================================================== */
 
 .app-button__label {
 
-    position: relative;
+    display:
+        inline-flex;
 
-    display: inline-flex;
+    align-items:
+        center;
 
-    align-items: center;
+    justify-content:
+        center;
 
-    justify-content: center;
+}
 
-    z-index: 2;
+/* ==========================================================
+   APP BUTTON — SPINNER
+========================================================== */
+
+.app-button__spinner {
+
+    width:
+        1.6rem;
+
+
+    height:
+        1.6rem;
+
+
+    border:
+        2px solid currentColor;
+
+
+    border-right-color:
+        transparent;
+
+
+    border-radius:
+        50%;
+
+
+    animation:
+        button-spin
+        var(--motion-spin)
+        linear
+        infinite;
+
+}
+
+@keyframes button-spin {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
 
 }

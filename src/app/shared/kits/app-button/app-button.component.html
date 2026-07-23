@@ -20,12 +20,23 @@
 
     [disabled]="disabled || loading">
 
-    <span *ngIf="loading" class="app-button__spinner"></span>
+
+    @if(loading){
+      <span
+        class="app-button__spinner">
+    </span>
+    }
+
+
+
+    <ng-content select="[appButtonIcon]"></ng-content>
+
 
     <span class="app-button__label">
 
-        <ng-content />
+        <ng-content></ng-content>
 
     </span>
+
 
 </button>

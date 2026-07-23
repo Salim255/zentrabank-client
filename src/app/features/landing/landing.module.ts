@@ -13,9 +13,11 @@ import { FeaturesComponent } from "./components/features/features.component";
 import { SecurityComponent } from "./components/security/security.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { HeaderComponent } from "./components/header/header.component";
+import { SharedModule } from "../../shared/shared.module";
 
 @NgModule({
   imports: [
+    SharedModule,
     CommonModule,
     LandingRoutingModule,
     LucideAngularModule

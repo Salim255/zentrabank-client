@@ -5,9 +5,11 @@ import { AppNameComponent } from "./components/app-name/app-name.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { LanguageComponent } from "./components/language/language.component";
 import { InstructionsComponent } from "./components/instructions/instructions.component";
+import { AppButtonComponent } from "./kits/app-button/app-button.component";
 
 @NgModule({
   declarations: [
+    AppButtonComponent,
     InstructionsComponent,
     FormErrorComponent,
     NavbarComponent,
@@ -17,6 +19,7 @@ import { InstructionsComponent } from "./components/instructions/instructions.co
     CommonModule,
   ],
   exports: [
+    AppButtonComponent,
     NgComponentOutlet,
     InstructionsComponent,
     FormErrorComponent,
