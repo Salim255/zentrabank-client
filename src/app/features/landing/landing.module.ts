@@ -10,6 +10,7 @@ import { BalanceCardComponent } from "./components/balance-card/balance-card.com
 import { LucideAngularModule } from 'lucide-angular';
 import { HeroSectionComponent } from "./components/hero-section/hero-section.component";
 import { FeaturesComponent } from "./components/features/features.component";
+import { SecurityComponent } from "./components/security/security.component";
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { FeaturesComponent } from "./components/features/features.component";
     LucideAngularModule
   ],
   declarations: [
+    SecurityComponent,
     FeaturesComponent,
     HeroSectionComponent,
     BalanceCardComponent,

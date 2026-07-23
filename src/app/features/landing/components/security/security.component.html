@@ -1,0 +1,116 @@
+<section class="security">
+
+
+    <div class="security__content">
+
+
+        <span class="security__badge">
+
+            Security & Trust
+
+        </span>
+
+
+
+        <h2 class="security__title">
+
+            Your finances.
+            <br>
+            Protected by design.
+
+        </h2>
+
+
+
+        <p class="security__description">
+
+            ZentraBank combines modern security practices
+            with a simple experience you can trust every day.
+
+        </p>
+
+
+
+        <div class="security__items">
+
+
+            @for(item of securityItems; track item.title) {
+
+
+                <article class="security-item">
+
+
+                    <div class="security-item__icon">
+
+
+                        <lucide-icon
+                            [img]="item.icon">
+                        </lucide-icon>
+
+
+                    </div>
+
+
+
+                    <div>
+
+
+                        <h3 class="security-item__title">
+
+                            {{ item.title }}
+
+                        </h3>
+
+
+
+                        <p class="security-item__description">
+
+                            {{ item.description }}
+
+                        </p>
+
+
+                    </div>
+
+
+                </article>
+
+
+            }
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="security__visual">
+
+
+        <div class="security-card">
+
+
+            <lucide-icon
+                [img]="securityHeroIcon">
+            </lucide-icon>
+
+
+
+            <span>
+
+                Secure banking
+
+            </span>
+
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
