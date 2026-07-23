@@ -1,39 +1,161 @@
 :root {
-  /* Primary IBKR Blue */
-  --primary: #0055D4;
-  --primary-hover: #093D8C;
 
-  /* Neutral background system */
-  --bg-body: #F7F8FA;
-  --bg-surface: #FFFFFF;
+    /* ==========================================================
+       BRAND
+    ========================================================== */
 
-  /* Text */
-  --text-primary: #454545;
-  --text-secondary: #727579;
-  --text-muted: #A2A3A5;
-  --text-clear: #FFFFFF;
+    --primary-50:  #EEF3FF;
+    --primary-100: #DCE7FF;
+    --primary-200: #BFD1FF;
+    --primary-300: #92B0FF;
+    --primary-400: #648BFF;
+    --primary-500: #3D5AFE;
+    --primary-600: #2F49E8;
+    --primary-700: #2439C8;
+    --primary-800: #1C2E9E;
+    --primary-900: #16247A;
 
-  /* Borders */
-  --color-border: #D0D1D2;
 
-  /* Shadows */
-  --shadow-light: 0px 2px 2px rgba(0,0,0,0.1);
 
-  /* Inputs */
-  --input-bg: #FFFFFF;
-  --input-border: #D0D1D2;
-  --input-border-focus: #307EF2;
-  --input-placeholder: #6D767E;
+    /* ==========================================================
+       NEUTRAL
+    ========================================================== */
 
-  /* Buttons */
-  --btn-primary-bg: #0055D4;
-  --btn-primary-bg-hover: #093D8C;
-  --btn-primary-color: #FFFFFF;
+    --gray-0:   #FFFFFF;
+    --gray-50:  #FAFBFC;
+    --gray-100: #F5F7FA;
+    --gray-200: #ECEFF3;
+    --gray-300: #DCE2EA;
+    --gray-400: #C1CAD6;
+    --gray-500: #97A3B3;
+    --gray-600: #6C7889;
+    --gray-700: #4B5565;
+    --gray-800: #313B49;
+    --gray-900: #1C2430;
 
-  /* Alerts */
-  --alert-error-bg: #D912221A;
-  --alert-error-text: #D91222;
 
-  --alert-success-bg: #0EB35B1A;
-  --alert-success-text: #0EB35B;
+
+    /* ==========================================================
+       SURFACE
+    ========================================================== */
+
+    --surface-page: var(--gray-50);
+    --surface-primary: var(--gray-0);
+    --surface-secondary: var(--gray-100);
+    --surface-tertiary: var(--gray-200);
+
+    --surface-hover: #F2F5F9;
+    --surface-selected: #EEF3FF;
+
+
+
+    /* ==========================================================
+       TEXT
+    ========================================================== */
+
+    --text-primary: #1C2430;
+    --text-secondary: #5F6B7A;
+    --text-tertiary: #8A95A5;
+    --text-placeholder: #A3ACB8;
+    --text-disabled: #B8C0CB;
+    --text-inverse: #FFFFFF;
+
+    --text-link: var(--primary-600);
+    --text-link-hover: var(--primary-700);
+
+
+
+    /* ==========================================================
+       BORDER
+    ========================================================== */
+
+    --border-light: #ECEFF3;
+    --border-default: #DCE2EA;
+    --border-strong: #C6CED8;
+    --border-focus: var(--primary-500);
+
+
+
+    /* ==========================================================
+       SUCCESS
+    ========================================================== */
+
+    --success-50: #EDF9F1;
+    --success-100: #D7F3E1;
+    --success-500: #16A34A;
+    --success-700: #15803D;
+
+    --success-soft: var(--success-50);
+
+
+
+    /* ==========================================================
+       WARNING
+    ========================================================== */
+
+    --warning-50: #FFF8E8;
+    --warning-100: #FFF1CC;
+    --warning-500: #F59E0B;
+    --warning-700: #C57D0A;
+
+    --warning-soft: var(--warning-50);
+
+
+
+    /* ==========================================================
+       DANGER
+    ========================================================== */
+
+    --danger-50: #FFF2F2;
+    --danger-100: #FFE2E2;
+    --danger-500: #DC2626;
+    --danger-700: #B91C1C;
+
+    --danger-soft: var(--danger-50);
+
+
+
+    /* ==========================================================
+       INFORMATION
+    ========================================================== */
+
+    --info-50: #EEF5FF;
+    --info-100: #D9E8FF;
+    --info-500: #2563EB;
+    --info-700: #1D4ED8;
+
+    --info-soft: var(--info-50);
+
+
+
+    /* ==========================================================
+       ICONS
+    ========================================================== */
+
+    --icon-primary: var(--text-primary);
+    --icon-secondary: var(--text-secondary);
+    --icon-muted: var(--text-tertiary);
+    --icon-inverse: var(--text-inverse);
+
+
+
+    /* ==========================================================
+       STATES
+    ========================================================== */
+
+    --state-hover: rgba(61, 90, 254, .05);
+    --state-active: rgba(61, 90, 254, .08);
+    --state-selected: rgba(61, 90, 254, .10);
+    --state-disabled: rgba(28, 36, 48, .04);
+
+
+
+    /* ==========================================================
+       OVERLAY
+    ========================================================== */
+
+    --overlay-light: rgba(28, 36, 48, .08);
+    --overlay-default: rgba(28, 36, 48, .20);
+    --overlay-dark: rgba(28, 36, 48, .50);
+
 }
