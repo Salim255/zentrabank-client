@@ -1,3 +1,6 @@
+@use "../../../../../themes/styles/mixins" as *;
+@use "../../../../../themes/styles/media" as *;
+
 .features {
 
 
@@ -271,5 +274,19 @@
     color:
         var(--text-secondary);
 
+
+}
+
+@include respond(tab-port) {
+
+
+    .features__grid {
+
+
+        grid-template-columns:
+            1fr;
+
+
+    }
 
 }

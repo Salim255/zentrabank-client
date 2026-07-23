@@ -1,237 +1,369 @@
+@use "../../../../../themes/styles/mixins" as *;
+@use "../../../../../themes/styles/media" as *;
+
+/* ==========================================================
+   Landing Header
+========================================================== */
+
 .landing-header {
 
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        1000;
 
     width:
         100%;
 
-
     height:
         7.2rem;
 
+    background:
+        rgba(250, 251, 252, .82);
 
+    backdrop-filter:
+        blur(1.8rem);
+
+    -webkit-backdrop-filter:
+        blur(1.8rem);
+
+    border-bottom:
+        1px solid
+        rgba(220, 226, 234, .72);
+
+    transition:
+        background var(--motion-normal),
+        border-color var(--motion-normal),
+        box-shadow var(--motion-normal);
+
+}
+
+
+/* ==========================================================
+   Container
+========================================================== */
+
+.landing-header__container {
+
+    width:
+        100%;
+
+    max-width:
+        128rem;
+
+    height:
+        100%;
+
+    margin:
+        0 auto;
+
+    padding-inline:
+        var(--space-8);
 
     display:
         flex;
 
-
     align-items:
         center;
-
-
 
     justify-content:
         space-between;
 
-
-
-    padding:
-        0
-        var(--space-8);
-
-
-
-    position:
-        relative;
-
-
-
-    z-index:
-        10;
-
-
-
 }
 
 
-
-
-
-/* Brand */
-
+/* ==========================================================
+   Brand
+========================================================== */
 
 .landing-header__brand {
 
-
     display:
         flex;
-
-
 
     align-items:
         center;
 
-
-
     gap:
         var(--space-3);
 
+    text-decoration:
+        none;
 
-
-    color:
-        var(--text-primary);
-
-
-
-    font-size:
-        2rem;
-
-
-
-    font-weight:
-        var(--font-weight-semibold);
-
-
-
-    letter-spacing:
-        var(--tracking-tight);
-
-}
-
-
-
-.landing-header__brand img {
-
-
-    width:
-        3.6rem;
-
-
-    height:
-        3.6rem;
-
-}
-
-
-
-
-
-
-/* Actions */
-
-
-.landing-header__actions {
-
-
-    display:
-        flex;
-
-
-
-    align-items:
-        center;
-
-
-
-    gap:
-        var(--space-3);
-
-}
-
-
-
-
-
-.landing-header__login {
-
-
-    padding:
-        1rem 1.8rem;
-
-
-
-    border-radius:
-        var(--radius-md);
-
-
-
-    color:
-        var(--text-secondary);
-
-
-
-    font-size:
-        var(--body-md-size);
-
-
-
-    font-weight:
-        var(--font-weight-medium);
-
-
+    user-select:
+        none;
 
     transition:
-        var(--transition-fast);
-
-
+        opacity var(--motion-fast);
 
     &:hover {
 
-
-        color:
-            var(--text-primary);
-
-
-        background:
-            var(--surface-secondary);
-
+        opacity:
+            .9;
 
     }
 
 }
 
 
+.landing-header__brand img {
+
+    width:
+        4rem;
+
+    height:
+        4rem;
+
+    flex:
+        0 0 auto;
+
+}
 
 
+.landing-header__brand span {
 
+    display:
+        flex;
 
-.landing-header__cta {
-
-
-    padding:
-        1rem 2rem;
-
-
-
-    border-radius:
-        var(--radius-md);
-
-
-
-    background:
-        var(--primary-700);
-
-
-
-    color:
-        white;
-
-
+    align-items:
+        center;
 
     font-size:
-        var(--body-md-size);
-
-
+        var(--heading-sm-size);
 
     font-weight:
         var(--font-weight-semibold);
 
+    letter-spacing:
+        var(--tracking-tight);
 
+    color:
+        var(--text-primary);
+
+}
+
+
+.landing-header__brand-accent {
+
+    color:
+        var(--primary-600);
+
+}
+
+
+/* ==========================================================
+   Actions
+========================================================== */
+
+.landing-header__actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        var(--space-3);
+
+}
+
+
+/* ==========================================================
+   Login Button
+========================================================== */
+
+.landing-header__login {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    height:
+        4.4rem;
+
+    padding-inline:
+        var(--space-5);
+
+    border-radius:
+        var(--radius-md);
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        var(--body-md-size);
+
+    font-weight:
+        var(--font-weight-medium);
 
     transition:
-        var(--transition-fast);
-
-
+        color var(--motion-fast),
+        background var(--motion-fast);
 
     &:hover {
 
+        color:
+            var(--text-primary);
 
         background:
-            var(--primary-800);
+            var(--state-hover);
+
+    }
+
+}
 
 
+/* ==========================================================
+   CTA
+========================================================== */
+
+.landing-header__cta {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    height:
+        4.4rem;
+
+    padding-inline:
+        var(--space-6);
+
+    border-radius:
+        var(--radius-md);
+
+    background:
+        var(--primary-600);
+
+    color:
+        var(--text-inverse);
+
+    font-size:
+        var(--body-md-size);
+
+    font-weight:
+        var(--font-weight-semibold);
+
+    box-shadow:
+        var(--shadow-sm);
+
+    transition:
+        background var(--motion-fast),
+        transform var(--motion-fast),
+        box-shadow var(--motion-fast);
+
+    &:hover {
+
+        background:
+            var(--primary-700);
 
         transform:
-            translateY(-1px);
+            translateY(-.2rem);
+
+        box-shadow:
+            var(--shadow-md);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Tablet
+========================================================== */
+
+@include respond(tab-port) {
+
+    .landing-header__container {
+
+        padding-inline:
+            var(--space-6);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Phone
+========================================================== */
+
+@include respond(phone) {
+
+    .landing-header {
+
+        height:
+            6.4rem;
+
+    }
+
+    .landing-header__container {
+
+        padding-inline:
+            var(--space-4);
+
+    }
+
+    .landing-header__brand {
+
+        gap:
+            var(--space-2);
+
+    }
+
+    .landing-header__brand img {
+
+        width:
+            3.6rem;
+
+        height:
+            3.6rem;
+
+    }
+
+    .landing-header__brand span {
+
+        display:
+            none;
+
+    }
+
+    .landing-header__actions {
+
+        gap:
+            var(--space-2);
+
+    }
+
+    .landing-header__login {
+
+        display:
+            none;
+
+    }
+
+    .landing-header__cta {
+
+        height:
+            4rem;
+
+        padding-inline:
+            var(--space-5);
 
     }
 
