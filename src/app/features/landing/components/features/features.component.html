@@ -1,0 +1,81 @@
+<section class="features">
+
+
+    <header class="features__header">
+
+
+        <span class="features__badge">
+
+            Why ZentraBank
+
+        </span>
+
+
+
+        <h2 class="features__title">
+
+            A banking experience
+            designed around you.
+
+        </h2>
+
+
+
+        <p class="features__description">
+
+            Simple by design, powerful by nature.
+
+        </p>
+
+
+    </header>
+
+
+
+
+    <div class="features__grid">
+
+
+        @for(feature of features; track feature.title) {
+
+
+            <article class="feature">
+
+
+                <div class="feature__icon">
+
+
+                    <lucide-icon
+                        [img]="feature.icon">
+                    </lucide-icon>
+
+
+                </div>
+
+
+
+                <h3 class="feature__title">
+
+                    {{ feature.title }}
+
+                </h3>
+
+
+
+                <p class="feature__description">
+
+                    {{ feature.description }}
+
+                </p>
+
+
+            </article>
+
+
+        }
+
+
+    </div>
+
+
+</section>

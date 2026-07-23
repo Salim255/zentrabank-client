@@ -1,0 +1,275 @@
+.features {
+
+
+    padding:
+        var(--space-20)
+        var(--space-8);
+
+
+
+}
+
+
+
+.features__header {
+
+
+    max-width:
+        70rem;
+
+
+    margin:
+        0 auto;
+
+
+    text-align:
+        center;
+
+
+}
+
+
+
+.features__badge {
+
+
+    display:
+        inline-flex;
+
+
+    padding:
+        var(--space-2)
+        var(--space-4);
+
+
+
+    border-radius:
+        var(--radius-pill);
+
+
+
+    background:
+        var(--primary-50);
+
+
+
+    color:
+        var(--primary-700);
+
+
+
+    font-size:
+        var(--body-sm-size);
+
+}
+
+
+
+
+
+.features__title {
+
+
+    margin-top:
+        var(--space-6);
+
+
+
+    font-size:
+        var(--heading-xl-size);
+
+
+
+    color:
+        var(--text-primary);
+
+
+}
+
+
+
+
+
+.features__description {
+
+
+    margin-top:
+        var(--space-4);
+
+
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+
+
+
+
+.features__grid {
+
+
+    margin-top:
+        var(--space-12);
+
+
+
+    display:
+        grid;
+
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+
+
+    gap:
+        var(--space-6);
+
+
+}
+
+
+
+
+
+.feature {
+
+
+    padding:
+        var(--space-8);
+
+
+
+    background:
+        var(--surface-primary);
+
+
+
+    border:
+        1px solid
+        var(--border-default);
+
+
+
+    border-radius:
+        var(--radius-card);
+
+
+
+    transition:
+        transform var(--transition-normal);
+
+
+
+    &:hover {
+
+
+        transform:
+            translateY(-4px);
+
+    }
+
+}
+
+
+
+
+.feature__icon {
+
+
+    width:
+        4.8rem;
+
+
+    height:
+        4.8rem;
+
+
+    display:
+        flex;
+
+
+    align-items:
+        center;
+
+
+    justify-content:
+        center;
+
+
+    border-radius:
+        var(--radius-lg);
+
+
+
+    background:
+        var(--primary-50);
+
+
+
+    color:
+        var(--primary-700);
+
+
+
+    lucide-icon {
+
+
+        width:
+            2.4rem;
+
+
+        height:
+            2.4rem;
+
+
+    }
+
+}
+
+
+
+
+.feature__title {
+
+
+    margin-top:
+        var(--space-6);
+
+
+
+    font-size:
+        var(--heading-sm-size);
+
+
+
+    font-weight:
+        var(--font-weight-semibold);
+
+
+
+}
+
+
+
+
+.feature__description {
+
+
+    margin-top:
+        var(--space-3);
+
+
+
+    line-height:
+        1.7;
+
+
+    color:
+        var(--text-secondary);
+
+
+}

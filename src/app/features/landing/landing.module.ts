@@ -9,6 +9,7 @@ import { QuickActionsComponent } from "./components/quick-actions/quick-actions.
 import { BalanceCardComponent } from "./components/balance-card/balance-card.component";
 import { LucideAngularModule } from 'lucide-angular';
 import { HeroSectionComponent } from "./components/hero-section/hero-section.component";
+import { FeaturesComponent } from "./components/features/features.component";
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { HeroSectionComponent } from "./components/hero-section/hero-section.com
     LucideAngularModule
   ],
   declarations: [
+    FeaturesComponent,
     HeroSectionComponent,
     BalanceCardComponent,
     QuickActionsComponent,
