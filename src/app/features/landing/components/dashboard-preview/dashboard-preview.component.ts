@@ -1,5 +1,13 @@
 import { Component } from "@angular/core";
 
+import {
+    Wallet,
+    UserRound,
+    TrendingUp,
+    ShieldCheck,
+    ArrowRight
+} from 'lucide-angular';
+
 @Component({
   selector: "landing-dashboard-preview",
   templateUrl: "./dashboard-preview.component.html",
@@ -7,4 +15,19 @@ import { Component } from "@angular/core";
   standalone: false
 })
 
-export class DashboardPreviewComponent {}
+export class DashboardPreviewComponent {
+
+   walletIcon = Wallet;
+
+
+    userIcon = UserRound;
+
+
+    trendIcon = TrendingUp;
+
+
+    shieldIcon = ShieldCheck;
+
+
+    arrowIcon = ArrowRight;
+}

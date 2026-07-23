@@ -1,125 +1,166 @@
-@use "../../../../../themes/styles/mixins" as *;
 @use "../../../../../themes/styles/media" as *;
 
+
+/* ==========================================================
+   HERO
+========================================================== */
+
 .hero {
-
-
-    min-height:
-        80vh;
-
 
     display:
         grid;
 
-
     grid-template-columns:
-        1fr 1fr;
-
-
+        minmax(0, 6fr)
+        minmax(34rem, 5fr);
 
     align-items:
         center;
 
-
     gap:
-        var(--space-12);
+        clamp(
+            var(--space-8),
+            6vw,
+            var(--space-20)
+        );
 
-
-
-    padding:
-        var(--space-12)
-        var(--space-8);
-
-
+    min-height:
+        84rem;
 
 }
 
 
 
+/* ==========================================================
+   CONTENT
+========================================================== */
 
 .hero__content {
 
+    display:
+        flex;
 
-    max-width:
-        56rem;
+    flex-direction:
+        column;
 
+    gap:
+        var(--space-8);
 
 }
 
 
 
-.hero__badge {
 
+
+/* ==========================================================
+   INTRO
+========================================================== */
+
+.hero__intro {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+    gap:
+        var(--space-5);
+
+    max-width:
+        62rem;
+
+}
+
+
+
+
+
+/* ==========================================================
+   EYEBROW
+========================================================== */
+
+.hero__eyebrow {
 
     display:
         inline-flex;
 
+    align-items:
+        center;
 
-    padding:
-        var(--space-2)
-        var(--space-4);
-
-
-
-    border-radius:
-        var(--radius-pill);
-
-
-
-    background:
-        var(--primary-50);
-
-
+    gap:
+        var(--space-3);
 
     color:
-        var(--primary-700);
-
-
+        var(--primary-600);
 
     font-size:
-        var(--body-sm-size);
-
+        var(--label-md-size);
 
     font-weight:
         var(--font-weight-medium);
 
+    letter-spacing:
+        .08em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.hero__eyebrow::before {
+
+    content:
+        "";
+
+    width:
+        3.2rem;
+
+    height:
+        .2rem;
+
+    border-radius:
+        999px;
+
+    background:
+        currentColor;
 
 }
 
 
 
 
+
+/* ==========================================================
+   TITLE
+========================================================== */
 
 .hero__title {
 
+    margin:
+        0;
 
-    margin-top:
-        var(--space-6);
+    max-width:
+        11ch;
 
+    color:
+        var( --gray-800);
 
-
-    font-size:
-        clamp(
-            4rem,
-            5vw,
-            6.4rem
-        );
-
+    font-size:  4rem;
 
 
     line-height:
-        1.05;
-
-
+        1.04;
 
     letter-spacing:
-        var(--tracking-tight);
+        -0.045em;
 
-
-
-    color:
-        var(--text-primary);
-
+    text-wrap:
+        balance;
 
 }
 
@@ -127,63 +168,56 @@
 
 
 
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
 .hero__description {
 
-
-    margin-top:
-        var(--space-6);
-
-
+    margin:
+        0;
 
     max-width:
-        48rem;
-
-
-
-    font-size:
-        var(--body-lg-size);
-
-
-
-    line-height:
-        1.7;
-
-
+        52rem;
 
     color:
         var(--text-secondary);
 
+    font-size:
+        var(--body-lg-size);
+
+    font-weight:
+        var(--font-weight-normal);
+
+    line-height:
+        1.8;
+
+    letter-spacing:
+        -0.01em;
+
 }
 
 
 
 
 
+/* ==========================================================
+   ACTIONS
+========================================================== */
+
 .hero__actions {
-
-
-    margin-top:
-        var(--space-8);
-
-
 
     display:
         flex;
 
+    align-items:
+        center;
 
     gap:
         var(--space-4);
 
-}
-
-
-
-
-
-.hero__primary {
-
-
-    @include btn-primary;
+    flex-wrap:
+        wrap;
 
 }
 
@@ -191,87 +225,172 @@
 
 
 
-.hero__secondary {
-
-
-    padding:
-        0.65rem 1.4rem;
-
-
-    border:
-        1px solid
-        var(--border-default);
-
-
-    border-radius:
-        var(--radius-md);
-
-
-    color:
-        var(--text-primary);
-
-
-
-    background:
-        var(--surface-primary);
-
-
-}
-
-
-
-
+/* ==========================================================
+   VISUAL
+========================================================== */
 
 .hero__visual {
-
 
     display:
         flex;
 
-
-    justify-content:
+    align-items:
         center;
 
-
+    justify-content:
+        flex-end;
+  landing-dashboard-preview {
+    min-width: 0;
+    width: 100%;
+  }
 }
 
 
+
+
+
+/* ==========================================================
+   TABLET LANDSCAPE
+========================================================== */
+
 @include respond(tab-land) {
 
-
     .hero {
-
 
         grid-template-columns:
             1fr;
 
-
-
-        text-align:
-            center;
-
+        gap:
+            var(--space-12);
 
     }
-
 
 
     .hero__content {
 
+        align-items:
+            center;
 
-        margin:
-            0 auto;
-
+        text-align:
+            center;
 
     }
 
 
+    .hero__intro {
+
+        align-items:
+            center;
+
+    }
+
+
+    .hero__title {
+
+        max-width:
+            12ch;
+
+    }
+
+
+    .hero__description {
+
+        max-width:
+            58rem;
+
+    }
+
+
+    .hero__actions {
+
+        justify-content:
+            center;
+
+    }
+
 
     .hero__visual {
 
+        justify-content:
+            center;
 
-        margin-top:
-            var(--space-8);
+    }
 
+}
+
+
+
+
+
+/* ==========================================================
+   TABLET PORTRAIT
+========================================================== */
+
+@include respond(tab-port) {
+
+    .hero {
+
+        min-height:
+            auto;
+
+    }
+
+
+    .hero__title {
+
+        font-size:
+            clamp(
+                3.6rem,
+                8vw,
+                5rem
+            );
+
+    }
+
+}
+
+
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@include respond(phone-lg) {
+
+
+    .hero__content {
+
+        gap:
+            var(--space-6);
+
+    }
+
+
+    .hero__intro {
+
+        gap:
+            var(--space-4);
+
+    }
+
+
+    .hero__actions {
+
+        width:
+            100%;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .hero__actions app-button {
+
+        width:
+            100%;
 
     }
 

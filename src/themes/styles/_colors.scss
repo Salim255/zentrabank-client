@@ -53,15 +53,43 @@
        TEXT
     ========================================================== */
 
-    --text-primary: #1C2430;
-    --text-secondary: #5F6B7A;
-    --text-tertiary: #8A95A5;
-    --text-placeholder: #A3ACB8;
-    --text-disabled: #B8C0CB;
-    --text-inverse: #FFFFFF;
+    /* ==========================================================
+   TEXT
+========================================================== */
 
-    --text-link: var(--primary-600);
-    --text-link-hover: var(--primary-700);
+--text-display: var(--gray-800);
+
+
+--text-primary:
+    #1C2430;
+
+
+--text-secondary:
+    #5F6B7A;
+
+
+--text-tertiary:
+    #8A95A5;
+
+
+--text-placeholder:
+    #A3ACB8;
+
+
+--text-disabled:
+    #B8C0CB;
+
+
+--text-inverse:
+    #FFFFFF;
+
+
+--text-link:
+    var(--primary-600);
+
+
+--text-link-hover:
+    var(--primary-700);
 
 
 
