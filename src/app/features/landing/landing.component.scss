@@ -1,7 +1,7 @@
 .landing {
 
     width: 100dvw;
-    min-height: 100vh;
+    height: 100vh;
 
     overflow: hidden;
 
@@ -27,4 +27,11 @@
             transparent 28%
         ),
         var(--surface-page);
+
+    &__container {
+      overflow-y: auto;
+      min-height: 0;
+      min-height: 0;
+      height: 100%;
+    }
 }
