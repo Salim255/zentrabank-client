@@ -1,74 +1,236 @@
-// =========================
-// Flex utilities
-// =========================
+/* ==========================================================
+   FLEX
+========================================================== */
+
 @mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
 }
+
 
 @mixin flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
 }
 
-// =========================
-// Card (IBKR account style)
-// =========================
+
+/* ==========================================================
+   CARD
+========================================================== */
+
 @mixin card {
-  background: var(--bg-surface);
-  border: 1px solid var(--color-border, #e5e7eb);
-  border-radius: 8px;
-  padding: 1.25rem;
-  box-shadow: var(--shadow-light);
+
+    background:
+        var(--surface-primary);
+
+    border:
+        1px solid
+        var(--border-default);
+
+    border-radius:
+        var(--radius-card);
+
+    padding:
+        var(--space-6);
+
+    box-shadow:
+        var(--shadow-card);
+
+    transition:
+        box-shadow var(--transition-normal),
+        border-color var(--transition-fast);
+
 }
 
-// =========================
-// Button base
-// =========================
+
+/* ==========================================================
+   BUTTON BASE
+========================================================== */
+
 @mixin btn-base {
-  font-family: var(--font-primary, 'Inter', sans-serif);
-  font-weight: 500;
-  padding: 0.65rem 1.4rem;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: 0.2s ease;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        var(--space-2);
+
+    font-family:
+        var(--font-family);
+
+    font-size:
+        var(--label-md-size);
+
+    font-weight:
+        var(--label-md-weight);
+
+    line-height:
+        var(--label-md-line-height);
+
+    letter-spacing:
+        var(--label-md-tracking);
+
+    padding:
+        var(--space-3)
+        var(--space-5);
+
+    border:
+        none;
+
+    border-radius:
+        var(--radius-button);
+
+    cursor:
+        pointer;
+
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-normal);
+
 }
 
-// =========================
-// Primary button
-// =========================
+
+/* ==========================================================
+   PRIMARY BUTTON
+========================================================== */
+
 @mixin btn-primary {
-  @include btn-base;
-  background: var(--primary);
-  color: #ffffff;
 
-  &:hover {
-    background: var(--primary-hover);
-  }
+    @include btn-base;
+
+    background:
+        var(--primary-600);
+
+    color:
+        var(--text-inverse);
+
+    &:hover {
+
+        background:
+            var(--primary-700);
+
+    }
+
+    &:active {
+
+        background:
+            var(--primary-800);
+
+    }
+
+    &:disabled {
+
+        opacity:
+            .5;
+
+        cursor:
+            not-allowed;
+
+    }
+
 }
 
-// =========================
-// Input
-// =========================
+
+/* ==========================================================
+   INPUT
+========================================================== */
+
 @mixin input {
-  width: 100%;
-  padding: 0.65rem 0.75rem;
-  border-radius: 6px;
-  border: 1px solid var(--input-border);
-  background: var(--input-bg);
-  color: var(--text-primary);
-  font-family: var(--font-primary, 'Inter', sans-serif);
 
-  &::placeholder {
-    color: var(--input-placeholder);
-  }
+    width:
+        100%;
 
-  &:focus {
-    outline: none;
-    border-color: var(--input-border-focus);
-    box-shadow: 0 0 0 2px rgba(0, 191, 255, 0.25); // matches --primary
-  }
+    background:
+        var(--gray-0);
+
+    color:
+        var(--text-primary);
+
+    font-family:
+        var(--font-family);
+
+    font-size:
+        var(--body-md-size);
+
+    font-weight:
+        var(--body-md-weight);
+
+    line-height:
+        var(--body-md-line-height);
+
+    padding:
+        var(--space-3)
+        var(--space-4);
+
+    border:
+        1px solid
+        var(--border-default);
+
+    border-radius:
+        var(--radius-input);
+
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-normal),
+        background-color var(--transition-fast);
+
+    &::placeholder {
+
+        color:
+            var(--text-placeholder);
+
+    }
+
+    &:hover {
+
+        border-color:
+            var(--border-strong);
+
+    }
+
+    &:focus {
+
+        outline:
+            none;
+
+        border-color:
+            var(--border-focus);
+
+        box-shadow:
+            0 0 0 .3rem
+            rgba(61, 90, 254, .12);
+
+    }
+
+    &:disabled {
+
+        background:
+            var(--surface-secondary);
+
+        color:
+            var(--text-disabled);
+
+        cursor:
+            not-allowed;
+
+    }
+
 }
