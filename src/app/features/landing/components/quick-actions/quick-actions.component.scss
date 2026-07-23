@@ -201,54 +201,29 @@
 ========================================================== */
 .quick-actions__icon {
 
+    width: 4.2rem;
+    height: 4.2rem;
 
-    width:
-        4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    border-radius: var(--radius-lg);
 
-    height:
-        4rem;
-
-
-    display:
-        flex;
-
-
-    align-items:
-        center;
+    background: var(--primary-50);
+    color: var(--primary-600);
 
 
-    justify-content:
-        center;
+    lucide-icon {
 
+        width: 2rem;
+        height: 2rem;
 
-    border-radius:
-        var(--radius-lg);
+        stroke-width: 1.8;
 
-
-
-    background:
-        var(--primary-50);
-
-
-
-    color:
-        var(--primary-600);
-  lucide-icon {
-
-      width:
-          2rem;
-
-      height:
-          2rem;
-
-      stroke-width:
-          2;
-
-  }
+    }
 
 }
-
 
 
 
