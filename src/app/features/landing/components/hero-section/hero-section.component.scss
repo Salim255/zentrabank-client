@@ -1,0 +1,235 @@
+@use "../../../../../themes/styles/mixins" as *;
+
+.hero {
+
+
+    min-height:
+        80vh;
+
+
+    display:
+        grid;
+
+
+    grid-template-columns:
+        1fr 1fr;
+
+
+
+    align-items:
+        center;
+
+
+    gap:
+        var(--space-12);
+
+
+
+    padding:
+        var(--space-16)
+        var(--space-8);
+
+
+
+}
+
+
+
+
+.hero__content {
+
+
+    max-width:
+        56rem;
+
+
+}
+
+
+
+.hero__badge {
+
+
+    display:
+        inline-flex;
+
+
+    padding:
+        var(--space-2)
+        var(--space-4);
+
+
+
+    border-radius:
+        var(--radius-pill);
+
+
+
+    background:
+        var(--primary-50);
+
+
+
+    color:
+        var(--primary-700);
+
+
+
+    font-size:
+        var(--body-sm-size);
+
+
+    font-weight:
+        var(--font-weight-medium);
+
+
+}
+
+
+
+
+
+.hero__title {
+
+
+    margin-top:
+        var(--space-6);
+
+
+
+    font-size:
+        clamp(
+            4rem,
+            5vw,
+            6.4rem
+        );
+
+
+
+    line-height:
+        1.05;
+
+
+
+    letter-spacing:
+        var(--tracking-tight);
+
+
+
+    color:
+        var(--text-primary);
+
+
+}
+
+
+
+
+
+.hero__description {
+
+
+    margin-top:
+        var(--space-6);
+
+
+
+    max-width:
+        48rem;
+
+
+
+    font-size:
+        var(--body-lg-size);
+
+
+
+    line-height:
+        1.7;
+
+
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+
+
+
+.hero__actions {
+
+
+    margin-top:
+        var(--space-8);
+
+
+
+    display:
+        flex;
+
+
+    gap:
+        var(--space-4);
+
+}
+
+
+
+
+
+.hero__primary {
+
+
+    @include btn-primary;
+
+}
+
+
+
+
+
+.hero__secondary {
+
+
+    padding:
+        0.65rem 1.4rem;
+
+
+    border:
+        1px solid
+        var(--border-default);
+
+
+    border-radius:
+        var(--radius-md);
+
+
+    color:
+        var(--text-primary);
+
+
+
+    background:
+        var(--surface-primary);
+
+
+}
+
+
+
+
+
+.hero__visual {
+
+
+    display:
+        flex;
+
+
+    justify-content:
+        center;
+
+
+}

@@ -8,6 +8,7 @@ import { SpendingChartComponent } from "./components/spending-chart/spending-cha
 import { QuickActionsComponent } from "./components/quick-actions/quick-actions.component";
 import { BalanceCardComponent } from "./components/balance-card/balance-card.component";
 import { LucideAngularModule } from 'lucide-angular';
+import { HeroSectionComponent } from "./components/hero-section/hero-section.component";
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { LucideAngularModule } from 'lucide-angular';
     LucideAngularModule
   ],
   declarations: [
+    HeroSectionComponent,
     BalanceCardComponent,
     QuickActionsComponent,
     SpendingChartComponent,
