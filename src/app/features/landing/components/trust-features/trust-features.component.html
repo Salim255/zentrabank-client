@@ -1,0 +1,35 @@
+<div class="features">
+
+    @for (item of items; track item.title) {
+
+        <article class="feature">
+
+            <div class="feature__icon">
+
+                <lucide-icon
+                    [img]="item.icon">
+                </lucide-icon>
+
+            </div>
+
+            <div class="feature__content">
+
+                <h3 class="feature__title">
+
+                    {{ item.title }}
+
+                </h3>
+
+                <p class="feature__description">
+
+                    {{ item.description }}
+
+                </p>
+
+            </div>
+
+        </article>
+
+    }
+
+</div>

@@ -1,0 +1,69 @@
+<article class="card motion-floating">
+
+    <header class="card__header">
+
+        <div class="card__icon">
+
+            <lucide-icon
+                [img]="securityHeroIcon">
+            </lucide-icon>
+
+        </div>
+
+        <div>
+
+            <span class="card__label">
+
+                Security Status
+
+            </span>
+
+            <h3 class="card__title">
+
+                Protected
+
+            </h3>
+
+        </div>
+
+    </header>
+
+    <div class="card__divider"></div>
+
+    <div class="card__list">
+
+        @for(item of items; track item.label) {
+
+            <div class="card__item">
+
+                <span>
+
+                    {{ item.label }}
+
+                </span>
+
+                <strong>
+
+                    {{ item.value }}
+
+                </strong>
+
+            </div>
+
+        }
+
+    </div>
+
+    <footer class="card__footer">
+
+        <span class="card__indicator"></span>
+
+        <span>
+
+            All systems operational
+
+        </span>
+
+    </footer>
+
+</article>

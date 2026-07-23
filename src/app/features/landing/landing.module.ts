@@ -14,6 +14,8 @@ import { SecurityComponent } from "./components/security/security.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { SharedModule } from "../../shared/shared.module";
+import { TrustFeaturesComponent } from "./components/trust-features/trust-features.component";
+import { TrustStatusCardComponent } from "./components/trust-status-card/trust-status-card.component";
 
 @NgModule({
   imports: [
@@ -23,6 +25,8 @@ import { SharedModule } from "../../shared/shared.module";
     LucideAngularModule
   ],
   declarations: [
+    TrustStatusCardComponent,
+    TrustFeaturesComponent,
     HeaderComponent,
     FooterComponent,
     SecurityComponent,

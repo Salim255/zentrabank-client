@@ -31,60 +31,12 @@
 
 
 
-        <div class="trust__features">
 
+        <landing-trust-features [items]="securityItems">
 
-            @for (item of securityItems; track item.title) {
-
-
-                <article class="trust-feature">
-
-
-                    <div class="trust-feature__icon">
-
-                        <lucide-icon
-                            [img]="item.icon">
-                        </lucide-icon>
-
-                    </div>
-
-
-
-                    <div class="trust-feature__content">
-
-
-                        <h3 class="trust-feature__title">
-
-                            {{ item.title }}
-
-                        </h3>
-
-
-
-                        <p class="trust-feature__description">
-
-                            {{ item.description }}
-
-                        </p>
-
-
-                    </div>
-
-
-                </article>
-
-
-            }
-
-
-        </div>
-
+        </landing-trust-features>
 
     </div>
-
-
-
-
 
     <div class="trust__visual">
 
