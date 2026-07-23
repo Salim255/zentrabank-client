@@ -7,8 +7,12 @@ import { AuthRedirectGuard } from './core/guards/auth-redirect-guard';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/auth',
+    redirectTo: '/landing',
     pathMatch: 'full'
+  },
+  {
+    path: "landing",
+    loadChildren: () => import('./features/landing/landing.module').then(m => m.LandingModule)
   },
   {
     path: 'auth',
