@@ -11,6 +11,7 @@ import { LucideAngularModule } from 'lucide-angular';
 import { HeroSectionComponent } from "./components/hero-section/hero-section.component";
 import { FeaturesComponent } from "./components/features/features.component";
 import { SecurityComponent } from "./components/security/security.component";
+import { FooterComponent } from "./components/footer/footer.component";
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { SecurityComponent } from "./components/security/security.component";
     LucideAngularModule
   ],
   declarations: [
+     FooterComponent,
     SecurityComponent,
     FeaturesComponent,
     HeroSectionComponent,

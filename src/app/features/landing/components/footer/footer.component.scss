@@ -1,0 +1,295 @@
+.footer {
+
+
+    margin-top:
+        var(--space-20);
+
+
+
+    padding:
+        var(--space-16)
+        var(--space-8)
+        var(--space-8);
+
+
+
+    background:
+        var(--primary-900);
+
+
+
+    color:
+        white;
+
+
+
+}
+
+
+
+.footer__container {
+
+
+    max-width:
+        120rem;
+
+
+    margin:
+        0 auto;
+
+
+
+    display:
+        grid;
+
+
+
+    grid-template-columns:
+        1.5fr 1fr;
+
+
+
+    gap:
+        var(--space-12);
+
+
+
+}
+
+
+
+
+/* Brand */
+
+.footer__logo {
+
+
+    font-size:
+        2.8rem;
+
+
+
+    font-weight:
+        var(--font-weight-bold);
+
+
+
+    letter-spacing:
+        var(--tracking-tight);
+
+
+}
+
+
+
+.footer__description {
+
+
+    margin-top:
+        var(--space-4);
+
+
+
+    max-width:
+        32rem;
+
+
+
+    line-height:
+        1.7;
+
+
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        );
+
+}
+
+
+
+
+
+
+/* Navigation */
+
+
+.footer__navigation {
+
+
+    display:
+        grid;
+
+
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+
+
+    gap:
+        var(--space-8);
+
+}
+
+
+
+
+
+.footer__column-title {
+
+
+    font-size:
+        var(--body-sm-size);
+
+
+
+    font-weight:
+        var(--font-weight-semibold);
+
+
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.9
+        );
+
+
+
+    margin-bottom:
+        var(--space-4);
+
+}
+
+
+
+
+
+.footer__links {
+
+
+    display:
+        flex;
+
+
+
+    flex-direction:
+        column;
+
+
+
+    gap:
+        var(--space-3);
+
+}
+
+
+
+
+
+.footer__links a {
+
+
+    font-size:
+        var(--body-sm-size);
+
+
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.6
+        );
+
+
+
+    transition:
+        color
+        var(--transition-fast);
+
+
+
+    &:hover {
+
+
+        color:
+            white;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+/* Bottom */
+
+
+.footer__bottom {
+
+
+    max-width:
+        120rem;
+
+
+
+    margin:
+        var(--space-12)
+        auto
+        0;
+
+
+
+    padding-top:
+        var(--space-6);
+
+
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+
+
+
+    display:
+        flex;
+
+
+
+    justify-content:
+        space-between;
+
+
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.5
+        );
+
+
+
+    font-size:
+        var(--body-sm-size);
+
+}
