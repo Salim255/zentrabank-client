@@ -1,0 +1,272 @@
+.quick-actions {
+
+
+    padding:
+        var(--space-6);
+
+
+
+    background:
+        var(--surface-primary);
+
+
+
+    border:
+        1px solid
+        var(--border-default);
+
+
+
+    border-radius:
+        var(--radius-card);
+
+
+
+    box-shadow:
+        var(--shadow-card);
+
+}
+
+
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+
+.quick-actions__header {
+
+
+    display:
+        flex;
+
+
+    justify-content:
+        space-between;
+
+
+    align-items:
+        center;
+
+
+    margin-bottom:
+        var(--space-5);
+
+}
+
+
+
+.quick-actions__title {
+
+
+    color:
+        var(--text-primary);
+
+
+    font-size:
+        var(--heading-sm-size);
+
+
+    font-weight:
+        var(--font-weight-semibold);
+
+}
+
+
+
+.quick-actions__link {
+
+
+    color:
+        var(--primary-600);
+
+
+    font-size:
+        var(--body-sm-size);
+
+
+}
+
+
+
+
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+
+.quick-actions__grid {
+
+
+    display:
+        grid;
+
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+
+    gap:
+        var(--space-3);
+
+}
+
+
+
+
+/* ==========================================================
+   ITEM
+========================================================== */
+
+
+.quick-actions__item {
+
+
+    display:
+        flex;
+
+
+    flex-direction:
+        column;
+
+
+    align-items:
+        center;
+
+
+    gap:
+        var(--space-3);
+
+
+
+    padding:
+        var(--space-4)
+        var(--space-2);
+
+
+
+    background:
+        transparent;
+
+
+
+    border:
+        1px solid
+        transparent;
+
+
+
+    border-radius:
+        var(--radius-md);
+
+
+
+    transition:
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast);
+
+
+
+    &:hover {
+
+
+        background:
+            var(--surface-secondary);
+
+
+
+        border-color:
+            var(--border-default);
+
+
+
+        transform:
+            translateY(-2px);
+
+
+    }
+
+
+}
+
+
+
+
+
+/* ==========================================================
+   ICON
+========================================================== */
+.quick-actions__icon {
+
+
+    width:
+        4rem;
+
+
+    height:
+        4rem;
+
+
+    display:
+        flex;
+
+
+    align-items:
+        center;
+
+
+    justify-content:
+        center;
+
+
+    border-radius:
+        var(--radius-lg);
+
+
+
+    background:
+        var(--primary-50);
+
+
+
+    color:
+        var(--primary-600);
+  lucide-icon {
+
+      width:
+          2rem;
+
+      height:
+          2rem;
+
+      stroke-width:
+          2;
+
+  }
+
+}
+
+
+
+
+
+.quick-actions__label {
+
+
+    color:
+        var(--text-secondary);
+
+
+
+    font-size:
+        var(--caption-size);
+
+
+
+    font-weight:
+        var(--font-weight-medium);
+
+}

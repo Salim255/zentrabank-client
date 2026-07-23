@@ -7,9 +7,14 @@ import { RecentTransactionsComponent } from "./components/recent-transactions/re
 import { SpendingChartComponent } from "./components/spending-chart/spending-chart.component";
 import { QuickActionsComponent } from "./components/quick-actions/quick-actions.component";
 import { BalanceCardComponent } from "./components/balance-card/balance-card.component";
+import { LucideAngularModule } from 'lucide-angular';
 
 @NgModule({
-  imports: [CommonModule, LandingRoutingModule],
+  imports: [
+    CommonModule,
+    LandingRoutingModule,
+    LucideAngularModule
+  ],
   declarations: [
     BalanceCardComponent,
     QuickActionsComponent,
