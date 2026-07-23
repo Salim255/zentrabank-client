@@ -1,0 +1,347 @@
+/* ==========================================================
+   ZentraBank Motion System
+========================================================== */
+
+
+/* ----------------------------------------------------------
+   Timing
+---------------------------------------------------------- */
+
+:root {
+
+    --motion-fast:
+        150ms ease;
+
+    --motion-normal:
+        250ms ease;
+
+    --motion-slow:
+        500ms cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+}
+
+
+
+
+
+/* ----------------------------------------------------------
+   Fade
+---------------------------------------------------------- */
+
+
+@keyframes fade-in {
+
+
+    from {
+
+        opacity:
+            0;
+
+    }
+
+
+    to {
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+
+
+
+.motion-fade-in {
+
+    animation:
+        fade-in
+        var(--motion-slow)
+        forwards;
+
+}
+
+
+
+
+
+
+/* ----------------------------------------------------------
+   Slide up
+---------------------------------------------------------- */
+
+
+@keyframes slide-up {
+
+
+    from {
+
+        opacity:
+            0;
+
+
+        transform:
+            translateY(2.4rem);
+
+    }
+
+
+
+    to {
+
+        opacity:
+            1;
+
+
+        transform:
+            translateY(0);
+
+    }
+
+
+}
+
+
+
+.motion-slide-up {
+
+
+    animation:
+        slide-up
+        var(--motion-slow)
+        forwards;
+
+
+}
+
+
+
+
+
+
+
+/* ----------------------------------------------------------
+   Scale in
+---------------------------------------------------------- */
+
+
+@keyframes scale-in {
+
+
+    from {
+
+        opacity:
+            0;
+
+
+        transform:
+            scale(
+                0.96
+            );
+
+    }
+
+
+
+    to {
+
+        opacity:
+            1;
+
+
+        transform:
+            scale(
+                1
+            );
+
+    }
+
+
+}
+
+
+
+.motion-scale-in {
+
+
+    animation:
+        scale-in
+        var(--motion-slow)
+        forwards;
+
+
+}
+
+
+
+
+
+
+
+/* ----------------------------------------------------------
+   Floating element
+---------------------------------------------------------- */
+
+
+@keyframes floating {
+
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+
+    50% {
+
+        transform:
+            translateY(-8px);
+
+    }
+
+
+}
+
+
+
+.motion-floating {
+
+
+    animation:
+
+        floating
+        4s
+        ease-in-out
+        infinite;
+
+
+}
+
+
+
+
+
+
+
+/* ----------------------------------------------------------
+   Hover lift
+---------------------------------------------------------- */
+
+
+.motion-hover-lift {
+
+
+    transition:
+        transform
+        var(--motion-normal),
+        box-shadow
+        var(--motion-normal);
+
+
+
+    &:hover {
+
+
+        transform:
+            translateY(-4px);
+
+
+
+        box-shadow:
+            var(--shadow-lg);
+
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ----------------------------------------------------------
+   Stagger helper
+---------------------------------------------------------- */
+
+
+.motion-delay-1 {
+
+    animation-delay:
+        100ms;
+
+}
+
+
+.motion-delay-2 {
+
+    animation-delay:
+        200ms;
+
+}
+
+
+.motion-delay-3 {
+
+    animation-delay:
+        300ms;
+
+}
+
+
+.motion-delay-4 {
+
+    animation-delay:
+        400ms;
+
+}
+
+
+
+
+
+
+/* ----------------------------------------------------------
+   Accessibility
+---------------------------------------------------------- */
+
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+
+    *,
+    *::before,
+    *::after {
+
+
+        animation-duration:
+            1ms !important;
+
+
+        animation-iteration-count:
+            1 !important;
+
+
+        scroll-behavior:
+            auto !important;
+
+
+        transition-duration:
+            1ms !important;
+
+
+    }
+
+}
