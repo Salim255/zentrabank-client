@@ -1,150 +1,43 @@
-<section class="trust landing-section">
+<section class="security landing-section">
 
+    <div class="security__content">
 
-    <div class="trust__content">
+       <div class="security__intro">
 
+          <span class="security__eyebrow">
 
-        <span class="trust__eyebrow">
+              Trust
 
-            Trust
+          </span>
 
-        </span>
+          <h2 class="security__title">
 
+              Confidence built into
+              every interaction.
 
+          </h2>
 
-        <h2 class="trust__title">
+          <p class="security__description">
 
-            Confidence built into
-            every interaction.
+              Every payment, login and transfer is protected by multiple
+              layers of security, giving you complete peace of mind without
+              adding complexity to your everyday banking.
 
-        </h2>
+          </p>
 
+      </div>
 
-
-        <p class="trust__description">
-
-            Every payment, login and transfer is protected by multiple
-            layers of security, giving you complete peace of mind without
-            adding complexity to your everyday banking.
-
-        </p>
-
-
-
-
-        <landing-trust-features [items]="securityItems">
-
+        <landing-trust-features
+            [items]="securityItems">
         </landing-trust-features>
 
     </div>
 
-    <div class="trust__visual">
+    <div class="security__visual">
 
-
-        <article class="trust-card">
-
-
-            <header class="trust-card__header">
-
-
-                <div class="trust-card__icon">
-
-                    <lucide-icon
-                        [img]="securityHeroIcon">
-                    </lucide-icon>
-
-                </div>
-
-
-
-                <div>
-
-
-                    <span class="trust-card__label">
-
-                        Security Status
-
-                    </span>
-
-
-
-                    <h3 class="trust-card__status">
-
-                        Protected
-
-                    </h3>
-
-
-                </div>
-
-
-            </header>
-
-
-
-
-            <div class="trust-card__divider"></div>
-
-
-
-
-            <div class="trust-card__list">
-
-
-                <div class="trust-card__item">
-
-                    <span>Encryption</span>
-
-                    <strong>AES-256</strong>
-
-                </div>
-
-
-
-                <div class="trust-card__item">
-
-                    <span>Authentication</span>
-
-                    <strong>Biometric</strong>
-
-                </div>
-
-
-
-                <div class="trust-card__item">
-
-                    <span>Monitoring</span>
-
-                    <strong>24 / 7</strong>
-
-                </div>
-
-
-            </div>
-
-
-
-
-            <footer class="trust-card__footer">
-
-
-                <span class="trust-card__indicator"></span>
-
-
-                <span>
-
-                    All systems operational
-
-                </span>
-
-
-            </footer>
-
-
-        </article>
-
+        <landing-trust-status-card>
+        </landing-trust-status-card>
 
     </div>
-
 
 </section>

@@ -4,6 +4,7 @@
 
 .card {
 
+
     display:
         flex;
 
@@ -13,8 +14,7 @@
     gap:
         var(--space-7);
 
-    width:
-        min(100%, 42rem);
+
 
     padding:
         var(--space-9);
