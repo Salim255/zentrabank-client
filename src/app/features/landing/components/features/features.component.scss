@@ -1,7 +1,9 @@
 @use "../../../../../themes/styles/mixins" as *;
 @use "../../../../../themes/styles/media" as *;
 
-.features {}
+.features {
+
+}
 
 
 
@@ -104,7 +106,7 @@
 
 .features__grid {
 
-
+    transition: all .3s ease;
     margin-top:
         var(--space-12);
 
@@ -207,20 +209,8 @@
     color:
         var(--primary-700);
 
+    padding: 1rem;
 
-
-    lucide-icon {
-
-
-        width:
-            2.4rem;
-
-
-        height:
-            2.4rem;
-
-
-    }
 
 }
 
