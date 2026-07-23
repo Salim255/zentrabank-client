@@ -1,0 +1,48 @@
+:root {
+
+    /* ==========================================================
+       ELEVATION
+       Clean • Modern • Enterprise
+    ========================================================== */
+
+    /* No elevation */
+
+    --shadow-none:
+        none;
+
+
+
+    /* Inputs • Cards */
+
+    --shadow-xs:
+        0 1px 2px rgba(16, 24, 40, .04);
+
+
+
+    /* Cards */
+
+    --shadow-sm:
+        0 2px 8px rgba(16, 24, 40, .06);
+
+
+
+    /* Dropdown • Popover */
+
+    --shadow-md:
+        0 8px 24px rgba(16, 24, 40, .08);
+
+
+
+    /* Modal */
+
+    --shadow-lg:
+        0 16px 40px rgba(16, 24, 40, .10);
+
+
+
+    /* Drawer */
+
+    --shadow-xl:
+        0 24px 64px rgba(16, 24, 40, .12);
+
+}
