@@ -1,1 +1,72 @@
-<div>Hello spending chart</div>
+<section class="spending-chart">
+
+
+    <header class="spending-chart__header">
+
+
+        <div>
+
+            <span class="spending-chart__label">
+
+                {{ summary.title }}
+
+            </span>
+
+
+            <h3 class="spending-chart__amount">
+
+                {{ summary.amount }}
+
+            </h3>
+
+
+        </div>
+
+
+
+        <span class="spending-chart__change">
+
+            ↑ {{ summary.change }}
+
+        </span>
+
+
+    </header>
+
+
+
+
+    <div class="spending-chart__graph">
+
+
+        @for(item of spending; track item.label) {
+
+
+            <div class="spending-chart__column">
+
+
+                <div
+                    class="spending-chart__bar"
+                    [style.height.%]="item.value">
+
+                </div>
+
+
+                <span>
+
+                    {{ item.label }}
+
+                </span>
+
+
+            </div>
+
+
+        }
+
+
+    </div>
+
+
+
+</section>

@@ -1,0 +1,262 @@
+.spending-chart {
+
+
+    padding:
+        var(--space-6);
+
+
+
+    background:
+        var(--surface-primary);
+
+
+
+    border:
+        1px solid
+        var(--border-default);
+
+
+
+    border-radius:
+        var(--radius-card);
+
+
+
+    box-shadow:
+        var(--shadow-card);
+
+}
+
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+
+.spending-chart__header {
+
+
+    display:
+        flex;
+
+
+    align-items:
+        flex-start;
+
+
+    justify-content:
+        space-between;
+
+
+}
+
+
+
+.spending-chart__label {
+
+
+    display:
+        block;
+
+
+    color:
+        var(--text-secondary);
+
+
+    font-size:
+        var(--body-sm-size);
+
+
+}
+
+
+
+.spending-chart__amount {
+
+
+    margin-top:
+        var(--space-2);
+
+
+
+    color:
+        var(--text-primary);
+
+
+
+    font-size:
+        2.4rem;
+
+
+    font-weight:
+        var(--font-weight-semibold);
+
+
+    letter-spacing:
+        var(--tracking-tight);
+
+}
+
+
+
+
+
+.spending-chart__change {
+
+
+    padding:
+        var(--space-1)
+        var(--space-3);
+
+
+
+    border-radius:
+        var(--radius-pill);
+
+
+
+    background:
+        var(--success-soft);
+
+
+
+    color:
+        var(--success);
+
+
+
+    font-size:
+        var(--caption-size);
+
+
+
+    font-weight:
+        var(--font-weight-semibold);
+
+}
+
+
+
+
+
+/* ==========================================================
+   GRAPH
+========================================================== */
+
+
+.spending-chart__graph {
+
+
+    height:
+        12rem;
+
+
+    margin-top:
+        var(--space-6);
+
+
+
+    display:
+        flex;
+
+
+    align-items:
+        flex-end;
+
+
+    justify-content:
+        space-between;
+
+
+    gap:
+        var(--space-3);
+
+}
+
+
+
+
+
+.spending-chart__column {
+
+
+    height:
+        100%;
+
+
+    flex:
+        1;
+
+
+    display:
+        flex;
+
+
+    flex-direction:
+        column;
+
+
+    justify-content:
+        flex-end;
+
+
+    align-items:
+        center;
+
+
+    gap:
+        var(--space-2);
+
+
+}
+
+
+
+
+
+.spending-chart__bar {
+
+
+    width:
+        100%;
+
+
+    max-width:
+        2rem;
+
+
+
+    border-radius:
+        var(--radius-sm)
+        var(--radius-sm)
+        0
+        0;
+
+
+
+    background:
+        var(--primary-600);
+
+
+
+    transition:
+        height var(--transition-normal);
+
+
+}
+
+
+
+.spending-chart__column span {
+
+
+    color:
+        var(--text-muted);
+
+
+
+    font-size:
+        var(--caption-size);
+
+}
