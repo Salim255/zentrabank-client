@@ -7,4 +7,18 @@ import { Component } from "@angular/core";
   standalone: false
 })
 
-export class BalanceCardComponent {}
+export class BalanceCardComponent {
+  readonly account = {
+
+      type: 'Premium Checking',
+
+      number: '•••• 2458',
+
+      balance: '€24,860.52',
+
+      change: '+3.8%',
+
+      status: 'Available balance'
+
+  };
+}

@@ -1,0 +1,107 @@
+<section class="balance-card">
+
+
+    <header class="balance-card__header">
+
+
+        <div class="balance-card__account">
+
+
+            <span class="balance-card__label">
+
+                {{ account.type }}
+
+            </span>
+
+
+            <span class="balance-card__number">
+
+                {{ account.number }}
+
+            </span>
+
+
+        </div>
+
+
+
+        <div class="balance-card__logo">
+
+            <span></span>
+
+            <span></span>
+
+        </div>
+
+
+    </header>
+
+
+
+
+    <div class="balance-card__content">
+
+
+        <span class="balance-card__caption">
+
+            {{ account.status }}
+
+        </span>
+
+
+
+        <h2 class="balance-card__amount">
+
+            {{ account.balance }}
+
+        </h2>
+
+
+
+        <div class="balance-card__growth">
+
+
+            <span class="balance-card__indicator">
+
+                ↑
+
+            </span>
+
+
+            <span>
+
+                {{ account.change }}
+                this month
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <footer class="balance-card__footer">
+
+
+        <span>
+
+            Secure account
+
+        </span>
+
+
+        <span>
+
+            Active
+
+        </span>
+
+
+    </footer>
+
+
+
+</section>
