@@ -423,7 +423,7 @@
 
 
     gap:
-        var(--space-3);
+        var(--space-4);
 
 }
 
@@ -447,7 +447,7 @@
 
 
     gap:
-        var(--space-3);
+        var(--space-4);
 
 
     color:
@@ -473,7 +473,6 @@
     width:
         3.2rem;
 
-
     height:
         3.2rem;
 
@@ -490,6 +489,14 @@
         center;
 
 
+    flex:
+        0 0 3.2rem;
+
+
+    line-height:
+        0;
+
+
     border-radius:
         var(--radius-md);
 
@@ -503,8 +510,19 @@
         );
 
 
-
     lucide-icon {
+
+        display:
+            flex;
+
+
+        align-items:
+            center;
+
+
+        justify-content:
+            center;
+
 
         width:
             1.6rem;
@@ -512,6 +530,9 @@
 
         height:
             1.6rem;
+
+
+
 
     }
 
