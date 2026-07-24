@@ -12,10 +12,12 @@ import { RouterModule } from "@angular/router";
 import { AppInputComponent } from "./kits/app-input/app-input.component";
 import { LucideAngularModule } from "lucide-angular";
 import { AppSelectComponent } from "./kits/app-select/app-select.component";
+import { ClickOutsideDirective } from "./directives/click-outside/click-outside.directive";
 
 @NgModule({
   declarations: [
-     AppSelectComponent,
+    ClickOutsideDirective,
+    AppSelectComponent,
     AppInputComponent,
     HeaderComponent,
     FooterComponent,
@@ -31,6 +33,7 @@ import { AppSelectComponent } from "./kits/app-select/app-select.component";
     CommonModule,
   ],
   exports: [
+    ClickOutsideDirective,
     AppSelectComponent,
     AppInputComponent,
     HeaderComponent,
