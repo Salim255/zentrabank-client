@@ -8,7 +8,12 @@ import { ControlValueAccessor } from "@angular/forms";
   standalone: false
 })
 export class AppInputComponent implements ControlValueAccessor {
+    @Input()
+    inputId = '';
+
     @Input() label = "";
+
+    @Input() name = "";
 
     @Input() hint = "";
 

@@ -2,13 +2,21 @@
 
     @if (label) {
 
-        <label class="form-control__label">
+        <label for="" class="form-control__label">
 
-            {{ label }}
+            <span>
+
+                {{ label }}
+
+            </span>
 
             @if (required) {
 
-                <span class="form-control__required">*</span>
+                <span class="form-control__required">
+
+                    *
+
+                </span>
 
             }
 
@@ -20,25 +28,46 @@
 
     <div class="form-control__field">
 
+        <div class="form-control__prefix">
+
+            <ng-content select="[inputPrefix]"></ng-content>
+
+        </div>
+
+
+
         <input
 
             class="form-control__input"
 
             [type]="type"
 
+            [id]="inputId"
+
+            [name]="name"
+
             [placeholder]="placeholder"
 
             [autocomplete]="autocomplete"
 
-            [disabled]="disabled"
-
             [readonly]="readonly"
+
+            [disabled]="disabled"
 
             [value]="value"
 
             (input)="onInput($event)"
 
             (blur)="onTouched()">
+
+
+
+
+        <div class="form-control__suffix">
+
+            <ng-content select="[inputSuffix]"></ng-content>
+
+        </div>
 
     </div>
 
@@ -53,5 +82,9 @@
         </p>
 
     }
+
+
+
+    <ng-content select="app-form-error"></ng-content>
 
 </div>
