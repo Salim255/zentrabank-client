@@ -330,3 +330,14 @@
         1.5;
 
 }
+
+.form-control__error {
+    color:
+        var(--danger-500);
+
+    font-size:
+        var(--body-sm-size);
+
+    line-height:
+        1.5;
+}

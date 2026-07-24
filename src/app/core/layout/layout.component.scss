@@ -1,5 +1,6 @@
 .app-layout {
   height: 100dvh;
+  width: 100dvw;
   display: grid;
   grid-template-rows: auto 1fr;
   &__outlet {

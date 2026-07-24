@@ -7,12 +7,6 @@
             <app-name>
             </app-name>
 
-            <h1 class="form__title">
-
-                Welcome back
-
-            </h1>
-
             <p class="form__description">
 
                 Sign in to securely access your banking dashboard.
@@ -46,6 +40,7 @@
                 <div class="form__group">
 
                     <app-input
+                        [required]="true"
                         formControlName="password"
                         type="password"
                         name="password"

@@ -1,82 +1,279 @@
 @use "../../../../../../../themes/styles/media" as *;
-@use "../../../../../../../themes/styles/mixins" as *;
 
-.form {
-  width: 100%;
-  width: 40rem ;
-  margin: 0 auto;
-  padding: 2rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  box-shadow: var(--shadow-light);
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 
-  // Header
-  &__header {
-    text-align: center;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    app-name {
-      flex: 1;
-    }
-  }
+/* ==========================================================
+   LOGIN PAGE
+========================================================== */
 
-  &__title {
-    font-size: var(--fs-xl);
-    font-weight: var(--fw-semibold);
-    color: var(--text-primary);
-  }
+.login {
 
-  // Form groups
-  &__group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-  }
-
-  // Labels
-  &__label {
-    font-size: var(--fs-sm);
-    font-weight: var(--fw-medium);
-    color: var(--text-secondary);
-  }
-
-  // Inputs
-  &__input {
-    @include input;
-    font-size: var(--fs-md);
-  }
-
-  // Button
-  &__button {
-    @include btn-primary;
+    min-height: 0;
+    min-width: 0;
     width: 100%;
-    font-size: var(--fs-md);
-    padding: 0.75rem;
-  }
+    height: 100%;
 
-  // Footer
-  &__footer {
-    text-align: center;
-    margin-top: 0.5rem;
-  }
+    display:
+        flex;
 
-  &__text {
-    font-size: var(--fs-sm);
-    color: var(--text-secondary);
-  }
+    align-items:
+        center;
 
-  &__link {
-    color: var(--primary);
-    font-weight: var(--fw-medium);
-    text-decoration: none;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(
+                61,
+                90,
+                254,
+                .08
+            ),
+            transparent 40%
+        ),
+        var(--surface-page);
+
+}
+
+
+
+
+
+/* ==========================================================
+   LOGIN PANEL
+========================================================== */
+
+.login__container {
+
+    width: 100%;
+    min-width: 0;
+    padding: var(--space-5) var(--space-12);
+
+
+    background:
+        var(--surface-primary);
+
+
+    border:
+        1px solid
+        var(--border-light);
+
+
+    border-radius:
+        var(--radius-xl);
+
+
+}
+
+
+
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+.form {
+  min-width: 0;
+  width: 100%;
+}
+
+.form__header {
+
+    display:
+        flex;
+
+
+    flex-direction:
+        column;
+
+
+    align-items:
+        center;
+
+
+    text-align:
+        center;
+
+
+    gap:
+        var(--space-3);
+
+
+    margin-bottom:
+        var(--space-8);
+
+}
+
+
+
+
+
+.form__description {
+
+   /*  max-width:
+        32rem;
+ */
+
+    color:
+        var(--text-secondary);
+
+
+    font-size:
+        var(--body-md-size);
+
+
+    line-height:
+        1.6;
+
+}
+
+
+
+
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+.form__body {
+
+    display:
+        flex;
+
+
+    flex-direction:
+        column;
+
+
+    gap:
+        var(--space-5);
+          min-width: 0;
+    width: 100%;
+
+}
+
+
+
+
+
+.form__group {
+    min-width: 0;
+    width: 100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.form__footer {
+
+
+
+
+    padding-top: var(--space-4);
+
+    border-top:
+        1px solid
+        var(--border-light);
+
+
+    display:
+        flex;
+
+
+    justify-content:
+        center;
+
+
+    align-items:
+        center;
+
+
+    gap:
+        var(--space-2);
+
+
+    font-size:
+        var(--body-sm-size);
+
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+
+
+
+.form__footer a {
+
+    color:
+        var(--primary-600);
+
+
+    font-weight:
+        var(--font-weight-medium);
+
+
+    text-decoration:
+        none;
+
+
+    transition:
+        color var(--motion-fast);
+
+
 
     &:hover {
-      text-decoration: underline;
+
+        color:
+            var(--primary-700);
+
     }
-  }
+
+}
+
+
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@include respond(phone) {
+
+
+    .login {
+
+        padding:
+            var(--space-4);
+
+    }
+
+
+
+    .login__container {
+
+        padding:
+            var(--space-6);
+
+
+        border-radius:
+            var(--radius-lg);
+
+    }
+
 }

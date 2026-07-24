@@ -10,10 +10,6 @@
 @forward "themes/styles/radius";
 @forward "themes/styles/spacing";
 @forward "themes/styles/motions";
-
-
-
-.landing-section {
-  padding: var(--space-10) var(--space-8);
-}
+@forward "themes/styles/components/form";
+@forward "themes/styles/components/form-control";
 
