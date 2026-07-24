@@ -1,105 +1,494 @@
+@use "../../../../../themes/styles/media" as *;
+
+
+/* ==========================================================
+   ACCOUNT MANAGE
+========================================================== */
+
 .account-manage {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
 
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+    width:
+        100%;
 
-  &__title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #0f172a;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
+    max-width:
+        112rem;
 
-  /* Card */
-  &__card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 14px;
-    padding: 1.75rem;
-    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.05);
+    margin:
+        0 auto;
 
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
+    padding:
+        var(--space-8);
 
-  &__card-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #0f172a;
-    margin-bottom: 0.5rem;
-  }
+    display:
+        flex;
 
-  /* Rows */
-  &__row {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid #f1f5f9;
+    flex-direction:
+        column;
 
-    &:last-child {
-      border-bottom: none;
+    gap:
+        var(--space-8);
+
+}
+
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.account-manage__header {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--space-3);
+
+}
+
+
+
+.account-manage__title {
+
+    margin:
+        0;
+
+    color:
+        var(--text-display);
+
+    font-size: 3rem;
+
+    font-weight:
+        var(--font-weight-semibold);
+
+    letter-spacing:
+        -.03em;
+
+}
+
+
+
+.account-manage__description {
+
+    margin:
+        0;
+
+    max-width:
+        58rem;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        var(--body-lg-size);
+
+    line-height:
+        1.7;
+
+}
+
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.account-manage__card {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--space-7);
+
+    padding:
+        var(--space-7);
+
+    border:
+        1px solid
+        var(--border-light);
+
+    border-radius:
+        var(--radius-xl);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.98),
+            rgba(250,251,253,.95)
+        );
+
+    box-shadow:
+        0 .8rem 2.4rem rgba(15,23,42,.035);
+
+}
+
+
+
+/* ==========================================================
+   CARD HEADER
+========================================================== */
+
+.account-manage__card-header {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        space-between;
+
+    gap:
+        var(--space-5);
+
+}
+
+
+
+.account-manage__card-header h2 {
+
+    margin:
+        0 0 var(--space-2);
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        var(--heading-sm-size);
+
+    font-weight:
+        var(--font-weight-semibold);
+
+    letter-spacing:
+        -.02em;
+
+}
+
+
+
+.account-manage__card-header p {
+
+    margin:
+        0;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        var(--body-md-size);
+
+    line-height:
+        1.6;
+
+}
+
+
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.account-manage__grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        var(--space-6)
+        var(--space-8);
+
+}
+
+
+
+/* ==========================================================
+   FIELD
+========================================================== */
+
+.account-manage__field {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--space-2);
+
+}
+
+
+
+.account-manage__field span {
+
+    color:
+        var(--text-tertiary);
+
+    font-size:
+        1.2rem;
+
+    font-weight:
+        var(--font-weight-medium);
+
+    letter-spacing:
+        .08em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+
+.account-manage__field strong {
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        var(--body-lg-size);
+
+    font-weight:
+        var(--font-weight-medium);
+
+    line-height:
+        1.5;
+
+}
+
+
+
+/* ==========================================================
+   SETTINGS LIST
+========================================================== */
+
+.account-manage__list {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+}
+
+
+
+.account-manage__setting {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        var(--space-5);
+
+    padding:
+        var(--space-5) 0;
+
+}
+
+
+
+.account-manage__setting:not(:last-child) {
+
+    border-bottom:
+        1px solid
+        var(--border-light);
+
+}
+
+
+
+.account-manage__setting strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        var(--space-1);
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        var(--body-lg-size);
+
+    font-weight:
+        var(--font-weight-medium);
+
+}
+
+
+
+.account-manage__setting span {
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        var(--body-md-size);
+
+    line-height:
+        1.6;
+
+}
+
+
+
+/* ==========================================================
+   BADGE
+========================================================== */
+
+.account-manage__badge {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-shrink:
+        0;
+
+    padding:
+        .8rem 1.6rem;
+
+    border-radius:
+        var(--radius-full);
+
+    background:
+        var(--surface-secondary);
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        1.2rem;
+
+    font-weight:
+        var(--font-weight-semibold);
+
+    letter-spacing:
+        .04em;
+
+}
+
+
+
+.account-manage__badge--success {
+
+    background:
+        rgba(34,197,94,.10);
+
+    color:
+        #15803d;
+
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@include respond(tab-port) {
+
+    .account-manage {
+
+        padding:
+            var(--space-6);
+
     }
-  }
 
-  &__label {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #64748b;
-  }
+}
 
-  &__value {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #0f172a;
 
-    &--highlight {
-      color: #2563eb;
-      font-weight: 700;
-    }
-  }
 
-  /* Actions */
-  &__actions {
-    display: flex;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
+@include respond(phone) {
 
-  &__button {
-    flex: 1;
-    padding: 0.85rem;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.1s ease;
+    .account-manage {
 
-    background: #2563eb;
-    color: #ffffff;
+        padding:
+            var(--space-4);
 
-    &:hover {
-      background: #1e4fcf;
+        gap:
+            var(--space-6);
+
     }
 
-    &:active {
-      transform: scale(0.98);
+    .account-manage__title {
+
+        font-size:
+            3rem;
+
     }
 
-    &--secondary {
-      background: #f1f5f9;
-      color: #0f172a;
+    .account-manage__card {
 
-      &:hover {
-        background: #e2e8f0;
-      }
+        padding:
+            var(--space-5);
+
+        gap:
+            var(--space-5);
+
     }
-  }
+
+    .account-manage__card-header {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+    }
+
+    .account-manage__grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            var(--space-5);
+
+    }
+
+    .account-manage__setting {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+    }
+
+    .account-manage__badge {
+
+        align-self:
+            flex-start;
+
+    }
+
 }
