@@ -50,6 +50,7 @@
 
 
                 <app-select
+                    [required]="true"
                     class="form__field"
                     formControlName="title"
                     name="title"
@@ -134,7 +135,7 @@
 
 
             <app-input
-
+                [required]="true"
                 formControlName="addressLine"
 
                 name="addressLine"
@@ -159,7 +160,7 @@
                     name="country"
 
                     label="Country"
-
+                    [required]="true"
                     [options]="countries">
 
                 </app-select>
@@ -171,7 +172,7 @@
                 <app-input
 
                     formControlName="city"
-
+                    [required]="true"
                     name="city"
 
                     label="City"
@@ -187,7 +188,7 @@
                 <app-input
 
                     formControlName="zipCode"
-
+                    [required]="true"
                     name="zipCode"
 
                     label="Postal code"
@@ -214,7 +215,7 @@
                     name="phoneType"
 
                     label="Phone type"
-
+                    [required]="true"
                     [options]="phoneTypes">
 
                 </app-select>
@@ -230,7 +231,7 @@
                     name="phoneNumber"
 
                     label="Phone number"
-
+                    [required]="true"
                     placeholder="Enter phone number">
 
                 </app-input>
@@ -270,6 +271,8 @@
                 name="employmentStatus"
 
                 label="Employment status"
+
+                [required]="true"
 
                 [options]="employmentStatuses">
 
@@ -355,6 +358,8 @@
 
                 name="accountType"
 
+                [required]="true"
+
                 label="Bank account type"
 
                 [options]="accountTypes">
@@ -378,23 +383,9 @@
 
 
             <app-button
-
-                variant="ghost"
-
-                type="button">
-
-                Back
-
-            </app-button>
-
-
-
-
-
-            <app-button
-
+                [fullWidth]="true"
                 variant="primary"
-
+                (click)="onContinue()"
                 type="submit">
 
                 Continue
@@ -403,8 +394,6 @@
 
 
         </footer>
-
-
 
 
     </form>

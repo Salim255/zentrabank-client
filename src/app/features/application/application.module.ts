@@ -6,6 +6,7 @@ import { ApplicationPage } from "./application.page";
 import { SharedModule } from "../../shared/shared.module";
 import { ApplicationFormComponent } from "./components/application-form/application-form.component";
 import { ReviewComponent } from "./components/review/review.component";
+import { LucideAngularModule } from "lucide-angular";
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { ReviewComponent } from "./components/review/review.component";
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    SharedModule
+    SharedModule,
+    LucideAngularModule
   ],
   declarations: [
     ApplicationFormComponent,

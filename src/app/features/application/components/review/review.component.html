@@ -1,118 +1,402 @@
 <section class="review">
 
-  <h2 class="review__title">Review</h2>
+    <!-- ===================================================== -->
+    <!-- HEADER -->
+    <!-- ===================================================== -->
 
-  <!-- ACCOUNT INFORMATION -->
-  <div class="review__block">
-    <h3 class="review__subtitle">Account Information</h3>
+    <header class="review__header">
 
-    <div class="review__item">
-      <span class="review__label">Customer Type</span>
-      <span class="review__value">Individual</span>
+        <h1 class="review__title">
+
+            Review your application
+
+        </h1>
+
+        <p class="review__description">
+
+            Please review your information carefully before submitting your application.
+            You can still go back and make changes if anything needs to be updated.
+
+        </p>
+
+    </header>
+
+
+
+    <!-- ===================================================== -->
+    <!-- ACCOUNT INFORMATION -->
+    <!-- ===================================================== -->
+
+    <section class="review__section">
+
+        <header class="review__section-header">
+
+            <h2 class="review__section-title">
+
+                Account Information
+
+            </h2>
+
+        </header>
+
+        <div class="review__list">
+
+            <div class="review__item">
+
+                <span class="review__label">
+
+                    Customer Type
+
+                </span>
+
+                <span class="review__value">
+
+                    Individual
+
+                </span>
+
+            </div>
+
+            <div class="review__item">
+
+                <span class="review__label">
+
+                    Account Title
+
+                </span>
+
+                <span class="review__value">
+
+                    {{ applicationReviewDto?.firstName }}
+                    {{ applicationReviewDto?.lastName }}
+
+                </span>
+
+            </div>
+
+            <div class="review__item">
+
+                <span class="review__label">
+
+                    Account Type
+
+                </span>
+
+                <span class="review__value">
+
+                    {{ applicationReviewDto?.accountType }}
+
+                </span>
+
+            </div>
+
+            <div class="review__item">
+
+                <span class="review__label">
+
+                    Phone Number
+
+                </span>
+
+                <span class="review__value">
+
+                    {{ applicationReviewDto?.phoneNumber }}
+
+                </span>
+
+            </div>
+
+            <div class="review__item">
+
+                <span class="review__label">
+
+                    Address
+
+                </span>
+
+                <span class="review__value">
+
+                    {{ applicationReviewDto?.addressLine }},
+                    {{ applicationReviewDto?.city }},
+                    {{ applicationReviewDto?.zipCode }}
+
+                </span>
+
+            </div>
+
+            <div class="review__item">
+
+                <span class="review__label">
+
+                    Date of Birth
+
+                </span>
+
+                <span class="review__value">
+
+                    {{ applicationReviewDto?.dob | date : 'yyyy-MM-dd' }}
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================================== -->
+    <!-- SOURCE OF WEALTH -->
+    <!-- ===================================================== -->
+<section class="review__section">
+
+    <header class="review__section-header">
+
+        <h2 class="review__section-title">
+
+            Employment & Financial Profile
+
+        </h2>
+
+    </header>
+
+    <div class="review__list">
+
+        <div class="review__item">
+
+            <span class="review__label">
+
+                Employment Status
+
+            </span>
+
+            <span class="review__value">
+
+                {{ applicationReviewDto?.employmentStatus }}
+
+            </span>
+
+        </div>
+
     </div>
 
-    <div class="review__item">
-      <span class="review__label">Account Title</span>
-      <span class="review__value">
-        {{ applicationReviewDto?.firstName }} {{ applicationReviewDto?.lastName }}
-      </span>
+    <div class="review__wealth">
+
+        <h3 class="review__sub-title">
+
+            Source of Wealth
+
+        </h3>
+
+        <div class="review__badges">
+
+            @for(source of applicationReviewDto?.sourceOfWealth; track source) {
+
+                <div class="review__badge">
+
+                    <lucide-icon
+                        class="review__badge-icon"
+                        [img]="circleCheck">
+                    </lucide-icon>
+
+                    <span>
+
+                        {{ source }}
+
+                    </span>
+
+                </div>
+
+            }
+
+        </div>
+
     </div>
 
-    <div class="review__item">
-      <span class="review__label">Account Type</span>
-      <span class="review__value">
-        {{ applicationReviewDto?.accountType }}
-      </span>
-    </div>
+</section>
 
-    <div class="review__item">
-      <span class="review__label">Phone</span>
-      <span class="review__value">
-        {{ applicationReviewDto?.phoneNumber }}
-      </span>
-    </div>
 
-    <div class="review__item">
-      <span class="review__label">Address</span>
-      <span class="review__value">
-        {{ applicationReviewDto?.addressLine }},
-        {{ applicationReviewDto?.city }},
-        {{ applicationReviewDto?.zipCode }}
-      </span>
-    </div>
+    <!-- ===================================================== -->
+    <!-- AGREEMENTS -->
+    <!-- ===================================================== -->
 
-    <div class="review__item">
-      <span class="review__label">Date of Birth</span>
-      <span class="review__value">
-        {{ applicationReviewDto?.dob | date:'yyyy-MM-dd' }}
-      </span>
-    </div>
-  </div>
+    <section class="review__section">
 
-  <!-- SOURCE OF FUNDS -->
-  <div class="review__block">
-    <h3 class="review__subtitle">Source of Funds</h3>
+        <header class="review__section-header">
 
-    <div class="review__item" *ngFor="let source of applicationReviewDto?.sourceOfWealth">
-      <span class="review__label">{{ source }}</span>
-      <span class="review__value">Yes</span>
-    </div>
-  </div>
+            <h2 class="review__section-title">
 
-  <!-- AGREEMENTS -->
-  <div class="review__block">
-    <h3 class="review__subtitle">Agreements & Disclosures</h3>
+                Agreements & Disclosures
 
-    <div class="review__checkboxes">
-      <label><input type="checkbox" checked disabled> Client Agreement</label>
-      <label><input type="checkbox" checked disabled> Privacy Policy</label>
-      <label><input type="checkbox" checked disabled> Cookie Policy</label>
-    </div>
-  </div>
+            </h2>
 
-  <!-- SIGNATURE -->
-  <div class="review__block">
-    <h3 class="review__subtitle">Signature</h3>
+        </header>
 
-    <p class="review__text">
-      By signing below, you confirm that all information provided is accurate and that you agree to the electronic records and disclosures.
-    </p>
+        <div class="review__agreement-list">
 
-    <div class="review__item">
-      <span class="review__label">Account Title</span>
-      <span class="review__value">
-        {{ applicationReviewDto?.firstName }} {{ applicationReviewDto?.lastName }}
-      </span>
-    </div>
+            <div class="review__agreement">
 
-    <div class="review__item">
-      <span class="review__label">Date</span>
-      <span class="review__value">
-        {{ today | date:'yyyy-MM-dd HH:mm' }}
-      </span>
-    </div>
+                <lucide-icon
+                    class="review__agreement-icon"
+                    [img]="circleCheck">
+                </lucide-icon>
 
-    <div class="review__field">
-      <label for="signature">Accepted Signature</label>
-      <input id="signature" type="text" placeholder="Type your full name"
-         [formControl]="signatureControl"
-        >
-      <app-form-error
-        [control]="signatureControl"
-        field="signature">
-      </app-form-error>
-    </div>
-  </div>
+                <span>
 
-  <!-- ACTIONS -->
-  <div class="review__actions">
-    <button class="btn btn--secondary" (click)="onBack()">Back</button>
-    <button
-      class="btn btn--primary"
-      (click)="onSubmit()"
-      [disabled]="signatureControl.invalid">
-      Confirm
-    </button>
-  </div>
+                    Client Agreement accepted
+
+                </span>
+
+            </div>
+
+            <div class="review__agreement">
+
+                <lucide-icon
+                    class="review__agreement-icon"
+                    [img]="circleCheck">
+                </lucide-icon>
+
+                <span>
+
+                    Privacy Policy accepted
+
+                </span>
+
+            </div>
+
+            <div class="review__agreement">
+
+                <lucide-icon
+                    class="review__agreement-icon"
+                    [img]="circleCheck">
+                </lucide-icon>
+
+                <span>
+
+                    Cookie Policy accepted
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================================== -->
+    <!-- SIGNATURE -->
+    <!-- ===================================================== -->
+
+    <section class="review__section review__section--signature">
+
+        <header class="review__section-header">
+
+            <h2 class="review__section-title">
+
+                Electronic Signature
+
+            </h2>
+
+            <p class="review__section-description">
+
+                By typing your full legal name below, you confirm that the
+                information provided is accurate and agree to the electronic
+                records and disclosures.
+
+            </p>
+
+        </header>
+
+        <div class="review__summary">
+
+            <div class="review__item">
+
+                <span class="review__label">
+
+                    Account Holder
+
+                </span>
+
+                <span class="review__value">
+
+                    {{ applicationReviewDto?.firstName }}
+                    {{ applicationReviewDto?.lastName }}
+
+                </span>
+
+            </div>
+
+            <div class="review__item">
+
+                <span class="review__label">
+
+                    Date
+
+                </span>
+
+                <span class="review__value">
+
+                    {{ today | date : 'yyyy-MM-dd HH:mm' }}
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <app-input
+
+            [formControl]="signatureControl"
+
+            name="signature"
+
+            label="Electronic Signature"
+
+            placeholder="Type your full legal name"
+
+            [required]="true">
+
+        </app-input>
+
+    </section>
+
+
+
+    <!-- ===================================================== -->
+    <!-- ACTIONS -->
+    <!-- ===================================================== -->
+
+    <footer class="review__actions">
+
+        <app-button
+
+            variant="ghost"
+
+            type="button"
+
+            (click)="onBack()">
+
+            Back
+
+        </app-button>
+
+        <app-button
+
+            variant="primary"
+
+            type="button"
+
+            [disabled]="signatureControl.invalid"
+
+            (click)="onSubmit()">
+
+            Confirm Application
+
+        </app-button>
+
+    </footer>
 
 </section>

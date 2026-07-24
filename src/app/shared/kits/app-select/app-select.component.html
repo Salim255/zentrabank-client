@@ -35,6 +35,9 @@
 
     <div
         class="select"
+        appClickOutside
+
+        (appClickOutside)="closeDropdown()"
         [class.select--open]="open"
         [class.select--invalid]="showError"
         [class.select--disabled]="disabled">

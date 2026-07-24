@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { ApplicationService } from "../../services/application.service";
 import { ApplicationReviewDto } from "../../model/application.model";
 import { AbstractControl, FormControl, Validators } from "@angular/forms";
+import { CircleCheck, LucideIconData } from "lucide-angular";
 
 @Component({
   selector: "app-review",
@@ -15,7 +16,7 @@ export class ReviewComponent implements OnInit {
   applicationReviewDto: ApplicationReviewDto | null = null;
   // Signature control (local to this component)
   signatureControl = new FormControl<string>('', { nonNullable: true });
-
+  circleCheck: LucideIconData = CircleCheck;
   constructor(
     private applicationService: ApplicationService,
     private router: Router){}

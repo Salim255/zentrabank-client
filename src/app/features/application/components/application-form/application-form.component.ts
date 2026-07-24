@@ -241,15 +241,9 @@ export class ApplicationFormComponent implements OnInit {
 
     }
 
-
-
-
-
-
-
     onContinue(): void {
 
-
+        console.log("hello from continue")
         if(this.applicationForm.invalid){
 
 
@@ -260,27 +254,14 @@ export class ApplicationFormComponent implements OnInit {
 
         }
 
-
-
-
-
-
         this.applicationService
             .setApplicationInstance(
                 this.applicationForm.value
             );
 
-
-
-
-
-
         this.router.navigate(
             ["/application/review"]
         );
-
-
     }
-
 
 }

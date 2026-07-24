@@ -198,7 +198,11 @@ export class AppSelectComponent implements ControlValueAccessor {
 
 
 
+  closeDropdown(): void {
 
+      this.open = false;
+
+  }
 
 
     onChange = (

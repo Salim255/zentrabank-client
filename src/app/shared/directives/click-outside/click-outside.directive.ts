@@ -30,7 +30,15 @@ export class ClickOutsideDirective {
 
 
 
+    @HostListener(
+    "document:keydown.escape"
+    )
 
+    onEscape(): void {
+
+        this.appClickOutside.emit();
+
+    }
 
     @HostListener("document:click", ["$event"])
 
