@@ -11,22 +11,7 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: "landing",
-    loadChildren: () => import('./features/landing/landing.module').then(m => m.LandingModule)
-  },
-  {
-    path: 'auth',
-    loadChildren: () => import('./features/auth/auth.module').then(m => m.AuthModule),
-    canMatch: [AuthRedirectGuard]
-  },
-  {
-    path: "application",
-    loadChildren: () => import('./features/application/application.module').then((m) => m.ApplicationModule),
-    canActivate: [AuthGuard, ApplicationGuard]
-  },
-  {
-    path: 'dashboard',
-    canActivate: [AuthGuard,  DashboardGuard],
-    loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule)
+    path: "",
+    loadChildren: () => import("./core/layout/layout.module").then(m => m.LayoutModule)
   }
 ];
