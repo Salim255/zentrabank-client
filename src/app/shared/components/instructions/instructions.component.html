@@ -1,24 +1,215 @@
 <aside class="instructions">
 
-  <h2 class="instructions__title">Open an Account</h2>
 
-  <ul class="instructions__steps">
-    <li class="instructions__steps-item">1. Create a username and password.</li>
-    <li class="instructions__steps-item">2. Complete the application.</li>
-  </ul>
+    <header class="instructions__header">
 
-  <h3 class="instructions__subtitle">You'll need:</h3>
 
-  <ul class="instructions__requirements">
-    <li class="instructions__requirements-item">1. Personal and contact details.</li>
-    <li class="instructions__requirements-item">2. Income and tax information.</li>
-  </ul>
+        <div class="instructions__brand-mark">
 
-  <div class="instructions__footer">
-    <p class="instructions__footer-text">Already have an account?
-      <span class="instructions__link" (click)="onNavigate()">
-        Login
-      </span>
-    </p>
-  </div>
+            <lucide-icon
+                [img]="ShieldCheckIcon">
+            </lucide-icon>
+
+        </div>
+
+
+
+        <h2 class="instructions__title">
+
+            Open your account
+
+        </h2>
+
+
+
+        <p class="instructions__intro">
+
+            Start your ZentraBank journey with a simple,
+            secure account setup.
+
+        </p>
+
+
+    </header>
+
+
+
+
+
+    <div class="instructions__content">
+
+
+        <section class="instructions__section">
+
+
+            <h3 class="instructions__subtitle">
+
+                Getting started
+
+            </h3>
+
+
+
+            <ol class="instructions__steps">
+
+
+                <li class="instructions__step">
+
+
+                    <span class="instructions__step-number">
+
+                        01
+
+                    </span>
+
+
+
+                    <p class="instructions__step-text">
+
+                        Create your username and password.
+
+                    </p>
+
+
+                </li>
+
+
+
+
+
+                <li class="instructions__step">
+
+
+                    <span class="instructions__step-number">
+
+                        02
+
+                    </span>
+
+
+
+                    <p class="instructions__step-text">
+
+                        Complete your account application.
+
+                    </p>
+
+
+                </li>
+
+
+            </ol>
+
+
+        </section>
+
+
+
+
+
+
+
+        <section class="instructions__section">
+
+
+            <h3 class="instructions__subtitle">
+
+                You'll need
+
+            </h3>
+
+
+
+
+            <ul class="instructions__requirements">
+
+
+                <li class="instructions__requirement">
+
+
+                    <span class="instructions__requirement-icon">
+
+                        <lucide-icon
+                            [img]="ContactIcon">
+                        </lucide-icon>
+
+                    </span>
+
+
+
+                    <span>
+
+                        Personal and contact details.
+
+                    </span>
+
+
+                </li>
+
+
+
+
+
+                <li class="instructions__requirement">
+
+
+                    <span class="instructions__requirement-icon">
+
+                        <lucide-icon
+                            [img]="ReceiptTextIcon">
+                        </lucide-icon>
+
+                    </span>
+
+
+
+                    <span>
+
+                        Income and tax information.
+
+                    </span>
+
+
+                </li>
+
+
+            </ul>
+
+
+        </section>
+
+
+    </div>
+
+
+
+
+
+
+
+    <footer class="instructions__footer">
+
+
+        <p>
+
+            Already have an account?
+
+
+            <button
+                type="button"
+                class="instructions__link"
+                (click)="onNavigate()">
+
+
+                Sign in
+
+            </button>
+
+        </p>
+
+
+    </footer>
+
+
+
 </aside>

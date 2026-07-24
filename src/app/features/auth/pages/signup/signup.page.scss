@@ -1,3 +1,5 @@
+@use "../../../../../themes/styles/media" as *;
+
 .signup-page {
   display: flex;
   min-height: 0;
@@ -8,4 +10,17 @@
   div {
     padding: 0 4rem;
   }
+}
+
+
+@include respond(tab-port) {
+
+
+    .signup-page{
+
+        flex-direction: column;
+
+    }
+
+
 }

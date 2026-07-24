@@ -1,105 +1,272 @@
 <form
-  [formGroup]="signupForm"
-  (ngSubmit)="onSubmit()"
-  class="signup-form">
+    class="form signup-form"
+    [formGroup]="signupForm"
+    (ngSubmit)="onSubmit()">
 
-  <h2 class="signup-form__title">Create a Username and Password</h2>
 
-  <!-- Email -->
-  <div class="form-group">
-    <label for="email">Email Address</label>
-    <input
-      id="email"
-      type="email"
-      formControlName="email"
-      placeholder="Enter email"
-      class="form-input" />
-    <app-form-error
-        [control]="signupForm.get('email')"
-        field="email">
-    </app-form-error>
-  </div>
+    <header class="form__header">
 
-  <!-- Username -->
-  <div class="form-group">
-    <label for="userName">Username</label>
-    <input
-      id="userName"
-      type="text"
-      placeholder="Enter username"
-      formControlName="userName"
-      class="form-input" />
+        <h2 class="form__title">
 
-    <app-form-error
-          [control]="signupForm.get('userName')"
-          field="userName">
-    </app-form-error>
-  </div>
+            Create your account
 
-  <!-- Password -->
-  <div class="form-group">
-    <label for="password">Password</label>
+        </h2>
 
-    <div class="password-wrapper">
-      <input
-        id="password"
-        placeholder="Enter password"
-        type="{{ showPassword() ? 'text' : 'password' }}"
-        formControlName="password"
-        class="form-input" />
 
-      <button
-        type="button"
-        class="show-btn"
-        (click)="showPassword.set(!showPassword())">
-        {{ showPassword() ? 'Hide' : 'Show' }}
-      </button>
+        <p class="form__description">
+
+            Join ZentraBank and manage your finances
+            with confidence.
+
+        </p>
+
+    </header>
+
+
+
+    <div class="form__body">
+
+
+        <!-- Email -->
+
+        <div class="form__group">
+
+            <app-input
+                [required]="true"
+
+                formControlName="email"
+
+                name="email"
+
+                type="email"
+
+                label="Email address"
+
+                placeholder="Enter your email">
+
+            </app-input>
+
+        </div>
+
+
+
+
+        <!-- Username -->
+
+        <div class="form__group">
+
+            <app-input
+
+                formControlName="userName"
+                [required]="true"
+                name="userName"
+
+                label="Username"
+
+                placeholder="Choose a username">
+
+            </app-input>
+
+        </div>
+
+
+
+
+
+        <!-- Password -->
+
+        <div class="form__group">
+
+
+            <app-input
+
+                formControlName="password"
+
+                [required]="true"
+
+                name="password"
+
+                type="password"
+
+                label="Password"
+
+                placeholder="Create a password">
+
+
+                <button
+                    inputSuffix
+                    type="button"
+                    class="form-control__action"
+                    (click)="showPassword.set(!showPassword())">
+
+
+                    {{ showPassword() ? 'Hide' : 'Show' }}
+
+
+                </button>
+
+
+            </app-input>
+
+
+        </div>
+
+
+
+
+
+        <!-- Confirm password -->
+
+        <div class="form__group">
+
+
+            <app-input
+                [required]="true"
+
+                formControlName="confirmPassword"
+
+                name="confirmPassword"
+
+                [type]="showPassword() ? 'text' : 'password'"
+
+                label="Confirm password"
+
+                placeholder="Confirm your password">
+
+            </app-input>
+
+
+        </div>
+
+
+
+
+
+        <!-- Marketing -->
+
+        <div class="form__group">
+
+
+            <div class="form-section">
+
+
+                <label class="form-section__label">
+
+                    Marketing preferences
+
+                </label>
+
+
+
+                <p class="form-section__description">
+
+                    Receive updates about new features,
+                    products and offers.
+
+                </p>
+
+
+
+                <div class="form-options">
+
+
+                    <label class="form-option">
+
+
+                        <input
+                            type="radio"
+                            formControlName="marketing"
+                            value="yes">
+
+
+                        <span>
+
+                            Yes
+
+                        </span>
+
+
+                    </label>
+
+
+
+
+                    <label class="form-option">
+
+
+                        <input
+                            type="radio"
+                            formControlName="marketing"
+                            value="no">
+
+
+                        <span>
+
+                            No
+
+                        </span>
+
+
+                    </label>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
     </div>
 
-    <app-form-error
-      [control]="signupForm.get('password')"
-      field="password">
-    </app-form-error>
-  </div>
 
-  <!-- Confirm Password -->
-  <div class="form-group">
-    <label for="confirmPassword">Confirm Password</label>
-    <input
-      id="confirmPassword"
-      type="password"
-      placeholder="Confirm password"
-      type="{{ showPassword() ? 'text' : 'password' }}"
-      formControlName="confirmPassword"
-      class="form-input" />
-    <app-form-error
-      [control]="signupForm.get('confirmPassword')"
-      field="confirmPassword">
-    </app-form-error>
-  </div>
 
-  <!-- Marketing Preferences -->
-  <div class="form-group">
-    <label for="marketing" class="form-label">Marketing Preferences</label>
-    <p class="form-description">
-      Do you want to be contacted by ZentraBank about features, products and offers?
-    </p>
 
-    <div class="radio-group">
-      <label>
-        <input type="radio" formControlName="marketing" value="yes" />
-        Yes
-      </label>
 
-      <label>
-        <input type="radio" formControlName="marketing" value="no" />
-        No
-      </label>
+    <div class="form__actions">
+
+
+        <app-button
+
+            variant="primary"
+
+            [fullWidth]="true"
+
+            type="submit">
+
+
+            Create account
+
+
+        </app-button>
+
+
     </div>
-  </div>
 
-  <!-- Submit -->
-  <button type="submit" class="submit-btn">
-    Create Account
-  </button>
+
+
+
+
+    <footer class="form__footer">
+
+
+        <span>
+
+            Already have an account?
+
+        </span>
+
+
+        <a routerLink="/auth/login">
+
+            Sign in
+
+        </a>
+
+
+    </footer>
+
+
 </form>

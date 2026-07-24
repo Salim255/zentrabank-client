@@ -10,6 +10,7 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { RouterModule } from "@angular/router";
 import { AppInputComponent } from "./kits/app-input/app-input.component";
+import { LucideAngularModule } from "lucide-angular";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AppInputComponent } from "./kits/app-input/app-input.component";
     AppNameComponent,
     LanguageComponent],
   imports: [
+    LucideAngularModule,
     RouterModule,
     CommonModule,
   ],
