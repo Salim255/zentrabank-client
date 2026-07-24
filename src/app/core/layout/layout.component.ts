@@ -34,24 +34,29 @@ export class LayoutComponent implements OnInit {
 
   }
 
- ngOnInit(): void {
-
+  ngOnInit(): void {
+    // For refresh
+    this.updateHeaderVariant(this.router.url);
     this.router.events
-        .pipe(
-            filter(event => event instanceof NavigationEnd)
-        )
-        .subscribe(() => {
+      .pipe(
+          filter(event => event instanceof NavigationEnd)
+      )
+      .subscribe(() => {
+        const url = this.router.url;
+        this.updateHeaderVariant(url);
+      });
+  }
 
-            const url = this.router.url;
+  private updateHeaderVariant(url: string): void {
 
-            this.headerVariant.set(  url.startsWith("/landing")
-                    ? "light"
-                    : "dark")
+    this.headerVariant.set(
+      url.startsWith("/landing")
+          ? "light"
+          : "dark"
+    );
 
+  }
 
-        });
-
-}
   onLogin() {
     this.router.navigateByUrl("/auth");
   }
