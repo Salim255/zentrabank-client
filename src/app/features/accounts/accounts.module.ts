@@ -4,9 +4,13 @@ import { Accounts } from "./accounts";
 import { AccountItemComponent } from "./components/account-item/account-item.component";
 import { CommonModule } from "@angular/common";
 import { AccountsListComponent } from "./components/accounts-list/accounts-list.component";
+import { SharedModule } from "../../shared/shared.module";
+import { LucideAngularModule } from "lucide-angular";
 
 @NgModule({
   imports: [
+    LucideAngularModule,
+    SharedModule,
     CommonModule,
     AccountsRoutingModule,
   ],

@@ -1,27 +1,12 @@
 .dashboard-layout {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 0;
+  height: 100%;
   position: relative;
-  .dashboard-navbar {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    &__item {
-      app-dashboard-hero{
-        &:hover {
-          cursor: pointer;
-        }
-      }
-        app-hero-navbar {
-          position: absolute;
-          right: 0;
 
-        }
-    }
-  }
   &__children {
-
+    min-height: 0;
+    height: 100%;
   }
 }

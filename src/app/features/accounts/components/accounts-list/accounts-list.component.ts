@@ -2,6 +2,7 @@ import { Component, Input, signal, SimpleChanges } from "@angular/core";
 import { AccountDto } from "../../model/account.model";
 import { Subscription } from "rxjs";
 import { AccountService } from "../../services/account.service";
+import { Wallet } from "lucide-angular";
 
 @Component({
   selector: "app-accounts-list",
@@ -12,6 +13,7 @@ import { AccountService } from "../../services/account.service";
 export class AccountsListComponent {
   accounts = signal<AccountDto[]>([]);
   accountsSubscription!: Subscription;
+  Wallet = Wallet
   constructor(private accountService: AccountService) {}
 
   ngOnInit(): void {

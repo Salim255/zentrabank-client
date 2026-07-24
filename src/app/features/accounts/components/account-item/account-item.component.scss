@@ -1,79 +1,546 @@
+@use "../../../../../themes/styles/media" as *;
+
+
+/* ==========================================================
+   ACCOUNT ITEM
+========================================================== */
+
 .account-item {
-  background: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 20px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
-  &:hover {
-    border-color: var(--primary);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-  }
+    display:
+        flex;
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction:
+        column;
 
-    .account-item__type {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-strong);
-      text-transform: capitalize;
+    gap:
+        var(--space-7);
+
+    padding:
+        var(--space-7);
+
+    background:
+        var(--surface-primary);
+
+    border:
+        1px solid
+        var(--border-light);
+
+    border-radius:
+        var(--radius-xl);
+
+    cursor:
+        pointer;
+
+    transition:
+        transform var(--motion-fast),
+        border-color var(--motion-fast),
+        box-shadow var(--motion-fast);
+
+    box-shadow:
+        0 .8rem 2.4rem rgba(
+            15,
+            23,
+            42,
+            .03
+        );
+
+}
+
+
+
+.account-item:hover {
+
+    transform:
+        translateY(-.2rem);
+
+    border-color:
+        rgba(
+            75,
+            92,
+            255,
+            .18
+        );
+
+    box-shadow:
+        0 1.8rem 4rem rgba(
+            15,
+            23,
+            42,
+            .08
+        );
+
+}
+
+
+
+.account-item:hover
+.account-item__action {
+
+    color:
+        var(--primary-600);
+
+}
+
+
+
+.account-item:hover
+.account-item__action
+lucide-icon {
+
+    transform:
+        translateX(.4rem);
+
+}
+
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.account-item__header {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        space-between;
+
+    gap:
+        var(--space-5);
+
+}
+
+
+
+.account-item__identity {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        var(--space-4);
+
+}
+
+
+
+.account-item__icon {
+
+    width:
+        5.2rem;
+
+    height:
+        5.2rem;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-shrink:
+        0;
+
+    border-radius:
+        var(--radius-lg);
+
+    background:
+        rgba(
+            75,
+            92,
+            255,
+            .08
+        );
+
+    color:
+        var(--primary-600);
+
+}
+
+
+
+.account-item__icon
+lucide-icon {
+
+    width:
+        2.2rem;
+
+    height:
+        2.2rem;
+
+}
+
+
+
+.account-item__heading {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    gap:
+        var(--space-1);
+
+}
+
+
+
+.account-item__title {
+
+    margin:
+        0;
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        var(--heading-sm-size);
+
+    font-weight:
+        var(--font-weight-semibold);
+
+}
+
+
+
+.account-item__number {
+
+    margin:
+        0;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        var(--body-sm-size);
+
+}
+
+
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.account-item__status {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        .7rem
+        1.4rem;
+
+    border-radius:
+        var(--radius-full);
+
+    background:
+        var(--surface-secondary);
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        1.2rem;
+
+    font-weight:
+        var(--font-weight-semibold);
+
+    letter-spacing:
+        .04em;
+
+}
+
+
+
+.account-item__status--active {
+
+    background:
+        rgba(
+            34,
+            197,
+            94,
+            .12
+        );
+
+    color:
+        #15803d;
+
+}
+
+
+
+/* ==========================================================
+   BALANCE
+========================================================== */
+
+.account-item__balance {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--space-2);
+
+}
+
+
+
+.account-item__balance-label {
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        var(--body-sm-size);
+
+}
+
+
+
+.account-item__balance-value {
+
+    margin:
+        0;
+
+    color:
+        var(--text-display);
+
+    font-size:
+        clamp(
+            2.8rem,
+            3vw,
+            3.8rem
+        );
+
+    font-weight:
+        var(--font-weight-bold);
+
+    letter-spacing:
+        -.03em;
+
+}
+
+
+
+/* ==========================================================
+   DETAILS
+========================================================== */
+
+.account-item__details {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:
+        var(--space-5)
+        var(--space-8);
+
+}
+
+
+
+.account-item__detail {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--space-1);
+
+}
+
+
+
+.account-item__detail span {
+
+    color:
+        var(--text-tertiary);
+
+    font-size:
+        1.2rem;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .08em;
+
+}
+
+
+
+.account-item__detail strong {
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        var(--body-md-size);
+
+    font-weight:
+        var(--font-weight-medium);
+
+    word-break:
+        break-word;
+
+}
+
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.account-item__footer {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        var(--space-4);
+
+    padding-top:
+        var(--space-5);
+
+    border-top:
+        1px solid
+        var(--border-light);
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        var(--body-sm-size);
+
+}
+
+
+
+.account-item__action {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        var(--space-2);
+
+    color:
+        var(--text-secondary);
+
+    font-weight:
+        var(--font-weight-medium);
+
+    transition:
+        color var(--motion-fast);
+
+}
+
+
+
+.account-item__action
+lucide-icon {
+
+    width:
+        1.7rem;
+
+    height:
+        1.7rem;
+
+    transition:
+        transform var(--motion-fast);
+
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@include respond(phone) {
+
+    .account-item {
+
+        padding:
+            var(--space-5);
+
+        gap:
+            var(--space-6);
+
     }
 
-    .account-item__status {
-      font-size: 0.85rem;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: var(--gray-100);
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+    .account-item__header {
 
-      &.active {
-        background: var(--success-bg);
-        color: var(--success-text);
-      }
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
     }
-  }
 
-  &__body {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    .account-item__details {
 
-    .account-item__row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+        grid-template-columns:
+            1fr;
 
-      .label {
-        font-size: 0.85rem;
-        color: var(--text-muted);
-      }
+        gap:
+            var(--space-4);
 
-      .value {
-        font-size: 0.95rem;
-        font-weight: 500;
-        color: var(--text-strong);
-      }
-
-      &.balance .value.amount {
-        font-size: 1.15rem;
-        font-weight: 700;
-        color: var(--primary);
-      }
     }
-  }
 
-  &__footer {
-    border-top: 1px solid var(--border-color-light);
-    padding-top: 12px;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-  }
+    .account-item__footer {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+    }
+
 }

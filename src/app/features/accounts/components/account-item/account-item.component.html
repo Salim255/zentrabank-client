@@ -1,49 +1,185 @@
-<div class="account-item" (click)="onOverview()">
-  <div class="account-item__header">
-    <div class="account-item__type">{{ account.type }}</div>
-    <div class="account-item__status" [class.active]="account.status === 'ACTIVE'">
-      {{ account.status }}
-    </div>
-  </div>
+<div
+    class="account-item"
+    (click)="onOverview()">
 
-  <div class="account-item__body">
-    <div class="account-item__row">
-      <span class="label">Account Number</span>
-      <span class="value">{{ account.accountNumber }}</span>
-    </div>
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-    <div class="account-item__row">
-      <span class="label">IBAN</span>
-      <span class="value">{{ account.iban }}</span>
-    </div>
+    <header class="account-item__header">
 
-    <div class="account-item__row">
-      <span class="label">BIC</span>
-      <span class="value">{{ account.bic }}</span>
-    </div>
+        <div class="account-item__identity">
 
-    <div class="account-item__row">
-      <span class="label">Currency</span>
-      <span class="value">{{ account.currency }}</span>
-    </div>
+            <div class="account-item__icon">
 
-    <div class="account-item__row balance">
-      <span class="label">Balance</span>
-      <span class="value amount">{{ account.balance | currency: account.currency }}</span>
-    </div>
+                <lucide-icon
+                    [img]="Wallet">
 
-    <div class="account-item__row">
-      <span class="label">Overdraft</span>
-      <span class="value">
-        <ng-container *ngIf="account.overdraftEnabled; else noOverdraft">
-          Enabled ({{ account.overdraftLimit | currency: account.currency }})
-        </ng-container>
-        <ng-template #noOverdraft>Disabled</ng-template>
-      </span>
-    </div>
-  </div>
+                </lucide-icon>
 
-  <div class="account-item__footer">
-    <span class="date">Created: {{ account.createdAt | date:'mediumDate' }}</span>
-  </div>
+            </div>
+
+            <div class="account-item__heading">
+
+                <h3 class="account-item__title">
+
+                    {{ account.type }}
+
+                </h3>
+
+                <p class="account-item__number">
+
+                    •••• {{ account.accountNumber.slice(-4) }}
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <span
+            class="account-item__status"
+            [class.account-item__status--active]="account.status === 'ACTIVE'">
+
+            {{ account.status }}
+
+        </span>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         BALANCE
+    ====================================================== -->
+
+    <section class="account-item__balance">
+
+        <span class="account-item__balance-label">
+
+            Available Balance
+
+        </span>
+
+        <h2 class="account-item__balance-value">
+
+            {{ account.balance | currency:account.currency }}
+
+        </h2>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DETAILS
+    ====================================================== -->
+
+    <section class="account-item__details">
+
+        <div class="account-item__detail">
+
+            <span>
+
+                IBAN
+
+            </span>
+
+            <strong>
+
+                {{ account.iban }}
+
+            </strong>
+
+        </div>
+
+        <div class="account-item__detail">
+
+            <span>
+
+                BIC
+
+            </span>
+
+            <strong>
+
+                {{ account.bic }}
+
+            </strong>
+
+        </div>
+
+        <div class="account-item__detail">
+
+            <span>
+
+                Currency
+
+            </span>
+
+            <strong>
+
+                {{ account.currency }}
+
+            </strong>
+
+        </div>
+
+        <div class="account-item__detail">
+
+            <span>
+
+                Overdraft
+
+            </span>
+
+            <strong>
+
+                @if(account.overdraftEnabled){
+
+                    {{ account.overdraftLimit | currency:account.currency }}
+
+                } @else {
+
+                    Not enabled
+
+                }
+
+            </strong>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="account-item__footer">
+
+        <span>
+
+            Opened {{ account.createdAt | date:'mediumDate' }}
+
+        </span>
+
+        <div class="account-item__action">
+
+            <span>
+
+                View details
+
+            </span>
+
+            <lucide-icon
+                [img]="ArrowRight">
+
+            </lucide-icon>
+
+        </div>
+
+    </footer>
+
 </div>
