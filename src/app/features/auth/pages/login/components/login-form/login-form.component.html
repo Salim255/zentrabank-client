@@ -1,8 +1,9 @@
 <div class="login-form-wrapper">
-  <form [formGroup]="authForm" class="form" (ngSubmit)="onSubmit()" >
-    <div class="form__header">
+   <div class="form__header">
       <app-name></app-name>
     </div>
+  <form [formGroup]="authForm" class="form" (ngSubmit)="onSubmit()" >
+
     <div class="form-group">
       <label for="userName">Username</label>
       <input

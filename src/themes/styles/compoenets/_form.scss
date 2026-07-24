@@ -1,0 +1,440 @@
+/* ==========================================================
+   FORM
+========================================================== */
+
+.form {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--space-8);
+
+}
+
+
+
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.form__header {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+    gap:
+        var(--space-3);
+
+}
+
+
+
+
+
+.form__eyebrow {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    padding:
+        var(--space-2)
+        var(--space-4);
+
+    border:
+        1px solid
+        var(--border-light);
+
+    border-radius:
+        var(--radius-pill);
+
+    background:
+        var(--surface-primary);
+
+    color:
+        var(--primary-600);
+
+    font-size:
+        var(--body-sm-size);
+
+    font-weight:
+        var(--font-weight-semibold);
+
+}
+
+
+
+
+
+.form__title {
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        var(--heading-lg-size);
+
+    font-weight:
+        var(--font-weight-semibold);
+
+    letter-spacing:
+        var(--tracking-tight);
+
+    line-height:
+        1.15;
+
+}
+
+
+
+
+
+.form__description {
+
+    max-width:
+        48rem;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        var(--body-md-size);
+
+    line-height:
+        1.7;
+
+}
+
+
+
+
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+.form__body {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--space-5);
+
+}
+
+
+
+
+
+/* ==========================================================
+   GROUP
+========================================================== */
+
+.form__group {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--space-2);
+
+}
+
+
+
+
+
+.form__group-header {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        var(--space-3);
+
+}
+
+
+
+
+
+/* ==========================================================
+   LABEL
+========================================================== */
+
+.form__label {
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        var(--body-sm-size);
+
+    font-weight:
+        var(--font-weight-medium);
+
+}
+
+
+
+
+
+.form__hint {
+
+    color:
+        var(--text-tertiary);
+
+    font-size:
+        var(--body-sm-size);
+
+}
+
+
+
+
+
+/* ==========================================================
+   INPUT
+========================================================== */
+
+.form__input {
+
+    width:
+        100%;
+
+    height:
+        5rem;
+
+    padding-inline:
+        var(--space-4);
+
+    border:
+        1px solid
+        var(--border-default);
+
+    border-radius:
+        var(--radius-lg);
+
+    background:
+        var(--surface-primary);
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        var(--body-md-size);
+
+    transition:
+        border-color var(--motion-fast),
+        background var(--motion-fast),
+        box-shadow var(--motion-fast);
+
+}
+
+
+
+
+
+.form__input::placeholder {
+
+    color:
+        var(--text-placeholder);
+
+}
+
+
+
+
+
+.form__input:hover {
+
+    border-color:
+        var(--border-strong);
+
+}
+
+
+
+
+
+.form__input:focus {
+
+    outline:
+        none;
+
+    border-color:
+        var(--border-focus);
+
+    box-shadow:
+        0 0 0 .4rem
+        rgba(61, 90, 254, .08);
+
+}
+
+
+
+
+
+.form__input:disabled {
+
+    background:
+        var(--surface-secondary);
+
+    color:
+        var(--text-disabled);
+
+    cursor:
+        not-allowed;
+
+}
+
+
+
+
+
+/* ==========================================================
+   HELPER
+========================================================== */
+
+.form__helper {
+
+    color:
+        var(--text-tertiary);
+
+    font-size:
+        var(--body-sm-size);
+
+    line-height:
+        1.5;
+
+}
+
+
+
+
+
+/* ==========================================================
+   ERROR
+========================================================== */
+
+.form__error {
+
+    color:
+        var(--danger-500);
+
+    font-size:
+        var(--body-sm-size);
+
+    line-height:
+        1.5;
+
+}
+
+
+
+
+
+/* ==========================================================
+   ACTIONS
+========================================================== */
+
+.form__actions {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--space-3);
+
+}
+
+
+
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.form__footer {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        var(--space-2);
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        var(--body-sm-size);
+
+}
+
+
+
+
+
+.form__footer a {
+
+    color:
+        var(--primary-600);
+
+    font-weight:
+        var(--font-weight-medium);
+
+    text-decoration:
+        none;
+
+    transition:
+        color var(--motion-fast);
+
+}
+
+
+
+
+
+.form__footer a:hover {
+
+    color:
+        var(--primary-700);
+
+}

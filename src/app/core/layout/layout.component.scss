@@ -1,0 +1,11 @@
+.app-layout {
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  &__outlet {
+    min-width: 0;
+    width: 100%;
+    min-height: 0;
+    height: 100%;
+  }
+}

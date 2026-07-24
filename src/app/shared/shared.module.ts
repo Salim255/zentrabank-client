@@ -9,9 +9,11 @@ import { AppButtonComponent } from "./kits/app-button/app-button.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { RouterModule } from "@angular/router";
+import { AppInputComponent } from "./kits/app-input/app-input.component";
 
 @NgModule({
   declarations: [
+    AppInputComponent,
     HeaderComponent,
     FooterComponent,
     AppButtonComponent,
@@ -25,6 +27,7 @@ import { RouterModule } from "@angular/router";
     CommonModule,
   ],
   exports: [
+    AppInputComponent,
     HeaderComponent,
     FooterComponent,
     AppButtonComponent,

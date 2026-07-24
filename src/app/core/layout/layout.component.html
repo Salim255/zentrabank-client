@@ -1,6 +1,10 @@
-<app-header
-    [headerVariant]="headerVariant()"
-    [actions]="headerActions">
-</app-header>
 
-<router-outlet></router-outlet>
+<main class="app-layout">
+  <app-header
+      [headerVariant]="headerVariant()"
+      [actions]="headerActions">
+  </app-header>
+  <div class="pp-layout__outlet">
+    <router-outlet></router-outlet>
+  </div>
+</main>
