@@ -1,16 +1,14 @@
 <section class="landing">
+  <app-header
+      [actions]="headerActions">
+  </app-header>
 
-   <landing-header ></landing-header>
+  <div class="landing__container">
+    <landing-hero-section></landing-hero-section>
 
-    <div class="landing__container">
-      <landing-hero-section></landing-hero-section>
+    <landing-features ></landing-features>
 
-      <landing-features ></landing-features>
+    <app-footer ></app-footer>
 
-
-  <!--     <landing-security></landing-security> -->
-
-      <landing-footer ></landing-footer>
-
-    </div>
+  </div>
 </section>

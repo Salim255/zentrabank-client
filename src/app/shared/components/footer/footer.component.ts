@@ -22,7 +22,7 @@ interface FooterColumn {
 
 @Component({
 
-    selector: 'landing-footer',
+    selector: 'app-footer',
 
     templateUrl: './footer.component.html',
 

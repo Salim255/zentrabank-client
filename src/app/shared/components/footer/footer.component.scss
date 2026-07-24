@@ -1,4 +1,4 @@
-@use "../../../../../themes/styles/media" as *;
+@use "../../../../themes/styles/media" as *;
 
 
 /* ==========================================================
@@ -284,7 +284,7 @@
 
 
 
-.footer__links a {
+.footer__links span {
 
     color:
         rgba(
@@ -311,10 +311,11 @@
 
 
 
-.footer__links a:hover {
+.footer__links span:hover {
 
     color:
         var(--text-inverse);
+    cursor: pointer;
 
 }
 

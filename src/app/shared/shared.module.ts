@@ -6,9 +6,14 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 import { LanguageComponent } from "./components/language/language.component";
 import { InstructionsComponent } from "./components/instructions/instructions.component";
 import { AppButtonComponent } from "./kits/app-button/app-button.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
+    HeaderComponent,
+    FooterComponent,
     AppButtonComponent,
     InstructionsComponent,
     FormErrorComponent,
@@ -16,9 +21,12 @@ import { AppButtonComponent } from "./kits/app-button/app-button.component";
     AppNameComponent,
     LanguageComponent],
   imports: [
+    RouterModule,
     CommonModule,
   ],
   exports: [
+    HeaderComponent,
+    FooterComponent,
     AppButtonComponent,
     NgComponentOutlet,
     InstructionsComponent,

@@ -11,8 +11,6 @@ import { LucideAngularModule } from 'lucide-angular';
 import { HeroSectionComponent } from "./components/hero-section/hero-section.component";
 import { FeaturesComponent } from "./components/features/features.component";
 import { SecurityComponent } from "./components/security/security.component";
-import { FooterComponent } from "./components/footer/footer.component";
-import { HeaderComponent } from "./components/header/header.component";
 import { SharedModule } from "../../shared/shared.module";
 import { TrustFeaturesComponent } from "./components/trust-features/trust-features.component";
 import { TrustStatusCardComponent } from "./components/trust-status-card/trust-status-card.component";
@@ -27,8 +25,6 @@ import { TrustStatusCardComponent } from "./components/trust-status-card/trust-s
   declarations: [
     TrustStatusCardComponent,
     TrustFeaturesComponent,
-    HeaderComponent,
-    FooterComponent,
     SecurityComponent,
     FeaturesComponent,
     HeroSectionComponent,

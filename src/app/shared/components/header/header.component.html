@@ -1,0 +1,109 @@
+<header class="app-header">
+
+
+    <div class="app-header__container">
+
+
+        <!-- ==================================================
+             BRAND
+        =================================================== -->
+
+        <a
+            class="app-header__brand"
+            [routerLink]="routerLink">
+
+
+            <img
+                [src]="logoSrc"
+                [alt]="brandName + brandAccent + ' logo'">
+
+
+
+            <span class="app-header__brand-name">
+
+
+                {{ brandName }}
+
+
+                <span class="app-header__brand-accent">
+
+                    {{ brandAccent }}
+
+                </span>
+
+
+            </span>
+
+
+        </a>
+
+
+
+
+
+        <!-- ==================================================
+             NAVIGATION
+        =================================================== -->
+
+        <nav
+            class="app-header__navigation">
+
+
+            @for(item of navigation; track item.label) {
+
+
+                <a
+                    class="app-header__link"
+                    [routerLink]="item.route"
+                    routerLinkActive="app-header__link--active">
+
+
+                    {{ item.label }}
+
+
+                </a>
+
+
+            }
+
+
+        </nav>
+
+
+
+
+
+        <!-- ==================================================
+             ACTIONS
+        =================================================== -->
+
+        <div
+            class="app-header__actions">
+
+
+            @for(action of actions; track action.label) {
+
+
+                <app-button
+
+                    [variant]="action.variant"
+
+                    [type]="action.type ?? 'button'">
+
+
+                    {{ action.label }}
+
+
+                </app-button>
+
+
+            }
+
+
+        </div>
+
+
+    </div>
+
+
+</header>

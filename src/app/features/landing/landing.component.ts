@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { HeaderAction } from "../../shared/components/header/header.component";
 
 @Component({
   selector: "app-lading",
@@ -7,4 +8,21 @@ import { Component } from "@angular/core";
   standalone: false
 })
 
-export class LandingComponent {}
+export class LandingComponent {
+   headerActions: HeaderAction[] = [
+
+        {
+            label: "Sign in",
+            variant: "ghost",
+            type: "button"
+        },
+
+
+        {
+            label: "Open account",
+            variant: "primary",
+            type: "button"
+        }
+
+    ];
+}
