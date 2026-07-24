@@ -1,160 +1,413 @@
-<section class="about">
+<section class="application">
 
-  <h2 class="about__title">About You</h2>
 
-  <form [formGroup]="applicationForm" class="about__form">
+    <header class="application__header">
 
-    <!-- 1. IDENTITY INFORMATION -->
-    <div class="about__block">
-      <h3 class="about__subtitle">Identity Information</h3>
 
-      <div class="form__row">
+        <h1 class="application__title">
 
-        <div class="form__field">
-          <label for="title">Title</label>
-          <select id="title" formControlName="title">
-            <option value="">Select</option>
-            <option>MR</option>
-            <option>MRS</option>
-            <option>MS</option>
-          </select>
-          <app-form-error [control]="applicationForm.get('title')" field="title"></app-form-error>
-        </div>
+            About you
 
-        <div class="form__field">
-          <label for="firstName">First Name *</label>
-          <input id="firstName" type="text" formControlName="firstName">
-          <app-form-error [control]="applicationForm.get('firstName')" field="firstName"></app-form-error>
-        </div>
+        </h1>
 
-        <div class="form__field">
-          <label for="lastName">Last Name *</label>
-          <input id="lastName" type="text" formControlName="lastName">
-          <app-form-error [control]="applicationForm.get('lastName')" field="lastName"></app-form-error>
-        </div>
-      </div>
 
-      <div class="form__row">
-        <div class="form__field">
-          <label for="dob">Date of Birth *</label>
-          <input id="dob" type="date" formControlName="dob">
-          <app-form-error [control]="applicationForm.get('dob')" field="dob"></app-form-error>
-        </div>
-      </div>
-    </div>
 
-    <!-- 2. CONTACT INFORMATION -->
-    <div class="about__block">
-      <h3 class="about__subtitle">Contact Information</h3>
+        <p class="application__description">
 
-      <div class="form__row">
-        <div class="form__field form__field--wide">
-          <label for="addressLine">Address Line</label>
-          <input id="addressLine" type="text" formControlName="addressLine">
-          <app-form-error [control]="applicationForm.get('addressLine')" field="addressLine"></app-form-error>
-        </div>
-      </div>
+            Tell us a little about yourself.
+            This information helps us create your account securely.
 
-      <div class="form__row">
-        <div class="form__field">
-          <label for="country">Country</label>
-          <select id="country" formControlName="country">
-            <option value="">Select a country</option>
-            <option value="france">France</option>
-          </select>
-          <app-form-error [control]="applicationForm.get('country')" field="country"></app-form-error>
-        </div>
+        </p>
 
-        <div class="form__field">
-          <label for="city">City *</label>
-          <input id="city" type="text" formControlName="city">
-          <app-form-error [control]="applicationForm.get('city')" field="city"></app-form-error>
-        </div>
 
-        <div class="form__field">
-          <label for="zipCode">Zip / Postal Code *</label>
-          <input id="zipCode" type="text" formControlName="zipCode">
-          <app-form-error [control]="applicationForm.get('zipCode')" field="zipCode"></app-form-error>
-        </div>
-      </div>
+    </header>
 
-      <div class="form__row">
-        <div class="form__field">
-          <label for="phoneType">Phone Type</label>
-          <select id="phoneType" formControlName="phoneType">
-            <option>Mobile</option>
-            <option>Home</option>
-            <option>Work</option>
-          </select>
-          <app-form-error [control]="applicationForm.get('phoneType')" field="phoneType"></app-form-error>
-        </div>
 
-        <div class="form__field">
-          <label for="phoneNumber">Phone Number *</label>
-          <input id="phoneNumber" type="text" formControlName="phoneNumber">
-          <app-form-error [control]="applicationForm.get('phoneNumber')" field="phoneNumber"></app-form-error>
-        </div>
-      </div>
-    </div>
 
-    <!-- 3. EMPLOYMENT & FINANCIAL PROFILE -->
-    <div class="about__block">
-      <h3 class="about__subtitle">Employment & Financial Profile</h3>
 
-      <div class="form__field form__field--wide">
-        <label for="employmentStatus">Employment Status</label>
-        <select id="employmentStatus" formControlName="employmentStatus">
-          <option value="">Select</option>
-          <option value="employed">Employed</option>
-          <option value="self-employed">Self‑Employed</option>
-          <option value="unemployed">Unemployed</option>
-          <option value="student">Student</option>
-          <option value="retired">Retired</option>
-          <option value="other">Other</option>
-        </select>
-        <app-form-error [control]="applicationForm.get('employmentStatus')" field="employmentStatus"></app-form-error>
-      </div>
 
-      <div class="about__block" formGroupName="sourceOfWealth">
-        <h4 class="about__subtitle">Source of Wealth</h4>
+    <form
+        class="application__form"
+        [formGroup]="applicationForm">
 
-        <div class="form__checkboxes form__checkboxes--grid">
 
-          <label><input type="checkbox" formControlName="employmentIncome"> Income from Employment</label>
-          <label><input type="checkbox" formControlName="marketInvestments"> Market Investments / Trading</label>
-          <label><input type="checkbox" formControlName="interestDividend"> Interest / Dividend Income</label>
-          <label><input type="checkbox" formControlName="realEstate"> Property / Real Estate</label>
-          <label><input type="checkbox" formControlName="inheritanceGift"> Inheritance / Gift</label>
-          <label><input type="checkbox" formControlName="pension"> Pension / Retirement Benefit</label>
-          <label><input type="checkbox" formControlName="disabilityUnemployment"> Disability / Severance / Unemployment</label>
-          <label><input type="checkbox" formControlName="other"> Other</label>
 
-        </div>
-        <app-form-error [control]="applicationForm.get('sourceOfWealth')" field="sourceOfWealth"></app-form-error>
-      </div>
-    </div>
+        <!-- Identity -->
 
-    <!-- 4. ACCOUNT SETUP -->
-    <div class="about__block">
-      <h3 class="about__subtitle">Account Type</h3>
 
-      <div class="form__field form__field--wide">
-        <label for="accountType">Bank Account Type</label>
-        <select id="accountType" formControlName="accountType">
-          <option value="">Select</option>
-          <option value="CHECKING">Checking Account</option>
-          <option value="SAVINGS">Savings Account</option>
-          <option value="CREDIT">Credit Account</option>
-          <option value="LOAN">Loan Account</option>
-        </select>
-        <app-form-error [control]="applicationForm.get('accountType')" field="accountType"></app-form-error>
-      </div>
-    </div>
+        <section class="application__section">
 
-    <!-- ACTIONS -->
-    <div class="about__actions">
-      <button type="button" class="btn btn--secondary">Back</button>
-      <button type="submit" class="btn btn--primary" (click)="onContinue()">Continue</button>
-    </div>
-  </form>
+
+            <h2 class="application__section-title">
+
+                Identity Information
+
+            </h2>
+
+
+
+            <div class="form__row">
+
+
+                <app-select
+                    class="form__field"
+                    formControlName="title"
+                    name="title"
+                    label="Title"
+                    [options]="titles">
+                </app-select>
+
+
+
+
+                <app-input
+                    class="form__field"
+                    formControlName="firstName"
+                    name="firstName"
+                    label="First name"
+                    placeholder="Enter first name"
+                    [required]="true">
+                </app-input>
+
+
+
+
+                <app-input
+                    class="form__field"
+                    formControlName="lastName"
+                    name="lastName"
+                    label="Last name"
+                    placeholder="Enter last name"
+                    [required]="true">
+                </app-input>
+
+
+            </div>
+
+
+
+
+            <div class="form__row">
+
+
+                <app-input
+
+                    class="form__field"
+
+                    formControlName="dob"
+
+                    name="dob"
+
+                    label="Date of birth"
+
+                    type="date"
+
+                    [required]="true">
+
+                </app-input>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+
+        <!-- Contact -->
+
+
+        <section class="application__section">
+
+
+            <h2 class="application__section-title">
+
+                Contact Information
+
+            </h2>
+
+
+
+
+            <app-input
+
+                formControlName="addressLine"
+
+                name="addressLine"
+
+                label="Address"
+
+                placeholder="Enter your address">
+
+            </app-input>
+
+
+
+
+
+            <div class="form__row">
+
+
+                <app-select
+
+                    formControlName="country"
+
+                    name="country"
+
+                    label="Country"
+
+                    [options]="countries">
+
+                </app-select>
+
+
+
+
+
+                <app-input
+
+                    formControlName="city"
+
+                    name="city"
+
+                    label="City"
+
+                    placeholder="Enter city">
+
+                </app-input>
+
+
+
+
+
+                <app-input
+
+                    formControlName="zipCode"
+
+                    name="zipCode"
+
+                    label="Postal code"
+
+                    placeholder="Enter postal code">
+
+                </app-input>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="form__row">
+
+
+                <app-select
+
+                    formControlName="phoneType"
+
+                    name="phoneType"
+
+                    label="Phone type"
+
+                    [options]="phoneTypes">
+
+                </app-select>
+
+
+
+
+
+                <app-input
+
+                    formControlName="phoneNumber"
+
+                    name="phoneNumber"
+
+                    label="Phone number"
+
+                    placeholder="Enter phone number">
+
+                </app-input>
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+        <!-- Employment -->
+
+
+        <section class="application__section">
+
+
+            <h2 class="application__section-title">
+
+                Employment & Financial Profile
+
+            </h2>
+
+
+
+            <app-select
+
+                formControlName="employmentStatus"
+
+                name="employmentStatus"
+
+                label="Employment status"
+
+                [options]="employmentStatuses">
+
+            </app-select>
+
+
+
+
+
+
+            <div
+                class="application__wealth"
+                formGroupName="sourceOfWealth">
+
+
+                <h3 class="application__sub-title">
+
+                    Source of wealth
+
+                </h3>
+
+
+
+                <div class="application__checkbox-grid">
+
+
+                    @for(item of wealthOptions; track item.control) {
+
+
+                        <label class="application__checkbox">
+
+
+                            <input
+                                type="checkbox"
+                                [formControlName]="item.control">
+
+
+                            <span>
+
+                                {{ item.label }}
+
+                            </span>
+
+
+                        </label>
+
+
+                    }
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+
+
+        <!-- Account -->
+
+
+        <section class="application__section">
+
+
+            <h2 class="application__section-title">
+
+                Account type
+
+            </h2>
+
+
+
+            <app-select
+
+                formControlName="accountType"
+
+                name="accountType"
+
+                label="Bank account type"
+
+                [options]="accountTypes">
+
+            </app-select>
+
+
+
+        </section>
+
+
+
+
+
+
+
+        <!-- Actions -->
+
+
+        <footer class="form__actions">
+
+
+            <app-button
+
+                variant="ghost"
+
+                type="button">
+
+                Back
+
+            </app-button>
+
+
+
+
+
+            <app-button
+
+                variant="primary"
+
+                type="submit">
+
+                Continue
+
+            </app-button>
+
+
+        </footer>
+
+
+
+
+    </form>
+
+
 </section>

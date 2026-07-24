@@ -11,9 +11,11 @@ import { HeaderComponent } from "./components/header/header.component";
 import { RouterModule } from "@angular/router";
 import { AppInputComponent } from "./kits/app-input/app-input.component";
 import { LucideAngularModule } from "lucide-angular";
+import { AppSelectComponent } from "./kits/app-select/app-select.component";
 
 @NgModule({
   declarations: [
+     AppSelectComponent,
     AppInputComponent,
     HeaderComponent,
     FooterComponent,
@@ -29,6 +31,7 @@ import { LucideAngularModule } from "lucide-angular";
     CommonModule,
   ],
   exports: [
+    AppSelectComponent,
     AppInputComponent,
     HeaderComponent,
     FooterComponent,

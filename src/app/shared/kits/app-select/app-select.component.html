@@ -1,0 +1,257 @@
+<div class="form-control">
+
+
+    <!-- LABEL -->
+
+    @if (label) {
+
+        <label
+            class="form-control__label"
+            [for]="id">
+
+            <span>
+
+                {{ label }}
+
+            </span>
+
+
+            @if (required) {
+
+                <span class="form-control__required">
+
+                    *
+
+                </span>
+
+            }
+
+
+        </label>
+
+    }
+
+    <!-- SELECT -->
+
+    <div
+        class="select"
+        [class.select--open]="open"
+        [class.select--invalid]="showError"
+        [class.select--disabled]="disabled">
+
+
+
+
+
+
+        <!-- TRIGGER -->
+
+        <button
+
+            type="button"
+
+            class="select__trigger"
+
+            [id]="id"
+
+            [disabled]="disabled"
+
+            (click)="toggleDropdown()"
+
+            (blur)="onBlur()">
+
+
+
+
+
+            <span class="select__value">
+
+
+
+                @if(selectedOption?.icon; as icon) {
+
+
+                    <lucide-icon
+
+                        class="select__icon"
+
+                        [img]="icon">
+
+                    </lucide-icon>
+
+
+                }
+
+
+
+
+
+                @if(selectedOption) {
+
+
+                    <span>
+
+                        {{ selectedOption.label }}
+
+                    </span>
+
+
+                }
+                @else {
+
+
+                    <span class="select__placeholder">
+
+                        {{ placeholder }}
+
+                    </span>
+
+
+                }
+
+
+
+            </span>
+
+
+
+
+
+
+            <lucide-icon
+
+                class="select__arrow"
+
+                [img]="ChevronDown">
+
+            </lucide-icon>
+
+
+
+        </button>
+
+
+
+
+
+
+
+
+        <!-- DROPDOWN -->
+
+        @if(open) {
+
+
+            <div class="select__dropdown">
+
+
+
+
+
+                @for(option of options; track option.value) {
+
+
+
+                    <button
+
+                        type="button"
+
+                        class="select__option"
+
+                        [class.select__option--active]="
+                            option.value === value
+                        "
+
+                        (click)="selectOption(option)">
+
+
+
+
+
+
+                        @if(option.icon) {
+
+
+                            <lucide-icon
+
+                                class="select__option-icon"
+
+                                [img]="option.icon">
+
+                            </lucide-icon>
+
+
+                        }
+
+
+
+
+
+
+                        <span>
+
+                            {{ option.label }}
+
+                        </span>
+
+
+
+
+                    </button>
+
+
+
+                }
+
+
+
+
+            </div>
+
+
+        }
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- HINT -->
+
+    @if(hint && !showError) {
+
+
+        <p class="form-control__hint">
+
+            {{ hint }}
+
+        </p>
+
+
+    }
+
+
+
+
+
+
+
+
+    <!-- ERROR -->
+
+    @if(showError) {
+
+
+        <ng-content select="app-form-error"></ng-content>
+
+
+    }
+
+
+
+</div>
