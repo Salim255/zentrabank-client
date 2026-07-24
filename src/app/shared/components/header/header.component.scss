@@ -62,6 +62,98 @@
 
 
 
+/* ==========================================================
+   DARK VARIANT
+========================================================== */
+
+.app-header--dark {
+
+
+    background:
+        rgba(
+            22,
+            36,
+            122,
+            .88
+        );
+
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            .12
+        );
+
+
+}
+
+
+
+.app-header--dark {
+
+
+    .app-header__brand-name {
+
+
+        color:
+            var(--text-inverse);
+
+
+    }
+
+
+
+    .app-header__brand-accent {
+
+
+        color:
+            var(--primary-200);
+
+
+    }
+
+
+
+    .app-header__link {
+
+
+        color:
+            rgba(
+                255,
+                255,
+                255,
+                .72
+            );
+
+
+    }
+
+
+
+    .app-header__link:hover {
+
+
+        color:
+            var(--text-inverse);
+
+
+    }
+
+
+
+    .app-header__link--active {
+
+
+        color:
+            var(--text-inverse);
+
+
+    }
+
+}
 
 /* ==========================================================
    CONTAINER

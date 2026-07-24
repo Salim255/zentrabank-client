@@ -1,4 +1,7 @@
-<header class="app-header">
+<header
+    class="app-header"
+    [class.app-header--dark]="headerVariant === 'dark'"
+    [class.app-header--light]="headerVariant === 'light'">
 
 
     <div class="app-header__container">
@@ -87,7 +90,7 @@
                 <app-button
 
                     [variant]="action.variant"
-
+                    (click)="action.action?.()"
                     [type]="action.type ?? 'button'">
 
 

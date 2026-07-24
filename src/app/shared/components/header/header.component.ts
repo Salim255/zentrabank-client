@@ -25,15 +25,30 @@ export interface HeaderAction {
 
     label: string;
 
-    variant: HeaderButtonVariant;
+    variant:
+        | "primary"
+        | "secondary"
+        | "outline"
+        | "ghost"
+        | "danger";
+
 
     type?:
         | "button"
         | "submit"
         | "reset";
 
+
+    route?: string;
+
+
+    action?: () => void;
+
 }
 
+export type HeaderVariant =
+    | "light"
+    | "dark";
 
 
 @Component({
@@ -51,10 +66,10 @@ export interface HeaderAction {
 })
 export class HeaderComponent {
 
-
-    constructor(private router: Router){}
     @Input()
+    headerVariant: HeaderVariant = "light";
 
+    @Input()
     navigation: HeaderNavItem[] = [];
 
 
@@ -85,10 +100,6 @@ export class HeaderComponent {
     @Input()
     routerLink =
         "/";
-
-    onLogin() {
-      this.router.navigateByUrl("/auth");
-    }
 
 }
 
