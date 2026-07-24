@@ -1,0 +1,614 @@
+/* ==========================================================
+   APP SELECT
+========================================================== */
+
+
+.select {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+
+}
+
+
+
+/* ==========================================================
+   TRIGGER
+========================================================== */
+
+
+.select__trigger {
+
+    width:
+        100%;
+
+
+    height:
+        4.8rem;
+
+
+    display:
+        flex;
+
+
+    align-items:
+        center;
+
+
+    justify-content:
+        space-between;
+
+
+    gap:
+        var(--space-3);
+
+
+    padding:
+        0
+        var(--space-4);
+
+
+
+    background:
+        var(--surface-primary);
+
+
+
+    border:
+        1px solid
+        var(--border-default);
+
+
+
+    border-radius:
+        var(--radius-md);
+
+
+
+    color:
+        var(--text-primary);
+
+
+
+    font-size:
+        var(--body-md-size);
+
+
+
+    font-weight:
+        var(--font-weight-medium);
+
+
+
+    cursor:
+        pointer;
+
+
+
+    transition:
+
+        border-color var(--motion-fast),
+
+        box-shadow var(--motion-fast),
+
+        background var(--motion-fast);
+
+
+
+    &:hover {
+
+
+        border-color:
+            var(--primary-300);
+
+
+    }
+
+
+
+
+
+    &:focus-visible {
+
+
+        outline:
+            none;
+
+
+
+        border-color:
+            var(--primary-600);
+
+
+
+        box-shadow:
+
+            0 0 0 .35rem
+            rgba(
+                75,
+                92,
+                255,
+                .14
+            );
+
+
+    }
+
+
+}
+
+
+
+
+
+/* ==========================================================
+   VALUE
+========================================================== */
+
+
+.select__value {
+
+    display:
+        flex;
+
+
+    align-items:
+        center;
+
+
+    gap:
+        var(--space-3);
+
+
+    min-width:
+        0;
+
+
+}
+
+
+
+
+
+.select__placeholder {
+
+    color:
+        var(--text-tertiary);
+
+}
+
+
+
+
+
+.select__icon {
+
+
+    width:
+        1.8rem;
+
+
+    height:
+        1.8rem;
+
+
+    flex:
+        0 0 auto;
+
+
+    color:
+        var(--text-secondary);
+
+
+}
+
+
+
+
+
+
+/* ==========================================================
+   ARROW
+========================================================== */
+
+
+.select__arrow {
+
+
+    width:
+        1.8rem;
+
+
+    height:
+        1.8rem;
+
+
+
+    color:
+        var(--text-tertiary);
+
+
+
+    transition:
+
+        transform var(--motion-fast);
+
+
+
+}
+
+
+
+
+
+
+
+.select--open {
+
+
+    .select__arrow {
+
+
+        transform:
+            rotate(180deg);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   DROPDOWN
+========================================================== */
+
+
+.select__dropdown {
+
+
+    position:
+        absolute;
+
+
+
+    top:
+        calc(100% + var(--space-2));
+
+
+
+    left:
+        0;
+
+
+
+    width:
+        100%;
+
+
+
+    z-index:
+        50;
+
+
+
+    padding:
+        var(--space-2);
+
+
+
+    background:
+        var(--surface-primary);
+
+
+
+    border:
+        1px solid
+        var(--border-light);
+
+
+
+    border-radius:
+        var(--radius-lg);
+
+
+
+    box-shadow:
+
+        0 1.2rem 3rem
+        rgba(
+            15,
+            23,
+            42,
+            .12
+        );
+
+
+
+    animation:
+        select-open .15s ease-out;
+
+
+
+}
+
+
+
+
+
+@keyframes select-open {
+
+
+    from {
+
+        opacity:
+            0;
+
+
+        transform:
+            translateY(-.6rem);
+
+    }
+
+
+    to {
+
+        opacity:
+            1;
+
+
+        transform:
+            translateY(0);
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   OPTIONS
+========================================================== */
+
+
+.select__option {
+
+
+    width:
+        100%;
+
+
+
+    display:
+        flex;
+
+
+
+    align-items:
+        center;
+
+
+
+    gap:
+        var(--space-3);
+
+
+
+    height:
+        4.2rem;
+
+
+
+    padding-inline:
+        var(--space-3);
+
+
+
+    border:
+        none;
+
+
+
+    border-radius:
+        var(--radius-md);
+
+
+
+    background:
+        transparent;
+
+
+
+    color:
+        var(--text-primary);
+
+
+
+    font-size:
+        var(--body-md-size);
+
+
+
+    font-weight:
+        var(--font-weight-medium);
+
+
+
+    cursor:
+        pointer;
+
+
+
+    text-align:
+        left;
+
+
+
+    transition:
+
+        background var(--motion-fast),
+
+        color var(--motion-fast);
+
+
+
+
+
+
+
+    &:hover {
+
+
+        background:
+            var(--state-hover);
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+.select__option--active {
+
+
+    background:
+        rgba(
+            75,
+            92,
+            255,
+            .08
+        );
+
+
+    color:
+        var(--primary-600);
+
+
+
+}
+
+
+
+
+
+
+
+.select__option-icon {
+
+
+    width:
+        1.8rem;
+
+
+    height:
+        1.8rem;
+
+
+    color:
+        var(--text-secondary);
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   INVALID STATE
+========================================================== */
+
+
+.select--invalid {
+
+
+    .select__trigger {
+
+
+        border-color:
+            var(--danger-500);
+
+
+
+        &:focus-visible {
+
+
+            box-shadow:
+
+                0 0 0 .35rem
+                rgba(
+                    239,
+                    68,
+                    68,
+                    .12
+                );
+
+
+        }
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   DISABLED
+========================================================== */
+
+
+.select--disabled {
+
+
+    opacity:
+        .6;
+
+
+
+    .select__trigger {
+
+
+        cursor:
+            not-allowed;
+
+
+        background:
+            var(--surface-secondary);
+
+
+    }
+
+
+}
