@@ -1,4 +1,4 @@
-import { Component, Input, signal, SimpleChanges } from "@angular/core";
+import { Component, OnInit, signal, } from "@angular/core";
 import { AccountDto } from "../../model/account.model";
 import { Subscription } from "rxjs";
 import { AccountService } from "../../services/account.service";
@@ -10,7 +10,7 @@ import { Wallet } from "lucide-angular";
   styleUrls: ["./accounts-list.component.scss"],
   standalone: false
 })
-export class AccountsListComponent {
+export class AccountsListComponent implements OnInit {
   accounts = signal<AccountDto[]>([]);
   accountsSubscription!: Subscription;
   Wallet = Wallet

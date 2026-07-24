@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { FormErrorComponent } from "./components/form-error/form-error.component";
-import { CommonModule, NgComponentOutlet } from "@angular/common";
+import { CommonModule, CurrencyPipe, NgComponentOutlet } from "@angular/common";
 import { AppNameComponent } from "./components/app-name/app-name.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { LanguageComponent } from "./components/language/language.component";
@@ -28,6 +28,7 @@ import { ClickOutsideDirective } from "./directives/click-outside/click-outside.
     AppNameComponent,
     LanguageComponent],
   imports: [
+    CurrencyPipe,
     LucideAngularModule,
     RouterModule,
     CommonModule,

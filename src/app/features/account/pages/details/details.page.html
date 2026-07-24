@@ -1,52 +1,166 @@
 <section class="account-details">
 
-  <h2 class="account-details__title">Bank Account Details</h2>
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
-  <!-- Account Holder -->
-  <div class="account-details__row">
-    <span class="account-details__label">Account Holder</span>
-    <span class="account-details__value">John Doe</span>
-  </div>
+    <header class="account-details__hero">
 
-  <!-- Account Number -->
-  <div class="account-details__row">
-    <span class="account-details__label">Account Number</span>
-    <span class="account-details__value">234567000</span>
-  </div>
+        <div class="account-details__identity">
 
-  <!-- IBAN -->
-  <div class="account-details__row">
-    <span class="account-details__label">IBAN</span>
-    <span class="account-details__value">FR76 3000 6000 0112 3456 7890 189</span>
-  </div>
+            <div class="account-details__icon">
 
-  <!-- BIC / SWIFT -->
-  <div class="account-details__row">
-    <span class="account-details__label">BIC / SWIFT</span>
-    <span class="account-details__value">BNPAFRPPXXX</span>
-  </div>
+                <lucide-icon
+                    [img]="Wallet">
 
-  <!-- Account Type -->
-  <div class="account-details__row">
-    <span class="account-details__label">Account Type</span>
-    <span class="account-details__value">Current Account</span>
-  </div>
+                </lucide-icon>
 
-  <!-- Available Balance -->
-  <div class="account-details__row">
-    <span class="account-details__label">Available Balance</span>
-    <span class="account-details__value account-details__value--highlight">
-      €12,450.90
-    </span>
-  </div>
+            </div>
 
-  <!-- Actions -->
-  <div class="account-details__actions">
-    <button class="account-details__button">View Transactions</button>
-    <button class="account-details__button account-details__button--secondary">
-      Download Statement
-    </button>
-  </div>
+            <div>
+
+                <p class="account-details__eyebrow">
+
+                    {{ account()?.type }}
+
+                </p>
+
+                <h1 class="account-details__title">
+
+                    •••• {{ account()?.accountNumber?.slice(-4) }}
+
+                </h1>
+
+            </div>
+
+        </div>
+
+        <span
+            class="account-details__status"
+            [class.account-details__status--active]="account()?.status === 'ACTIVE'">
+
+            {{ account()?.status }}
+
+        </span>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         BALANCE
+    ====================================================== -->
+
+    <section class="account-details__balance">
+
+        <span class="account-details__balance-label">
+
+            Available Balance
+
+        </span>
+
+        <h2 class="account-details__balance-value">
+
+            {{ account()?.balance | currency:account()?.currency }}
+
+        </h2>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INFORMATION
+    ====================================================== -->
+
+    <section class="account-details__card">
+
+        <header class="account-details__card-header">
+
+            <h3>
+
+                Account Information
+
+            </h3>
+
+        </header>
+
+        <div class="account-details__grid">
+
+            <div class="account-details__field">
+
+                <span>Account Holder</span>
+
+                <strong>John Doe</strong>
+
+            </div>
+
+            <div class="account-details__field">
+
+                <span>Account Number</span>
+
+                <strong>{{ account()?.accountNumber }}</strong>
+
+            </div>
+
+            <div class="account-details__field">
+
+                <span>IBAN</span>
+
+                <strong>{{ account()?.iban }}</strong>
+
+            </div>
+
+            <div class="account-details__field">
+
+                <span>BIC / SWIFT</span>
+
+                <strong>{{ account()?.bic }}</strong>
+
+            </div>
+
+            <div class="account-details__field">
+
+                <span>Currency</span>
+
+                <strong>{{ account()?.currency }}</strong>
+
+            </div>
+
+            <div class="account-details__field">
+
+                <span>Created</span>
+
+                <strong>{{ account()?.createdAt | date:'mediumDate' }}</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ACTIONS
+    ====================================================== -->
+
+    <footer class="account-details__actions">
+
+        <app-button
+            variant="ghost">
+
+            View Transactions
+
+        </app-button>
+
+        <app-button
+            variant="secondary">
+
+            Download Statement
+
+        </app-button>
+
+    </footer>
 
 </section>
-
