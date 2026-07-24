@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup } from "@angular/forms";
+import { Component, OnInit, Optional, Self } from "@angular/core";
+import { FormGroup, NgControl } from "@angular/forms";
 import { AuthService } from "../../../../services/auth.service";
 import { Subscription } from "rxjs";
 import { Router } from "@angular/router";

@@ -1,43 +1,98 @@
-<div class="login-form-wrapper">
-   <div class="form__header">
-      <app-name></app-name>
-    </div>
-  <form [formGroup]="authForm" class="form" (ngSubmit)="onSubmit()" >
+<div class="login">
 
-    <div class="form-group">
-      <label for="userName">Username</label>
-      <input
-        id="userName"
-        type="text"
-        placeholder="Enter your username"
-        formControlName="userName"
-        class="form-input" />
+    <div class="login__container">
 
-      <app-form-error
-          [control]="authForm.get('userName')"
-          field="userName">
-      </app-form-error>
+        <header class="form__header">
+
+            <app-name>
+            </app-name>
+
+            <h1 class="form__title">
+
+                Welcome back
+
+            </h1>
+
+            <p class="form__description">
+
+                Sign in to securely access your banking dashboard.
+
+            </p>
+
+        </header>
+
+        <form
+            class="form"
+            [formGroup]="authForm"
+            (ngSubmit)="onSubmit()">
+
+            <div class="form__body">
+
+                <div class="form__group">
+
+                    <app-input
+                        [required]="true"
+                        formControlName="userName"
+                        name="userName"
+                        label="Username"
+                        placeholder="Enter your username">
+
+                    </app-input>
+
+                </div>
+
+
+
+                <div class="form__group">
+
+                    <app-input
+                        formControlName="password"
+                        type="password"
+                        name="password"
+                        label="Password"
+                        placeholder="Enter your password">
+
+                    </app-input>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form__actions">
+
+                <app-button
+                    [fullWidth]="true"
+                    variant="primary"
+                    type="submit">
+
+                    Sign in
+
+                </app-button>
+
+            </div>
+
+
+
+            <footer class="form__footer">
+
+                <span>
+
+                    Don't have an account?
+
+                </span>
+
+                <a routerLink="/auth/signup">
+
+                    Create one
+
+                </a>
+
+            </footer>
+
+        </form>
+
     </div>
-    <div class="form__group">
-      <label for="password" class="form__label">Password</label>
-      <input
-          formControlName="password"
-          class="form__input"
-          type="password"
-          id="password"
-          placeholder="Enter your password">
-          <app-form-error
-          [control]="authForm.get('password')"
-          field="password">
-          </app-form-error>
-    </div>
-    <div class="form__group">
-      <button type="submit" class="form__button">Login</button>
-    </div>
-    <div class="form__footer">
-      <p class="form__text">Don't have an account?
-        <a routerLink="/auth/signup" class="form__link">Register</a>
-      </p>
-    </div>
-  </form>
+
 </div>

@@ -1,5 +1,15 @@
-import { Component, Input } from "@angular/core";
-import { ControlValueAccessor } from "@angular/forms";
+import {
+  Component,
+  Input,
+  Optional,
+  Self
+} from "@angular/core";
+
+import {
+  ControlValueAccessor,
+  NgControl
+} from "@angular/forms";
+
 
 @Component({
   selector: "app-input",
@@ -8,65 +18,278 @@ import { ControlValueAccessor } from "@angular/forms";
   standalone: false
 })
 export class AppInputComponent implements ControlValueAccessor {
+
+
+    /* ==========================================================
+       INPUT API
+    ========================================================== */
+
     @Input()
-    inputId = '';
+    label = "";
 
-    @Input() label = "";
 
-    @Input() name = "";
 
-    @Input() hint = "";
+    @Input()
+    name = "";
 
-    @Input() placeholder = "";
 
-    @Input() type: HTMLInputElement["type"] = "text";
 
-    @Input() autocomplete = "off";
+    @Input()
+    placeholder = "";
 
-    @Input() required = false;
 
-    @Input() disabled = false;
 
-    @Input() readonly = false;
+    @Input()
+    hint = "";
+
+
+
+    @Input()
+    type: HTMLInputElement["type"] = "text";
+
+
+
+    @Input()
+    autocomplete = "off";
+
+
+
+    @Input()
+    required = false;
+
+
+
+    @Input()
+    readonly = false;
+
+
+
+    private static nextId = 0;
+
+
+    @Input()
+    id = `app-input-${AppInputComponent.nextId++}`;
+
+
+
+
+    /* ==========================================================
+       STATE
+    ========================================================== */
 
     value = "";
 
-    writeValue(value: string): void {
+    disabled = false;
+
+
+
+
+    /* ==========================================================
+       CONTROL VALUE ACCESSOR
+    ========================================================== */
+
+    private onChange: (value: string) => void = () => {};
+
+    private onTouched: () => void = () => {};
+
+
+
+
+
+    constructor(
+
+        @Optional()
+        @Self()
+        public readonly ngControl: NgControl
+
+    ) {
+
+
+        if (this.ngControl) {
+
+            this.ngControl.valueAccessor = this;
+
+        }
+
+    }
+
+
+
+
+
+    writeValue(value: string | null): void {
 
         this.value = value ?? "";
 
     }
 
-    registerOnChange(fn: any): void {
+
+
+
+
+    registerOnChange(
+        fn: (value: string) => void
+    ): void {
 
         this.onChange = fn;
 
     }
 
-    registerOnTouched(fn: any): void {
+
+
+
+
+    registerOnTouched(
+        fn: () => void
+    ): void {
 
         this.onTouched = fn;
 
     }
 
-    setDisabledState(disabled: boolean): void {
 
-        this.disabled = disabled;
+
+
+
+    setDisabledState(
+        isDisabled: boolean
+    ): void {
+
+        this.disabled = isDisabled;
 
     }
 
-    onInput(event: Event): void {
 
-        const value = (event.target as HTMLInputElement).value;
+
+
+
+
+
+    /* ==========================================================
+       EVENTS
+    ========================================================== */
+
+
+    onInput(
+        event: Event
+    ): void {
+
+
+        const value =
+            (event.target as HTMLInputElement).value;
+
+
 
         this.value = value;
+
 
         this.onChange(value);
 
     }
 
-    onChange = (_: string) => {};
 
-    onTouched = () => {};
+
+
+
+    onBlur(): void {
+
+
+        this.onTouched();
+
+
+        this.control?.markAsTouched();
+
+    }
+
+
+
+
+
+    /* ==========================================================
+       FORM STATE
+    ========================================================== */
+
+
+    get control() {
+
+        return this.ngControl?.control;
+
+    }
+
+
+
+
+
+    get invalid(): boolean {
+
+        return !!this.control?.invalid;
+
+    }
+
+
+
+
+
+    get touched(): boolean {
+
+        return !!this.control?.touched;
+
+    }
+
+
+
+
+
+    get dirty(): boolean {
+
+        return !!this.control?.dirty;
+
+    }
+
+
+
+    get errorMessage(): string | null {
+
+        if (!this.control || !this.showError) {
+            return null;
+        }
+
+
+        if (this.control.hasError('required')) {
+
+            return `${this.label} is required`;
+
+        }
+
+
+        if (this.control.hasError('email')) {
+
+            return 'Please enter a valid email address';
+
+        }
+
+
+        if (this.control.hasError('minlength')) {
+
+            return `${this.label} is too short`;
+
+        }
+
+
+        return null;
+
+    }
+
+    get showError(): boolean {
+
+
+        return !!this.control &&
+            this.control.invalid &&
+            (
+                this.control.touched ||
+                this.control.dirty
+            );
+
+    }
 
 }

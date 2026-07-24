@@ -2,7 +2,9 @@
 
     @if (label) {
 
-        <label for="" class="form-control__label">
+        <label
+            class="form-control__label"
+            [for]="id">
 
             <span>
 
@@ -26,7 +28,10 @@
 
 
 
-    <div class="form-control__field">
+    <div
+        class="form-control__field"
+        [class.form-control__field--invalid]="showError"
+        [class.form-control__field--disabled]="disabled">
 
         <div class="form-control__prefix">
 
@@ -40,11 +45,11 @@
 
             class="form-control__input"
 
-            [type]="type"
-
-            [id]="inputId"
+            [id]="id"
 
             [name]="name"
+
+            [type]="type"
 
             [placeholder]="placeholder"
 
@@ -58,7 +63,7 @@
 
             (input)="onInput($event)"
 
-            (blur)="onTouched()">
+            (blur)="onBlur()">
 
 
 
@@ -73,7 +78,7 @@
 
 
 
-    @if (hint) {
+    @if (hint && !showError) {
 
         <p class="form-control__hint">
 
@@ -85,6 +90,14 @@
 
 
 
-    <ng-content select="app-form-error"></ng-content>
+    @if (showError && errorMessage) {
+
+      <p class="form-control__error">
+
+          {{ errorMessage }}
+
+      </p>
+
+  }
 
 </div>
