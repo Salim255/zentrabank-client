@@ -5,6 +5,8 @@ import { SharedModule } from "../../../../shared/shared.module";
 import { LucideAngularModule } from "lucide-angular";
 import { TransactionItemComponent } from "./components/transaction-item/transaction-item.component";
 import { CommonModule } from "@angular/common";
+import { TransactionSummaryComponent } from "./components/transaction-summary/transaction-summary.component";
+import { TransactionCardComponent } from "./components/transaction-card/transaction-card.component";
 
 @NgModule({
   imports:[
@@ -13,7 +15,12 @@ import { CommonModule } from "@angular/common";
     SharedModule,
     HistoryRoutingModule
   ],
-  declarations: [HistoryPage, TransactionItemComponent]
+  declarations: [
+    HistoryPage,
+    TransactionCardComponent,
+    TransactionSummaryComponent,
+    TransactionItemComponent,
+  ]
 })
 
 export class HistoryModule{}

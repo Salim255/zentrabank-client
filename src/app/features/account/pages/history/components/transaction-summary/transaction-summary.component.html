@@ -1,0 +1,152 @@
+<section class="transaction-summary">
+
+    <header class="transaction-summary__header">
+
+        <div>
+
+            <h2 class="transaction-summary__title">
+
+                Transaction Summary
+
+            </h2>
+
+            <p class="transaction-summary__description">
+
+                A quick overview of your account activity.
+
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+
+
+    <div class="transaction-summary__grid">
+
+        <!-- Transactions -->
+
+        <article class="transaction-summary__card">
+
+            <div class="transaction-summary__icon">
+
+                <lucide-icon
+                    name="receipt">
+                </lucide-icon>
+
+            </div>
+
+            <span class="transaction-summary__label">
+
+                Transactions
+
+            </span>
+
+            <h3 class="transaction-summary__value">
+
+                284
+
+            </h3>
+
+        </article>
+
+
+
+
+
+        <!-- Money In -->
+
+        <article class="transaction-summary__card">
+
+            <div
+                class="transaction-summary__icon transaction-summary__icon--success">
+
+                <lucide-icon
+                    name="arrow-down-left">
+                </lucide-icon>
+
+            </div>
+
+            <span class="transaction-summary__label">
+
+                Money In
+
+            </span>
+
+            <h3
+                class="transaction-summary__value transaction-summary__value--success">
+
+                + £12,480
+
+            </h3>
+
+        </article>
+
+
+
+
+
+        <!-- Money Out -->
+
+        <article class="transaction-summary__card">
+
+            <div
+                class="transaction-summary__icon transaction-summary__icon--danger">
+
+                <lucide-icon
+                    [img]="arrowUpRight">
+                </lucide-icon>
+
+            </div>
+
+            <span class="transaction-summary__label">
+
+                Money Out
+
+            </span>
+
+            <h3
+                class="transaction-summary__value transaction-summary__value--danger">
+
+                − £7,920
+
+            </h3>
+
+        </article>
+
+
+
+
+
+        <!-- Balance -->
+
+        <article class="transaction-summary__card transaction-summary__card--balance">
+
+            <div
+                class="transaction-summary__icon transaction-summary__icon--primary">
+
+                <lucide-icon
+                    name="wallet">
+                </lucide-icon>
+
+            </div>
+
+            <span class="transaction-summary__label">
+
+                Current Balance
+
+            </span>
+
+            <h3 class="transaction-summary__value">
+
+                £18,392
+
+            </h3>
+
+        </article>
+
+    </div>
+
+</section>

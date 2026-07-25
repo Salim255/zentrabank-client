@@ -1,0 +1,312 @@
+/* ==========================================================
+   SUMMARY
+========================================================== */
+
+.transaction-summary {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-8);
+
+}
+
+
+
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.transaction-summary__header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: var(--space-8);
+
+}
+
+
+
+
+
+.transaction-summary__title {
+
+    margin: 0;
+
+    color: var(--text-display);
+
+    font-size: var(--heading-lg-size);
+
+    font-weight: var(--font-weight-semibold);
+
+    letter-spacing: var(--tracking-tight);
+
+}
+
+
+
+
+
+.transaction-summary__description {
+
+    margin-top: var(--space-2);
+
+    color: var(--text-secondary);
+
+    line-height: 1.7;
+
+}
+
+
+
+
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.transaction-summary__grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: var(--space-5);
+
+}
+
+
+
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.transaction-summary__card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-4);
+
+    padding: var(--space-7);
+
+    background: var(--surface-primary);
+
+    border: 1px solid var(--border-light);
+
+    border-radius: var(--radius-2xl);
+
+    transition:
+        transform var(--motion-fast),
+        border-color var(--motion-fast),
+        box-shadow var(--motion-fast);
+
+}
+
+
+
+
+
+.transaction-summary__card:hover {
+
+    transform: translateY(-2px);
+
+    border-color: var(--border-default);
+
+    box-shadow:
+        0 .8rem 2rem rgba(15,23,42,.05);
+
+}
+
+
+
+
+
+.transaction-summary__card--balance {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(75,92,255,.05),
+            rgba(75,92,255,.02)
+        );
+
+}
+
+
+
+
+
+/* ==========================================================
+   ICON
+========================================================== */
+
+.transaction-summary__icon {
+
+    width: 5rem;
+
+    height: 5rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: var(--radius-xl);
+
+    background: var(--surface-secondary);
+
+    color: var(--text-secondary);
+
+}
+
+
+
+
+
+.transaction-summary__icon--primary {
+
+    background: rgba(75,92,255,.08);
+
+    color: var(--primary-600);
+
+}
+
+
+
+
+
+.transaction-summary__icon--success {
+
+    background: rgba(34,197,94,.08);
+
+    color: var(--success-600);
+
+}
+
+
+
+
+
+.transaction-summary__icon--danger {
+
+    background: rgba(239,68,68,.08);
+
+    color: var(--danger-600);
+
+}
+
+
+
+
+
+.transaction-summary__icon lucide-icon {
+
+    width: 2.2rem;
+
+    height: 2.2rem;
+
+}
+
+
+
+
+
+/* ==========================================================
+   TYPOGRAPHY
+========================================================== */
+
+.transaction-summary__label {
+
+    color: var(--text-muted);
+
+    font-size: var(--body-xs-size);
+
+    font-weight: var(--font-weight-semibold);
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+
+}
+
+
+
+
+
+.transaction-summary__value {
+
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 3rem;
+
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: -.04em;
+
+}
+
+
+
+
+
+.transaction-summary__value--success {
+
+    color: var(--success-600);
+
+}
+
+
+
+
+
+.transaction-summary__value--danger {
+
+    color: var(--danger-600);
+
+}
+
+
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 1100px) {
+
+    .transaction-summary__grid {
+
+        grid-template-columns: repeat(2,1fr);
+
+    }
+
+}
+
+
+
+
+
+@media (max-width: 640px) {
+
+    .transaction-summary__grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
