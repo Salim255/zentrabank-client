@@ -1,89 +1,664 @@
-.expenses-history {
-  width: 100%;
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+@use "../../../../../themes/styles/media" as *;
 
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 
-  &__title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #0f172a;
-    text-align: center;
-  }
+/* ==========================================================
+   PAGE
+========================================================== */
 
-  /* Filters */
-  &__filters {
+.transactions {
+
     display: flex;
-    gap: 1rem;
-    justify-content: flex-end;
-  }
 
-  &__filter {
-    padding: 0.65rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    background: #f9fafb;
-    font-size: 0.95rem;
-    color: #0f172a;
+    flex-direction: column;
+
+    gap: var(--space-10);
+
+    padding: var(--space-10);
+
+}
+
+
+
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.transactions__header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: var(--space-8);
+
+}
+
+
+
+
+
+.transactions__heading {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-3);
+
+}
+
+
+
+
+
+.transactions__title {
+
+    margin: 0;
+
+    color: var(--text-display);
+
+    font-size: var(--heading-xl-size);
+
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: var(--tracking-tight);
+
+}
+
+
+
+
+
+.transactions__description {
+
+    margin: 0;
+
+    max-width: 58rem;
+
+    color: var(--text-secondary);
+
+    line-height: 1.7;
+
+}
+
+
+
+
+
+.transactions__toolbar {
+
+    width: 34rem;
+
+}
+
+
+
+
+
+/* ==========================================================
+   LIST
+========================================================== */
+
+.transactions__list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-6);
+
+}
+
+
+
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.transaction {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-8);
+
+    padding: var(--space-8);
+
+    border-radius: var(--radius-2xl);
+
+    border: 1px solid var(--border-light);
+
+    background: var(--surface-primary);
+
+    transition:
+        transform var(--motion-fast),
+        border-color var(--motion-fast),
+        box-shadow var(--motion-fast);
+
+}
+
+
+
+
+
+.transaction:hover {
+
+    transform: translateY(-2px);
+
+    border-color: var(--border-default);
+
+    box-shadow:
+        0 .8rem 2.8rem rgba(15, 23, 42, .06);
+
+}
+
+
+
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.transaction__top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: var(--space-8);
+
+}
+
+
+
+
+
+.transaction__identity {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-5);
+
+}
+
+
+
+
+
+.transaction__icon {
+
+    width: 5.4rem;
+
+    height: 5.4rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: var(--radius-xl);
+
+    background: var(--surface-secondary);
+
+    border: 1px solid var(--border-light);
+
+}
+
+
+
+
+
+.transaction--deposit .transaction__icon {
+
+    background: rgba(34, 197, 94, .08);
+
+    color: var(--success-600);
+
+}
+
+
+
+
+
+.transaction--withdrawal .transaction__icon {
+
+    background: rgba(239, 68, 68, .08);
+
+    color: var(--danger-600);
+
+}
+
+
+
+
+
+.transaction--transfer .transaction__icon {
+
+    background: rgba(75, 92, 255, .08);
+
+    color: var(--primary-600);
+
+}
+
+
+
+
+
+.transaction__icon lucide-icon {
+
+    width: 2.4rem;
+
+    height: 2.4rem;
+
+}
+
+
+
+
+
+.transaction__type {
+
+    display: inline-block;
+
+    margin-bottom: .5rem;
+
+    color: var(--text-muted);
+
+    font-size: var(--body-xs-size);
+
+    font-weight: var(--font-weight-semibold);
+
+    text-transform: uppercase;
+
+    letter-spacing: .12em;
+
+}
+
+
+
+
+
+.transaction__title {
+
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: var(--heading-md-size);
+
+    font-weight: var(--font-weight-semibold);
+
+}
+
+
+
+
+
+.transaction__subtitle {
+
+    margin-top: .6rem;
+
+    color: var(--text-secondary);
+
+    line-height: 1.6;
+
+}
+
+
+
+
+
+/* ==========================================================
+   RIGHT
+========================================================== */
+
+.transaction__value {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: var(--space-2);
+
+}
+
+
+
+
+
+.transaction__amount {
+
+    font-size: 2.8rem;
+
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: -.04em;
+
+    white-space: nowrap;
+
+}
+
+
+
+
+
+.transaction__amount--positive {
+
+    color: var(--success-600);
+
+}
+
+
+
+
+
+.transaction__amount--negative {
+
+    color: var(--danger-600);
+
+}
+
+
+
+
+
+.transaction__status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: .6rem;
+
+    color: var(--success-600);
+
+    font-size: var(--body-sm-size);
+
+    font-weight: var(--font-weight-medium);
+
+}
+
+
+
+
+
+.transaction__status lucide-icon {
+
+    width: 1.6rem;
+
+    height: 1.6rem;
+
+}
+
+
+
+
+
+/* ==========================================================
+   INFO GRID
+========================================================== */
+
+.transaction__details {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: var(--space-5);
+
+    padding: var(--space-6) 0;
+
+    border-top: 1px solid var(--border-light);
+
+    border-bottom: 1px solid var(--border-light);
+
+}
+
+
+
+
+
+.transaction-detail {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: .7rem;
+
+}
+
+
+
+
+
+.transaction-detail__label {
+
+    color: var(--text-muted);
+
+    font-size: var(--body-xs-size);
+
+    font-weight: var(--font-weight-medium);
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+
+}
+
+
+
+
+
+.transaction-detail__value {
+
+    color: var(--text-primary);
+
+    font-size: var(--body-md-size);
+
+    font-weight: var(--font-weight-semibold);
+
+    word-break: break-word;
+
+}
+
+
+
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.transaction__footer {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+}
+
+
+
+
+
+.transaction__action {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: var(--space-2);
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
     cursor: pointer;
 
-    &:focus {
-      outline: none;
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-    }
-  }
+    color: var(--primary-600);
 
-  /* Table */
-  &__table {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 14px;
-    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-  }
+    font-size: var(--body-sm-size);
 
-  &__header,
-  &__row {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1.5fr 1fr;
-    padding: 1rem 1.25rem;
-    font-size: 0.95rem;
-  }
+    font-weight: var(--font-weight-semibold);
 
-  &__header {
-    background: #f8fafc;
-    font-weight: 600;
-    color: #475569;
-    border-bottom: 1px solid #e2e8f0;
-  }
+    transition: gap var(--motion-fast);
 
-  &__row {
-    color: #0f172a;
-    border-bottom: 1px solid #f1f5f9;
+}
 
-    &:last-child {
-      border-bottom: none;
-    }
 
-    &:hover {
-      background: #f9fafb;
-    }
-  }
 
-  &__amount {
-    font-weight: 600;
 
-    &--negative {
-      color: #dc2626;
+
+.transaction__action:hover {
+
+    gap: var(--space-3);
+
+}
+
+
+
+
+
+.transaction__action lucide-icon {
+
+    width: 1.7rem;
+
+    height: 1.7rem;
+
+}
+
+
+
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@include respond(tab-port) {
+
+    .transactions {
+
+        padding: var(--space-8);
+
     }
 
-    &--positive {
-      color: #16a34a;
+
+
+    .transactions__header {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
     }
-  }
+
+
+
+    .transactions__toolbar {
+
+        width: 100%;
+
+    }
+
+
+
+    .transaction__details {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@include respond(phone) {
+
+    .transactions {
+
+        padding: var(--space-5);
+
+    }
+
+
+
+    .transaction {
+
+        padding: var(--space-6);
+
+        gap: var(--space-6);
+
+    }
+
+
+
+    .transaction__top {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+
+    .transaction__identity {
+
+        width: 100%;
+
+    }
+
+
+
+    .transaction__value {
+
+        width: 100%;
+
+        align-items: flex-start;
+
+    }
+
+
+
+    .transaction__amount {
+
+        font-size: 2.2rem;
+
+    }
+
+
+
+    .transaction__details {
+
+        grid-template-columns: 1fr;
+
+    }
+
 }
