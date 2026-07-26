@@ -13,7 +13,9 @@ const routes: Routes = [
     children: [
       {
         path: "landing",
-        loadChildren: () => import('../../features/landing/landing.module').then(m => m.LandingModule)
+        loadChildren: () => import('../../features/landing/landing.module').then(m => m.LandingModule),
+        canMatch: [AuthRedirectGuard]
+
       },
       {
         path: 'auth',
