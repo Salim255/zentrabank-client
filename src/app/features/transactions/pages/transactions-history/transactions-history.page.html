@@ -1,17 +1,35 @@
 <section class="transactions-history">
 
-  <!-- Page Title -->
-  <h1 class="transactions-history__title">Transactions History</h1>
+  <!-- ============================================
+       PAGE HEADER — Banking Product
+  ============================================ -->
+  <header class="transactions-history__header">
+    <h1 class="transactions-history__title">Transactions History</h1>
+    <p class="transactions-history__description">
+      Review all transfers, deposits and withdrawals associated with your account.
+    </p>
+  </header>
 
-  <app-history-filter></app-history-filter>
-
-  <!-- Table -->
-  <div class="transactions-history__table">
-    <app-history-header></app-history-header>
-    <!-- Rows -->
-    @for (item of transactions(); track $index) {
-      <app-history-item [transaction]="item"></app-history-item>
-    }
+  <!-- ============================================
+       FILTERS
+  ============================================ -->
+  <div class="transactions-history__filters">
+    <app-history-filter></app-history-filter>
   </div>
-</section>
 
+  <!-- ============================================
+       TABLE WRAPPER
+  ============================================ -->
+  <section class="transactions-history__table">
+
+    <app-history-header></app-history-header>
+
+    <div class="transactions-history__rows">
+      @for (item of transactions(); track $index) {
+        <app-history-item [transaction]="item"></app-history-item>
+      }
+    </div>
+
+  </section>
+
+</section>

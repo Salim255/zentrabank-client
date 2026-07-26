@@ -1,21 +1,39 @@
-/* Filters */
-.history-filters {
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-end;
+@use "../../../../../../../themes/styles/media" as *;
+/* ==========================================================
+   HISTORY FILTERS — BANKING PRODUCT ENTERPRISE
+========================================================== */
 
-    &__filter {
-    padding: 0.65rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    background: #f9fafb;
-    font-size: 0.95rem;
-    color: #0f172a;
-    cursor: pointer;
-    &:focus {
-        outline: none;
-        border-color: #2563eb;
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-      }
-    }
+.history-filters {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-6);
+
+  padding: var(--space-4) 0;
+}
+
+.history-filters__group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@include respond(tab-port) {
+  .history-filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
   }
+}
+
+@include respond(phone) {
+  .history-filters {
+    padding: var(--space-3) 0;
+  }
+}

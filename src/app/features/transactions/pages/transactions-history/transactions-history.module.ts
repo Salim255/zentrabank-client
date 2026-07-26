@@ -5,6 +5,7 @@ import { HistoryHeaderComponent } from "./components/history-header/history-head
 import { HistoryFilterComponent } from "./components/history-filter/history-filter.component";
 import { HistoryItemComponent } from "./components/history-item/history-item.component";
 import { CurrencyPipe } from "@angular/common";
+import { SharedModule } from "../../../../shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CurrencyPipe } from "@angular/common";
   ],
   imports: [
     CurrencyPipe,
+    SharedModule,
     TransactionsHistoryRoutingModule
   ]
 })

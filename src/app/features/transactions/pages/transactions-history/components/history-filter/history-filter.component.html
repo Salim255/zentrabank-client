@@ -1,15 +1,27 @@
-  <!-- Filters -->
-  <div class="history-filters">
-    <select class="history-filters__filter">
-      <option value="all">All Types</option>
-      <option value="TRANSFER">Transfers</option>
-      <option value="DEPOSIT">Deposits</option>
-      <option value="WITHDRAW">Withdrawals</option>
-    </select>
+<section class="history-filters">
 
-    <select class="history-filters__filter">
-      <option value="30">Last 30 days</option>
-      <option value="90">Last 3 months</option>
-      <option value="365">Last year</option>
-    </select>
+  <!-- Transaction Type -->
+  <div class="history-filters__group">
+    <app-select
+      name="type"
+      formControlName="type"
+      label="Transaction Type"
+      [options]="typeOptions">
+    </app-select>
   </div>
+
+  <!-- Date Range -->
+  <div class="history-filters__group">
+    <app-select
+      name="range"
+      formControlName="range"
+      label="Date Range"
+      [options]="[
+        { label: 'Last 30 days', value: '30' },
+        { label: 'Last 3 months', value: '90' },
+        { label: 'Last year', value: '365' }
+      ]">
+    </app-select>
+  </div>
+
+</section>
