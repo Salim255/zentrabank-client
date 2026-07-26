@@ -13,11 +13,11 @@ import { LucideAngularModule } from "lucide-angular";
 import { AppSelectComponent } from "./kits/app-select/app-select.component";
 import { ClickOutsideDirective } from "./directives/click-outside/click-outside.directive";
 import { GlobalNavigationComponent } from "./components/global-navigation/global-navigation.component";
-import { TransactionHeaderComponent } from "./components/transaction-header/transaction-header.component";
+import { FeatureNavigationComponent } from "./components/feature-navigation/feature-navigation.component";
 
 @NgModule({
   declarations: [
-    TransactionHeaderComponent,
+    FeatureNavigationComponent,
     GlobalNavigationComponent,
     ClickOutsideDirective,
     AppSelectComponent,
@@ -37,7 +37,7 @@ import { TransactionHeaderComponent } from "./components/transaction-header/tran
     CommonModule,
   ],
   exports: [
-    TransactionHeaderComponent,
+    FeatureNavigationComponent,
     GlobalNavigationComponent,
     DatePipe,
     LucideAngularModule,
