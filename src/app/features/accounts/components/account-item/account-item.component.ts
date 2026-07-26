@@ -22,6 +22,6 @@ export class AccountItemComponent {
 
   onOverview(){
     this.accountItemService.setAccountItem(this.account);
-    this.router.navigate(["/dashboard/account"])
+    this.router.navigateByUrl("/accounts/account")
   }
 }

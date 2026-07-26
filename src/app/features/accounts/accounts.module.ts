@@ -6,6 +6,7 @@ import { CommonModule } from "@angular/common";
 import { AccountsListComponent } from "./components/accounts-list/accounts-list.component";
 import { SharedModule } from "../../shared/shared.module";
 import { LucideAngularModule } from "lucide-angular";
+import { AccountsLayoutComponent } from "./components/accounts-layout/accounts-layout.component";
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { LucideAngularModule } from "lucide-angular";
     AccountsRoutingModule,
   ],
   declarations: [
+    AccountsLayoutComponent,
     AccountsListComponent,
     Accounts,
     AccountItemComponent,
