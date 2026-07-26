@@ -1,162 +1,72 @@
 @use "../../../../../themes/styles/media" as *;
-
-
 /* ==========================================================
-   ACCOUNT DETAILS
+   ACCOUNT DETAILS — LINEAR PREMIUM++
+========================================================== */
+/* ==========================================================
+   ACCOUNT DETAILS — BANKING PRODUCT STYLE
 ========================================================== */
 
 .account-details {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        var(--space-8);
-
-    width:
-        100%;
-
-    max-width:
-        112rem;
-
-    margin:
-        0 auto;
-
-    padding:
-        var(--space-8);
-
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-8);
+  max-width: 96rem;
+  margin: 0 auto;
 }
 
 
 
 /* ==========================================================
-   HERO
+   HERO — Banking Product
 ========================================================== */
 
 .account-details__hero {
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-7);
 
-    display:
-        flex;
-
-    align-items:
-        flex-start;
-
-    justify-content:
-        space-between;
-
-    gap:
-        var(--space-8);
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
-
-.account-details__identity {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        var(--space-5);
-
+.account-details__product {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
 }
-
-
 
 .account-details__icon {
+  width: 6rem;
+  height: 6rem;
+  border-radius: var(--radius-lg);
+  background: var(--primary-50);
+  color: var(--primary-700);
 
-    width:
-        6.4rem;
-
-    height:
-        6.4rem;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    flex-shrink:
-        0;
-
-    border-radius:
-        var(--radius-xl);
-
-    background:
-        rgba(
-            75,
-            92,
-            255,
-            .08
-        );
-
-    color:
-        var(--primary-600);
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-
-.account-details__icon
-lucide-icon {
-
-    width:
-        2.8rem;
-
-    height:
-        2.8rem;
-
+.account-details__product-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
 }
 
-
-
-.account-details__eyebrow {
-
-    margin:
-        0 0 var(--space-2);
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        var(--body-sm-size);
-
-    letter-spacing:
-        .08em;
-
-    text-transform:
-        uppercase;
-
+.account-details__product-number {
+  margin: 0;
+  font-size: var(--heading-card-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-display);
 }
 
-
-
-.account-details__title {
-
-    margin:
-        0;
-
-    color:
-        var(--text-display);
-
-    font-size: 3rem;
-
-    font-weight:
-        var(--font-weight-medium);
-
-    letter-spacing:
-        -.03em;
-
+.account-details__product-type {
+  margin: 0;
+  font-size: var(--body-sm-size);
+  color: var(--text-secondary);
 }
 
 
@@ -166,203 +76,67 @@ lucide-icon {
 ========================================================== */
 
 .account-details__status {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    padding:
-        .8rem 1.6rem;
-
-    border-radius:
-        var(--radius-full);
-
-    background:
-        var(--surface-secondary);
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        1.2rem;
-
-    font-weight:
-        var(--font-weight-semibold);
-
-    letter-spacing:
-        .06em;
-
-    text-transform:
-        uppercase;
-
+  padding: .7rem 1.4rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface-secondary);
+  font-size: var(--label-sm-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
 }
 
-
-
 .account-details__status--active {
-
-    background:
-        rgba(
-            34,
-            197,
-            94,
-            .12
-        );
-
-    color:
-        #15803d;
-
+  background: var(--success-50);
+  color: var(--success-700);
 }
 
 
 
 /* ==========================================================
-   BALANCE
+   BALANCE — Financial Identity
 ========================================================== */
 
 .account-details__balance {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        var(--space-3);
-
-    padding:
-        var(--space-7);
-
-    border:
-        1px solid
-        var(--border-light);
-
-    border-radius:
-        var(--radius-xl);
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(
-                75,
-                92,
-                255,
-                .03
-            ),
-            transparent
-        );
-
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
 }
-
-
-
-.account-details__balance-label {
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        var(--body-md-size);
-
-}
-
-
 
 .account-details__balance-value {
+  margin: 0;
+  font-size: clamp(3.2rem, 3.5vw, 4.2rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-display);
+  letter-spacing: -.03em;
+}
 
-    margin:
-        0;
-
-    color:
-        var(--text-display);
-
-    font-size: 3rem;
-
-    font-weight:
-        var(--font-weight-semibold);
-
-    letter-spacing:
-        -.04em;
-
+.account-details__balance-label {
+  margin: 0;
+  font-size: var(--body-sm-size);
+  color: var(--text-tertiary);
 }
 
 
 
 /* ==========================================================
-   CARD
+   SECTION — Banking Metadata
 ========================================================== */
 
-.account-details__card {
+.account-details__section {
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-7);
 
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        var(--space-7);
-
-    padding:
-        var(--space-7);
-
-    background:
-        var(--surface-primary);
-
-    border:
-        1px solid
-        var(--border-light);
-
-    border-radius:
-        var(--radius-xl);
-
-    box-shadow:
-        0 .8rem 2.4rem rgba(
-            15,
-            23,
-            42,
-            .03
-        );
-
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
 }
 
-
-
-.account-details__card-header {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-}
-
-
-
-.account-details__card-header h3 {
-
-    margin:
-        0;
-
-    color:
-        var(--text-primary);
-
-    font-size:
-        var(--heading-sm-size);
-
-    font-weight:
-        var(--font-weight-semibold);
-
+.account-details__section-header h3 {
+  margin: 0;
+  font-size: var(--heading-component-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-display);
 }
 
 
@@ -372,185 +146,40 @@ lucide-icon {
 ========================================================== */
 
 .account-details__grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(
-            2,
-            minmax(0,1fr)
-        );
-
-    gap:
-        var(--space-6)
-        var(--space-8);
-
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: var(--space-6) var(--space-8);
 }
-
-
 
 .account-details__field {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        var(--space-2);
-
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
 }
 
-
-
-.account-details__field span {
-
-    color:
-        var(--text-tertiary);
-
-    font-size:
-        1.2rem;
-
-    letter-spacing:
-        .08em;
-
-    text-transform:
-        uppercase;
-
+.account-details__field label {
+  font-size: var(--label-sm-size);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: .08em;
 }
-
-
 
 .account-details__field strong {
-
-    color:
-        var(--text-primary);
-
-    font-size:
-        var(--body-lg-size);
-
-    font-weight:
-        var(--font-weight-medium);
-
-    line-height:
-        1.5;
-
-    word-break:
-        break-word;
-
+  font-size: var(--body-md-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
 }
 
 
 
 /* ==========================================================
-   ACTIONS
+   ACTIONS — Banking Operations
 ========================================================== */
 
 .account-details__actions {
-
-    display:
-        flex;
-
-    justify-content:
-        flex-end;
-
-    gap:
-        var(--space-4);
-
-    padding-top:
-        var(--space-2);
-
-}
-
-
-
-/* ==========================================================
-   RESPONSIVE
-========================================================== */
-
-@include respond(tab-port) {
-
-    .account-details {
-
-        padding:
-            var(--space-6);
-
-    }
-
-    .account-details__hero {
-
-        flex-direction:
-            column;
-
-        align-items:
-            flex-start;
-
-    }
-
-}
-
-
-
-@include respond(phone) {
-
-    .account-details {
-
-        gap:
-            var(--space-6);
-
-        padding:
-            var(--space-4);
-
-    }
-
-    .account-details__icon {
-
-        width:
-            5.2rem;
-
-        height:
-            5.2rem;
-
-    }
-
-    .account-details__title {
-
-        font-size:
-            3rem;
-
-    }
-
-    .account-details__balance {
-
-        padding:
-            var(--space-5);
-
-    }
-
-    .account-details__card {
-
-        padding:
-            var(--space-5);
-
-    }
-
-    .account-details__grid {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            var(--space-5);
-
-    }
-
-    .account-details__actions {
-
-        flex-direction:
-            column;
-
-    }
-
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-4);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-light);
 }

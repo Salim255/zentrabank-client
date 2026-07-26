@@ -1,228 +1,78 @@
-<article
-    class="transaction-card"
-    [ngClass]="typeClass">
+<article class="transaction-card" [ngClass]="typeClass">
 
+  <!-- ============================================
+       HEADER
+  ============================================ -->
+  <header class="transaction-card__header">
 
-    <!-- HEADER -->
+    <div class="transaction-card__identity">
 
-    <header class="transaction-card__header">
+      <div class="transaction-card__icon">
+        <lucide-icon [img]="icon"></lucide-icon>
+      </div>
 
+      <div class="transaction-card__content">
+        <span class="transaction-card__type">{{ typeLabel }}</span>
+        <h2 class="transaction-card__title">{{ transaction.title }}</h2>
+        <p class="transaction-card__description">{{ transaction.description }}</p>
+      </div>
 
-        <div class="transaction-card__identity">
+    </div>
 
+    <div class="transaction-card__amount-wrapper">
+      <span class="transaction-card__amount" [ngClass]="amountClass">
+        {{ transaction.amount | currency:transaction.currency:"symbol" }}
+      </span>
 
-            <div class="transaction-card__icon">
+      <span class="transaction-card__status">
+        <lucide-icon [img]="checkCircle"></lucide-icon>
+        Completed
+      </span>
+    </div>
 
-                <lucide-icon
-                    [img]="icon">
-                </lucide-icon>
+  </header>
 
-            </div>
 
 
+  <!-- ============================================
+       DETAILS
+  ============================================ -->
+  <section class="transaction-card__details">
 
-            <div class="transaction-card__content">
+    <div class="transaction-card__detail">
+      <span class="transaction-card__label">Date</span>
+      <span class="transaction-card__value">{{ formattedDate }}</span>
+    </div>
 
+    <div class="transaction-card__detail">
+      <span class="transaction-card__label">Reference</span>
+      <span class="transaction-card__value">{{ transaction.reference }}</span>
+    </div>
 
-                <span class="transaction-card__type">
+    <div class="transaction-card__detail">
+      <span class="transaction-card__label">Method</span>
+      <span class="transaction-card__value">{{ transaction.method }}</span>
+    </div>
 
-                    {{ typeLabel }}
+    <div class="transaction-card__detail">
+      <span class="transaction-card__label">Balance After</span>
+      <span class="transaction-card__value">
+        {{ transaction.balanceAfter | currency:transaction.currency:"symbol" }}
+      </span>
+    </div>
 
-                </span>
+  </section>
 
 
 
-                <h2 class="transaction-card__title">
-
-                    {{ transaction.title }}
-
-                </h2>
-
-
-
-                <p class="transaction-card__description">
-
-                    {{ transaction.description }}
-
-                </p>
-
-
-            </div>
-
-
-        </div>
-
-
-
-
-        <div class="transaction-card__amount-wrapper">
-
-
-            <span
-                class="transaction-card__amount"
-                [ngClass]="amountClass">
-
-
-                {{ transaction.amount | currency:
-                    transaction.currency:
-                    "symbol"
-                }}
-
-
-            </span>
-
-
-
-            <span class="transaction-card__status">
-
-
-                <lucide-icon
-                    [img]="checkCircle">
-                </lucide-icon>
-
-
-                Completed
-
-
-            </span>
-
-
-        </div>
-
-
-    </header>
-
-
-
-
-
-    <!-- DETAILS -->
-
-
-    <section class="transaction-card__details">
-
-
-        <div class="transaction-card__detail">
-
-
-            <span class="transaction-card__label">
-
-                Date
-
-            </span>
-
-
-            <span class="transaction-card__value">
-
-                {{ formattedDate }}
-
-            </span>
-
-
-        </div>
-
-
-
-
-
-        <div class="transaction-card__detail">
-
-
-            <span class="transaction-card__label">
-
-                Reference
-
-            </span>
-
-
-            <span class="transaction-card__value">
-
-                {{ transaction.reference }}
-
-            </span>
-
-
-        </div>
-
-
-
-
-
-        <div class="transaction-card__detail">
-
-
-            <span class="transaction-card__label">
-
-                Method
-
-            </span>
-
-
-            <span class="transaction-card__value">
-
-                {{ transaction.method }}
-
-            </span>
-
-
-        </div>
-
-
-
-
-
-        <div class="transaction-card__detail">
-
-
-            <span class="transaction-card__label">
-
-                Balance After
-
-            </span>
-
-
-            <span class="transaction-card__value">
-
-                {{ transaction.balanceAfter | currency:
-                    transaction.currency:
-                    "symbol"
-                }}
-
-            </span>
-
-
-        </div>
-
-
-    </section>
-
-
-
-
-
-    <!-- FOOTER -->
-
-
-    <footer class="transaction-card__footer">
-
-
-        <button
-            class="transaction-card__action"
-            type="button">
-
-
-            View details
-
-
-            <lucide-icon
-                [img]="arrowLeftRight">
-            </lucide-icon>
-
-
-        </button>
-
-
-    </footer>
-
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="transaction-card__footer">
+    <button class="transaction-card__action" type="button">
+      View details
+      <lucide-icon [img]="arrowLeftRight"></lucide-icon>
+    </button>
+  </footer>
 
 </article>

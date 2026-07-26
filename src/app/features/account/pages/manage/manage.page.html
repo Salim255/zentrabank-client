@@ -1,237 +1,182 @@
 <section class="account-manage">
 
-    <header class="account-manage__header">
+  <!-- ============================================
+       PAGE HEADER — Banking Product
+  ============================================ -->
+  <header class="account-manage__header">
+    <h1 class="account-manage__title">Account Controls</h1>
+    <p class="account-manage__description">
+      Configure limits, features, security and documents for this bank account.
+    </p>
+  </header>
 
-        <h1 class="account-manage__title">
 
-            Account Settings
 
-        </h1>
+  <!-- ============================================
+       LIMITS
+  ============================================ -->
+  <section class="account-manage__card">
 
-        <p class="account-manage__description">
+    <header class="account-manage__card-header">
+      <div class="account-manage__card-heading">
+        <h2>Limits</h2>
+        <p>Daily and monthly limits for this account.</p>
+      </div>
 
-            Manage your personal information, security and account preferences.
-
-        </p>
-
+      <app-button variant="ghost">Edit</app-button>
     </header>
 
+    <div class="account-manage__grid">
+
+      <div class="account-manage__field">
+        <span class="account-manage__field-label">Daily Transfer Limit</span>
+        <!-- account()?.limits?.dailyTransfer -->
+        <strong>{{ 10000 | currency:account()?.currency }}</strong>
+      </div>
+
+      <div class="account-manage__field">
+        <span class="account-manage__field-label">Monthly Transfer Limit</span>
+      <!--   {{ account()?.limits?.monthlyTransfer }} -->
+        <strong>{{ 300 | currency:account()?.currency }}</strong>
+      </div>
+
+      <div class="account-manage__field">
+        <span class="account-manage__field-label">ATM Withdrawal Limit</span>
+     <!--    account()?.limits?.atm -->
+        <strong>{{ 300 | currency:account()?.currency }}</strong>
+      </div>
+
+      <div class="account-manage__field">
+        <span class="account-manage__field-label">Online Payments Limit</span>
+       <!--  account()?.limits?.online  -->
+        <strong>{{ 2000 | currency:account()?.currency }}</strong>
+      </div>
+
+    </div>
+
+  </section>
 
 
-    <!-- =====================================================
-         PROFILE
-    ====================================================== -->
 
-    <section class="account-manage__card">
+  <!-- ============================================
+       FEATURES
+  ============================================ -->
+  <section class="account-manage__card">
 
-        <header class="account-manage__card-header">
+    <header class="account-manage__card-header">
+      <div class="account-manage__card-heading">
+        <h2>Features</h2>
+        <p>Available features for this account.</p>
+      </div>
+    </header>
 
-            <div>
+    <div class="account-manage__list">
 
-                <h2>
-
-                    Personal Information
-
-                </h2>
-
-                <p>
-
-                    Update your contact details.
-
-                </p>
-
-            </div>
-
-            <app-button variant="ghost">
-
-                Edit
-
-            </app-button>
-
-        </header>
-
-        <div class="account-manage__grid">
-
-            <div class="account-manage__field">
-
-                <span>Full Name</span>
-
-                <strong>John Doe</strong>
-
-            </div>
-
-            <div class="account-manage__field">
-
-                <span>Email</span>
-
-                <strong>john.doe@gmail.com</strong>
-
-            </div>
-
-            <div class="account-manage__field">
-
-                <span>Phone</span>
-
-                <strong>+33 6 12 34 56 78</strong>
-
-            </div>
-
-            <div class="account-manage__field">
-
-                <span>Address</span>
-
-                <strong>Paris, France</strong>
-
-            </div>
-
+      <div class="account-manage__setting">
+        <div>
+          <strong>Overdraft</strong>
+          <span>Up to {{ account()?.overdraftLimit | currency:account()?.currency }}</span>
         </div>
+        <span class="account-manage__badge account-manage__badge--success">
+          {{ account()?.overdraftEnabled ? 'Enabled' : 'Disabled' }}
+        </span>
+      </div>
 
-    </section>
-
-
-
-    <!-- =====================================================
-         SECURITY
-    ====================================================== -->
-
-    <section class="account-manage__card">
-
-        <header class="account-manage__card-header">
-
-            <div>
-
-                <h2>
-
-                    Security
-
-                </h2>
-
-                <p>
-
-                    Protect your account.
-
-                </p>
-
-            </div>
-
-            <app-button variant="ghost">
-
-                Update
-
-            </app-button>
-
-        </header>
-
-        <div class="account-manage__list">
-
-            <div class="account-manage__setting">
-
-                <div>
-
-                    <strong>Password</strong>
-
-                    <span>Last changed 18 days ago</span>
-
-                </div>
-
-                <span class="account-manage__badge">
-
-                    Active
-
-                </span>
-
-            </div>
-
-            <div class="account-manage__setting">
-
-                <div>
-
-                    <strong>Two-factor authentication</strong>
-
-                    <span>Additional sign-in protection</span>
-
-                </div>
-
-                <span class="account-manage__badge account-manage__badge--success">
-
-                    Enabled
-
-                </span>
-
-            </div>
-
+      <div class="account-manage__setting">
+        <div>
+          <strong>International Transfers</strong>
+          <span>Send money abroad</span>
         </div>
+        <span class="account-manage__badge account-manage__badge--active">Active</span>
+      </div>
 
-    </section>
-
-
-
-    <!-- =====================================================
-         PREFERENCES
-    ====================================================== -->
-
-    <section class="account-manage__card">
-
-        <header class="account-manage__card-header">
-
-            <div>
-
-                <h2>
-
-                    Preferences
-
-                </h2>
-
-                <p>
-
-                    Communication and account preferences.
-
-                </p>
-
-            </div>
-
-        </header>
-
-        <div class="account-manage__list">
-
-            <div class="account-manage__setting">
-
-                <div>
-
-                    <strong>Email Notifications</strong>
-
-                    <span>Receive account activity alerts.</span>
-
-                </div>
-
-                <span class="account-manage__badge account-manage__badge--success">
-
-                    Enabled
-
-                </span>
-
-            </div>
-
-            <div class="account-manage__setting">
-
-                <div>
-
-                    <strong>Marketing Emails</strong>
-
-                    <span>Product updates and offers.</span>
-
-                </div>
-
-                <span class="account-manage__badge">
-
-                    Disabled
-
-                </span>
-
-            </div>
-
+      <div class="account-manage__setting">
+        <div>
+          <strong>Instant Payments</strong>
+          <span>Real-time transfers</span>
         </div>
+        <span class="account-manage__badge account-manage__badge--success">Enabled</span>
+      </div>
 
-    </section>
+    </div>
+
+  </section>
+
+
+
+  <!-- ============================================
+       SECURITY
+  ============================================ -->
+  <section class="account-manage__card">
+
+    <header class="account-manage__card-header">
+      <div class="account-manage__card-heading">
+        <h2>Security</h2>
+        <p>Protect this bank account.</p>
+      </div>
+
+      <app-button variant="ghost">Manage</app-button>
+    </header>
+
+    <div class="account-manage__list">
+
+      <div class="account-manage__setting">
+        <div>
+          <strong>Account Lock</strong>
+          <span>Prevent all outgoing transfers</span>
+        </div>
+        <span class="account-manage__badge">
+          {{ account()?.status ? 'Locked' : 'Unlocked' }}
+        </span>
+      </div>
+
+      <div class="account-manage__setting">
+        <div>
+          <strong>Authorized Devices</strong>
+        <!--   {{ account()?.authorizedDevices?.length }} -->
+          <span> 1 devices</span>
+        </div>
+        <span class="account-manage__badge account-manage__badge--active">Verified</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ============================================
+       DOCUMENTS
+  ============================================ -->
+  <section class="account-manage__card">
+
+    <header class="account-manage__card-header">
+      <div class="account-manage__card-heading">
+        <h2>Documents</h2>
+        <p>Statements and official documents.</p>
+      </div>
+    </header>
+
+    <div class="account-manage__list">
+
+      <div class="account-manage__setting">
+        <div>
+          <strong>Monthly Statements</strong>
+          <span>Download PDF statements</span>
+        </div>
+        <app-button variant="secondary">View</app-button>
+      </div>
+
+      <div class="account-manage__setting">
+        <div>
+          <strong>Account Certificate</strong>
+          <span>Proof of ownership</span>
+        </div>
+        <app-button variant="secondary">Download</app-button>
+      </div>
+
+    </div>
+
+  </section>
 
 </section>

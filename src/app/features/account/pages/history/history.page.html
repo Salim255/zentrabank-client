@@ -1,22 +1,36 @@
 <section class="transactions">
 
-
-    <!-- PAGE HEADER -->
+  <!-- ============================================
+       PAGE HEADER
+  ============================================ -->
+  <header class="transactions__header">
     <app-transactions-header></app-transactions-header>
+  </header>
 
-    <!-- SUMMARY -->
+
+  <!-- ============================================
+       SUMMARY
+  ============================================ -->
+  <section class="transactions__summary">
     <app-transaction-summary
-
       [summary]="summary">
-
     </app-transaction-summary>
+  </section>
 
-    <!-- LIST -->
-    <section class="transactions__list">
-        @for(transaction of transactions(); track transaction.id) {
-            <app-transaction-card
-                [transaction]="transaction">
-            </app-transaction-card>
-        }
-    </section>
+
+  <!-- ============================================
+       LIST
+  ============================================ -->
+  <section class="transactions__list">
+
+    @for (transaction of transactions(); track transaction.id) {
+
+      <app-transaction-card
+        [transaction]="transaction">
+      </app-transaction-card>
+
+    }
+
+  </section>
+
 </section>

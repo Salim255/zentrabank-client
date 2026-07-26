@@ -1,166 +1,121 @@
 <section class="account-details">
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
+  <!-- ============================================
+       ACCOUNT PRODUCT HERO
+  ============================================ -->
+  <header class="account-details__hero">
 
-    <header class="account-details__hero">
+    <div class="account-details__product">
 
-        <div class="account-details__identity">
+      <div class="account-details__icon">
+        <lucide-icon [img]="Wallet"></lucide-icon>
+      </div>
 
-            <div class="account-details__icon">
+      <div class="account-details__product-info">
 
-                <lucide-icon
-                    [img]="Wallet">
+        <h1 class="account-details__product-number">
+          •••• {{ account()?.accountNumber?.slice(-4) }}
+        </h1>
 
-                </lucide-icon>
+        <p class="account-details__product-type">
+          {{ account()?.type }} Account
+        </p>
 
-            </div>
+      </div>
 
-            <div>
+    </div>
 
-                <p class="account-details__eyebrow">
+    <span
+      class="account-details__status"
+      [class.account-details__status--active]="account()?.status === 'ACTIVE'">
+      {{ account()?.status }}
+    </span>
 
-                    {{ account()?.type }}
+  </header>
 
-                </p>
 
-                <h1 class="account-details__title">
 
-                    •••• {{ account()?.accountNumber?.slice(-4) }}
+  <!-- ============================================
+       BALANCE — Financial Identity
+  ============================================ -->
+  <section class="account-details__balance">
 
-                </h1>
+    <h2 class="account-details__balance-value">
+      {{ account()?.balance | currency:account()?.currency }}
+    </h2>
 
-            </div>
+    <p class="account-details__balance-label">
+      Available Balance
+    </p>
 
-        </div>
+  </section>
 
-        <span
-            class="account-details__status"
-            [class.account-details__status--active]="account()?.status === 'ACTIVE'">
 
-            {{ account()?.status }}
 
-        </span>
+  <!-- ============================================
+       ACCOUNT METADATA — Banking Information
+  ============================================ -->
+  <section class="account-details__section">
 
+    <header class="account-details__section-header">
+      <h3>Account Information</h3>
     </header>
 
+    <div class="account-details__grid">
 
+      <div class="account-details__field">
+        <label>Account Holder</label>
+        <strong> salim </strong>
+      </div>
 
-    <!-- =====================================================
-         BALANCE
-    ====================================================== -->
+      <div class="account-details__field">
+        <label>Account Number</label>
+        <strong>{{ account()?.accountNumber }}</strong>
+      </div>
 
-    <section class="account-details__balance">
+      <div class="account-details__field">
+        <label>IBAN</label>
+        <strong>{{ account()?.iban }}</strong>
+      </div>
 
-        <span class="account-details__balance-label">
+      <div class="account-details__field">
+        <label>BIC / SWIFT</label>
+        <strong>{{ account()?.bic }}</strong>
+      </div>
 
-            Available Balance
+      <div class="account-details__field">
+        <label>Currency</label>
+        <strong>{{ account()?.currency }}</strong>
+      </div>
 
-        </span>
+      <div class="account-details__field">
+        <label>Opened On</label>
+        <strong>{{ account()?.createdAt | date:'mediumDate' }}</strong>
+      </div>
 
-        <h2 class="account-details__balance-value">
+    </div>
 
-            {{ account()?.balance | currency:account()?.currency }}
-
-        </h2>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         INFORMATION
-    ====================================================== -->
-
-    <section class="account-details__card">
-
-        <header class="account-details__card-header">
-
-            <h3>
-
-                Account Information
-
-            </h3>
-
-        </header>
-
-        <div class="account-details__grid">
-
-            <div class="account-details__field">
-
-                <span>Account Holder</span>
-
-                <strong>John Doe</strong>
-
-            </div>
-
-            <div class="account-details__field">
-
-                <span>Account Number</span>
-
-                <strong>{{ account()?.accountNumber }}</strong>
-
-            </div>
-
-            <div class="account-details__field">
-
-                <span>IBAN</span>
-
-                <strong>{{ account()?.iban }}</strong>
-
-            </div>
-
-            <div class="account-details__field">
-
-                <span>BIC / SWIFT</span>
-
-                <strong>{{ account()?.bic }}</strong>
-
-            </div>
-
-            <div class="account-details__field">
-
-                <span>Currency</span>
-
-                <strong>{{ account()?.currency }}</strong>
-
-            </div>
-
-            <div class="account-details__field">
-
-                <span>Created</span>
-
-                <strong>{{ account()?.createdAt | date:'mediumDate' }}</strong>
-
-            </div>
-
-        </div>
-
-    </section>
+  </section>
 
 
 
-    <!-- =====================================================
-         ACTIONS
-    ====================================================== -->
+  <!-- ============================================
+       ACCOUNT ACTIONS — Banking Operations
+  ============================================ -->
+  <footer class="account-details__actions">
 
-    <footer class="account-details__actions">
+    <app-button variant="ghost">
+      View Transactions
+    </app-button>
 
-        <app-button
-            variant="ghost">
+    <app-button variant="secondary">
+      Download Statement
+    </app-button>
 
-            View Transactions
+    <app-button variant="secondary">
+      Manage Account
+    </app-button>
 
-        </app-button>
-
-        <app-button
-            variant="secondary">
-
-            Download Statement
-
-        </app-button>
-
-    </footer>
+  </footer>
 
 </section>
