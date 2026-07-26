@@ -1,96 +1,33 @@
 @use "../../../../../themes/styles/media" as *;
 
-
 /* ==========================================================
-   ACCOUNT ITEM
+   ACCOUNT ITEM — LINEAR PREMIUM
 ========================================================== */
 
 .account-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  padding: var(--space-7);
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
 
-    display:
-        flex;
+  transition:
+    transform var(--motion-fast),
+    border-color var(--motion-fast),
+    box-shadow var(--motion-fast),
+    background var(--motion-fast);
 
-    flex-direction:
-        column;
+  box-shadow: 0 .8rem 2.4rem rgba(15, 23, 42, .03);
 
-    gap:
-        var(--space-7);
-
-    padding:
-        var(--space-7);
-
-    background:
-        var(--surface-primary);
-
-    border:
-        1px solid
-        var(--border-light);
-
-    border-radius:
-        var(--radius-xl);
-
-    cursor:
-        pointer;
-
-    transition:
-        transform var(--motion-fast),
-        border-color var(--motion-fast),
-        box-shadow var(--motion-fast);
-
-    box-shadow:
-        0 .8rem 2.4rem rgba(
-            15,
-            23,
-            42,
-            .03
-        );
-
-}
-
-
-
-.account-item:hover {
-
-    transform:
-        translateY(-.2rem);
-
-    border-color:
-        rgba(
-            75,
-            92,
-            255,
-            .18
-        );
-
-    box-shadow:
-        0 1.8rem 4rem rgba(
-            15,
-            23,
-            42,
-            .08
-        );
-
-}
-
-
-
-.account-item:hover
-.account-item__action {
-
-    color:
-        var(--primary-600);
-
-}
-
-
-
-.account-item:hover
-.account-item__action
-lucide-icon {
-
-    transform:
-        translateX(.4rem);
-
+  &:hover {
+    transform: translateY(-.2rem);
+    border-color: var(--primary-200);
+    background: var(--surface-hover);
+    box-shadow: 0 1.8rem 4rem rgba(15, 23, 42, .08);
+  }
 }
 
 
@@ -100,136 +37,53 @@ lucide-icon {
 ========================================================== */
 
 .account-item__header {
-
-    display:
-        flex;
-
-    align-items:
-        flex-start;
-
-    justify-content:
-        space-between;
-
-    gap:
-        var(--space-5);
-
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-5);
 }
-
-
 
 .account-item__identity {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        var(--space-4);
-
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
 }
-
-
 
 .account-item__icon {
+  width: 5.2rem;
+  height: 5.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 
-    width:
-        5.2rem;
-
-    height:
-        5.2rem;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    flex-shrink:
-        0;
-
-    border-radius:
-        var(--radius-lg);
-
-    background:
-        rgba(
-            75,
-            92,
-            255,
-            .08
-        );
-
-    color:
-        var(--primary-600);
-
+  border-radius: var(--radius-lg);
+  background: var(--primary-50);
+  color: var(--primary-700);
 }
 
-
-
-.account-item__icon
-lucide-icon {
-
-    width:
-        2.2rem;
-
-    height:
-        2.2rem;
-
+.account-item__icon lucide-icon {
+  width: 2.2rem;
+  height: 2.2rem;
 }
-
-
 
 .account-item__heading {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    justify-content:
-        center;
-
-    gap:
-        var(--space-1);
-
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
 }
-
-
 
 .account-item__title {
-
-    margin:
-        0;
-
-    color:
-        var(--text-primary);
-
-    font-size:
-        var(--heading-sm-size);
-
-    font-weight:
-        var(--font-weight-semibold);
-
+  margin: 0;
+  font-size: var(--heading-component-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-display);
 }
 
-
-
 .account-item__number {
-
-    margin:
-        0;
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        var(--body-sm-size);
-
+  margin: 0;
+  font-size: var(--body-sm-size);
+  color: var(--text-secondary);
 }
 
 
@@ -239,55 +93,18 @@ lucide-icon {
 ========================================================== */
 
 .account-item__status {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    padding:
-        .7rem
-        1.4rem;
-
-    border-radius:
-        var(--radius-full);
-
-    background:
-        var(--surface-secondary);
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        1.2rem;
-
-    font-weight:
-        var(--font-weight-semibold);
-
-    letter-spacing:
-        .04em;
-
+  padding: .6rem 1.2rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface-secondary);
+  font-size: var(--label-sm-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  letter-spacing: .04em;
 }
 
-
-
 .account-item__status--active {
-
-    background:
-        rgba(
-            34,
-            197,
-            94,
-            .12
-        );
-
-    color:
-        #15803d;
-
+  background: var(--success-50);
+  color: var(--success-700);
 }
 
 
@@ -297,53 +114,22 @@ lucide-icon {
 ========================================================== */
 
 .account-item__balance {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        var(--space-2);
-
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
-
-
 
 .account-item__balance-label {
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        var(--body-sm-size);
-
+  font-size: var(--body-sm-size);
+  color: var(--text-tertiary);
 }
 
-
-
 .account-item__balance-value {
-
-    margin:
-        0;
-
-    color:
-        var(--text-display);
-
-    font-size:
-        clamp(
-            2.8rem,
-            3vw,
-            3.8rem
-        );
-
-    font-weight:
-        var(--font-weight-bold);
-
-    letter-spacing:
-        -.03em;
-
+  margin: 0;
+  font-size: clamp(2.8rem, 3vw, 3.8rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-display);
+  letter-spacing: -.03em;
 }
 
 
@@ -353,71 +139,29 @@ lucide-icon {
 ========================================================== */
 
 .account-item__details {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(
-            2,
-            minmax(0,1fr)
-        );
-
-    gap:
-        var(--space-5)
-        var(--space-8);
-
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5) var(--space-8);
 }
-
-
 
 .account-item__detail {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        var(--space-1);
-
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
 }
-
-
 
 .account-item__detail span {
-
-    color:
-        var(--text-tertiary);
-
-    font-size:
-        1.2rem;
-
-    text-transform:
-        uppercase;
-
-    letter-spacing:
-        .08em;
-
+  font-size: var(--label-sm-size);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: .08em;
 }
 
-
-
 .account-item__detail strong {
-
-    color:
-        var(--text-primary);
-
-    font-size:
-        var(--body-md-size);
-
-    font-weight:
-        var(--font-weight-medium);
-
-    word-break:
-        break-word;
-
+  font-size: var(--body-md-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  word-break: break-word;
 }
 
 
@@ -427,72 +171,37 @@ lucide-icon {
 ========================================================== */
 
 .account-item__footer {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    gap:
-        var(--space-4);
-
-    padding-top:
-        var(--space-5);
-
-    border-top:
-        1px solid
-        var(--border-light);
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        var(--body-sm-size);
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border-light);
+  font-size: var(--body-sm-size);
+  color: var(--text-secondary);
 }
-
-
 
 .account-item__action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  transition: color var(--motion-fast);
 
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    gap:
-        var(--space-2);
-
-    color:
-        var(--text-secondary);
-
-    font-weight:
-        var(--font-weight-medium);
-
-    transition:
-        color var(--motion-fast);
-
+  &:hover {
+    color: var(--primary-600);
+  }
 }
 
+.account-item__action lucide-icon {
+  width: 1.7rem;
+  height: 1.7rem;
+  transition: transform var(--motion-fast);
+}
 
-
-.account-item__action
-lucide-icon {
-
-    width:
-        1.7rem;
-
-    height:
-        1.7rem;
-
-    transition:
-        transform var(--motion-fast);
-
+.account-item:hover .account-item__action lucide-icon {
+  transform: translateX(.4rem);
 }
 
 
@@ -502,45 +211,23 @@ lucide-icon {
 ========================================================== */
 
 @include respond(phone) {
+  .account-item {
+    padding: var(--space-5);
+    gap: var(--space-6);
+  }
 
-    .account-item {
+  .account-item__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-        padding:
-            var(--space-5);
+  .account-item__details {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
 
-        gap:
-            var(--space-6);
-
-    }
-
-    .account-item__header {
-
-        flex-direction:
-            column;
-
-        align-items:
-            flex-start;
-
-    }
-
-    .account-item__details {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            var(--space-4);
-
-    }
-
-    .account-item__footer {
-
-        flex-direction:
-            column;
-
-        align-items:
-            flex-start;
-
-    }
-
+  .account-item__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

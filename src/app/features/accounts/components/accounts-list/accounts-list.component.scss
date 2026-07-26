@@ -1,33 +1,19 @@
 @use "../../../../../themes/styles/media" as *;
 
-
 /* ==========================================================
-   ACCOUNTS LIST
+   ACCOUNTS LIST — LINEAR PREMIUM STYLE
+   ZentraBank Design System
 ========================================================== */
 
 .accounts-list {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        var(--space-8);
-
-    width:
-        100%;
-
-    max-width:
-        124rem;
-
-    margin:
-        0 auto;
-
-    padding:
-        var(--space-8);
-
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-8);
+  max-width: 96rem;
+  margin: 0 auto;
+  font-family: var(--font-family);
+  color: var(--text-primary);
 }
 
 
@@ -37,91 +23,28 @@
 ========================================================== */
 
 .accounts-list__header {
-
-    display:
-        flex;
-
-    align-items:
-        flex-end;
-
-    justify-content:
-        space-between;
-
-    gap:
-        var(--space-8);
-
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-light);
 }
-
-
 
 .accounts-list__heading {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        var(--space-3);
-
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
-
-
 
 .accounts-list__title {
-
-    margin:
-        0;
-
-    color:
-        var(--text-display);
-
-    font-size:
-        var(--heading-xl-size);
-
-    font-weight:
-        var(--font-weight-bold);
-
-    letter-spacing:
-        var(--tracking-tight);
-
+  font-size: var(--heading-card-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-display);
 }
-
-
 
 .accounts-list__subtitle {
-
-    margin:
-        0;
-
-    max-width:
-        52rem;
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        var(--body-lg-size);
-
-    line-height:
-        1.65;
-
-}
-
-
-
-.accounts-list__actions {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        var(--space-3);
-
+  font-size: var(--body-sm-size);
+  color: var(--text-secondary);
 }
 
 
@@ -131,74 +54,16 @@
 ========================================================== */
 
 .accounts-list__toolbar {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    gap:
-        var(--space-5);
-
-    padding:
-        var(--space-5)
-        var(--space-6);
-
-    background:
-        var(--surface-primary);
-
-    border:
-        1px solid
-        var(--border-light);
-
-    border-radius:
-        var(--radius-xl);
-
-    box-shadow:
-        0 .8rem 2.4rem rgba(
-            15,
-            23,
-            42,
-            .035
-        );
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border-light);
 }
-
-
 
 .accounts-list__results {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    gap:
-        var(--space-2);
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        var(--body-sm-size);
-
-    font-weight:
-        var(--font-weight-medium);
-
-}
-
-
-
-.accounts-list__results strong {
-
-    color:
-        var(--text-primary);
-
+  font-size: var(--body-sm-size);
+  color: var(--text-tertiary);
 }
 
 
@@ -208,28 +73,21 @@
 ========================================================== */
 
 .accounts-list__content {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
 }
 
 
 
+/* ==========================================================
+   ROWS
+========================================================== */
+
 .accounts-list__rows {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        var(--space-5);
-
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
 
@@ -239,156 +97,55 @@
 ========================================================== */
 
 .accounts-list__empty {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    text-align:
-        center;
-
-    gap:
-        var(--space-5);
-
-    min-height:
-        42rem;
-
-    padding:
-        var(--space-10);
-
-    background:
-        var(--surface-primary);
-
-    border:
-        1px dashed
-        var(--border-default);
-
-    border-radius:
-        var(--radius-xl);
-
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  animation: fade-in var(--motion-slow) forwards;
 }
-
-
 
 .accounts-list__empty lucide-icon {
-
-    width:
-        5.2rem;
-
-    height:
-        5.2rem;
-
-    color:
-        var(--primary-500);
-
-    opacity:
-        .85;
-
+  width: 4rem;
+  height: 4rem;
+  color: var(--icon-muted);
 }
-
-
 
 .accounts-list__empty h3 {
-
-    margin:
-        0;
-
-    color:
-        var(--text-primary);
-
-    font-size:
-        var(--heading-md-size);
-
-    font-weight:
-        var(--font-weight-semibold);
-
+  font-size: var(--heading-component-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-display);
 }
 
-
-
 .accounts-list__empty p {
-
-    margin:
-        0;
-
-    max-width:
-        42rem;
-
-    color:
-        var(--text-secondary);
-
-    line-height:
-        1.7;
-
+  font-size: var(--body-md-size);
+  color: var(--text-secondary);
+  max-width: 40rem;
 }
 
 
 
 /* ==========================================================
-   MOBILE
+   RESPONSIVE
 ========================================================== */
 
 @include respond(tab-port) {
+  .accounts-list {
+    padding: var(--space-6);
+  }
 
-    .accounts-list {
+  .accounts-list__header {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
 
-        padding:
-            var(--space-6);
-
-    }
-
-    .accounts-list__header {
-
-        flex-direction:
-            column;
-
-        align-items:
-            flex-start;
-
-    }
-
-}
-
-
-
-@include respond(phone) {
-
-    .accounts-list {
-
-        gap:
-            var(--space-6);
-
-        padding:
-            var(--space-4);
-
-    }
-
-    .accounts-list__toolbar {
-
-        flex-direction:
-            column;
-
-        align-items:
-            flex-start;
-
-        padding:
-            var(--space-4);
-
-    }
-
-    .accounts-list__subtitle {
-
-        font-size:
-            var(--body-md-size);
-
-    }
-
+  .accounts-list__toolbar {
+    flex-direction: column;
+    gap: var(--space-3);
+    align-items: flex-start;
+  }
 }
