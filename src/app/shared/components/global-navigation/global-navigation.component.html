@@ -1,43 +1,70 @@
 <nav class="global-navigation">
 
-  <ul class="global-navigation__list">
+    <ul class="global-navigation__list">
 
-    <li class="global-navigation__item">
-      <a
-        routerLink="/accounts"
-        routerLinkActive="global-navigation__link--active"
-        class="global-navigation__link">
-        Accounts
-      </a>
-    </li>
+        <li class="global-navigation__item">
+            <a
+                routerLink="/accounts"
+                routerLinkActive="global-navigation__link--active"
+                class="global-navigation__link">
 
-    <li class="global-navigation__item">
-      <a
-        routerLink="/transactions"
-        routerLinkActive="global-navigation__link--active"
-        class="global-navigation__link">
-        Transactions
-      </a>
-    </li>
+                <lucide-icon [img]="walletIcon"></lucide-icon>
 
-    <li class="global-navigation__item">
-      <a
-        routerLink="/analytics"
-        routerLinkActive="global-navigation__link--active"
-        class="global-navigation__link">
-        Overview
-      </a>
-    </li>
+                <span>
+                    Accounts
+                </span>
 
-    <li class="global-navigation__item">
-      <a
-        routerLink="/profile"
-        routerLinkActive="global-navigation__link--active"
-        class="global-navigation__link">
-        Profile
-      </a>
-    </li>
+            </a>
+        </li>
 
-  </ul>
+
+        <li class="global-navigation__item">
+            <a
+                routerLink="/transactions"
+                routerLinkActive="global-navigation__link--active"
+                class="global-navigation__link">
+
+                <lucide-icon [img]="transactionIcon"></lucide-icon>
+
+                <span>
+                    Transactions
+                </span>
+
+            </a>
+        </li>
+
+
+        <li class="global-navigation__item">
+            <a
+                routerLink="/analytics"
+                routerLinkActive="global-navigation__link--active"
+                class="global-navigation__link">
+
+                <lucide-icon [img]="chartIcon"></lucide-icon>
+
+                <span>
+                    Overview
+                </span>
+
+            </a>
+        </li>
+
+
+        <li class="global-navigation__item">
+            <a
+                routerLink="/profile"
+                routerLinkActive="global-navigation__link--active"
+                class="global-navigation__link">
+
+                <lucide-icon [img]="userIcon"></lucide-icon>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+        </li>
+
+    </ul>
 
 </nav>

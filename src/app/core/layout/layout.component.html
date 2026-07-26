@@ -5,8 +5,15 @@
         [headerVariant]="headerVariant()"
         [actions]="headerActions">
     </app-header>
-    <app-global-nav></app-global-nav>
-    <app-feature-nav></app-feature-nav>
+
+    @if(showGlobalNav()){
+      <app-global-nav></app-global-nav>
+    }
+
+    @if(showFeatureNav()) {
+      <app-feature-nav></app-feature-nav>
+    }
+
   </div>
   <div class="pp-layout__outlet">
     <router-outlet></router-outlet>

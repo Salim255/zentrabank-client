@@ -5,6 +5,7 @@ import { AuthRedirectGuard } from "../guards/auth-redirect-guard";
 import { ApplicationGuard } from "../guards/application.guard";
 import { DashboardGuard } from "../guards/dashboard-guard";
 import { AuthGuard } from "../guards/auth.guard";
+import { LandingRedirectGuard } from "../guards/landing-redirect.guard";
 
 const routes: Routes = [
   {
@@ -14,7 +15,7 @@ const routes: Routes = [
       {
         path: "landing",
         loadChildren: () => import('../../features/landing/landing.module').then(m => m.LandingModule),
-        canMatch: [AuthRedirectGuard]
+        canMatch: [LandingRedirectGuard]
 
       },
       {

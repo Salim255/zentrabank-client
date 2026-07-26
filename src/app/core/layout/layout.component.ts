@@ -11,6 +11,7 @@ import { filter } from "rxjs";
 })
 export class LayoutComponent implements OnInit {
   showFeatureNav = signal<boolean>(false);
+  showGlobalNav = signal<boolean>(false);
   headerVariant = signal<HeaderVariant>("dark");
   headerActions: HeaderAction[] = [
 
@@ -49,6 +50,14 @@ export class LayoutComponent implements OnInit {
   }
 
   private updateHeaderVariant(url: string): void {
+    // Hide feature nav on auth or landing
+    const isAuth = url.startsWith("/auth");
+    const isLanding = url.startsWith("/landing");
+    const isTransactions = url.startsWith("/transactions");
+
+    this.showGlobalNav.set(!isAuth && !isLanding);
+
+    this.showFeatureNav.set(isTransactions);
 
     this.headerVariant.set(
       url.startsWith("/landing")

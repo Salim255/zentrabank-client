@@ -1,533 +1,151 @@
 @use "../../../../themes/styles/media" as *;
 
-
-/* ==========================================================
-   APP HEADER
-========================================================== */
-
 .app-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-    position:
-        sticky;
-
-    top:
-        0;
-
-
-    z-index:
-        10000000;
-
-
-    width:
-        100%;
-
-
-    height:
-        7.2rem;
-
+    width: 100%;
+    height: 7.6rem;
 
     background:
-        rgba(
-            250,
-            251,
-            252,
-            .82
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.92),
+            rgba(255,255,255,.78)
         );
 
+    backdrop-filter: blur(2rem);
+    -webkit-backdrop-filter: blur(2rem);
 
-    backdrop-filter:
-        blur(1.8rem);
-
-
-    -webkit-backdrop-filter:
-        blur(1.8rem);
-
-
-    border-bottom:
-        1px solid
-        rgba(
-            220,
-            226,
-            234,
-            .72
-        );
-
+    border-bottom: 1px solid var(--border-light);
 
     transition:
         background var(--motion-normal),
         border-color var(--motion-normal);
-
 }
-
-
-
-
-/* ==========================================================
-   DARK VARIANT
-========================================================== */
-
-/* ==========================================================
-   DARK VARIANT
-========================================================== */
 
 .app-header--dark {
-    background: #1c212b;
-
-    border-bottom:
-        1px solid
-        rgba(
-            255,
-            255,
-            255,
-            .08
+    background:
+        linear-gradient(
+            180deg,
+            rgba(24,31,45,.94),
+            rgba(24,31,45,.82)
         );
 
-
-    box-shadow:
-        0 1px 0
-        rgba(
-            0,
-            0,
-            0,
-            .12
-        );
-
+    border-color: rgba(255,255,255,.08);
 }
-
-
-
-
-
-.app-header--dark {
-
-
-    .app-header__brand-name {
-
-
-        color:
-            var(--text-inverse);
-
-
-    }
-
-
-
-    .app-header__brand-accent {
-
-
-        color:
-            var(--primary-200);
-
-
-    }
-
-
-
-    .app-header__link {
-
-
-        color:
-            rgba(
-                255,
-                255,
-                255,
-                .68
-            );
-
-
-    }
-
-
-
-    .app-header__link:hover {
-
-
-        color:
-            var(--text-inverse);
-
-
-    }
-
-
-
-    .app-header__link--active {
-
-
-        color:
-            var(--text-inverse);
-
-
-
-        &::after {
-
-            background:
-                var(--text-inverse);
-
-        }
-
-    }
-
-}
-/* ==========================================================
-   CONTAINER
-========================================================== */
 
 .app-header__container {
+    height: 100%;
+    max-width: 128rem;
+    margin: 0 auto;
+    padding-inline: var(--space-8);
 
-    width:
-        100%;
-
-
-    max-width:
-        128rem;
-
-
-    height:
-        100%;
-
-
-    margin:
-        0 auto;
-
-
-    padding-inline:
-        var(--space-8);
-
-
-    display:
-        flex;
-
-
-    align-items:
-        center;
-
-
-    justify-content:
-        space-between;
-
-
-    gap:
-        var(--space-8);
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-8);
 }
-
-
-
-
-
-/* ==========================================================
-   BRAND
-========================================================== */
 
 .app-header__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
 
-    display:
-        flex;
-
-
-    align-items:
-        center;
-
-
-    gap:
-        var(--space-3);
-
-
-    text-decoration:
-        none;
-
-
-    flex:
-        0 0 auto;
-
-
-    user-select:
-        none;
-
-
-    transition:
-        opacity var(--motion-fast);
-
-
+    text-decoration: none;
 }
-
-
-
-.app-header__brand:hover {
-
-    opacity:
-        .9;
-
-}
-
-
-
-
 
 .app-header__brand img {
-
-    width:
-        4rem;
-
-
-    height:
-        4rem;
-
-
-    object-fit:
-        contain;
-
+    width: 4.2rem;
+    height: 4.2rem;
+    object-fit: contain;
 }
-
-
-
-
 
 .app-header__brand-name {
+    display: flex;
+    align-items: center;
 
-    display:
-        flex;
+    font-size: 2rem;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -.04em;
 
-
-    align-items:
-        center;
-
-
-    font-size:
-        var(--heading-sm-size);
-
-
-    font-weight:
-        var(--font-weight-semibold);
-
-
-    letter-spacing:
-        var(--tracking-tight);
-
-
-    color:
-        var(--text-primary);
-
+    color: var(--text-primary);
 }
-
-
-
-
 
 .app-header__brand-accent {
-
-    color:
-        var(--primary-600);
-
+    color: var(--primary-600);
 }
-
-
-
-
-
-/* ==========================================================
-   NAVIGATION
-========================================================== */
 
 .app-header__navigation {
-
-    display:
-        flex;
-
-
-    align-items:
-        center;
-
-
-    gap:
-        var(--space-8);
-
-
-    flex:
-        1;
-
-
-    justify-content:
-        center;
-
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .5rem;
+    border-radius: var(--radius-xl);
 }
-
-
-
-
 
 .app-header__link {
+    display: flex;
+    align-items: center;
 
-    position:
-        relative;
+    height: 4rem;
+    padding-inline: 1.4rem;
 
+    border-radius: var(--radius-lg);
 
-    text-decoration:
-        none;
+    color: var(--text-secondary);
+    font-size: var(--body-sm-size);
+    font-weight: var(--font-weight-medium);
 
-
-    color:
-        var(--text-secondary);
-
-
-    font-size:
-        var(--body-md-size);
-
-
-    font-weight:
-        var(--font-weight-medium);
-
+    text-decoration: none;
 
     transition:
+        background var(--motion-fast),
         color var(--motion-fast);
-
 }
-
-
-
-
 
 .app-header__link:hover {
-
-    color:
-        var(--text-primary);
-
+    background: var(--surface-secondary);
+    color: var(--text-primary);
 }
-
-
-
-
 
 .app-header__link--active {
-
-    color:
-        var(--primary-600);
-
+    background: rgba(75,92,255,.08);
+    color: var(--primary-600);
 }
-
-
-
-
-
-/* ==========================================================
-   ACTIONS
-========================================================== */
 
 .app-header__actions {
-
-    display:
-        flex;
-
-
-    align-items:
-        center;
-
-
-    gap:
-        var(--space-3);
-
-
-    flex:
-        0 0 auto;
-
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
 }
-
-
-
-
-
-/* ==========================================================
-   TABLET PORTRAIT
-========================================================== */
 
 @include respond(tab-port) {
-
-
     .app-header__container {
-
-        padding-inline:
-            var(--space-6);
-
+        padding-inline: var(--space-6);
     }
-
 
     .app-header__navigation {
-
-        display:
-            none;
-
+        display: none;
     }
-
 }
 
-
-
-
-
-/* ==========================================================
-   PHONE
-========================================================== */
-
 @include respond(phone) {
-
-
     .app-header {
-
-        height:
-            6.4rem;
-
+        height: 6.8rem;
     }
-
-
 
     .app-header__container {
-
-        padding-inline:
-            var(--space-4);
-
-        gap:
-            var(--space-4);
-
+        padding-inline: var(--space-4);
     }
-
-
-
-    .app-header__brand {
-
-        gap:
-            var(--space-2);
-
-    }
-
-
-
-    .app-header__brand img {
-
-        width:
-            3.6rem;
-
-
-        height:
-            3.6rem;
-
-    }
-
-
 
     .app-header__brand-name {
-
-        display:
-            none;
-
+        display: none;
     }
 
-
-
-    .app-header__actions {
-
-        gap:
-            var(--space-2);
-
+    .app-header__brand img {
+        width: 3.6rem;
+        height: 3.6rem;
     }
-
 }
