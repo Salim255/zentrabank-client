@@ -2,12 +2,12 @@ import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
-  selector: "app-sub-header",
-  templateUrl: "./sub-header.component.html",
-  styleUrls: ["./sub-header.component.scss"],
+  selector: "app-global-nav",
+  templateUrl: "./global-navigation.component.html",
+  styleUrls: ["./global-navigation.component.scss"],
   standalone: false
 })
-export class SubHeaderComponent {
+export class GlobalNavigationComponent {
   constructor(private router: Router) { }
 
   onNav(){

@@ -1,9 +1,13 @@
 
 <main class="app-layout">
-  <app-header
-      [headerVariant]="headerVariant()"
-      [actions]="headerActions">
-  </app-header>
+  <div class="app-layout__header">
+    <app-header
+        [headerVariant]="headerVariant()"
+        [actions]="headerActions">
+    </app-header>
+    <app-global-nav></app-global-nav>
+    <app-transaction-header></app-transaction-header>
+  </div>
   <div class="pp-layout__outlet">
     <router-outlet></router-outlet>
   </div>

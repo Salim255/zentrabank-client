@@ -4,7 +4,7 @@ import { TransactionsHistoryRoutingModule } from "./transactions-history-routing
 import { HistoryHeaderComponent } from "./components/history-header/history-header.component";
 import { HistoryFilterComponent } from "./components/history-filter/history-filter.component";
 import { HistoryItemComponent } from "./components/history-item/history-item.component";
-import { CurrencyPipe } from "@angular/common";
+import { CurrencyPipe, DatePipe } from "@angular/common";
 import { SharedModule } from "../../../../shared/shared.module";
 
 @NgModule({

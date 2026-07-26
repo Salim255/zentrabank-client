@@ -4,7 +4,13 @@
   min-height: 0;
   height: 100%;
   position: relative;
+  overflow: hidden;
 
+  app-sub-header {
+    position: sticky;
+    top: 0;
+    display: block;
+  }
   &__children {
     min-height: 0;
     height: 100%;

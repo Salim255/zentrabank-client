@@ -1,11 +1,14 @@
   <!-- ============================================
        NAVIGATION (component)
   ============================================ -->
-<app-transaction-header></app-transaction-header>
+
 
 <section class="transactions-layout">
-
   <!-- ============================================
+       PAGE CONTENT
+  ============================================ -->
+  <div class="transactions-layout__content">
+      <!-- ============================================
        PAGE HEADER — Banking Product
   ============================================ -->
   <header class="transactions-layout__header">
@@ -14,10 +17,6 @@
       Manage transfers, deposits, withdrawals and history.
     </p>
   </header>
-  <!-- ============================================
-       PAGE CONTENT
-  ============================================ -->
-  <div class="transactions-layout__content">
     <router-outlet></router-outlet>
   </div>
 

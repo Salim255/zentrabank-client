@@ -1,71 +1,170 @@
+@use "../../../../../../../themes/styles/media" as *;
+/* ==========================================================
+   HISTORY ITEM — BANKING PRODUCT ENTERPRISE
+========================================================== */
+
 .history-item {
-  color: #0f172a;
-  border-bottom: 1px solid #f1f5f9;
   display: grid;
-  grid-template-columns: 1.2fr 1fr 2fr 1fr 1fr;
-  padding: 1rem 1.25rem;
-  font-size: 0.95rem;
+  grid-template-columns: 14rem 1fr 14rem 12rem 12rem;
+  align-items: center;
 
-  gap: 1rem;
-  &:last-child {
-    border-bottom: none;
-  }
+  padding: var(--space-4) var(--space-2);
+  border-bottom: 1px solid var(--border-light);
+
+  transition:
+    background var(--motion-fast),
+    transform var(--motion-fast);
+
   &:hover {
-    background: #f9fafb;
+    background: var(--surface-hover);
+    transform: translateY(-.1rem);
   }
-    /* Amounts */
-  &__amount {
-    font-weight: 600;
-
-    &--negative {
-      //color: #dc2626;
-    }
-
-    &--positive {
-      color: #16a34a;
-    }
-  }
-
-  /* Status */
-  &__status {
-    font-weight: 600;
-
-    &--success {
-      //color: #16a34a;
-    }
-
-    &--pending {
-      //color: #d97706;
-    }
-
-    &--failed {
-      //color: #dc2626;
-    }
-  }
-
-  &__name {
-
-  }
-  /* Type badges */
-  &__badge {
-    padding: 0.25rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    //color: #ffffff;
-    text-transform: capitalize;
-
-    &--transfer {
-      background: #2563eb;
-    }
-
-    &--deposit {
-      background: #16a34a;
-    }
-
-    &--withdraw {
-      background: #dc2626;
-    }
-}
 }
 
+
+
+/* ==========================================================
+   TYPE + ICON
+========================================================== */
+
+.history-item__type {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.history-item__icon {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: var(--radius-lg);
+
+  background: var(--surface-tertiary);
+  color: var(--icon-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.history-item__icon lucide-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.history-item__badge {
+  padding: .4rem .8rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface-secondary);
+  font-size: var(--label-sm-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+}
+
+
+
+/* ==========================================================
+   NAME
+========================================================== */
+
+.history-item__name {
+  font-size: var(--body-md-size);
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+
+
+/* ==========================================================
+   DATE
+========================================================== */
+
+.history-item__date {
+  font-size: var(--body-sm-size);
+  color: var(--text-secondary);
+}
+
+
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.history-item__status {
+  font-size: var(--label-sm-size);
+  font-weight: var(--font-weight-semibold);
+  padding: .4rem 1rem;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+}
+
+.history-item__status--pending {
+  background: var(--warning-50);
+  color: var(--warning-700);
+}
+
+.history-item__status--completed {
+  background: var(--success-50);
+  color: var(--success-700);
+}
+
+.history-item__status--failed {
+  background: var(--danger-50);
+  color: var(--danger-700);
+}
+
+
+
+/* ==========================================================
+   AMOUNT
+========================================================== */
+
+.history-item__amount {
+  font-size: var(--body-md-size);
+  font-weight: var(--font-weight-semibold);
+  text-align: right;
+}
+
+.history-item__amount--negative {
+  color: var(--danger-600);
+}
+
+.history-item__amount--positive {
+  color: var(--success-600);
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@include respond(phone) {
+  .history-item {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: var(--space-2);
+    padding: var(--space-3) 0;
+  }
+
+  .history-item__type {
+    grid-column: span 2;
+  }
+
+  .history-item__name {
+    grid-column: span 2;
+  }
+
+  .history-item__date {
+    grid-column: span 1;
+  }
+
+  .history-item__status {
+    grid-column: span 1;
+    justify-self: end;
+  }
+
+  .history-item__amount {
+    grid-column: span 2;
+    justify-self: end;
+  }
+}
