@@ -1,73 +1,117 @@
-.transaction-form {
-  width: 50%;
+@use "../../../../../../../../../themes/styles/media" as *;
+/* ==========================================================
+   TRANSFER LAYOUT — BANKING PRODUCT ENTERPRISE
+========================================================== */
+
+.transfer-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+
+  padding: var(--space-8);
+  max-width: 96rem;
   margin: 0 auto;
-  padding: 2rem;
-  background: var(--text-clear);
-  border: 1px solid var(--color-border);
-  border-radius: 2px;
-  box-shadow: var(--shadow-light);
+}
+
+
+
+/* ==========================================================
+   PAGE HEADER
+========================================================== */
+
+.transfer-layout__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.transfer-layout__title {
+  margin: 0;
+  font-size: var(--heading-card-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-display);
+}
+
+.transfer-layout__description {
+  margin: 0;
+  font-size: var(--body-sm-size);
+  color: var(--text-secondary);
+}
+
+
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+.transfer-form {
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+
+  padding: var(--space-8);
 
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: var(--space-8);
 
-  &__title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #111827;
-    text-align: center;
-    margin-bottom: 0.5rem;
+  animation: fade-in var(--motion-slow) forwards;
+}
+
+.transfer-form__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.transfer-form__title {
+  margin: 0;
+  font-size: var(--heading-component-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-display);
+}
+
+.transfer-form__description {
+  margin: 0;
+  font-size: var(--body-sm-size);
+  color: var(--text-secondary);
+}
+
+.transfer-form__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.transfer-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.transfer-form__actions {
+  padding-top: var(--space-4);
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@include respond(phone) {
+  .transfer-layout {
+    padding: var(--space-5);
   }
 
-  &__group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+  .transfer-form {
+    padding: var(--space-6);
   }
 
-  &__label {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #4b5563;
-  }
-
-  &__input,
-  &__select {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    background: #f9fafb;
-    color: #111827;
-    transition: border-color 0.2s ease, background 0.2s ease;
-
-    &:focus {
-      outline: none;
-      border-color: #2563eb;
-      background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-    }
-  }
-
-  &__button {
-    width: 100%;
-    padding: 0.85rem;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #ffffff;
-    background: #2563eb;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-
-    &:hover {
-      background: #1e4fcf;
-    }
-
-    &:active {
-      background: #1a46b8;
-    }
+  .transfer-form__title {
+    font-size: var(--heading-sm-size);
   }
 }

@@ -6,6 +6,7 @@ import { TransferReviewerComponent } from "../review/transfer-reviewer.component
 import { AccountService } from "../../../../../../../accounts/services/account.service";
 import { Subscription } from "rxjs";
 import { Account } from "../../../../../../../accounts/model/account.model";
+import { SelectOption } from "../../../../../../../../shared/kits/app-select/app-select.component";
 
 @Component({
   selector: "app-transfer-form",
@@ -17,6 +18,8 @@ export class FormComponent implements OnInit {
   transForm!: FormGroup;
   private accountsSubscription!: Subscription;
   userAccounts= signal< Account []> ([]);
+
+  option: SelectOption[] = [{ label: 'Transfer', value: 'TRANSFER' }]
 
   constructor(
     private accountsService: AccountService,
@@ -101,6 +104,14 @@ export class FormComponent implements OnInit {
 
     input.value = value.toFixed(2);
     this.transForm.get('amount')?.setValue(input.value, { emitEvent: false });
+  }
+
+
+  getAccountOptions(): SelectOption[] {
+    return this.userAccounts().map(acc => ({
+      label: acc.accountNumber,
+      value: acc.accountNumber
+    }));
   }
 
   ngOnDestroy(): void {

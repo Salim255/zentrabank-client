@@ -1,119 +1,139 @@
-<form class="transaction-form" [formGroup]="transForm">
+<form class="transfer-form" [formGroup]="transForm">
 
-  <h2 class="transaction-form__title">Transfer Details</h2>
+  <!-- ============================================
+       FORM HEADER
+  ============================================ -->
+  <header class="transfer-form__header">
+    <h2 class="transfer-form__title">Transfer Details</h2>
+    <p class="transfer-form__description">
+      Provide the required information to complete your internal transfer.
+    </p>
+  </header>
 
 
 
-  <!-- Recipient IBAN -->
-  <div class="transaction-form__group">
-    <label for="iban" class="transaction-form__label">Recipient IBAN</label>
-    <input
-      type="text"
-      name="iban"
-      formControlName="iban"
-      class="transaction-form__input"
-      placeholder="Enter recipient IBAN"
-    />
-    <app-form-error
-          [control]="transForm.get('iban')"
-          field="iban">
-    </app-form-error>
-  </div>
+  <!-- ============================================
+       FORM BODY
+  ============================================ -->
+  <div class="transfer-form__body">
 
-  <!-- Recipient BIC -->
-  <div class="transaction-form__group">
-    <label for="bic" class="transaction-form__label">Recipient BIC (SWIFT)</label>
-    <input
-      type="text"
-      name="bic"
-      formControlName="bic"
-      class="transaction-form__input"
-      placeholder="Enter recipient BIC"
-    />
-     <app-form-error
+    <!-- Recipient IBAN -->
+    <div class="transfer-form__group">
+      <app-input
+        formControlName="iban"
+        name="iban"
+        label="Recipient IBAN"
+        placeholder="Enter recipient IBAN"
+        [required]="true">
+      </app-input>
+
+      <app-form-error
+        [control]="transForm.get('iban')"
+        field="iban">
+      </app-form-error>
+    </div>
+
+
+    <!-- Recipient BIC -->
+    <div class="transfer-form__group">
+      <app-input
+        formControlName="bic"
+        name="bic"
+        label="Recipient BIC (SWIFT)"
+        placeholder="Enter recipient BIC"
+        [required]="true">
+      </app-input>
+
+      <app-form-error
         [control]="transForm.get('bic')"
         field="bic">
-    </app-form-error>
-  </div>
+      </app-form-error>
+    </div>
 
-   <!-- Receiver Name -->
-  <div class="transaction-form__group">
-    <label for="recipientName" class="transaction-form__label">Recipient Name</label>
-    <input
-      type="text"
-      name="recipientName"
-      formControlName="recipientName"
-      class="transaction-form__input"
-      placeholder="Enter recipient full name"
-    />
-     <app-form-error
+
+    <!-- Recipient Name -->
+    <div class="transfer-form__group">
+      <app-input
+        formControlName="recipientName"
+        name="recipientName"
+        label="Recipient Name"
+        placeholder="Enter recipient full name"
+        [required]="true">
+      </app-input>
+
+      <app-form-error
         [control]="transForm.get('recipientName')"
         field="recipientName">
-    </app-form-error>
+      </app-form-error>
+    </div>
+
+
+    <!-- Transfer Amount -->
+    <div class="transfer-form__group">
+      <app-input
+        formControlName="amount"
+        name="amount"
+        label="Transfer Amount (€)"
+        placeholder="0.00"
+        [required]="true"
+        (input)="formatAmount($event)"
+        (blur)="finalizeAmount($event)"
+        (keydown)="blockInvalidKeys($event)"
+        (paste)="blockInvalidPaste($event)">
+      </app-input>
+
+      <app-form-error
+        [control]="transForm.get('amount')"
+        field="amount">
+      </app-form-error>
+    </div>
+
+
+    <!-- Transaction Type -->
+    <div class="transfer-form__group">
+      <app-select
+        formControlName="type"
+        name="type"
+        label="Transaction Type"
+        type="select"
+        [options]="option"
+        [required]="true">
+      </app-select>
+    </div>
+
+
+    <!-- Debit Account -->
+    <div class="transfer-form__group">
+      <app-select
+        formControlName="fromAccountNumber"
+        name="fromAccountNumber"
+        label="Debit Account"
+        type="select"
+        placeholder="Select an account"
+        [options]="getAccountOptions()"
+        [required]="true">
+      </app-select>
+
+      <app-form-error
+        [control]="transForm.get('fromAccountNumber')"
+        field="fromAccountNumber">
+      </app-form-error>
+    </div>
+
   </div>
 
-  <!-- Transfer Amount -->
-  <div class="transaction-form__group">
-    <label for="amount" class="transaction-form__label">Transfer Amount (€)</label>
-    <input
-      type="text"
-      formControlName="amount"
-      class="transaction-form__input"
-      placeholder="0.00"
-      (input)="formatAmount($event)"
-      (blur)="finalizeAmount($event)"
-      (keydown)="blockInvalidKeys($event)"
-      (paste)="blockInvalidPaste($event)"
-    />
-    <app-form-error
-      [control]="transForm.get('amount')"
-      field="amount">
-    </app-form-error>
+
+
+  <!-- ============================================
+       FORM ACTIONS
+  ============================================ -->
+  <div class="transfer-form__actions">
+    <app-button
+      variant="primary"
+      [fullWidth]="true"
+      (click)="onTransfer()">
+      Transfer
+    </app-button>
   </div>
-
-  <!-- Transaction Type -->
-  <div class="transaction-form__group">
-    <label for="type" class="transaction-form__label">Transaction Type</label>
-    <select name="type" formControlName="type" class="transaction-form__select">
-      <option value="TRANSFER">Transfer</option>
-    </select>
-  </div>
-
-  <!-- Optional: Receiver Account Number -->
-<div class="transaction-form__group">
-  <label for="referenceAccountNumber" class="transaction-form__label">
-    Debit Account
-  </label>
-
-  <select
-    name="fromAccountNumber"
-    formControlName="fromAccountNumber"
-    class="transaction-form__input transaction-form__select"
-  >
-    <option value="" disabled>Select an account</option>
-
-    @for (acc of userAccounts(); track $index) {
-      <option
-        [value]="acc.accountNumber"
-      >
-        {{ acc.accountNumber }} — {{ acc.balance | currency:'EUR' }}
-      </option>
-    }
-
-  </select>
-
-  <app-form-error
-    [control]="transForm.get('fromAccountNumber')"
-    field="fromAccountNumber">
-  </app-form-error>
-</div>
-
-  <!-- Submit -->
-  <button
-    (click)="onTransfer()"
-    type="btn"
-    class="transaction-form__button">
-    Transfer
-  </button>
 
 </form>
