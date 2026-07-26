@@ -1,0 +1,120 @@
+@use "../../../../../../../themes/styles/media" as *;
+/* ==========================================================
+   DEPOSIT LAYOUT — BANKING PRODUCT ENTERPRISE
+========================================================== */
+
+.deposit-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+
+  padding: var(--space-8);
+  max-width: 96rem;
+  margin: 0 auto;
+
+  font-family: var(--font-family);
+}
+
+
+
+/* ==========================================================
+   PAGE HEADER
+========================================================== */
+
+.deposit-layout__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.deposit-layout__title {
+  margin: 0;
+  font-size: var(--heading-card-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-display);
+}
+
+.deposit-layout__description {
+  margin: 0;
+  font-size: var(--body-sm-size);
+  color: var(--text-secondary);
+}
+
+
+
+/* ==========================================================
+   PLACEHOLDER PANEL
+========================================================== */
+
+.deposit-placeholder {
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+
+  padding: var(--space-8);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+
+  text-align: center;
+
+  animation: fade-in var(--motion-slow) forwards;
+}
+
+.deposit-placeholder__icon {
+  width: 5rem;
+  height: 5rem;
+  border-radius: var(--radius-lg);
+
+  background: var(--surface-tertiary);
+  color: var(--icon-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deposit-placeholder__icon lucide-icon {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+.deposit-placeholder__title {
+  margin: 0;
+  font-size: var(--heading-component-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-display);
+}
+
+.deposit-placeholder__text {
+  margin: 0;
+  font-size: var(--body-md-size);
+  color: var(--text-secondary);
+  max-width: 52rem;
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@include respond(phone) {
+  .deposit-layout {
+    padding: var(--space-5);
+    gap: var(--space-6);
+  }
+
+  .deposit-placeholder {
+    padding: var(--space-6);
+  }
+
+  .deposit-placeholder__title {
+    font-size: var(--heading-sm-size);
+  }
+}

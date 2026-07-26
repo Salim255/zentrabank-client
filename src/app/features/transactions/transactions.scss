@@ -1,3 +1,83 @@
+@use "../../../themes/styles/media" as *;
+/* ==========================================================
+   TRANSACTIONS LAYOUT — BANKING PRODUCT ENTERPRISE
+========================================================== */
+
 .transactions-layout {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+
+  padding: 0 var(--space-8) ;
+
+  margin: 0 auto;
+
+  font-family: var(--font-family);
+}
+
+
+
+/* ==========================================================
+   PAGE HEADER
+========================================================== */
+
+.transactions-layout__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.transactions-layout__title {
+  margin: 0;
+  font-size: var(--heading-card-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-display);
+}
+
+.transactions-layout__description {
+  margin: 0;
+  font-size: var(--body-sm-size);
+  color: var(--text-secondary);
+}
+
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.transactions-layout__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@include respond(tab-port) {
+  .transactions-layout {
+    padding: var(--space-6);
+  }
+
+  .transactions-layout__header {
+    padding-bottom: var(--space-5);
+  }
+}
+
+@include respond(phone) {
+  .transactions-layout {
+    padding: var(--space-5);
+    gap: var(--space-6);
+  }
+
+  .transactions-layout__title {
+    font-size: var(--heading-component-size);
+  }
 }

@@ -1,19 +1,11 @@
 <div class="trans-options">
 
+  <!-- Deposit -->
   <a class="trans-card" routerLink="/dashboard/transactions/transfer/deposit">
     <figure class="trans-card__figure">
 
       <div class="trans-card__icon">
-        <!-- SVG Deposit -->
-        <svg xmlns="http://www.w3.org/2000/svg"
-          width="54" height="54" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-banknote-arrow-down-icon lucide-banknote-arrow-down">
-          <path d="M12 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5"/>
-          <path d="m16 19 3 3 3-3"/><path d="M18 12h.01"/><path d="M19 16v6"/>
-          <path d="M6 12h.01"/><circle cx="12" cy="12" r="2"/>
-        </svg>
+        <lucide-icon [img]="banknote"></lucide-icon>
       </div>
 
       <figcaption class="trans-card__caption">
@@ -22,26 +14,19 @@
       </figcaption>
 
       <footer class="trans-card__footer">
-        <button class="trans-card__btn">Select</button>
+        <span class="trans-card__action">Select</span>
+        <lucide-icon [img]="arrowRight"></lucide-icon>
       </footer>
 
     </figure>
   </a>
 
+  <!-- Withdraw -->
   <a class="trans-card" routerLink="/dashboard/transactions/transfer/withdraw">
     <figure class="trans-card__figure">
 
       <div class="trans-card__icon">
-        <!-- SVG Withdraw -->
-        <svg xmlns="http://www.w3.org/2000/svg"
-          width="54" height="54" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="1.25"
-          stroke-linecap="round" stroke-linejoin="round"
-          class="lucide lucide-banknote-arrow-up-icon lucide-banknote-arrow-up">
-          <path d="M12 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5"/>
-          <path d="M18 12h.01"/><path d="M19 22v-6"/><path d="m22 19-3-3-3 3"/>
-          <path d="M6 12h.01"/><circle cx="12" cy="12" r="2"/>
-        </svg>
+        <lucide-icon [img]="banknote"></lucide-icon>
       </div>
 
       <figcaption class="trans-card__caption">
@@ -50,24 +35,19 @@
       </figcaption>
 
       <footer class="trans-card__footer">
-        <button class="trans-card__btn">Select</button>
+        <span class="trans-card__action">Select</span>
+        <lucide-icon [img]="arrowRight"></lucide-icon>
       </footer>
 
     </figure>
   </a>
 
+  <!-- Internal Transfer -->
   <a class="trans-card" routerLink="/dashboard/transactions/transfer/transfer">
     <figure class="trans-card__figure">
 
       <div class="trans-card__icon">
-        <!-- SVG Transfer -->
-         <svg xmlns="http://www.w3.org/2000/svg"
-          width="54" height="24" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor"
-          stroke-width="1.25" stroke-linecap="round"
-          stroke-linejoin="round" class="lucide lucide-arrow-right-left-icon lucide-arrow-right-left">
-          <path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/>
-        </svg>
+        <lucide-icon [img]="arrowRightLeft"></lucide-icon>
       </div>
 
       <figcaption class="trans-card__caption">
@@ -76,8 +56,10 @@
       </figcaption>
 
       <footer class="trans-card__footer">
-        <button class="trans-card__btn">Select</button>
+        <span class="trans-card__action">Select</span>
+        <lucide-icon [img]="arrowRight"></lucide-icon>
       </footer>
+
     </figure>
   </a>
 

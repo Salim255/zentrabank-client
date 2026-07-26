@@ -1,117 +1,154 @@
+@use "../../../../../../../themes/styles/media" as *;
+/* ==========================================================
+   TRANSACTION OPTIONS — BANKING PRODUCT ENTERPRISE
+========================================================== */
+
 .trans-options {
-  display: flex;
-  gap: 1.6rem;
-  padding: 2rem 1rem;
-  background: var(--bg-body);
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  gap: var(--space-6);
 }
+
+
+
+/* ==========================================================
+   CARD
+========================================================== */
 
 .trans-card {
   text-decoration: none;
   color: inherit;
-  display: block;
-  .trans-card__figure {
-    background: var(--bg-surface);
-    border: .5px solid var(--color-border);
-    border-radius: 4px;
-    padding: 2rem ;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.4rem;
-    transition: all 0.25s ease;
-    position: relative;
-    box-shadow: var(--shadow-light);
-    cursor: pointer;
 
-    &:hover {
-      //transform: translateY(-4px);
-      box-shadow: 0 4px 6px rgba(0,0,0,0.08);
-      //border-color: var(--primary);
-    }
-  }
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
 
-  .trans-card__icon svg {
-    width: 50px;
-    height: 50px;
-    color: var(--text-secondary);
-    transition: color 0.25s ease;
-  }
+  padding: var(--space-6);
 
-  &:hover .trans-card__icon svg {
-    color: var(--primary-hover);
-  }
+  display: flex;
+  flex-direction: column;
 
-  .trans-card__caption {
-    text-align: center;
-  }
+  transition:
+    background var(--motion-fast),
+    border-color var(--motion-fast),
+    box-shadow var(--motion-fast),
+    transform var(--motion-fast);
 
-  .trans-card__title {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-bottom: 0.35rem;
-    color: var(--text-primary);
-  }
-
-  .trans-card__text {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.35;
-  }
-
-  /* Footer with real button */
-  .trans-card__footer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-  }
-
-  .trans-card__btn {
-    border: 1px  solid var(--text-secondary) ;
-    color: var(--text-secondary);
-    background-color: transparent;
-    padding: 0.55rem 1.4rem;
-    border-radius: 2px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    width: 80%;
-    &:hover {
-      background: var(--btn-primary-bg-hover);
-      box-shadow: 0 4px 12px rgba(0,85,212,0.3);
-      color: var(--btn-primary-color);
-    }
-
-    &:active {
-      transform: translateY(0);
-      box-shadow: none;
-    }
+  &:hover {
+    background: var(--surface-hover);
+    border-color: var(--border-default);
+    box-shadow: 0 1.8rem 4rem rgba(15, 23, 42, .08);
+    transform: translateY(-.2rem);
   }
 }
 
-/* Optional dark mode */
-@media (prefers-color-scheme: dark) {
-  .trans-card__figure {
-    background: #1c212b;
-    border-color: rgba(255,255,255,0.08);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+.trans-card__figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+
+
+/* ==========================================================
+   ICON
+========================================================== */
+
+.trans-card__icon {
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: var(--radius-lg);
+
+  background: var(--surface-tertiary);
+  color: var(--icon-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trans-card__icon lucide-icon {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+
+
+/* ==========================================================
+   CAPTION
+========================================================== */
+
+.trans-card__caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.trans-card__title {
+  margin: 0;
+  font-size: var(--heading-component-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-display);
+}
+
+.trans-card__text {
+  margin: 0;
+  font-size: var(--body-sm-size);
+  color: var(--text-secondary);
+}
+
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.trans-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border-light);
+}
+
+.trans-card__action {
+  font-size: var(--body-sm-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+
+  transition:
+    color var(--motion-fast),
+    transform var(--motion-fast);
+}
+
+.trans-card__footer:hover .trans-card__action {
+  color: var(--primary-600);
+  transform: translateX(.2rem);
+}
+
+.trans-card__footer lucide-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@include respond(phone) {
+  .trans-card {
+    padding: var(--space-5);
+  }
+
+  .trans-card__icon {
+    width: 4.4rem;
+    height: 4.4rem;
   }
 
   .trans-card__title {
-    color: #ffffff;
-  }
-
-  .trans-card__text {
-    color: rgba(255,255,255,0.6);
-  }
-
-  .trans-card__btn {
-    background: var(--primary);
-
-    &:hover {
-      background: var(--primary-hover);
-    }
+    font-size: var(--heading-sm-size);
   }
 }

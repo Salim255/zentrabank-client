@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ArrowRight, ArrowRightLeft, Banknote } from "lucide-angular";
 
 @Component({
   selector: "app-trans-options",
@@ -6,4 +7,8 @@ import { Component } from "@angular/core";
   styleUrls: ["./trans-options.page.scss"],
   standalone: false
 })
-export class TransOptionsPage {}
+export class TransOptionsPage {
+  banknote = Banknote;
+  arrowRight = ArrowRight;
+  arrowRightLeft = ArrowRightLeft;
+}

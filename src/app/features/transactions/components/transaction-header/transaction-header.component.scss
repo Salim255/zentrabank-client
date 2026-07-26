@@ -1,68 +1,78 @@
+@use "../../../../../themes/styles/media" as *;
+/* ==========================================================
+   TRANSACTION HEADER — BANKING PRODUCT ENTERPRISE
+========================================================== */
+
 .transaction-header {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
-  list-style: none;
-  margin: 0;
-  padding: 0 2rem;
-  height: 46px;
+  gap: var(--space-6);
 
-  /* No background */
-  background: transparent;
-
-  /* Light separator */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-
-  &__item {
-    display: flex;
-    align-items: center;
-  }
-
-  &__link {
-    font-size: 0.9rem;
-    font-weight: 500;
-
-    /* DARK TEXT (visible on light backgrounds) */
-    color: #1c1f26;
-
-    text-decoration: none;
-    padding: 0.35rem 0;
-    position: relative;
-    transition: color 0.2s ease, opacity 0.2s ease;
-
-    &:hover {
-      color: #000;
-      opacity: 0.8;
-    }
-
-    /* Active state */
-    &--active {
-      color: #000;
-      font-weight: 600;
-    }
-
-    /* Underline for active link */
-    &--active::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 100%;
-      height: 2px;
-      background: #000;
-      border-radius: 2px;
-    }
-  }
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border-light);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+.transaction-header__item {
+  list-style: none;
+}
+
+.transaction-header__link {
+  display: inline-flex;
+  align-items: center;
+
+  padding: var(--space-2) var(--space-1);
+  font-size: var(--body-md-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+
+  text-decoration: none;
+
+  transition:
+    color var(--motion-fast),
+    opacity var(--motion-fast);
+}
+
+.transaction-header__link:hover {
+  color: var(--text-primary);
+  opacity: .85;
+}
+
+/* ==========================================================
+   ACTIVE STATE — Linear-style underline indicator
+========================================================== */
+
+.transaction-header__link--active {
+  color: var(--text-display);
+  font-weight: var(--font-weight-semibold);
+  position: relative;
+}
+
+.transaction-header__link--active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
+
+  width: 100%;
+  height: 0.2rem;
+
+  background: var(--primary-600);
+  border-radius: var(--radius-pill);
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@include respond(phone) {
   .transaction-header {
-    gap: 1rem;
-    padding: 0 1rem;
+    gap: var(--space-4);
+    padding-bottom: var(--space-3);
   }
 
   .transaction-header__link {
-    font-size: 0.85rem;
+    font-size: var(--body-sm-size);
   }
 }
