@@ -10,6 +10,7 @@ import { filter } from "rxjs";
   standalone: false
 })
 export class LayoutComponent implements OnInit {
+  showFeatureNav = signal<boolean>(false);
   headerVariant = signal<HeaderVariant>("dark");
   headerActions: HeaderAction[] = [
 
@@ -60,4 +61,5 @@ export class LayoutComponent implements OnInit {
   onLogin() {
     this.router.navigateByUrl("/auth");
   }
+
 }
