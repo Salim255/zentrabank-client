@@ -6,6 +6,7 @@ import {
     CheckCircle,
     LucideIconData
 } from "lucide-angular";
+import { retry } from "rxjs";
 
 
 export type TransactionType =
@@ -50,7 +51,7 @@ export class TransactionCardComponent {
 
 
     @Input({ required: true })
-    transaction!: Transaction;
+    transaction!: any;
 
 
     checkCircle = CheckCircle;
@@ -73,11 +74,8 @@ export class TransactionCardComponent {
                 return ArrowUpRight;
 
 
-
-            case "transfer":
-
-                return ArrowLeftRight;
-
+            default:
+              return ArrowLeftRight;
 
         }
 
@@ -104,6 +102,8 @@ export class TransactionCardComponent {
             case "transfer":
 
                 return "Transfer";
+            default:
+              return "";
 
 
         }

@@ -1,0 +1,213 @@
+@use "../../../themes/styles/media" as *;
+/* ==========================================================
+   PROFILE — LINEAR PREMIUM STYLE
+   ZentraBank Design System
+========================================================== */
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-8);
+  max-width: 96rem;
+  margin: 0 auto;
+  font-family: var(--font-family);
+  color: var(--text-primary);
+}
+
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.profile__hero {
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-6);
+  animation: fade-in var(--motion-slow) forwards;
+}
+
+.profile__identity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.profile__avatar {
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: var(--radius-circle);
+  background: var(--primary-50);
+  color: var(--primary-700);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--heading-component-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile__hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.profile__name {
+  font-size: var(--heading-card-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-display);
+}
+
+.profile__meta {
+  display: flex;
+  gap: var(--space-3);
+  font-size: var(--body-sm-size);
+  color: var(--text-secondary);
+}
+
+
+
+/* ==========================================================
+   EDIT BUTTON
+========================================================== */
+
+.profile__edit {
+  padding: var(--space-2) var(--space-4);
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  font-size: var(--label-md-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  transition: background var(--motion-fast), border var(--motion-fast);
+
+  &:hover {
+    background: var(--surface-hover);
+    border-color: var(--border-strong);
+  }
+}
+
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.profile__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+
+
+/* ==========================================================
+   SECTION
+========================================================== */
+
+.profile-section {
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.profile-section__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.profile-section__icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  color: var(--icon-primary);
+}
+
+.profile-section__title {
+  font-size: var(--heading-component-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-display);
+}
+
+.profile-section__subtitle {
+  font-size: var(--body-sm-size);
+  color: var(--text-secondary);
+}
+
+
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.profile-section__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: var(--space-6);
+}
+
+
+
+/* ==========================================================
+   ITEM
+========================================================== */
+
+.profile-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.profile-item--wide {
+  grid-column: span 2;
+}
+
+.profile-item__label {
+  font-size: var(--label-sm-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-tertiary);
+  letter-spacing: var(--tracking-wide);
+}
+
+.profile-item__value {
+  font-size: var(--body-lg-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+.profile-item__status {
+  color: var(--success-700);
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@include respond(tab-port) {
+  .profile {
+    padding: var(--space-6);
+  }
+
+  .profile__hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-section {
+    padding: var(--space-6);
+  }
+}

@@ -7,6 +7,7 @@ import { TransactionItemComponent } from "./components/transaction-item/transact
 import { CommonModule } from "@angular/common";
 import { TransactionSummaryComponent } from "./components/transaction-summary/transaction-summary.component";
 import { TransactionCardComponent } from "./components/transaction-card/transaction-card.component";
+import { TransactionsHeaderComponent } from "./components/transaction-header/transaction-header.component";
 
 @NgModule({
   imports:[
@@ -17,6 +18,7 @@ import { TransactionCardComponent } from "./components/transaction-card/transact
   ],
   declarations: [
     HistoryPage,
+    TransactionsHeaderComponent,
     TransactionCardComponent,
     TransactionSummaryComponent,
     TransactionItemComponent,

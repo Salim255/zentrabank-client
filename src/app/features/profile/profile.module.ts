@@ -3,9 +3,11 @@ import { NgModule } from "@angular/core";
 import { ProfileRoutingModule } from "./profile-routing.module";
 import { ProfileLayoutComponent } from "./components/profile-layout/profile-layout.component";
 import { ProfilePage } from "./profile.page";
+import { LucideAngularModule } from "lucide-angular";
+import { SharedModule } from "../../shared/shared.module";
 
 @NgModule({
   declarations: [ProfileLayoutComponent, ProfilePage],
-  imports: [CommonModule, ProfileRoutingModule]
+  imports: [LucideAngularModule, CommonModule, ProfileRoutingModule, SharedModule]
 })
 export class ProfileModule{}

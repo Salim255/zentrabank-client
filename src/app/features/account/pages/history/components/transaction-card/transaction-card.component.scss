@@ -1,0 +1,899 @@
+@use "../../../../../../../themes/styles/media" as *;
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.transaction-card {
+
+
+    display: flex;
+
+
+    flex-direction: column;
+
+
+    gap:
+
+        var(--space-6);
+
+
+
+    padding:
+
+        var(--space-6);
+
+
+
+    background:
+
+        var(--surface-primary);
+
+
+
+    border:
+
+        1px solid
+        var(--border-light);
+
+
+
+    border-radius:
+
+        var(--radius-xl);
+
+
+
+    transition:
+
+        border-color var(--motion-fast),
+
+        box-shadow var(--motion-fast),
+
+        transform var(--motion-fast);
+
+
+}
+
+
+
+
+
+.transaction-card:hover {
+
+
+    transform:
+
+        translateY(-2px);
+
+
+
+    border-color:
+
+        var(--border-default);
+
+
+
+    box-shadow:
+
+        0 1rem 2.5rem
+        rgba(
+            15,
+            23,
+            42,
+            .05
+        );
+
+}
+
+
+
+
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+
+.transaction-card__header {
+
+
+    display:
+
+        flex;
+
+
+    align-items:
+
+        center;
+
+
+    justify-content:
+
+        space-between;
+
+
+    gap:
+
+        var(--space-6);
+
+
+}
+
+
+
+
+
+.transaction-card__identity {
+
+
+    display:
+
+        flex;
+
+
+    align-items:
+
+        center;
+
+
+    gap:
+
+        var(--space-4);
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   ICON
+========================================================== */
+
+
+.transaction-card__icon {
+
+
+    width:
+
+        4.2rem;
+
+
+
+    height:
+
+        4.2rem;
+
+
+
+    display:
+
+        flex;
+
+
+    align-items:
+
+        center;
+
+
+    justify-content:
+
+        center;
+
+
+
+    flex-shrink:
+
+        0;
+
+
+
+    border-radius:
+
+        var(--radius-lg);
+
+
+
+    background:
+
+        var(--surface-secondary);
+
+
+
+    color:
+
+        var(--text-secondary);
+
+}
+
+
+
+
+
+.transaction-card__icon lucide-icon {
+
+
+    width:
+
+        2rem;
+
+
+
+    height:
+
+        2rem;
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   TYPE COLORS
+========================================================== */
+
+
+.transaction-card--deposit
+.transaction-card__icon {
+
+
+    background:
+
+        var(--success-50);
+
+
+
+    color:
+
+        var(--success-600);
+
+}
+
+
+
+
+
+.transaction-card--withdrawal
+.transaction-card__icon {
+
+
+    background:
+
+        var(--danger-50);
+
+
+
+    color:
+
+        var(--danger-600);
+
+}
+
+
+
+
+
+.transaction-card--transfer
+.transaction-card__icon {
+
+
+    background:
+
+        var(--primary-50);
+
+
+
+    color:
+
+        var(--primary-600);
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   MAIN TEXT
+========================================================== */
+
+
+.transaction-card__type {
+
+
+    color:
+
+        var(--text-muted);
+
+
+
+    font-size:
+
+        var(--body-xs-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-medium);
+
+
+
+    letter-spacing:
+
+        .06em;
+
+
+
+    text-transform:
+
+        uppercase;
+
+}
+
+
+
+
+
+
+
+.transaction-card__title {
+
+
+    margin:
+
+        var(--space-1) 0 0;
+
+
+
+    color:
+
+        var(--text-primary);
+
+
+
+    font-size:
+
+        var(--body-lg-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-semibold);
+
+
+
+    line-height:
+
+        var(--line-height-tight);
+
+}
+
+
+
+
+
+.transaction-card__description {
+
+
+    margin:
+
+        var(--space-1) 0 0;
+
+
+
+    color:
+
+        var(--text-secondary);
+
+
+
+    font-size:
+
+        var(--body-sm-size);
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   AMOUNT
+========================================================== */
+
+
+.transaction-card__amount-wrapper {
+
+
+    display:
+
+        flex;
+
+
+    flex-direction:
+
+        column;
+
+
+    align-items:
+
+        flex-end;
+
+
+    gap:
+
+        var(--space-2);
+
+}
+
+
+
+
+
+.transaction-card__amount {
+
+
+    font-size:
+
+        var(--heading-md-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-semibold);
+
+
+
+    letter-spacing:
+
+        var(--tracking-tight);
+
+}
+
+
+
+
+
+.transaction-card__amount--positive {
+
+
+    color:
+
+        var(--success-600);
+
+}
+
+
+
+
+
+.transaction-card__amount--negative {
+
+
+    color:
+
+        var(--danger-600);
+
+}
+
+
+
+
+
+
+
+.transaction-card__status {
+
+
+    display:
+
+        flex;
+
+
+    align-items:
+
+        center;
+
+
+    gap:
+
+        var(--space-1);
+
+
+
+    color:
+
+        var(--success-600);
+
+
+
+    font-size:
+
+        var(--body-xs-size);
+
+}
+
+
+
+
+
+.transaction-card__status lucide-icon {
+
+
+    width:
+
+        1.4rem;
+
+
+    height:
+
+        1.4rem;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   DETAILS
+========================================================== */
+
+
+.transaction-card__details {
+
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        repeat(4,1fr);
+
+
+
+    gap:
+
+        var(--space-4);
+
+
+
+    padding:
+
+        var(--space-5) 0;
+
+
+
+    border-top:
+
+        1px solid
+        var(--border-light);
+
+
+
+    border-bottom:
+
+        1px solid
+        var(--border-light);
+
+}
+
+
+
+
+
+
+.transaction-card__detail {
+
+
+    display:
+
+        flex;
+
+
+    flex-direction:
+
+        column;
+
+
+    gap:
+
+        var(--space-1);
+
+}
+
+
+
+
+
+.transaction-card__label {
+
+
+    color:
+
+        var(--text-muted);
+
+
+
+    font-size:
+
+        var(--body-xs-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-medium);
+
+
+
+    text-transform:
+
+        uppercase;
+
+
+
+    letter-spacing:
+
+        .05em;
+
+}
+
+
+
+
+
+.transaction-card__value {
+
+
+    color:
+
+        var(--text-primary);
+
+
+
+    font-size:
+
+        var(--body-sm-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-medium);
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+
+.transaction-card__footer {
+
+
+    display:
+
+        flex;
+
+
+    justify-content:
+
+        flex-end;
+
+}
+
+
+
+
+
+.transaction-card__action {
+
+
+    display:
+
+        inline-flex;
+
+
+    align-items:
+
+        center;
+
+
+    gap:
+
+        var(--space-2);
+
+
+
+    border:
+
+        none;
+
+
+
+    padding:
+
+        0;
+
+
+
+    background:
+
+        transparent;
+
+
+
+    color:
+
+        var(--primary-600);
+
+
+
+    cursor:
+
+        pointer;
+
+
+
+    font-size:
+
+        var(--body-sm-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-semibold);
+
+}
+
+
+
+
+
+.transaction-card__action:hover {
+
+
+    opacity:
+
+        .8;
+
+}
+
+
+
+
+
+.transaction-card__action lucide-icon {
+
+
+    width:
+
+        1.6rem;
+
+
+
+    height:
+
+        1.6rem;
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+
+@include respond(tab-port) {
+
+
+    .transaction-card__details {
+
+
+        grid-template-columns:
+
+            repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+
+@include respond(phone) {
+
+
+    .transaction-card {
+
+
+        padding:
+
+            var(--space-5);
+
+    }
+
+
+
+    .transaction-card__header {
+
+
+        align-items:
+
+            flex-start;
+
+
+
+        flex-direction:
+
+            column;
+
+    }
+
+
+
+    .transaction-card__amount-wrapper {
+
+
+        align-items:
+
+            flex-start;
+
+    }
+
+
+
+    .transaction-card__details {
+
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+}

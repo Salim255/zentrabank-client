@@ -1,0 +1,232 @@
+@use "../../../../../../../themes/styles/media" as *;
+
+
+/* ==========================================================
+   TRANSACTIONS HEADER
+========================================================== */
+
+.transactions-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--space-8);
+
+
+    padding:
+
+        var(--space-4) 0;
+
+}
+
+
+
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.transactions-header__content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-2);
+
+}
+
+
+
+
+
+.transactions-header__title {
+
+    margin: 0;
+
+
+    color:
+
+        var(--text-primary);
+
+
+
+    font-size:
+
+        var(--heading-lg-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-semibold);
+
+
+
+    line-height:
+
+        var(--line-height-tight);
+
+
+
+    letter-spacing:
+
+        var(--tracking-tight);
+
+}
+
+
+
+
+
+.transactions-header__description {
+
+    margin: 0;
+
+
+    max-width:
+
+        42rem;
+
+
+    color:
+
+        var(--text-secondary);
+
+
+
+    font-size:
+
+        var(--body-md-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-regular);
+
+
+
+    line-height:
+
+        var(--line-height-relaxed);
+
+}
+
+
+
+
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+
+.transactions-header__search {
+
+    width:
+
+        28rem;
+
+
+
+    flex-shrink:
+
+        0;
+
+}
+
+
+
+
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+
+@include respond(tab-port) {
+
+
+    .transactions-header {
+
+        align-items:
+
+            stretch;
+
+
+        flex-direction:
+
+            column;
+
+
+
+        gap:
+
+            var(--space-5);
+
+    }
+
+
+
+    .transactions-header__search {
+
+        width:
+
+            100%;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+
+@include respond(phone) {
+
+
+    .transactions-header {
+
+
+        padding:
+
+            var(--space-3) 0;
+
+    }
+
+
+
+    .transactions-header__title {
+
+
+        font-size:
+
+            var(--heading-md-size);
+
+    }
+
+
+
+    .transactions-header__description {
+
+
+        font-size:
+
+            var(--body-sm-size);
+
+    }
+
+}

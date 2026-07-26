@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { ArrowDownLeft, ArrowRightLeft, ArrowUpRight, ShoppingBag } from "lucide-angular";
+import { Component, Input } from "@angular/core";
+import { ArrowDownLeft, ArrowRightLeft, ArrowUpRight, Receipt, ShoppingBag, Wallet } from "lucide-angular";
 
 @Component({
     selector: "app-transaction-summary",
@@ -8,6 +8,9 @@ import { ArrowDownLeft, ArrowRightLeft, ArrowUpRight, ShoppingBag } from "lucide
     standalone: false
 })
 export class TransactionSummaryComponent {
+  @Input() summary!: any;
+  wallet = Wallet;
+  receipt = Receipt;
   shoppingBag = ShoppingBag;
   arrowDownLeft = ArrowDownLeft;
   arrowUpRight = ArrowUpRight;

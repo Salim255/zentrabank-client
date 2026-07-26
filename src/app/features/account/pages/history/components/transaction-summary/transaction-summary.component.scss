@@ -1,16 +1,31 @@
+@use "../../../../../../../themes/styles/media" as *;
+
+
 /* ==========================================================
-   SUMMARY
+   TRANSACTION SUMMARY
 ========================================================== */
+
 
 .transaction-summary {
 
-    display: flex;
 
-    flex-direction: column;
+    display:
 
-    gap: var(--space-8);
+        flex;
+
+
+    flex-direction:
+
+        column;
+
+
+    gap:
+
+        var(--space-5);
+
 
 }
+
 
 
 
@@ -20,15 +35,42 @@
    HEADER
 ========================================================== */
 
+
 .transaction-summary__header {
 
-    display: flex;
 
-    justify-content: space-between;
+    display:
 
-    align-items: flex-end;
+        flex;
 
-    gap: var(--space-8);
+
+    align-items:
+
+        center;
+
+
+}
+
+
+
+
+
+.transaction-summary__content {
+
+
+    display:
+
+        flex;
+
+
+    flex-direction:
+
+        column;
+
+
+    gap:
+
+        var(--space-2);
 
 }
 
@@ -38,15 +80,33 @@
 
 .transaction-summary__title {
 
-    margin: 0;
 
-    color: var(--text-display);
+    margin:
 
-    font-size: var(--heading-lg-size);
+        0;
 
-    font-weight: var(--font-weight-semibold);
 
-    letter-spacing: var(--tracking-tight);
+    color:
+
+        var(--text-primary);
+
+
+
+    font-size:
+
+        var(--heading-md-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-semibold);
+
+
+
+    letter-spacing:
+
+        var(--tracking-tight);
 
 }
 
@@ -56,13 +116,25 @@
 
 .transaction-summary__description {
 
-    margin-top: var(--space-2);
 
-    color: var(--text-secondary);
+    margin:
 
-    line-height: 1.7;
+        0;
+
+
+    color:
+
+        var(--text-secondary);
+
+
+
+    font-size:
+
+        var(--body-sm-size);
+
 
 }
+
 
 
 
@@ -72,15 +144,28 @@
    GRID
 ========================================================== */
 
+
 .transaction-summary__grid {
 
-    display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    display:
 
-    gap: var(--space-5);
+        grid;
+
+
+    grid-template-columns:
+
+        repeat(4, 1fr);
+
+
+
+    gap:
+
+        var(--space-5);
 
 }
+
+
 
 
 
@@ -90,25 +175,61 @@
    CARD
 ========================================================== */
 
+
 .transaction-summary__card {
 
-    display: flex;
 
-    flex-direction: column;
+    display:
 
-    gap: var(--space-4);
+        flex;
 
-    padding: var(--space-7);
 
-    background: var(--surface-primary);
+    align-items:
 
-    border: 1px solid var(--border-light);
+        center;
 
-    border-radius: var(--radius-2xl);
+
+    gap:
+
+        var(--space-4);
+
+
+
+    padding:
+
+        var(--space-6);
+
+
+
+    min-height:
+
+        12rem;
+
+
+
+    background:
+
+        var(--surface-primary);
+
+
+
+    border:
+
+        1px solid
+        var(--border-light);
+
+
+
+    border-radius:
+
+        var(--radius-xl);
+
+
 
     transition:
-        transform var(--motion-fast),
+
         border-color var(--motion-fast),
+
         box-shadow var(--motion-fast);
 
 }
@@ -119,12 +240,22 @@
 
 .transaction-summary__card:hover {
 
-    transform: translateY(-2px);
 
-    border-color: var(--border-default);
+    border-color:
+
+        var(--border-default);
+
+
 
     box-shadow:
-        0 .8rem 2rem rgba(15,23,42,.05);
+
+        0 1rem 3rem
+        rgba(
+            15,
+            23,
+            42,
+            .05
+        );
 
 }
 
@@ -134,14 +265,13 @@
 
 .transaction-summary__card--balance {
 
+
     background:
-        linear-gradient(
-            135deg,
-            rgba(75,92,255,.05),
-            rgba(75,92,255,.02)
-        );
+
+        var(--surface-secondary);
 
 }
+
 
 
 
@@ -151,59 +281,58 @@
    ICON
 ========================================================== */
 
+
 .transaction-summary__icon {
 
-    width: 5rem;
 
-    height: 5rem;
+    display:
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: var(--radius-xl);
-
-    background: var(--surface-secondary);
-
-    color: var(--text-secondary);
-
-}
+        flex;
 
 
+    align-items:
+
+        center;
 
 
+    justify-content:
 
-.transaction-summary__icon--primary {
+        center;
 
-    background: rgba(75,92,255,.08);
 
-    color: var(--primary-600);
+    flex-shrink:
 
-}
+        0;
 
 
 
+    width:
 
-
-.transaction-summary__icon--success {
-
-    background: rgba(34,197,94,.08);
-
-    color: var(--success-600);
-
-}
+        4.6rem;
 
 
 
+    height:
+
+        4.6rem;
 
 
-.transaction-summary__icon--danger {
 
-    background: rgba(239,68,68,.08);
+    border-radius:
 
-    color: var(--danger-600);
+        var(--radius-lg);
+
+
+
+    background:
+
+        var(--surface-secondary);
+
+
+
+    color:
+
+        var(--text-secondary);
 
 }
 
@@ -213,9 +342,15 @@
 
 .transaction-summary__icon lucide-icon {
 
-    width: 2.2rem;
 
-    height: 2.2rem;
+    width:
+
+        2rem;
+
+
+    height:
+
+        2rem;
 
 }
 
@@ -223,21 +358,101 @@
 
 
 
+.transaction-summary__icon--success {
+
+
+    color:
+
+        var(--success-600);
+
+
+
+    background:
+
+        var(--success-50);
+
+}
+
+
+
+
+
+.transaction-summary__icon--danger {
+
+
+    color:
+
+        var(--danger-600);
+
+
+
+    background:
+
+        var(--danger-50);
+
+}
+
+
+
+
+
+.transaction-summary__icon--primary {
+
+
+    color:
+
+        var(--primary-600);
+
+
+
+    background:
+
+        var(--primary-50);
+
+}
+
+
+
+
+
+
+
+
 /* ==========================================================
-   TYPOGRAPHY
+   VALUES
 ========================================================== */
+
 
 .transaction-summary__label {
 
-    color: var(--text-muted);
 
-    font-size: var(--body-xs-size);
+    color:
 
-    font-weight: var(--font-weight-semibold);
+        var(--text-muted);
 
-    text-transform: uppercase;
 
-    letter-spacing: .08em;
+
+    font-size:
+
+        var(--body-xs-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-medium);
+
+
+
+    text-transform:
+
+        uppercase;
+
+
+
+    letter-spacing:
+
+        .06em;
 
 }
 
@@ -247,15 +462,34 @@
 
 .transaction-summary__value {
 
-    margin: 0;
 
-    color: var(--text-primary);
+    margin:
 
-    font-size: 3rem;
+        var(--space-1) 0 0;
 
-    font-weight: var(--font-weight-bold);
 
-    letter-spacing: -.04em;
+
+    color:
+
+        var(--text-primary);
+
+
+
+    font-size:
+
+        var(--heading-md-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-semibold);
+
+
+
+    letter-spacing:
+
+        var(--tracking-tight);
 
 }
 
@@ -265,7 +499,10 @@
 
 .transaction-summary__value--success {
 
-    color: var(--success-600);
+
+    color:
+
+        var(--success-600);
 
 }
 
@@ -275,9 +512,13 @@
 
 .transaction-summary__value--danger {
 
-    color: var(--danger-600);
+
+    color:
+
+        var(--danger-600);
 
 }
+
 
 
 
@@ -287,13 +528,19 @@
    RESPONSIVE
 ========================================================== */
 
-@media (max-width: 1100px) {
+
+@include respond(tab-land) {
+
 
     .transaction-summary__grid {
 
-        grid-template-columns: repeat(2,1fr);
+
+        grid-template-columns:
+
+            repeat(2,1fr);
 
     }
+
 
 }
 
@@ -301,12 +548,29 @@
 
 
 
-@media (max-width: 640px) {
+@include respond(phone) {
+
 
     .transaction-summary__grid {
 
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+
+            1fr;
 
     }
+
+
+
+    .transaction-summary__card {
+
+
+        min-height:
+
+            auto;
+
+
+    }
+
 
 }

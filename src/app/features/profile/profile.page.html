@@ -1,3 +1,148 @@
-<app-profile-layout>
-  <router-outlet></router-outlet>
-</app-profile-layout>
+<section class="profile">
+
+  <!-- ============================================
+       HERO — Identity
+  ============================================ -->
+  <header class="profile__hero motion-slide-up">
+
+    <div class="profile__identity">
+
+      <div class="profile__avatar">
+        {{ profile()?.firstName?.charAt(0) }}
+        {{ profile()?.lastName?.charAt(0) }}
+      </div>
+
+      <div class="profile__hero-content">
+
+        <h1 class="profile__name">
+          {{ profile()?.firstName }} {{ profile()?.lastName }}
+        </h1>
+
+        <div class="profile__meta">
+          <span>{{ profile()?.country }}</span>
+          <span>{{ profile()?.city }}</span>
+          <span>Customer</span>
+        </div>
+
+      </div>
+    </div>
+
+    <app-button variant="secondary" >
+      Edit profile
+    </app-button>
+
+  </header>
+
+
+
+  <!-- ============================================
+       CONTENT
+  ============================================ -->
+  <div class="profile__content motion-fade-in">
+
+
+    <!-- SECTION -->
+    <section class="profile-section">
+
+      <header class="profile-section__header">
+        <lucide-icon [img]="userIcon" class="profile-section__icon"></lucide-icon>
+
+        <div>
+          <h2 class="profile-section__title">Personal information</h2>
+          <p class="profile-section__subtitle">Identity details linked to your account.</p>
+        </div>
+      </header>
+
+      <div class="profile-section__grid">
+
+        <div class="profile-item">
+          <span class="profile-item__label">Full name</span>
+          <strong class="profile-item__value">
+            {{ profile()?.firstName }} {{ profile()?.lastName }}
+          </strong>
+        </div>
+
+        <div class="profile-item">
+          <span class="profile-item__label">Title</span>
+          <strong class="profile-item__value">
+            {{ profile()?.title }}
+          </strong>
+        </div>
+
+        <div class="profile-item">
+          <span class="profile-item__label">Date of birth</span>
+          <strong class="profile-item__value">
+            {{ profile()?.dateOfBirth }}
+          </strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- SECTION -->
+    <section class="profile-section">
+
+      <header class="profile-section__header">
+        <lucide-icon [img]="mapPinIcon" class="profile-section__icon"></lucide-icon>
+
+        <div>
+          <h2 class="profile-section__title">Contact information</h2>
+          <p class="profile-section__subtitle">Your registered communication details.</p>
+        </div>
+      </header>
+
+      <div class="profile-section__grid">
+
+        <div class="profile-item profile-item--wide">
+          <span class="profile-item__label">Address</span>
+          <strong class="profile-item__value">
+            {{ profile()?.addressLine }}<br>
+            {{ profile()?.zipCode }} {{ profile()?.city }}<br>
+            {{ profile()?.country }}
+          </strong>
+        </div>
+
+        <div class="profile-item">
+          <span class="profile-item__label">Phone</span>
+          <strong class="profile-item__value">
+            {{ profile()?.phoneNumber }}
+          </strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- SECTION -->
+    <section class="profile-section">
+
+      <header class="profile-section__header">
+        <lucide-icon [img]="briefcaseIcon" class="profile-section__icon"></lucide-icon>
+
+        <div>
+          <h2 class="profile-section__title">Professional profile</h2>
+          <p class="profile-section__subtitle">Employment information.</p>
+        </div>
+      </header>
+
+      <div class="profile-section__grid">
+
+        <div class="profile-item">
+          <span class="profile-item__label">Employment status</span>
+          <strong class="profile-item__value profile-item__status">
+            {{ profile()?.employmentStatus }}
+          </strong>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</section>
