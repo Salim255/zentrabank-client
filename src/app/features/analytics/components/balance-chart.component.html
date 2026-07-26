@@ -1,13 +1,24 @@
-<div class="balance-chart-container">
-  <apx-chart
-    #chart
-    [series]="chartOptions.series!"
-    [chart]="chartOptions.chart!"
-    [xaxis]="chartOptions.xaxis!"
-    [stroke]="chartOptions.stroke!"
-    [fill]="chartOptions.fill!"
-    [grid]="chartOptions.grid!"
-    [tooltip]="chartOptions.tooltip!"
-    [yaxis]="chartOptions.yaxis!"
-  ></apx-chart>
-</div>
+<section class="analytics-panel">
+
+  <header class="analytics-panel__header">
+    <h2 class="analytics-panel__title">Balance Analytics</h2>
+    <p class="analytics-panel__description">
+      Historical balance trends for this bank account.
+    </p>
+  </header>
+
+  <div class="analytics-panel__chart">
+    <apx-chart
+      #chart
+      [series]="chartOptions.series!"
+      [chart]="chartOptions.chart!"
+      [xaxis]="chartOptions.xaxis!"
+      [stroke]="chartOptions.stroke!"
+      [fill]="chartOptions.fill!"
+      [grid]="chartOptions.grid!"
+      [tooltip]="chartOptions.tooltip!"
+      [yaxis]="chartOptions.yaxis!"
+    ></apx-chart>
+  </div>
+
+</section>

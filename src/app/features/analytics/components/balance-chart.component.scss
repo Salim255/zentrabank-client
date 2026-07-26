@@ -1,7 +1,85 @@
-.balance-chart-container {
+@use "../../../../themes/styles/media" as *;
+/* ==========================================================
+   ANALYTICS PANEL — BANKING PRODUCT ENTERPRISE
+========================================================== */
+
+.analytics-panel {
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-7);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+
+  animation: fade-in var(--motion-slow) forwards;
+}
+
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.analytics-panel__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.analytics-panel__title {
+  margin: 0;
+  font-size: var(--heading-component-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-display);
+}
+
+.analytics-panel__description {
+  margin: 0;
+  font-size: var(--body-sm-size);
+  color: var(--text-secondary);
+}
+
+
+
+/* ==========================================================
+   CHART CONTAINER
+========================================================== */
+
+.analytics-panel__chart {
+  width: 100%;
+  //height: 32rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+
+  padding: var(--space-4);
+
+  transition:
+    background var(--motion-fast),
+    border-color var(--motion-fast);
+
+  &:hover {
+    background: var(--surface-hover);
+    border-color: var(--border-default);
+  }
+}
+
+.analytics-panel__chart apx-chart {
   width: 100%;
   height: 100%;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 1.5rem;
 }
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@include respond(tab-port) {}

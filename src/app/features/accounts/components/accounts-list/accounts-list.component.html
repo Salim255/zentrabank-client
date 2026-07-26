@@ -1,130 +1,31 @@
 <section class="accounts-list">
 
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
+  @if (accounts().length) {
 
-    <header class="accounts-list__header">
+    <div class="accounts-list__rows">
 
-        <div class="accounts-list__heading">
+      @for (item of accounts(); track item.id) {
+        <app-account-item [account]="item"></app-account-item>
+      }
 
-            <h1 class="accounts-list__title">
+    </div>
 
-                Your Accounts
+  }
 
-            </h1>
+  @else {
 
-            <p class="accounts-list__subtitle">
+    <div class="accounts-list__empty">
 
-                View and manage all of your banking accounts from one place.
+      <lucide-icon [img]="Wallet"></lucide-icon>
 
-            </p>
+      <h3>No accounts yet</h3>
 
-        </div>
+      <p>Open your first account to start managing your finances.</p>
 
-        <div class="accounts-list__actions">
+      <app-button variant="primary">Open Account</app-button>
 
-        <!--     <app-button
-                variant="primary">
+    </div>
 
-                Open Account
-
-            </app-button>
- -->
-        </div>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         TOOLBAR
-    ====================================================== -->
-
-    <section class="accounts-list__toolbar">
-
-        <div class="accounts-list__results">
-
-            {{ accounts().length }}
-
-            {{ accounts().length === 1 ? 'account' : 'accounts' }}
-
-        </div>
-
-        <!-- Future -->
-
-        <!--
-
-        <app-input
-            placeholder="Search accounts...">
-        </app-input>
-
-        <app-select
-            label=""
-            [options]="sortOptions">
-        </app-select>
-
-        -->
-
-    </section>
-
-
-
-    <!-- =====================================================
-         CONTENT
-    ====================================================== -->
-
-    <section class="accounts-list__content">
-
-        @if (accounts().length) {
-
-            <div class="accounts-list__rows">
-
-                @for (item of accounts(); track item.id) {
-
-                    <app-account-item
-                        [account]="item">
-
-                    </app-account-item>
-
-                }
-
-            </div>
-
-        }
-
-        @else {
-
-            <div class="accounts-list__empty">
-
-                <lucide-icon
-                    [img]="Wallet">
-
-                </lucide-icon>
-
-                <h3>
-
-                    No accounts yet
-
-                </h3>
-
-                <p>
-
-                    Open your first account to start managing your finances.
-
-                </p>
-
-                <app-button
-                    variant="primary">
-
-                    Open Account
-
-                </app-button>
-
-            </div>
-
-        }
-
-    </section>
+  }
 
 </section>
