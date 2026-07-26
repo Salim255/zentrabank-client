@@ -6,6 +6,7 @@ import { Router } from "@angular/router";
 import { AuthFormService } from "../../../../services/auth-form.service";
 import { ToastrService } from "ngx-toastr";
 import { ApiErrorResponse } from "../../../../../../core/models/api-error-response.model";
+import { LockKeyhole, UserRound } from "lucide-angular";
 
 @Component({
   selector: 'app-login-form',
@@ -16,7 +17,8 @@ import { ApiErrorResponse } from "../../../../../../core/models/api-error-respon
 export class LoginFormComponent implements OnInit {
   authForm!: FormGroup;
   userSubscription!: Subscription;
-
+  userRound = UserRound;
+  lockKeyhole = LockKeyhole;
   constructor(
     private toastr: ToastrService,
     private authFormService: AuthFormService,

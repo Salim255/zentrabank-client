@@ -17,15 +17,11 @@
     align-items:
         center;
 
-    gap:
-        clamp(
-            var(--space-8),
-            6vw,
-            var(--space-20)
-        );
+    gap: var(--space-12);
 
     min-height:
         84rem;
+    padding: 0  var(--space-8);
 
 }
 
