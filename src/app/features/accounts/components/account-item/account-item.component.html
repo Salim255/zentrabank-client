@@ -1,8 +1,5 @@
 <div class="account-item" (click)="onOverview()">
 
-  <!-- ============================================
-       HEADER — Banking Product Identity
-  ============================================ -->
   <header class="account-item__header">
 
     <div class="account-item__identity">
@@ -11,9 +8,14 @@
         <lucide-icon [img]="Wallet"></lucide-icon>
       </div>
 
-      <div class="account-item__info">
-        <h3 class="account-item__title">{{ account.type }} Account</h3>
-        <p class="account-item__number">•••• {{ account.accountNumber.slice(-4) }}</p>
+      <div class="account-item__heading">
+        <h3 class="account-item__title">
+          {{ account.type }} Account
+        </h3>
+
+        <span class="account-item__subtitle">
+          Main account
+        </span>
       </div>
 
     </div>
@@ -26,68 +28,28 @@
 
   </header>
 
-
-
-  <!-- ============================================
-       BALANCE — Financial Identity
-  ============================================ -->
   <section class="account-item__balance">
-    <h2 class="account-item__balance-value">
+
+    <strong class="account-item__amount">
       {{ account.balance | currency:account.currency }}
-    </h2>
-    <span class="account-item__balance-label">Available Balance</span>
-  </section>
+    </strong>
 
-
-
-  <!-- ============================================
-       DETAILS — Banking Metadata
-  ============================================ -->
-  <section class="account-item__details">
-
-    <div class="account-item__detail">
-      <span class="account-item__detail-label">IBAN</span>
-      <strong>{{ account.iban }}</strong>
-    </div>
-
-    <div class="account-item__detail">
-      <span class="account-item__detail-label">BIC</span>
-      <strong>{{ account.bic }}</strong>
-    </div>
-
-    <div class="account-item__detail">
-      <span class="account-item__detail-label">Currency</span>
-      <strong>{{ account.currency }}</strong>
-    </div>
-
-    <div class="account-item__detail">
-      <span class="account-item__detail-label">Overdraft</span>
-      <strong>
-        @if(account.overdraftEnabled){
-          {{ account.overdraftLimit | currency:account.currency }}
-        } @else {
-          Not enabled
-        }
-      </strong>
-    </div>
-
-  </section>
-
-
-
-  <!-- ============================================
-       FOOTER — Enterprise Action
-  ============================================ -->
-  <footer class="account-item__footer">
-
-    <span class="account-item__opened">
-      Opened {{ account.createdAt | date:'mediumDate' }}
+    <span class="account-item__balance-label">
+      Balance
     </span>
 
-    <div class="account-item__action">
-      <span>View details</span>
+  </section>
+
+  <footer class="account-item__footer">
+
+    <span class="account-item__currency">
+      {{ account.currency }}
+    </span>
+
+    <span class="account-item__action">
+      View account
       <lucide-icon [img]="ArrowRight"></lucide-icon>
-    </div>
+    </span>
 
   </footer>
 

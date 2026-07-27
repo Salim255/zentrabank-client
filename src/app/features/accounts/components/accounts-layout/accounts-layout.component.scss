@@ -1,42 +1,99 @@
-/* ==========================================================
-   ACCOUNTS PAGE LAYOUT — BANKING PRODUCT ENTERPRISE
-========================================================== */
+@use "../../../../../themes/styles/mixins" as *;
+
 
 .accounts-layout {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-8);
-  padding: var(--space-8);
-  max-width: 96rem;
-  margin: 0 auto;
-  font-family: var(--font-family);
+
+    @include page-container;
+    align-items: center;
 }
 
 
 
 /* ==========================================================
-   PAGE HEADER
+   HEADER
 ========================================================== */
 
 .accounts-layout__header {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  padding-bottom: var(--space-6);
-  border-bottom: 1px solid var(--border-light);
+
+    @include page-content;
+
+    margin-bottom:
+
+        var(--space-8);
+
 }
+
+
+
+.accounts-layout__heading {
+
+    display:
+
+        flex;
+
+    flex-direction:
+
+        column;
+
+    gap:
+
+        var(--space-2);
+
+}
+
+
 
 .accounts-layout__title {
-  margin: 0;
-  font-size: var(--heading-card-size);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-display);
+
+    margin:
+
+        0;
+
+
+    color:
+
+        var(--text-primary);
+
+
+    font-size:
+
+        var(--heading-xl-size);
+
+
+    font-weight:
+
+        var(--font-weight-bold);
+
+
+    letter-spacing:
+
+        var(--tracking-tight);
+
 }
 
+
+
 .accounts-layout__description {
-  margin: 0;
-  font-size: var(--body-sm-size);
-  color: var(--text-secondary);
+
+    margin:
+
+        0;
+
+
+    color:
+
+        var(--text-secondary);
+
+
+    font-size:
+
+        var(--body-md-size);
+
+
+    line-height:
+
+        var(--body-md-line-height);
+
 }
 
 
@@ -45,8 +102,7 @@
    CONTENT
 ========================================================== */
 
+
 .accounts-layout__content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
+  @include page-content;
 }

@@ -1,23 +1,33 @@
-  <!-- ============================================
-       NAVIGATION (component)
-  ============================================ -->
-
-
 <section class="transactions-layout">
-  <!-- ============================================
-       PAGE CONTENT
-  ============================================ -->
-  <div class="transactions-layout__content">
-      <!-- ============================================
-       PAGE HEADER — Banking Product
-  ============================================ -->
-  <header class="transactions-layout__header">
-    <h1 class="transactions-layout__title">Transactions</h1>
-    <p class="transactions-layout__description">
-      Manage transfers, deposits, withdrawals and history.
-    </p>
-  </header>
-    <router-outlet></router-outlet>
-  </div>
+
+
+    <header class="transactions-layout__header">
+
+        <div class="transactions-layout__heading">
+
+            <h1 class="transactions-layout__title">
+                Transactions
+            </h1>
+
+
+            <p class="transactions-layout__description">
+
+                Manage transfers, deposits, withdrawals and history.
+
+            </p>
+
+        </div>
+
+
+    </header>
+
+
+
+    <div class="transactions-layout__content">
+
+        <router-outlet></router-outlet>
+
+    </div>
+
 
 </section>

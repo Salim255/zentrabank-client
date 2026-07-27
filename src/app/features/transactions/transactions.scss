@@ -1,47 +1,83 @@
-@use "../../../themes/styles/media" as *;
+@use "../../../themes/styles/mixins" as *;
+
 /* ==========================================================
-   TRANSACTIONS LAYOUT — BANKING PRODUCT ENTERPRISE
+   TRANSACTIONS LAYOUT
 ========================================================== */
 
 .transactions-layout {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-8);
+    @include page-container;
+    align-items: center;
 
-  padding: 0 var(--space-8) ;
-
-  margin: 0 auto;
-
-  font-family: var(--font-family);
 
 }
 
 
 
 /* ==========================================================
-   PAGE HEADER
+   HEADER
 ========================================================== */
 
 .transactions-layout__header {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
 
-  padding: var(--space-6) 0;
-  border-bottom: 1px solid var(--border-light);
+    @include page-content;
+
+    margin-bottom:
+        var(--space-8);
+
 }
+
+
+
+.transactions-layout__heading {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--space-2);
+
+}
+
+
 
 .transactions-layout__title {
-  margin: 0;
-  font-size: var(--heading-card-size);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-display);
+
+    margin:
+        0;
+
+    color:
+        var(--text-display);
+
+    font-size:
+        var(--heading-xl-size);
+
+    font-weight:
+        var(--font-weight-bold);
+
+    letter-spacing:
+        var(--tracking-tight);
+
 }
 
+
+
 .transactions-layout__description {
-  margin: 0;
-  font-size: var(--body-sm-size);
-  color: var(--text-secondary);
+
+    margin:
+        0;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        var(--body-md-size);
+
+    line-height:
+        var(--body-md-line-height);
+
 }
 
 
@@ -51,34 +87,5 @@
 ========================================================== */
 
 .transactions-layout__content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-}
-
-
-
-/* ==========================================================
-   RESPONSIVE
-========================================================== */
-
-@include respond(tab-port) {
-  .transactions-layout {
-    padding: var(--space-6);
-  }
-
-  .transactions-layout__header {
-    padding-bottom: var(--space-5);
-  }
-}
-
-@include respond(phone) {
-  .transactions-layout {
-    padding: var(--space-5);
-    gap: var(--space-6);
-  }
-
-  .transactions-layout__title {
-    font-size: var(--heading-component-size);
-  }
+  @include page-content;
 }

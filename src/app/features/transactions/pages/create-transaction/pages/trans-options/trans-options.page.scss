@@ -1,12 +1,39 @@
 @use "../../../../../../../themes/styles/media" as *;
+
 /* ==========================================================
-   TRANSACTION OPTIONS — BANKING PRODUCT ENTERPRISE
+   TRANSACTION OPTIONS
 ========================================================== */
 
 .trans-options {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-  gap: var(--space-6);
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:var(--space-6);
+
+    min-width:0;
+
+
+    @include respond(tab-port) {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+
+    @include respond(phone) {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
 }
 
 
@@ -16,36 +43,78 @@
 ========================================================== */
 
 .trans-card {
-  text-decoration: none;
-  color: inherit;
 
-  background: var(--surface-primary);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-xl);
+    min-width:0;
 
-  padding: var(--space-6);
+    height:100%;
 
-  display: flex;
-  flex-direction: column;
+    text-decoration:none;
 
-  transition:
-    background var(--motion-fast),
-    border-color var(--motion-fast),
-    box-shadow var(--motion-fast),
-    transform var(--motion-fast);
+    color:inherit;
 
-  &:hover {
-    background: var(--surface-hover);
-    border-color: var(--border-default);
-    box-shadow: 0 1.8rem 4rem rgba(15, 23, 42, .08);
-    transform: translateY(-.2rem);
-  }
+    background:
+        var(--surface-primary);
+
+    border:
+        1px solid
+        var(--border-light);
+
+    border-radius:
+        var(--radius-xl);
+
+    padding:
+        var(--space-6);
+
+    display:flex;
+
+    flex-direction:column;
+
+    transition:
+        background-color var(--motion-fast),
+        border-color var(--motion-fast),
+        box-shadow var(--motion-fast),
+        transform var(--motion-fast);
+
+
+
+    &:hover {
+
+        background:
+            var(--surface-hover);
+
+        border-color:
+            var(--border-default);
+
+        box-shadow:
+            0 1.8rem 4rem
+            rgba(15,23,42,.08);
+
+        transform:
+            translateY(-.2rem);
+
+    }
+
 }
 
+
+
+/* ==========================================================
+   FIGURE
+========================================================== */
+
 .trans-card__figure {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
+
+    height:100%;
+
+    margin:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:
+        var(--space-5);
+
 }
 
 
@@ -55,46 +124,94 @@
 ========================================================== */
 
 .trans-card__icon {
-  width: 5.2rem;
-  height: 5.2rem;
-  border-radius: var(--radius-lg);
 
-  background: var(--surface-tertiary);
-  color: var(--icon-primary);
+    width:5.2rem;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    height:5.2rem;
+
+    flex-shrink:0;
+
+    border-radius:
+        var(--radius-lg);
+
+    background:
+        var(--surface-tertiary);
+
+    color:
+        var(--icon-primary);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
 }
 
+
+
 .trans-card__icon lucide-icon {
-  width: 2.6rem;
-  height: 2.6rem;
+
+    width:2.6rem;
+
+    height:2.6rem;
+
 }
 
 
 
 /* ==========================================================
-   CAPTION
+   CONTENT
 ========================================================== */
 
 .trans-card__caption {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:
+        var(--space-1);
+
+    flex:1;
+
 }
+
+
 
 .trans-card__title {
-  margin: 0;
-  font-size: var(--heading-component-size);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-display);
+
+    margin:0;
+
+    color:
+        var(--text-display);
+
+    font-size:
+        var(--heading-component-size);
+
+    font-weight:
+        var(--font-weight-semibold);
+
+    letter-spacing:
+        var(--tracking-tight);
+
 }
 
+
+
 .trans-card__text {
-  margin: 0;
-  font-size: var(--body-sm-size);
-  color: var(--text-secondary);
+
+    margin:0;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        var(--body-sm-size);
+
+    line-height:
+        var(--body-sm-line-height);
+
 }
 
 
@@ -104,51 +221,98 @@
 ========================================================== */
 
 .trans-card__footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
-  padding-top: var(--space-5);
-  border-top: 1px solid var(--border-light);
+    margin-top:auto;
+
+    padding-top:
+        var(--space-5);
+
+    border-top:
+        1px solid
+        var(--border-light);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
 }
+
+
 
 .trans-card__action {
-  font-size: var(--body-sm-size);
-  font-weight: var(--font-weight-medium);
-  color: var(--text-secondary);
 
-  transition:
-    color var(--motion-fast),
-    transform var(--motion-fast);
+    color:
+        var(--text-secondary);
+
+    font-size:
+        var(--body-sm-size);
+
+    font-weight:
+        var(--font-weight-medium);
+
+    transition:
+        color var(--motion-fast),
+        transform var(--motion-fast);
+
 }
 
-.trans-card__footer:hover .trans-card__action {
-  color: var(--primary-600);
-  transform: translateX(.2rem);
+
+
+.trans-card:hover .trans-card__action {
+
+    color:
+        var(--primary-600);
+
+    transform:
+        translateX(.2rem);
+
 }
+
+
 
 .trans-card__footer lucide-icon {
-  width: 1.6rem;
-  height: 1.6rem;
+
+    width:1.6rem;
+
+    height:1.6rem;
+
 }
 
 
 
 /* ==========================================================
-   RESPONSIVE
+   MOBILE
 ========================================================== */
 
 @include respond(phone) {
-  .trans-card {
-    padding: var(--space-5);
-  }
 
-  .trans-card__icon {
-    width: 4.4rem;
-    height: 4.4rem;
-  }
 
-  .trans-card__title {
-    font-size: var(--heading-sm-size);
-  }
+    .trans-card {
+
+        padding:
+            var(--space-5);
+
+    }
+
+
+
+    .trans-card__icon {
+
+        width:4.4rem;
+
+        height:4.4rem;
+
+    }
+
+
+
+    .trans-card__title {
+
+        font-size:
+            var(--heading-sm-size);
+
+    }
+
 }

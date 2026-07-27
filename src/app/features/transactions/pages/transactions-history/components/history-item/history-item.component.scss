@@ -1,63 +1,195 @@
 @use "../../../../../../../themes/styles/media" as *;
+
+
 /* ==========================================================
-   HISTORY ITEM — BANKING PRODUCT ENTERPRISE
+   HISTORY ITEM
 ========================================================== */
 
 .history-item {
-  display: grid;
-  grid-template-columns: 14rem 1fr 14rem 12rem 12rem;
-  align-items: center;
 
-  padding: var(--space-4) var(--space-2);
-  border-bottom: 1px solid var(--border-light);
+    display:grid;
 
-  transition:
-    background var(--motion-fast),
-    transform var(--motion-fast);
+    grid-template-columns:
+        2.2fr
+        1.8fr
+        1.2fr
+        1.2fr
+        1fr;
 
-  &:hover {
-    background: var(--surface-hover);
-    transform: translateY(-.1rem);
-  }
+
+    align-items:center;
+
+
+    gap:
+        var(--space-6);
+
+
+    min-width:
+        0;
+
+
+    padding:
+
+        var(--space-4)
+        var(--space-5);
+
+
+    background:
+
+        var(--surface-primary);
+
+
+    border:
+
+        1px solid
+        var(--border-light);
+
+
+    border-radius:
+
+        var(--radius-lg);
+
+
+    transition:
+
+        background-color var(--motion-fast),
+
+        border-color var(--motion-fast),
+
+        box-shadow var(--motion-fast);
+
+
+
+    &:hover {
+
+        background:
+
+            var(--surface-hover);
+
+
+        border-color:
+
+            var(--border-default);
+
+
+        box-shadow:
+
+            0 1rem 2.5rem
+            rgba(
+                15,
+                23,
+                42,
+                .05
+            );
+
+    }
+
 }
 
 
 
 /* ==========================================================
-   TYPE + ICON
+   TYPE
 ========================================================== */
 
 .history-item__type {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:
+
+        var(--space-3);
+
+
+    min-width:
+        0;
+
 }
+
+
 
 .history-item__icon {
-  width: 3.6rem;
-  height: 3.6rem;
-  border-radius: var(--radius-lg);
 
-  background: var(--surface-tertiary);
-  color: var(--icon-primary);
+    width:
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+        3.8rem;
+
+
+    height:
+
+        3.8rem;
+
+
+    flex-shrink:
+
+        0;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    border-radius:
+
+        var(--radius-circle);
+
+
+    background:
+
+        var(--surface-tertiary);
+
+
+    color:
+
+        var(--primary-600);
+
 }
+
+
 
 .history-item__icon lucide-icon {
-  width: 2rem;
-  height: 2rem;
+
+    width:
+
+        1.8rem;
+
+
+    height:
+
+        1.8rem;
+
 }
 
+
+
 .history-item__badge {
-  padding: .4rem .8rem;
-  border-radius: var(--radius-pill);
-  background: var(--surface-secondary);
-  font-size: var(--label-sm-size);
-  font-weight: var(--font-weight-medium);
-  color: var(--text-secondary);
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+
+    color:
+
+        var(--text-secondary);
+
+
+    font-size:
+
+        var(--body-sm-size);
+
+
+    font-weight:
+
+        var(--font-weight-medium);
+
 }
 
 
@@ -67,9 +199,28 @@
 ========================================================== */
 
 .history-item__name {
-  font-size: var(--body-md-size);
-  color: var(--text-primary);
-  font-weight: var(--font-weight-medium);
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+
+    color:
+
+        var(--text-primary);
+
+
+    font-size:
+
+        var(--body-md-size);
+
+
+    font-weight:
+
+        var(--font-weight-medium);
+
 }
 
 
@@ -79,8 +230,21 @@
 ========================================================== */
 
 .history-item__date {
-  font-size: var(--body-sm-size);
-  color: var(--text-secondary);
+
+    color:
+
+        var(--text-secondary);
+
+
+    font-size:
+
+        var(--body-sm-size);
+
+
+    white-space:
+
+        nowrap;
+
 }
 
 
@@ -90,26 +254,105 @@
 ========================================================== */
 
 .history-item__status {
-  font-size: var(--label-sm-size);
-  font-weight: var(--font-weight-semibold);
-  padding: .4rem 1rem;
-  border-radius: var(--radius-pill);
-  text-transform: uppercase;
+
+    justify-self:start;
+
+
+    padding:
+
+        .5rem
+        1rem;
+
+
+    border-radius:
+
+        var(--radius-pill);
+
+
+    background:
+
+        var(--surface-secondary);
+
+
+    color:
+
+        var(--text-secondary);
+
+
+    font-size:
+
+        var(--label-sm-size);
+
+
+    font-weight:
+
+        var(--label-sm-weight);
+
+
+    white-space:
+
+        nowrap;
+
 }
 
-.history-item__status--pending {
-  background: var(--warning-50);
-  color: var(--warning-700);
-}
+
 
 .history-item__status--completed {
-  background: var(--success-50);
-  color: var(--success-700);
+
+    background:
+
+        rgba(
+            34,
+            197,
+            94,
+            .12
+        );
+
+
+    color:
+
+        var(--success-600);
+
 }
 
+
+
+.history-item__status--pending {
+
+    background:
+
+        rgba(
+            245,
+            158,
+            11,
+            .12
+        );
+
+
+    color:
+
+        var(--warning-600);
+
+}
+
+
+
 .history-item__status--failed {
-  background: var(--danger-50);
-  color: var(--danger-700);
+
+    background:
+
+        rgba(
+            239,
+            68,
+            68,
+            .12
+        );
+
+
+    color:
+
+        var(--danger-600);
+
 }
 
 
@@ -119,52 +362,146 @@
 ========================================================== */
 
 .history-item__amount {
-  font-size: var(--body-md-size);
-  font-weight: var(--font-weight-semibold);
-  text-align: right;
+
+    justify-self:end;
+
+
+    white-space:
+
+        nowrap;
+
+
+    color:
+
+        var(--text-primary);
+
+
+    font-size:
+
+        var(--body-md-size);
+
+
+    font-weight:
+
+        var(--font-weight-semibold);
+
+
+    letter-spacing:
+
+        var(--tracking-tight);
+
 }
 
-.history-item__amount--negative {
-  color: var(--danger-600);
-}
+
 
 .history-item__amount--positive {
-  color: var(--success-600);
+
+    color:
+
+        var(--success-600);
+
+}
+
+
+
+.history-item__amount--negative {
+
+    color:
+
+        var(--danger-600);
+
 }
 
 
 
 /* ==========================================================
-   RESPONSIVE
+   TABLET
+========================================================== */
+
+@include respond(tab-port) {
+
+
+    .history-item {
+
+        grid-template-columns:
+
+            2fr
+            1.5fr
+            1fr
+            auto;
+
+    }
+
+
+
+    .history-item__date {
+
+        display:none;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   MOBILE
 ========================================================== */
 
 @include respond(phone) {
-  .history-item {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    gap: var(--space-2);
-    padding: var(--space-3) 0;
-  }
 
-  .history-item__type {
-    grid-column: span 2;
-  }
 
-  .history-item__name {
-    grid-column: span 2;
-  }
+    .history-item {
 
-  .history-item__date {
-    grid-column: span 1;
-  }
+        grid-template-columns:
 
-  .history-item__status {
-    grid-column: span 1;
-    justify-self: end;
-  }
+            1fr
+            auto;
 
-  .history-item__amount {
-    grid-column: span 2;
-    justify-self: end;
-  }
+
+        gap:
+
+            var(--space-4);
+
+
+        padding:
+
+            var(--space-4);
+
+    }
+
+
+
+    .history-item__name {
+
+        display:none;
+
+    }
+
+
+
+    .history-item__date {
+
+        display:none;
+
+    }
+
+
+
+    .history-item__status {
+
+        display:none;
+
+    }
+
+
+
+    .history-item__amount {
+
+        grid-column:
+
+            2;
+
+    }
+
 }
