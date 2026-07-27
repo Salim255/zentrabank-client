@@ -54,10 +54,11 @@ export class LayoutComponent implements OnInit {
     const isAuth = url.startsWith("/auth");
     const isLanding = url.startsWith("/landing");
     const isTransactions = url.startsWith("/transactions");
+    const isAccount = url.startsWith("/accounts/account");
 
     this.showGlobalNav.set(!isAuth && !isLanding);
 
-    this.showFeatureNav.set(isTransactions);
+    this.showFeatureNav.set(isTransactions || isAccount);
 
     this.headerVariant.set(
       url.startsWith("/landing")

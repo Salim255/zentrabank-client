@@ -8,10 +8,26 @@ import { Observable, Subscription } from "rxjs";
   styleUrls: ["./feature-navigation.component.scss"],
   standalone: false
 })
-export class FeatureNavigationComponent {
-  items$: Observable< FeatureNavItem[]>;
-
+export class FeatureNavigationComponent implements OnInit, OnDestroy {
+  //items$: Observable<FeatureNavItem[]>;
+  items$ = signal<FeatureNavItem[]>([])
+  private itemSubscription!: Subscription;
   constructor(private featureNaveService: FeatureNavService){
-      this.items$ = this.featureNaveService.getNavItems$;
+
+  }
+
+  ngOnInit(): void {
+      this.subscribeToItems();
+  }
+
+
+  private subscribeToItems(){
+    this.itemSubscription = this.featureNaveService.getNavItems$.subscribe(items => {
+      this.items$.set(items)
+    })
+  }
+
+  ngOnDestroy(): void {
+      this.itemSubscription?.unsubscribe();
   }
 }

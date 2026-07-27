@@ -3,7 +3,8 @@
     <div class="feature-navigation__container">
 
         <ul class="feature-navigation__list">
-          @for(item of items$ | async; track $index) {
+
+          @for(item of items$(); track $index) {
             <li class="feature-navigation__item">
                 <a
                     [routerLink]="item.link"
