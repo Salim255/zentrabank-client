@@ -10,18 +10,18 @@ export interface FeatureNavItem {
 @Injectable({providedIn: "root"})
 export class FeatureNavService {
   // Internal subject
-  private readonly _items$ = new BehaviorSubject<FeatureNavItem[]>([]);
+  private readonly _navItems = new BehaviorSubject<FeatureNavItem[]>([]);
 
   // Public observable
-  readonly items$: Observable<FeatureNavItem[]> = this._items$.asObservable();
+  readonly getNavItems$: Observable<FeatureNavItem[]> = this._navItems.asObservable();
 
   // Setter
   setItems(items: FeatureNavItem[]): void {
-    this._items$.next(items);
+    this._navItems.next(items);
   }
 
   // Clear
   clear(): void {
-    this._items$.next([]);
+    this._navItems.next([]);
   }
 }

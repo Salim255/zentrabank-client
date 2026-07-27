@@ -3,30 +3,18 @@
     <div class="feature-navigation__container">
 
         <ul class="feature-navigation__list">
-
+          @for(item of items$ | async; track $index) {
             <li class="feature-navigation__item">
                 <a
-                    routerLink="/transactions/transfer"
+                    [routerLink]="item.link"
                     routerLinkActive="feature-navigation__link--active"
                     class="feature-navigation__link">
 
-                    Transfer
+                    {{ item.label }}
 
                 </a>
             </li>
-
-
-            <li class="feature-navigation__item">
-                <a
-                    routerLink="/transactions/history"
-                    routerLinkActive="feature-navigation__link--active"
-                    class="feature-navigation__link">
-
-                    History
-
-                </a>
-            </li>
-
+          }
         </ul>
 
     </div>

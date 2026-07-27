@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, signal } from "@angular/core";
 import { FeatureNavItem, FeatureNavService } from "../../services/feature-nav.service";
-import { Subscription } from "rxjs";
+import { Observable, Subscription } from "rxjs";
 
 @Component({
   selector: "app-feature-nav",
@@ -8,23 +8,10 @@ import { Subscription } from "rxjs";
   styleUrls: ["./feature-navigation.component.scss"],
   standalone: false
 })
-export class FeatureNavigationComponent implements OnInit, OnDestroy {
-  items: FeatureNavItem[] = [];
+export class FeatureNavigationComponent {
+  items$: Observable< FeatureNavItem[]>;
 
-  private naveDataSubscription!: Subscription;
-
-  constructor(private featureNaveService: FeatureNavService){}
-
-  ngOnInit(): void {
-
-  }
-
-
-
-  private subscribeToNavData() {
-    this.naveDataSubscription = this.featureNaveService.
-  }
-  ngOnDestroy(): void {
-    this.naveDataSubscription?.unsubscribe();
+  constructor(private featureNaveService: FeatureNavService){
+      this.items$ = this.featureNaveService.getNavItems$;
   }
 }
