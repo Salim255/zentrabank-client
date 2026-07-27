@@ -85,7 +85,7 @@
             class="app-header__actions">
 
 
-            @for(action of actions; track action.label) {
+           @if(!profile()){ @for(action of actions; track action.label) {
 
 
                 <app-button
@@ -102,8 +102,9 @@
 
 
             }
+          }
 
-
+          @if(profile()){ <app-user-menu></app-user-menu> }
         </div>
 
 

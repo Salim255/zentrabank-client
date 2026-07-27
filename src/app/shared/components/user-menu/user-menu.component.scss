@@ -1,0 +1,513 @@
+@use "../../../../themes/styles/media" as *;
+
+
+/* ==========================================================
+   USER MENU
+========================================================== */
+
+.user-menu {
+
+    position:
+        relative;
+
+}
+
+
+
+/* ==========================================================
+   TRIGGER
+========================================================== */
+
+.user-menu__trigger {
+
+    display:
+        flex;
+
+
+    align-items:
+        center;
+
+
+    gap:
+        var(--space-3);
+
+
+    padding:
+        .5rem
+        1rem;
+
+
+    border:
+        1px solid
+        var(--border-light);
+
+
+    border-radius:
+        var(--radius-lg);
+
+
+    background:
+        var(--surface-primary);
+
+
+    cursor:
+        pointer;
+
+
+    transition:
+
+        background-color var(--motion-fast),
+
+        border-color var(--motion-fast),
+
+        box-shadow var(--motion-fast);
+
+
+
+    &:hover {
+
+        background:
+            var(--surface-hover);
+
+
+        border-color:
+            var(--border-default);
+
+
+        box-shadow:
+            var(--shadow-sm);
+
+    }
+
+}
+
+
+
+
+/* ==========================================================
+   AVATAR
+========================================================== */
+
+.user-menu__avatar {
+
+    width:
+        3.8rem;
+
+
+    height:
+        3.8rem;
+
+
+    display:
+        flex;
+
+
+    align-items:
+        center;
+
+
+    justify-content:
+        center;
+
+
+    flex-shrink:
+        0;
+
+
+    border-radius:
+        var(--radius-circle);
+
+
+    background:
+        var(--primary-100);
+
+
+    color:
+        var(--primary-700);
+
+
+    font-size:
+        var(--label-md-size);
+
+
+    font-weight:
+        var(--font-weight-semibold);
+
+
+    letter-spacing:
+        var(--tracking-tight);
+
+}
+
+
+
+
+/* ==========================================================
+   IDENTITY
+========================================================== */
+
+.user-menu__identity {
+
+    display:
+        flex;
+
+
+    flex-direction:
+        column;
+
+
+    align-items:
+        flex-start;
+
+
+    line-height:
+        1.2;
+
+
+}
+
+
+
+.user-menu__name {
+
+    color:
+        var(--text-primary);
+
+
+    font-size:
+        var(--body-sm-size);
+
+
+    font-weight:
+        var(--font-weight-semibold);
+
+}
+
+
+
+
+.user-menu__role {
+
+    margin-top:
+        .3rem;
+
+
+    color:
+        var(--text-secondary);
+
+
+    font-size:
+        var(--caption-size);
+
+}
+
+
+
+
+
+.user-menu__chevron {
+
+    width:
+        1.6rem;
+
+
+    height:
+        1.6rem;
+
+
+    margin-left:
+        var(--space-2);
+
+
+    color:
+        var(--text-muted);
+
+
+    transition:
+        transform var(--motion-fast);
+
+}
+
+
+
+.user-menu__trigger:hover .user-menu__chevron {
+
+    transform:
+        translateY(.15rem);
+
+}
+
+
+
+/* ==========================================================
+   DROPDOWN
+========================================================== */
+
+.user-menu__dropdown {
+
+    position:
+        absolute;
+
+
+    top:
+        calc(100% + var(--space-3));
+
+
+    right:
+        0;
+
+
+    width:
+        24rem;
+
+
+    padding:
+        var(--space-2);
+
+
+    background:
+        var(--surface-primary);
+
+
+    border:
+        1px solid
+        var(--border-light);
+
+
+    border-radius:
+        var(--radius-xl);
+
+
+    box-shadow:
+        0 2rem 5rem
+        rgba(
+            15,
+            23,
+            42,
+            .12
+        );
+
+
+    animation:
+        fade-in var(--motion-fast);
+
+
+    z-index:
+        100;
+
+}
+
+
+
+/* ==========================================================
+   MENU ITEM
+========================================================== */
+
+.user-menu__item {
+
+    width:
+        100%;
+
+
+    display:
+        flex;
+
+
+    align-items:
+        center;
+
+
+    gap:
+        var(--space-3);
+
+
+    padding:
+        var(--space-3)
+        var(--space-3);
+
+
+    border:
+        none;
+
+
+    border-radius:
+        var(--radius-md);
+
+
+    background:
+        transparent;
+
+
+    color:
+        var(--text-primary);
+
+
+    text-decoration:
+        none;
+
+
+    font-size:
+        var(--body-sm-size);
+
+
+    font-weight:
+        var(--font-weight-medium);
+
+
+    cursor:
+        pointer;
+
+
+    transition:
+
+        background-color var(--motion-fast),
+
+        color var(--motion-fast);
+
+
+
+    &:hover {
+
+        background:
+            var(--surface-secondary);
+
+    }
+
+}
+
+
+
+.user-menu__item lucide-icon {
+
+    width:
+        1.8rem;
+
+
+    height:
+        1.8rem;
+
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+
+/* ==========================================================
+   DIVIDER
+========================================================== */
+
+.user-menu__divider {
+
+    height:
+        1px;
+
+
+    margin:
+        var(--space-2)
+        var(--space-3);
+
+
+    background:
+        var(--border-light);
+
+}
+
+
+
+/* ==========================================================
+   DANGER
+========================================================== */
+
+.user-menu__item--danger {
+
+    color:
+        var(--danger-600);
+
+
+
+    &:hover {
+
+        background:
+            rgba(
+                239,
+                68,
+                68,
+                .08
+            );
+
+    }
+
+
+}
+
+
+
+.user-menu__item--danger lucide-icon {
+
+    color:
+        var(--danger-600);
+
+}
+
+
+
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@include respond(tab-port) {
+
+
+    .user-menu__identity {
+
+        display:
+            none;
+
+    }
+
+
+    .user-menu__trigger {
+
+        padding:
+            .5rem;
+
+    }
+
+
+    .user-menu__chevron {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+
+
+
+/* ==========================================================
+   PHONE
+========================================================== */
+
+@include respond(phone) {
+
+
+    .user-menu__dropdown {
+
+        right:
+            -1rem;
+
+
+        width:
+            22rem;
+
+    }
+
+
+}

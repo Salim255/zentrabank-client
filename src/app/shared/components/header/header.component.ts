@@ -1,5 +1,9 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnDestroy, OnInit, signal } from "@angular/core";
 import { Router } from "@angular/router";
+import { AuthService } from "../../../features/auth/services/auth.service";
+import { Subscription } from "rxjs";
+import { ProfileService } from "../../../features/profile/services/profile.service";
+import { ProfileDto } from "../../../features/application/model/application.model";
 
 
 export type HeaderButtonVariant =
@@ -64,7 +68,7 @@ export type HeaderVariant =
     standalone: false
 
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnDestroy {
 
     @Input()
     headerVariant: HeaderVariant = "light";
@@ -101,6 +105,29 @@ export class HeaderComponent {
     routerLink =
         "/";
 
+    private userSubscription!: Subscription;
+
+    profile = signal<ProfileDto | null>(null);
+
+    constructor(private profileService: ProfileService){}
+
+
+    ngOnInit(): void {
+      this.subscribeToUser();
+    }
+
+
+    private subscribeToUser(){
+      this.userSubscription = this.profileService.profileSubject$.subscribe(profile => {
+        this.profile.set(profile);
+      })
+    }
+
+
+  ngOnDestroy(): void {
+
+    this.userSubscription?.unsubscribe();
+  }
 }
 
 

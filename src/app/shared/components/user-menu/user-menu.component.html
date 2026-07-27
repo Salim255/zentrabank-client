@@ -1,0 +1,147 @@
+<div
+  appClickOutside
+ (appClickOutside)="closeDropdown()"
+  class="user-menu">
+
+
+    <button
+        class="user-menu__trigger"
+        type="button"
+        (click)="toggle()">
+
+
+
+        <span class="user-menu__avatar">
+
+            {{ user.firstName.charAt(0) }}
+            {{ user.lastName.charAt(0) }}
+
+        </span>
+
+
+
+        <span class="user-menu__identity">
+
+
+            <strong class="user-menu__name">
+
+                {{ user.firstName }}
+                {{ user.lastName }}
+
+            </strong>
+
+
+
+            <small class="user-menu__role">
+
+                Customer
+
+            </small>
+
+
+        </span>
+
+
+
+        <lucide-icon
+            [img]="chevronDown"
+            class="user-menu__chevron">
+        </lucide-icon>
+
+
+
+    </button>
+
+
+
+
+
+    @if(isOpen) {
+
+
+        <div class="user-menu__dropdown" (click)="toggle()">
+
+
+            <a
+                routerLink="/profile"
+                class="user-menu__item">
+
+
+                <lucide-icon [img]="userIcon"></lucide-icon>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+
+
+
+            <a
+                routerLink="/settings"
+                class="user-menu__item">
+
+
+                <lucide-icon [img]="settingsIcon"></lucide-icon>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+
+
+
+            <a
+                routerLink="/security"
+                class="user-menu__item">
+
+
+                <lucide-icon [img]="shieldIcon"></lucide-icon>
+
+                <span>
+                    Security
+                </span>
+
+            </a>
+
+
+
+
+
+            <div class="user-menu__divider"></div>
+
+
+
+
+
+            <button
+                class="user-menu__item user-menu__item--danger"
+                type="button"
+                (click)="logout()">
+
+
+
+                <lucide-icon [img]="logoutIcon"></lucide-icon>
+
+
+                <span>
+                    Logout
+                </span>
+
+
+            </button>
+
+
+
+        </div>
+
+
+    }
+
+
+</div>
