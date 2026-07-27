@@ -1,15 +1,11 @@
 @use "../../../../themes/styles/media" as *;
 
-
 /* ==========================================================
    USER MENU
 ========================================================== */
 
 .user-menu {
-
-    position:
-        relative;
-
+    position: relative;
 }
 
 
@@ -20,67 +16,25 @@
 
 .user-menu__trigger {
 
-    display:
-        flex;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
 
+    padding: .4rem;
 
-    align-items:
-        center;
+    border: none;
+    background: transparent;
 
-
-    gap:
-        var(--space-3);
-
-
-    padding:
-        .5rem
-        1rem;
-
-
-    border:
-        1px solid
-        var(--border-light);
-
-
-    border-radius:
-        var(--radius-lg);
-
-
-    background:
-        var(--surface-primary);
-
-
-    cursor:
-        pointer;
-
+    cursor: pointer;
+    border-radius: var(--radius-lg);
 
     transition:
-
-        background-color var(--motion-fast),
-
-        border-color var(--motion-fast),
-
-        box-shadow var(--motion-fast);
-
-
+        transform var(--motion-fast);
 
     &:hover {
-
-        background:
-            var(--surface-hover);
-
-
-        border-color:
-            var(--border-default);
-
-
-        box-shadow:
-            var(--shadow-sm);
-
+        transform: translateY(-.1rem);
     }
-
 }
-
 
 
 
@@ -90,55 +44,39 @@
 
 .user-menu__avatar {
 
-    width:
-        3.8rem;
+    width: 4.2rem;
+    height: 4.2rem;
 
+    flex-shrink: 0;
 
-    height:
-        3.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    border-radius: var(--radius-circle);
 
-    display:
-        flex;
+    background: var(--primary-100);
+    color: var(--primary-700);
 
+    font-size: var(--label-md-size);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-tight);
 
-    align-items:
-        center;
-
-
-    justify-content:
-        center;
-
-
-    flex-shrink:
-        0;
-
-
-    border-radius:
-        var(--radius-circle);
-
-
-    background:
-        var(--primary-100);
-
-
-    color:
-        var(--primary-700);
-
-
-    font-size:
-        var(--label-md-size);
-
-
-    font-weight:
-        var(--font-weight-semibold);
-
-
-    letter-spacing:
-        var(--tracking-tight);
+    transition:
+        transform var(--motion-fast),
+        box-shadow var(--motion-fast);
 
 }
 
+
+.user-menu__trigger:hover .user-menu__avatar {
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 0 .4rem rgba(100,234,255,.12);
+
+}
 
 
 
@@ -148,92 +86,77 @@
 
 .user-menu__identity {
 
-    display:
-        flex;
+    display: flex;
+    flex-direction: column;
 
-
-    flex-direction:
-        column;
-
-
-    align-items:
-        flex-start;
-
-
-    line-height:
-        1.2;
-
+    gap: .2rem;
 
 }
-
 
 
 .user-menu__name {
 
-    color:
-        var(--text-primary);
+    color: var(--text-inverse);
 
+    font-size: var(--body-sm-size);
+    font-weight: var(--font-weight-semibold);
 
-    font-size:
-        var(--body-sm-size);
+    line-height: 1.2;
 
-
-    font-weight:
-        var(--font-weight-semibold);
+    transition:
+        opacity var(--motion-fast);
 
 }
-
-
 
 
 .user-menu__role {
 
-    margin-top:
-        .3rem;
+    color: rgba(255,255,255,.65);
 
+    font-size: var(--caption-size);
 
-    color:
-        var(--text-secondary);
+    line-height: 1.2;
 
-
-    font-size:
-        var(--caption-size);
+    transition:
+        color var(--motion-fast);
 
 }
 
 
+.user-menu__trigger:hover .user-menu__name {
+    opacity: .85;
+}
 
 
+.user-menu__trigger:hover .user-menu__role {
+    color: rgba(255,255,255,.85);
+}
+
+
+
+/* ==========================================================
+   CHEVRON
+========================================================== */
 
 .user-menu__chevron {
 
-    width:
-        1.6rem;
+    width: 1.5rem;
+    height: 1.5rem;
 
-
-    height:
-        1.6rem;
-
-
-    margin-left:
-        var(--space-2);
-
-
-    color:
-        var(--text-muted);
-
+    color: rgba(255,255,255,.65);
 
     transition:
-        transform var(--motion-fast);
+        transform var(--motion-fast),
+        color var(--motion-fast);
 
 }
-
 
 
 .user-menu__trigger:hover .user-menu__chevron {
 
-    transform:
-        translateY(.15rem);
+    transform: translateY(.2rem);
+
+    color: var(--text-inverse);
 
 }
 
@@ -245,125 +168,66 @@
 
 .user-menu__dropdown {
 
-    position:
-        absolute;
+    position: absolute;
 
+    top: calc(100% + var(--space-4));
+    right: 0;
 
-    top:
-        calc(100% + var(--space-3));
+    width: 26rem;
 
+    padding: var(--space-3);
 
-    right:
-        0;
+    background: var(--surface-primary);
 
+    border: 1px solid var(--border-light);
 
-    width:
-        24rem;
-
-
-    padding:
-        var(--space-2);
-
-
-    background:
-        var(--surface-primary);
-
-
-    border:
-        1px solid
-        var(--border-light);
-
-
-    border-radius:
-        var(--radius-xl);
-
+    border-radius: var(--radius-xl);
 
     box-shadow:
-        0 2rem 5rem
-        rgba(
-            15,
-            23,
-            42,
-            .12
-        );
-
+        0 2.5rem 6rem rgba(15,23,42,.16);
 
     animation:
         fade-in var(--motion-fast);
 
-
-    z-index:
-        100;
+    z-index: 100;
 
 }
 
 
 
 /* ==========================================================
-   MENU ITEM
+   MENU ITEMS
 ========================================================== */
 
 .user-menu__item {
 
-    width:
-        100%;
+    width: 100%;
 
+    display: flex;
+    align-items: center;
 
-    display:
-        flex;
+    gap: var(--space-3);
 
+    padding: var(--space-3);
 
-    align-items:
-        center;
+    border: none;
 
+    background: transparent;
 
-    gap:
-        var(--space-3);
+    border-radius: var(--radius-md);
 
+    color: var(--text-primary);
 
-    padding:
-        var(--space-3)
-        var(--space-3);
+    font-size: var(--body-sm-size);
+    font-weight: var(--font-weight-medium);
 
+    text-decoration: none;
 
-    border:
-        none;
-
-
-    border-radius:
-        var(--radius-md);
-
-
-    background:
-        transparent;
-
-
-    color:
-        var(--text-primary);
-
-
-    text-decoration:
-        none;
-
-
-    font-size:
-        var(--body-sm-size);
-
-
-    font-weight:
-        var(--font-weight-medium);
-
-
-    cursor:
-        pointer;
-
+    cursor: pointer;
 
     transition:
-
         background-color var(--motion-fast),
-
         color var(--motion-fast);
-
 
 
     &:hover {
@@ -379,16 +243,10 @@
 
 .user-menu__item lucide-icon {
 
-    width:
-        1.8rem;
+    width: 1.8rem;
+    height: 1.8rem;
 
-
-    height:
-        1.8rem;
-
-
-    color:
-        var(--text-secondary);
+    color: var(--text-secondary);
 
 }
 
@@ -400,14 +258,11 @@
 
 .user-menu__divider {
 
-    height:
-        1px;
-
+    height: 1px;
 
     margin:
         var(--space-2)
         var(--space-3);
-
 
     background:
         var(--border-light);
@@ -422,26 +277,17 @@
 
 .user-menu__item--danger {
 
-    color:
-        var(--danger-600);
-
+    color: var(--danger-600);
 
 
     &:hover {
 
         background:
-            rgba(
-                239,
-                68,
-                68,
-                .08
-            );
+            rgba(239,68,68,.08);
 
     }
 
-
 }
-
 
 
 .user-menu__item--danger lucide-icon {
@@ -453,41 +299,27 @@
 
 
 
-
-
 /* ==========================================================
    TABLET
 ========================================================== */
 
 @include respond(tab-port) {
 
-
     .user-menu__identity {
-
-        display:
-            none;
-
+        display: none;
     }
 
 
     .user-menu__trigger {
-
-        padding:
-            .5rem;
-
+        padding: .4rem;
     }
 
 
     .user-menu__chevron {
-
-        display:
-            none;
-
+        display: none;
     }
 
 }
-
-
 
 
 
@@ -497,17 +329,12 @@
 
 @include respond(phone) {
 
-
     .user-menu__dropdown {
 
-        right:
-            -1rem;
+        right: -1rem;
 
-
-        width:
-            22rem;
+        width: 23rem;
 
     }
-
 
 }

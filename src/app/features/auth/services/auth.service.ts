@@ -68,6 +68,7 @@ export class AuthService {
     return this.authHttp.logoutMe().pipe(
       tap(res =>{
         this.setUser(null);
+        this.profileService.setProfile(null)
       } )
     );
   }
