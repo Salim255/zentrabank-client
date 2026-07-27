@@ -64,10 +64,12 @@
                 <app-input
                     class="form__field"
                     formControlName="firstName"
+
                     name="firstName"
                     label="First name"
                     placeholder="Enter first name"
                     [required]="true">
+                    <lucide-icon inputPrefix [img]="userIcon" ></lucide-icon>
                 </app-input>
 
 
@@ -80,6 +82,7 @@
                     label="Last name"
                     placeholder="Enter last name"
                     [required]="true">
+                  <lucide-icon inputPrefix [img]="userRoundIcon" ></lucide-icon>
                 </app-input>
 
 
@@ -104,35 +107,16 @@
                     type="date"
 
                     [required]="true">
-
+                 <lucide-icon inputPrefix [img]="birthDateIcon" ></lucide-icon>
                 </app-input>
-
-
             </div>
-
-
         </section>
 
-
-
-
-
-
-
         <!-- Contact -->
-
-
         <section class="application__section">
-
-
             <h2 class="application__section-title">
-
-                Contact Information
-
+              Contact Information
             </h2>
-
-
-
 
             <app-input
                 [required]="true"
@@ -143,7 +127,7 @@
                 label="Address"
 
                 placeholder="Enter your address">
-
+               <lucide-icon inputPrefix [img]="addressIcon" ></lucide-icon>
             </app-input>
 
 
@@ -178,7 +162,7 @@
                     label="City"
 
                     placeholder="Enter city">
-
+                  <lucide-icon inputPrefix [img]="cityIcon" ></lucide-icon>
                 </app-input>
 
 
@@ -194,20 +178,13 @@
                     label="Postal code"
 
                     placeholder="Enter postal code">
-
+                  <lucide-icon inputPrefix [img]="postalCodeIcon" ></lucide-icon>
                 </app-input>
 
 
             </div>
 
-
-
-
-
-
             <div class="form__row">
-
-
                 <app-select
 
                     formControlName="phoneType"
@@ -220,10 +197,6 @@
 
                 </app-select>
 
-
-
-
-
                 <app-input
 
                     formControlName="phoneNumber"
@@ -233,7 +206,7 @@
                     label="Phone number"
                     [required]="true"
                     placeholder="Enter phone number">
-
+                  <lucide-icon inputPrefix [img]="phoneIcon" ></lucide-icon>
                 </app-input>
 
 

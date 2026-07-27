@@ -54,8 +54,10 @@ export class LayoutComponent implements OnInit {
     // Hide feature nav on auth or landing
     const isAuth = url.startsWith("/auth");
     const isLanding = url.startsWith("/landing");
+    const isApplication = url.startsWith("/application");
     const isTransactions = url.startsWith("/transactions");
     const isAccount = url.startsWith("/accounts/account");
+
 
      const authMode =
         url.startsWith("/auth/login")
@@ -67,7 +69,7 @@ export class LayoutComponent implements OnInit {
 
     this.currentAuthMode.set(authMode);
 
-    this.showGlobalNav.set(!isAuth && !isLanding);
+    this.showGlobalNav.set(!isAuth && !isLanding && !isApplication);
 
     this.showFeatureNav.set(isTransactions || isAccount);
 
