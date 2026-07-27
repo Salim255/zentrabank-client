@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 import { Info } from "lucide-angular";
 
 @Component({
@@ -9,4 +10,12 @@ import { Info } from "lucide-angular";
 })
 export class DepositPage {
   info = Info;
+
+
+  constructor(private router: Router){}
+
+
+  onBack(){
+    this.router.navigateByUrl("/transactions/transfer")
+  }
 }
