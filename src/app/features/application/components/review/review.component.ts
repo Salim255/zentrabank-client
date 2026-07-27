@@ -40,7 +40,7 @@ export class ReviewComponent implements OnInit {
     this.applicationReviewDto.signature = this.signatureControl.value;
     this.applicationService.submitApplication(this.applicationReviewDto).subscribe({
       next: (response) => {
-        this.router.navigate(["/dashboard/accounts"]);
+        this.router.navigate(["/accounts"]);
       },
       error: (err) => {
         console.log(err)

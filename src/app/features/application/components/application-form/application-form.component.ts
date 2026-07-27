@@ -248,8 +248,6 @@ export class ApplicationFormComponent implements OnInit {
     }
 
     onContinue(): void {
-
-        console.log("hello from continue")
         if(this.applicationForm.invalid){
 
 
