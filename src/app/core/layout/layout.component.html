@@ -2,8 +2,9 @@
 <main class="app-layout">
   <div class="app-layout__header">
     <app-header
+        [currentAuthMode]="currentAuthMode()"
         [headerVariant]="headerVariant()"
-        [actions]="headerActions">
+        >
     </app-header>
 
     @if(showGlobalNav()){

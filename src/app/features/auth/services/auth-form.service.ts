@@ -9,6 +9,7 @@ import { passwordMatchValidator } from "../../../shared/utils/form-errors";
 })
 export class AuthFormService {
   authForm!: FormGroup;
+
   constructor(  private fb: FormBuilder) {}
 
   buildForm(mode: 'login' | 'signup'): FormGroup {

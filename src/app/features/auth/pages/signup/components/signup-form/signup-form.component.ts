@@ -26,6 +26,7 @@ export class SignupFormComponent {
   ngOnInit(): void {
     this.signupForm = this.authFormService.buildForm('signup');
   }
+
   onSubmit(){
     if (this.signupForm.invalid) {
       this.signupForm.markAllAsTouched();

@@ -69,6 +69,8 @@ export type HeaderVariant =
 
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+    @Input()
+    currentAuthMode: "login" | "signup" | null = null;
 
     @Input()
     headerVariant: HeaderVariant = "light";
@@ -119,7 +121,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     private subscribeToUser(){
       this.userSubscription = this.profileService.profileSubject$.subscribe(profile => {
-        console.log(profile);
+
         this.profile.set(profile);
       })
     }

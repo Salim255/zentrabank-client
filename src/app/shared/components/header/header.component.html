@@ -83,31 +83,55 @@
 
         <div
             class="app-header__actions">
+          @if(profile()) {
 
-
-           @if(!profile()){ @for(action of actions; track action.label) {
-
-
-                <app-button
-
-                    [variant]="action.variant"
-                    (click)="action.action?.()"
-                    [type]="action.type ?? 'button'">
-
-
-                    {{ action.label }}
-
-
-                </app-button>
-
-
-            }
+              <app-user-menu>
+              </app-user-menu>
           }
+          @else if(currentAuthMode === "login") {
 
-          @if(profile()){ <app-user-menu></app-user-menu> }
+
+              <app-button
+                  variant="primary"
+                  routerLink="/auth/signup">
+
+                  Create account
+
+              </app-button>
+
+
+          }
+          @else if(currentAuthMode === "signup") {
+
+
+              <app-button
+                  variant="primary"
+                  routerLink="/auth/login">
+
+                  Sign in
+
+              </app-button>
+
+
+          }
+          @else {
+
+
+              @for(action of actions; track action.label) {
+
+                  <app-button
+                      [variant]="action.variant"
+                      (click)="action.action?.()">
+
+                      {{ action.label }}
+
+                  </app-button>
+
+              }
+
+
+          }
         </div>
-
-
     </div>
 
 

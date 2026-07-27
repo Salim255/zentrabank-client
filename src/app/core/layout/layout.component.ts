@@ -13,6 +13,7 @@ export class LayoutComponent implements OnInit {
   showFeatureNav = signal<boolean>(false);
   showGlobalNav = signal<boolean>(false);
   headerVariant = signal<HeaderVariant>("dark");
+  currentAuthMode = signal<"login" | "signup" | null>(null);
   headerActions: HeaderAction[] = [
 
       {
@@ -56,8 +57,18 @@ export class LayoutComponent implements OnInit {
     const isTransactions = url.startsWith("/transactions");
     const isAccount = url.startsWith("/accounts/account");
 
-    this.showGlobalNav.set(!isAuth && !isLanding);
+     const authMode =
+        url.startsWith("/auth/login")
+            ? "login"
+            : url.startsWith("/auth/signup")
+                ? "signup"
+                : null;
 
+
+    this.currentAuthMode.set(authMode);
+
+    this.showGlobalNav.set(!isAuth && !isLanding);
+    console.log(authMode,"hello");
     this.showFeatureNav.set(isTransactions || isAccount);
 
     this.headerVariant.set(
@@ -72,6 +83,7 @@ export class LayoutComponent implements OnInit {
     this.router.navigateByUrl("/auth");
   }
   private onCreateAccount(){
+    console.log("Hello")
     this.router.navigateByUrl("/auth/signup");
   }
 }
