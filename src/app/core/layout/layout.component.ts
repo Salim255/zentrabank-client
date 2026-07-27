@@ -27,7 +27,7 @@ export class LayoutComponent implements OnInit {
           label: "Open account",
           variant: "primary",
           type: "button",
-          action: () => this.onLogin()
+          action: () => this.onCreateAccount()
       }
 
   ];
@@ -68,8 +68,10 @@ export class LayoutComponent implements OnInit {
 
   }
 
-  onLogin() {
+  private onLogin() {
     this.router.navigateByUrl("/auth");
   }
-
+  private onCreateAccount(){
+    this.router.navigateByUrl("/auth/signup");
+  }
 }
