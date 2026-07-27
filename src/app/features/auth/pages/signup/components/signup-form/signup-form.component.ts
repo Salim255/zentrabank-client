@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../../../services/auth.service';
 import { ApiErrorResponse } from '../../../../../../core/models/api-error-response.model';
 import { ToastrService } from 'ngx-toastr';
+import { Mail, User } from 'lucide-angular';
 
 @Component({
   selector: 'app-signup-form',
@@ -15,6 +16,8 @@ import { ToastrService } from 'ngx-toastr';
 export class SignupFormComponent {
   signupForm!: FormGroup;
   showPassword = signal<boolean>(false);
+  emailIcon = Mail;
+  userIcon = User;
 
   constructor(
     private toastr: ToastrService,

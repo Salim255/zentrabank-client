@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 import { ApplicationFormService } from "../../services/application-form.service";
 import { ApplicationService } from "../../services/application.service";
 import { SelectOption } from "../../../../shared/kits/app-select/app-select.component";
-import { Building2, CalendarDays, Mail, MapPin, MapPinHouse, Phone, User, UserRound } from 'lucide-angular';
+import { Building2, CalendarDays, MapPin, MapPinHouse, Phone, User, UserRound } from 'lucide-angular';
 
 
 
@@ -19,7 +19,6 @@ export class ApplicationFormComponent implements OnInit {
     userIcon = User;
     userRoundIcon = UserRound;
     birthDateIcon = CalendarDays;
-    emailIcon = Mail;
     cityIcon = Building2;
     postalCodeIcon = MapPin;
     phoneIcon = Phone;
