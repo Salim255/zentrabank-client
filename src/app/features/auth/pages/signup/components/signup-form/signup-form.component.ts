@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../../../services/auth.service';
 import { ApiErrorResponse } from '../../../../../../core/models/api-error-response.model';
 import { ToastrService } from 'ngx-toastr';
-import { Mail, User } from 'lucide-angular';
+import { LockKeyhole, Mail, User } from 'lucide-angular';
 
 @Component({
   selector: 'app-signup-form',
@@ -18,6 +18,7 @@ export class SignupFormComponent {
   showPassword = signal<boolean>(false);
   emailIcon = Mail;
   userIcon = User;
+  passwordIcon = LockKeyhole;
 
   constructor(
     private toastr: ToastrService,
