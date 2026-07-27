@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 import {
     ChevronDown,
     User,
@@ -6,6 +6,9 @@ import {
     Shield,
     LogOut
 } from 'lucide-angular';
+import { ProfileDto } from '../../../features/application/model/application.model';
+import { ProfileService } from '../../../features/profile/services/profile.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -15,8 +18,6 @@ import {
     standalone: false
 })
 export class UserMenuComponent {
-
-
     isOpen = false;
 
 
@@ -28,15 +29,23 @@ export class UserMenuComponent {
 
 
 
-    user = {
+  profile = signal<ProfileDto | null>(null);
+  private userSubscription!: Subscription;
 
-        firstName: 'Pauline',
-        lastName: 'Bernard'
-
-    };
+  constructor(private profileService: ProfileService){}
 
 
+  ngOnInit(): void {
+    this.subscribeToUser();
+  }
 
+
+  private subscribeToUser(){
+    this.userSubscription = this.profileService.profileSubject$.subscribe(profile => {
+      console.log(profile);
+      this.profile.set(profile);
+    })
+  }
     toggle(): void {
 
         this.isOpen = !this.isOpen;
@@ -49,9 +58,13 @@ export class UserMenuComponent {
 
     logout(): void {
 
-        console.log('logout');
+      console.log('logout');
 
     }
 
-
+    ngOnDestroy(): void {
+      //Called once, before the instance is destroyed.
+      //Add 'implements OnDestroy' to the class.
+      this.userSubscription?.unsubscribe();
+    }
 }

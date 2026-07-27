@@ -119,6 +119,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     private subscribeToUser(){
       this.userSubscription = this.profileService.profileSubject$.subscribe(profile => {
+        console.log(profile);
         this.profile.set(profile);
       })
     }

@@ -29,7 +29,7 @@ export class App {
   private subscribeToAuth(){
     this.authSub  = this.authService.userIsAuthenticated.subscribe(isAuth => {
         if (!isAuth && this.previousAuthState() !== isAuth) {
-          this.router.navigate(['/auth']);
+          this.router.navigate(['/landing']);
         }
         this.previousAuthState.set(isAuth);
     });
