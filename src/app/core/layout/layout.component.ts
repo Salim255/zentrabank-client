@@ -68,7 +68,7 @@ export class LayoutComponent implements OnInit {
     this.currentAuthMode.set(authMode);
 
     this.showGlobalNav.set(!isAuth && !isLanding);
-    console.log(authMode,"hello");
+
     this.showFeatureNav.set(isTransactions || isAccount);
 
     this.headerVariant.set(

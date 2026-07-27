@@ -42,7 +42,7 @@ export class UserMenuComponent {
 
   private subscribeToUser(){
     this.userSubscription = this.profileService.profileSubject$.subscribe(profile => {
-      console.log(profile);
+
       this.profile.set(profile);
     })
   }
@@ -58,7 +58,7 @@ export class UserMenuComponent {
 
     logout(): void {
 
-      console.log('logout');
+
 
     }
 
