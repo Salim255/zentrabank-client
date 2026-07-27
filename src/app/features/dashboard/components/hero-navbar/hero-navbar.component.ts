@@ -38,7 +38,7 @@ export class HeroNavbarComponent {
   }
 
   logout(){
-    this.authService.logout().subscribe();
+   // this.authService.logout().subscribe();
 
     this.heroService.setHerModal(false);
   }

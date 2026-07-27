@@ -39,7 +39,7 @@ export class AuthHttpService {
     )
   }
 
-  logout(): Observable<{status: 'success', data: null}>{
+  logoutMe(): Observable<{status: 'success', data: null}>{
     return this.http.post<{status: 'success', data: null}>(
        `${this.ENV.apiBaseUrl}/users/logout`,
        {},

@@ -10,18 +10,26 @@
     display:
         grid;
 
+
     grid-template-columns:
-        minmax(0, 6fr)
-        minmax(34rem, 5fr);
+        minmax(32rem, 4fr)
+        minmax(0, 6fr);
+
 
     align-items:
         center;
 
-    gap: var(--space-12);
+
+    gap:
+        var(--space-12);
+
 
     min-height:
         84rem;
-    padding: 0  var(--space-8);
+
+
+    padding:
+        0 var(--space-8);
 
 }
 
@@ -235,6 +243,7 @@
 
     justify-content:
         flex-end;
+
   landing-dashboard-preview {
     min-width: 0;
     width: 100%;

@@ -1,4 +1,4 @@
-import { Component, Input, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import {
     ChevronDown,
     User,
@@ -9,6 +9,7 @@ import {
 import { ProfileDto } from '../../../features/application/model/application.model';
 import { ProfileService } from '../../../features/profile/services/profile.service';
 import { Subscription } from 'rxjs';
+import { AuthService } from '../../../features/auth/services/auth.service';
 
 
 @Component({
@@ -32,7 +33,10 @@ export class UserMenuComponent {
   profile = signal<ProfileDto | null>(null);
   private userSubscription!: Subscription;
 
-  constructor(private profileService: ProfileService){}
+  constructor(
+    private authService: AuthService,
+    private profileService: ProfileService
+  ){}
 
 
   ngOnInit(): void {
@@ -57,9 +61,7 @@ export class UserMenuComponent {
     }
 
     logout(): void {
-
-
-
+      this.authService.logoutMe().subscribe();
     }
 
     ngOnDestroy(): void {
