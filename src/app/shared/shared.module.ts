@@ -14,9 +14,11 @@ import { AppSelectComponent } from "./kits/app-select/app-select.component";
 import { ClickOutsideDirective } from "./directives/click-outside/click-outside.directive";
 import { GlobalNavigationComponent } from "./components/global-navigation/global-navigation.component";
 import { FeatureNavigationComponent } from "./components/feature-navigation/feature-navigation.component";
+import { UserMenuComponent } from "./components/user-menu/user-menu.component";
 
 @NgModule({
   declarations: [
+    UserMenuComponent,
     FeatureNavigationComponent,
     GlobalNavigationComponent,
     ClickOutsideDirective,
@@ -37,6 +39,7 @@ import { FeatureNavigationComponent } from "./components/feature-navigation/feat
     CommonModule,
   ],
   exports: [
+    UserMenuComponent,
     FeatureNavigationComponent,
     GlobalNavigationComponent,
     DatePipe,

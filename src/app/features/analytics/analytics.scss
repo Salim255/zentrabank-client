@@ -1,3 +1,5 @@
+@use "../../../themes/styles/mixins" as *;
+
 .analytics-layout {
-  padding: 2rem 4rem;
+   @include page-container;
 }
