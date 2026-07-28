@@ -70,6 +70,9 @@ export type HeaderVariant =
 })
 export class HeaderComponent implements OnInit, OnDestroy {
     @Input()
+    isApplication: boolean = false;
+
+    @Input()
     currentAuthMode: "login" | "signup" | null = null;
 
     @Input()
@@ -111,7 +114,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     profile = signal<ProfileDto | null>(null);
 
-    constructor(private profileService: ProfileService){}
+    constructor(
+      private authservice: AuthService,
+      private profileService: ProfileService,
+    ){}
 
 
     ngOnInit(): void {
@@ -126,7 +132,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       })
     }
 
-
+  logout(){
+    this.authservice.logoutMe().subscribe();
+  }
   ngOnDestroy(): void {
 
     this.userSubscription?.unsubscribe();

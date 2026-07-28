@@ -13,6 +13,8 @@ export class LayoutComponent implements OnInit {
   showFeatureNav = signal<boolean>(false);
   showGlobalNav = signal<boolean>(false);
   headerVariant = signal<HeaderVariant>("dark");
+  isApplication = signal<boolean>(false);
+
   currentAuthMode = signal<"login" | "signup" | null>(null);
   headerActions: HeaderAction[] = [
 
@@ -66,7 +68,7 @@ export class LayoutComponent implements OnInit {
                 ? "signup"
                 : null;
 
-
+    this.isApplication.set(isApplication);
     this.currentAuthMode.set(authMode);
 
     this.showGlobalNav.set(!isAuth && !isLanding && !isApplication);

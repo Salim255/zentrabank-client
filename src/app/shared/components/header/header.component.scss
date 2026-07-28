@@ -121,6 +121,156 @@
     gap: var(--space-3);
 }
 
+
+/* ==========================================================
+   SESSION
+========================================================== */
+
+.app-header__session {
+
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+
+}
+
+
+/* ==========================================================
+   IDENTITY
+========================================================== */
+
+.app-header__identity {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1.15;
+
+}
+
+
+.app-header__name {
+
+    color: var(--text-primary);
+
+    font-size: var(--body-md-size);
+
+    font-weight: var(--font-weight-semibold);
+
+    letter-spacing: -.02em;
+
+}
+
+
+.app-header__status {
+
+    margin-top: .2rem;
+
+    color: var(--text-secondary);
+
+    font-size: var(--caption-size);
+
+    font-weight: var(--font-weight-medium);
+
+}
+
+
+/* ==========================================================
+   SIGN OUT
+========================================================== */
+
+.app-header__logout {
+
+    display: inline-flex;
+    align-items: center;
+    gap: .8rem;
+
+    padding: .8rem 1.2rem;
+
+    border: none;
+    background: transparent;
+
+    color: var(--text-secondary);
+
+    font-size: var(--body-sm-size);
+    font-weight: var(--font-weight-medium);
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+
+}
+
+
+.app-header__logout:hover {
+
+    color: var(--danger-600);
+
+    transform: translateX(.2rem);
+
+}
+
+
+.app-header__logout lucide-icon {
+
+    width: 1.8rem;
+    height: 1.8rem;
+
+    transition:
+        transform var(--transition-fast);
+
+}
+
+
+.app-header__logout:hover lucide-icon {
+
+    transform: translateX(.25rem);
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@include respond(tab-port) {
+
+    .app-header__session {
+
+        gap: var(--space-3);
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@include respond(phone) {
+
+    .app-header__identity {
+
+        display: none;
+
+    }
+
+    .app-header__logout {
+
+        padding: .8rem;
+
+    }
+
+    .app-header__logout span {
+
+        display: none;
+
+    }
+
+}
 @include respond(tab-port) {
     .app-header__container {
         padding-inline: var(--space-6);

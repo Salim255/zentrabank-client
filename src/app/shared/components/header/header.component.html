@@ -67,6 +67,18 @@
 
         <div
             class="app-header__actions">
+          @if (isApplication) {
+
+
+
+              <app-button
+                variant="secondary"
+                (click)="logout()">
+                Sign out
+              </app-button>
+
+
+          }
           @if(profile()) {
 
               <app-user-menu>
@@ -108,20 +120,12 @@
                       (click)="action.action?.()">
 
                       {{ action.label }}
-
                   </app-button>
-
               }
-
-
           }
         </div>
     </div>
-
-
 </header>
-
-
 
 </div>
 
