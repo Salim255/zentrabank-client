@@ -1,57 +1,966 @@
+@use "../../../../../themes/styles/media" as *;
+@use "../../../../../themes/styles/mixins" as *;
+@use "../../../../../themes/styles/media" as *;
+
+
+/* ==========================================================
+   PROFILE LAYOUT
+========================================================== */
+
 .profile-layout {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
 
-  &__header {
-    margin-bottom: 2rem;
-  }
+  width:100%;
 
-  &__title {
-    font-size: 2rem;
-    font-weight: 600;
-  }
+  display:flex;
 
-  &__subtitle {
-    color: #6b7280;
-    margin-top: .25rem;
-  }
+  flex-direction:column;
 
-  &__content {
-    display: flex;
-    gap: 2rem;
-  }
+  gap:
+      var(--space-8);
 
-  &__sidebar {
-    width: 220px;
-  }
+  min-width:0;
+  @include page-content;
 
-  &__menu {
-    list-style: none;
-    padding: 0;
-  }
+  padding-bottom: var(--space-6);
 
-  &__menu-item {
-    padding: .75rem 1rem;
-    border-radius: .5rem;
-    cursor: pointer;
-    transition: background .2s;
+}
 
-    &.active {
-      background: #f3f4f6;
-      font-weight: 600;
-    }
+
+
+/* ==========================================================
+   PROFILE HERO
+========================================================== */
+
+.profile-hero {
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:
+        var(--space-7);
+
+    padding:
+        var(--space-8);
+
+    background:
+        var(--surface-primary);
+
+    border:
+        1px solid
+        var(--border-light);
+
+    border-radius:
+        var(--radius-xl);
+
+    transition:
+
+        border-color var(--motion-fast),
+
+        box-shadow var(--motion-fast);
+
+
 
     &:hover {
-      background: #f9fafb;
-    }
-  }
 
-  &__panel {
-    flex: 1;
-    background: white;
-    padding: 2rem;
-    border-radius: .75rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,.05);
-  }
+        border-color:
+            var(--border-default);
+
+        box-shadow:
+
+            0 2rem 5rem
+            rgba(15,23,42,.08);
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   HERO TOP
+========================================================== */
+
+.profile-hero__top {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:
+        var(--space-6);
+
+}
+
+
+
+/* ==========================================================
+   HERO IDENTITY
+========================================================== */
+
+.profile-hero__identity {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:
+        var(--space-6);
+
+    min-width:0;
+
+}
+
+
+
+/* ==========================================================
+   AVATAR
+========================================================== */
+
+.profile-hero__avatar {
+
+    width:
+        8rem;
+
+    height:
+        8rem;
+
+    flex-shrink:0;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    border-radius:
+        var(--radius-xl);
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--primary-100),
+            var(--surface-tertiary)
+        );
+
+
+    color:
+        var(--primary-700);
+
+
+    font-size:
+        2.8rem;
+
+
+    font-weight:
+        var(--font-weight-semibold);
+
+
+    letter-spacing:
+        var(--tracking-tight);
+
+}
+
+
+
+/* ==========================================================
+   HERO DETAILS
+========================================================== */
+
+.profile-hero__details {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:
+        var(--space-3);
+
+    min-width:0;
+
+}
+
+
+
+.profile-hero__name-row {
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:
+        var(--space-3);
+
+}
+
+
+
+.profile-hero__name {
+
+    margin:0;
+
+
+    color:
+        var(--text-display);
+
+
+    font-size:
+        3rem;
+
+
+    line-height:
+        1.15;
+
+
+    font-weight:
+        var(--font-weight-semibold);
+
+
+    letter-spacing:
+        var(--tracking-tight);
+
+}
+
+
+
+.profile-hero__role {
+
+    margin:0;
+
+
+    color:
+        var(--text-secondary);
+
+
+    font-size:
+        var(--body-md-size);
+
+}
+
+
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.profile-status {
+
+    display:inline-flex;
+
+    align-items:center;
+
+
+    padding:
+
+        .55rem 1.2rem;
+
+
+    border-radius:
+
+        var(--radius-pill);
+
+
+    background:
+
+        var(--success-50);
+
+
+    color:
+
+        var(--success-700);
+
+
+    font-size:
+
+        var(--label-sm-size);
+
+
+    font-weight:
+
+        var(--font-weight-semibold);
+
+}
+
+
+
+
+
+/* ==========================================================
+   HERO META
+========================================================== */
+
+.profile-hero__meta {
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+
+    gap:
+        var(--space-5);
+
+
+    color:
+
+        var(--text-secondary);
+
+
+    font-size:
+
+        var(--body-sm-size);
+
+}
+
+
+
+.profile-hero__meta span {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:
+        var(--space-2);
+
+
+}
+
+
+
+.profile-hero__meta lucide-icon {
+
+    width:
+        1.6rem;
+
+    height:
+        1.6rem;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+
+
+
+
+/* ==========================================================
+   PROFILE SUMMARY
+========================================================== */
+
+.profile-summary {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+        repeat(3,minmax(0,1fr));
+
+
+    gap:
+
+        var(--space-5);
+
+
+    padding-top:
+
+        var(--space-6);
+
+
+    border-top:
+
+        1px solid
+
+        var(--border-light);
+
+}
+
+
+
+.profile-summary__item {
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:
+
+        var(--space-1);
+
+
+}
+
+
+
+.profile-summary__label {
+
+
+    color:
+
+        var(--text-tertiary);
+
+
+    font-size:
+
+        var(--label-sm-size);
+
+
+    text-transform:
+
+        uppercase;
+
+
+    letter-spacing:
+
+        .08em;
+
+}
+
+
+
+.profile-summary__value {
+
+
+    color:
+
+        var(--text-primary);
+
+
+    font-size:
+
+        var(--body-md-size);
+
+
+    font-weight:
+
+        var(--font-weight-semibold);
+
+}
+
+
+
+
+
+/* ==========================================================
+   PROFILE CONTENT
+========================================================== */
+
+.profile-content {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:
+
+        var(--space-6);
+
+}
+
+
+
+
+
+/* ==========================================================
+   PROFILE SECTION
+========================================================== */
+
+.profile-section {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:
+
+        var(--space-6);
+
+
+    padding:
+
+        var(--space-7);
+
+
+    background:
+
+        var(--surface-primary);
+
+
+    border:
+
+        1px solid
+
+        var(--border-light);
+
+
+    border-radius:
+
+        var(--radius-xl);
+
+
+    transition:
+
+        border-color var(--motion-fast),
+
+        box-shadow var(--motion-fast);
+
+
+
+    &:hover {
+
+
+        border-color:
+
+            var(--border-default);
+
+
+        box-shadow:
+
+
+            0 1.8rem 4rem
+
+            rgba(15,23,42,.06);
+
+
+    }
+
+}
+
+
+
+
+
+/* ==========================================================
+   SECTION HEADER
+========================================================== */
+
+.profile-section__header {
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:
+
+        var(--space-4);
+
+}
+
+
+
+.profile-section__icon {
+
+
+    width:
+
+        4.8rem;
+
+
+    height:
+
+        4.8rem;
+
+
+    flex-shrink:0;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    border-radius:
+
+        var(--radius-lg);
+
+
+    background:
+
+        var(--surface-tertiary);
+
+
+    color:
+
+        var(--primary-600);
+
+}
+
+
+
+.profile-section__icon lucide-icon {
+
+
+    width:
+
+        2.4rem;
+
+
+    height:
+
+        2.4rem;
+
+}
+
+
+
+.profile-section__title {
+
+
+    margin:0;
+
+
+    color:
+
+        var(--text-display);
+
+
+    font-size:
+
+        var(--heading-component-size);
+
+
+    font-weight:
+
+        var(--font-weight-semibold);
+
+
+}
+
+
+
+.profile-section__subtitle {
+
+
+    margin:
+
+        var(--space-1) 0 0;
+
+
+    color:
+
+        var(--text-secondary);
+
+
+    font-size:
+
+        var(--body-sm-size);
+
+}
+
+
+
+
+
+/* ==========================================================
+   PROFILE FIELDS
+========================================================== */
+
+.profile-fields {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+        repeat(auto-fit,minmax(24rem,1fr));
+
+
+    gap:
+
+        var(--space-6)
+
+        var(--space-8);
+
+}
+
+
+
+.profile-field {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:
+
+        var(--space-1);
+
+
+}
+
+
+
+.profile-field--large {
+
+
+    grid-column:
+
+        span 2;
+
+}
+
+
+
+.profile-field__label {
+
+
+    color:
+
+        var(--text-tertiary);
+
+
+    font-size:
+
+        var(--label-sm-size);
+
+
+    text-transform:
+
+        uppercase;
+
+
+    letter-spacing:
+
+        .08em;
+
+}
+
+
+
+.profile-field__value {
+
+
+    color:
+
+        var(--text-primary);
+
+
+    font-size:
+
+        var(--body-md-size);
+
+
+    font-weight:
+
+        var(--font-weight-medium);
+
+
+    line-height:
+
+        1.6;
+
+}
+
+
+
+
+
+/* ==========================================================
+   EMPLOYMENT BADGE
+========================================================== */
+
+.profile-status-badge {
+
+
+    width:
+
+        fit-content;
+
+
+    display:inline-flex;
+
+
+    padding:
+
+        .6rem 1.2rem;
+
+
+    border-radius:
+
+        var(--radius-pill);
+
+
+    background:
+
+        var(--info-50);
+
+
+    color:
+
+        var(--info-700);
+
+
+    font-size:
+
+        var(--label-sm-size);
+
+
+    font-weight:
+
+        var(--font-weight-semibold);
+
+}
+
+
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@include respond(tab-port) {
+
+
+    .profile-hero__top {
+
+
+        flex-direction:column;
+
+
+        align-items:flex-start;
+
+    }
+
+
+
+    .profile-summary {
+
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+
+}
+
+
+
+@include respond(phone) {
+
+
+    .profile-hero {
+
+
+        padding:
+
+            var(--space-5);
+
+    }
+
+
+
+    .profile-hero__identity {
+
+
+        flex-direction:column;
+
+
+        align-items:flex-start;
+
+    }
+
+
+
+    .profile-hero__avatar {
+
+
+        width:
+
+            6rem;
+
+
+        height:
+
+            6rem;
+
+
+        font-size:
+
+            2.2rem;
+
+    }
+
+
+
+    .profile-hero__name {
+
+
+        font-size:
+
+            2.2rem;
+
+    }
+
+
+
+    .profile-section {
+
+
+        padding:
+
+            var(--space-5);
+
+    }
+
+
+
+    .profile-fields {
+
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+
+    .profile-field--large {
+
+
+        grid-column:
+
+            auto;
+
+    }
+
+
 }

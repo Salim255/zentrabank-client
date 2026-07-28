@@ -1,5 +1,6 @@
 @use "../../../themes/styles/mixins" as *;
 
 .analytics-layout {
-   @include page-container;
+  @include page-container;
+
 }

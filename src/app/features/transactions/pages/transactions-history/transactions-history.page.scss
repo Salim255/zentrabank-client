@@ -8,9 +8,6 @@
   flex-direction: column;
   gap: var(--space-8);
 
-  margin: 0 auto;
-
-  font-family: var(--font-family);
 }
 
 
@@ -79,29 +76,3 @@
   gap: var(--space-3);
 }
 
-
-
-/* ==========================================================
-   RESPONSIVE
-========================================================== */
-
-@include respond(tab-port) {
-  .transactions-history {
-    padding: var(--space-6);
-  }
-
-  .transactions-history__table {
-    padding: var(--space-5);
-  }
-}
-
-@include respond(phone) {
-  .transactions-history {
-    padding: var(--space-5);
-    gap: var(--space-6);
-  }
-
-  .transactions-history__title {
-    font-size: var(--heading-component-size);
-  }
-}

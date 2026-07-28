@@ -5,13 +5,14 @@
 ========================================================== */
 
 .transactions-layout {
-    @include page-container;
-    align-items: center;
+  @include page-container;
+  align-items: center;
 
-    overflow-y: auto;
+  overflow-y: auto;
 
-    min-height: 0;
-    height: 100%;
+  min-height: 0;
+  min-width: 0;
+  height: 100%;
 }
 
 
@@ -91,4 +92,5 @@
 
 .transactions-layout__content {
   @include page-content;
+   padding-bottom: var(--space-6);
 }

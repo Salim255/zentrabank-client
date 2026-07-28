@@ -1,29 +1,533 @@
 <section class="profile-layout">
 
-  <!-- Header / Title -->
-  <header class="profile-layout__header">
-    <h1 class="profile-layout__title">Profile</h1>
-    <p class="profile-layout__subtitle">Manage your personal information and account settings</p>
-  </header>
 
-  <!-- Main Content Wrapper -->
-  <div class="profile-layout__content">
+  <!-- ==========================================================
+       PROFILE HERO
+  =========================================================== -->
 
-    <!-- Left Sidebar (Navigation) -->
-    <aside class="profile-layout__sidebar">
-      <ul class="profile-layout__menu">
-        <li class="profile-layout__menu-item" >Personal Info</li>
-        <li class="profile-layout__menu-item" >Security</li>
-        <li class="profile-layout__menu-item" >Preferences</li>
-        <li class="profile-layout__menu-item" >Linked Accounts</li>
-      </ul>
-    </aside>
+  <header class="profile-hero motion-slide-up">
 
-    <!-- Right Content Area -->
-    <div class="profile-layout__panel">
-      <ng-content></ng-content>
+
+    <div class="profile-hero__top">
+
+
+      <div class="profile-hero__identity">
+
+
+        <div class="profile-hero__avatar">
+
+          {{ profile()?.firstName?.charAt(0) }}
+          {{ profile()?.lastName?.charAt(0) }}
+
+        </div>
+
+
+
+        <div class="profile-hero__details">
+
+
+          <div class="profile-hero__name-row">
+
+            <h1 class="profile-hero__name">
+
+              {{ profile()?.firstName }}
+              {{ profile()?.lastName }}
+
+            </h1>
+
+
+            <span class="profile-status">
+
+              Active customer
+
+            </span>
+
+
+          </div>
+
+
+
+          <p class="profile-hero__role">
+
+            {{ profile()?.title }}
+
+          </p>
+
+
+
+          <div class="profile-hero__meta">
+
+
+            <span>
+
+              <lucide-icon [img]="mapPinIcon"></lucide-icon>
+
+              {{ profile()?.city }},
+              {{ profile()?.country }}
+
+            </span>
+
+
+
+            <span>
+
+              Customer account
+
+            </span>
+
+
+
+            <span>
+
+              Member since 2026
+
+            </span>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <app-button variant="secondary">
+
+        Edit profile
+
+      </app-button>
+
+
     </div>
 
+
+
+
+
+    <!-- ======================================================
+         PROFILE SUMMARY
+    ======================================================= -->
+
+
+    <div class="profile-summary">
+
+
+      <div class="profile-summary__item">
+
+
+        <span class="profile-summary__label">
+
+          Account status
+
+        </span>
+
+
+        <strong class="profile-summary__value">
+
+          Verified
+
+        </strong>
+
+
+      </div>
+
+
+
+
+      <div class="profile-summary__item">
+
+
+        <span class="profile-summary__label">
+
+          Customer type
+
+        </span>
+
+
+        <strong class="profile-summary__value">
+
+          Personal
+
+        </strong>
+
+
+      </div>
+
+
+
+
+
+      <div class="profile-summary__item">
+
+
+        <span class="profile-summary__label">
+
+          Location
+
+        </span>
+
+
+        <strong class="profile-summary__value">
+
+          {{ profile()?.country }}
+
+        </strong>
+
+
+      </div>
+
+
+
+    </div>
+
+
+  </header>
+
+
+
+
+
+
+
+  <!-- ==========================================================
+       PROFILE CONTENT
+  =========================================================== -->
+
+
+  <div class="profile-content motion-fade-in">
+
+
+
+
+
+    <!-- ======================================================
+         PERSONAL INFORMATION
+    ======================================================= -->
+
+
+    <section class="profile-section">
+
+
+      <header class="profile-section__header">
+
+
+        <div class="profile-section__icon">
+
+          <lucide-icon [img]="userIcon"></lucide-icon>
+
+        </div>
+
+
+
+        <div>
+
+          <h2 class="profile-section__title">
+
+            Personal information
+
+          </h2>
+
+
+          <p class="profile-section__subtitle">
+
+            Identity details linked to your account.
+
+          </p>
+
+
+        </div>
+
+
+      </header>
+
+
+
+
+
+      <div class="profile-fields">
+
+
+        <div class="profile-field">
+
+
+          <span class="profile-field__label">
+
+            Full name
+
+          </span>
+
+
+          <strong class="profile-field__value">
+
+            {{ profile()?.firstName }}
+            {{ profile()?.lastName }}
+
+          </strong>
+
+
+        </div>
+
+
+
+
+
+        <div class="profile-field">
+
+
+          <span class="profile-field__label">
+
+            Title
+
+          </span>
+
+
+          <strong class="profile-field__value">
+
+            {{ profile()?.title }}
+
+          </strong>
+
+
+        </div>
+
+
+
+
+
+        <div class="profile-field">
+
+
+          <span class="profile-field__label">
+
+            Date of birth
+
+          </span>
+
+
+          <strong class="profile-field__value">
+
+            {{ profile()?.dateOfBirth }}
+
+          </strong>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+    <!-- ======================================================
+         CONTACT INFORMATION
+    ======================================================= -->
+
+
+    <section class="profile-section">
+
+
+      <header class="profile-section__header">
+
+
+        <div class="profile-section__icon">
+
+
+          <lucide-icon [img]="mapPinIcon"></lucide-icon>
+
+
+        </div>
+
+
+
+
+        <div>
+
+
+          <h2 class="profile-section__title">
+
+            Contact information
+
+          </h2>
+
+
+          <p class="profile-section__subtitle">
+
+            Registered communication details.
+
+          </p>
+
+
+        </div>
+
+
+      </header>
+
+
+
+
+
+      <div class="profile-fields">
+
+
+
+        <div class="profile-field profile-field--large">
+
+
+          <span class="profile-field__label">
+
+            Address
+
+          </span>
+
+
+          <strong class="profile-field__value">
+
+
+            {{ profile()?.addressLine }}
+
+            <br>
+
+            {{ profile()?.zipCode }}
+
+            {{ profile()?.city }}
+
+            <br>
+
+            {{ profile()?.country }}
+
+
+          </strong>
+
+
+        </div>
+
+
+
+
+
+        <div class="profile-field">
+
+
+          <span class="profile-field__label">
+
+            Phone number
+
+          </span>
+
+
+          <strong class="profile-field__value">
+
+            {{ profile()?.phoneNumber }}
+
+          </strong>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+    <!-- ======================================================
+         PROFESSIONAL INFORMATION
+    ======================================================= -->
+
+
+    <section class="profile-section">
+
+
+      <header class="profile-section__header">
+
+
+        <div class="profile-section__icon">
+
+
+          <lucide-icon [img]="briefcaseIcon"></lucide-icon>
+
+
+        </div>
+
+
+
+        <div>
+
+
+          <h2 class="profile-section__title">
+
+            Professional profile
+
+          </h2>
+
+
+          <p class="profile-section__subtitle">
+
+            Employment information.
+
+          </p>
+
+
+        </div>
+
+
+      </header>
+
+
+
+
+
+      <div class="profile-fields">
+
+
+
+        <div class="profile-field">
+
+
+          <span class="profile-field__label">
+
+            Employment status
+
+          </span>
+
+
+          <strong class="profile-status-badge">
+
+            {{ profile()?.employmentStatus }}
+
+          </strong>
+
+
+        </div>
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
   </div>
+
 
 </section>
