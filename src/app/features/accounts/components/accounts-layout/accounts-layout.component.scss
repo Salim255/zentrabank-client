@@ -2,16 +2,13 @@
 
 
 .accounts-layout {
-
-    @include page-container;
-    align-items: center;
-
-
-    min-height: 0;
-    height: 100%;
-    min-width: 0;
-    width: 100%;
-    overflow: hidden;
+  @include page-container;
+  align-items: center;
+  min-height: 0;
+  height: 100%;
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 
@@ -112,4 +109,7 @@
 
 .accounts-layout__content {
   @include page-content;
+  overflow: hidden;
+  min-height: 0;
+  height: 100%;
 }
