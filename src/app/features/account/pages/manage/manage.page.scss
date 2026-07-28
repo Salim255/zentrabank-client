@@ -1,5 +1,5 @@
 @use "../../../../../themes/styles/media" as *;
-
+@use "../../../../../themes/styles/mixins" as *;
 /* ==========================================================
    ACCOUNT MANAGE — BANKING PRODUCT ENTERPRISE
 ========================================================== */
@@ -8,17 +8,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
-  padding: var(--space-8);
-  max-width: 96rem;
-  margin: 0 auto;
-  font-family: var(--font-family);
 
+  @include page-content;
 
   min-height: 0;
-  height: 100%;
   min-width: 0;
-  width: 100%;
   overflow-y: auto;
+  padding-bottom: var(--space-6);
 }
 
 
@@ -33,6 +29,7 @@
   gap: var(--space-2);
   padding-bottom: var(--space-6);
   border-bottom: 1px solid var(--border-light);
+
 }
 
 .account-manage__title {
@@ -202,14 +199,6 @@
 ========================================================== */
 
 @include respond(tab-port) {
-  .account-manage {
-    padding: var(--space-6);
-  }
-
-  .account-manage__card {
-    padding: var(--space-6);
-  }
-
   .account-manage__card-header {
     flex-direction: column;
     align-items: flex-start;

@@ -51,8 +51,8 @@
     flex-direction:
         column;
 
-    padding: var(--space-8) var(--space-6);
-
+    padding: 0 var(--space-6);
+    padding-top: var(--space-8);
 
 
     @include respond(tab-port) {
@@ -86,7 +86,7 @@
 
     width:
         80%;
-
+    margin-inline: auto;
 
 
     @include respond(tab-port) {

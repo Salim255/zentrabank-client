@@ -1,16 +1,11 @@
 @use "../../../themes/styles/mixins" as *;
 
 .account-page {
-  @include page-container;
-  align-items: center;
-
+ @include page-container;
 
   min-height: 0;
   height: 100%;
   min-width: 0;
   width: 100%;
-  overflow: hidden;
-
-  background-color: red;
-
+  overflow: auto;
 }

@@ -21,9 +21,7 @@
 
     @include page-content;
 
-    margin-bottom:
-
-        var(--space-8);
+    margin-bottom: var(--space-4);
 
 }
 
@@ -110,6 +108,4 @@
 .accounts-layout__content {
   @include page-content;
   overflow: hidden;
-  min-height: 0;
-  height: 100%;
 }
