@@ -17,6 +17,18 @@
     overflow-y: auto;
     padding:  var(--space-10) var(--space-6);
 
+     /* Hide scrollbar */
+
+    scrollbar-width:
+        none; /* Firefox */
+
+
+    &::-webkit-scrollbar {
+
+        display:
+            none; /* Chrome, Safari, Edge */
+
+    }
 }
 
 

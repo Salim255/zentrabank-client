@@ -5,20 +5,27 @@
    APPLICATION
 ========================================================== */
 
-
 .application {
-
+    min-height: 0;
+    min-width: 0;
     width: 100%;
-
-    margin:
-        0 auto;
+    height: 100%;
+    overflow-y: auto;
     padding: var(--space-10) 0;
 
+     /* Hide scrollbar */
+
+    scrollbar-width:
+        none; /* Firefox */
+
+
+    &::-webkit-scrollbar {
+
+        display:
+            none; /* Chrome, Safari, Edge */
+
+    }
 }
-
-
-
-
 
 
 /* ==========================================================
