@@ -35,10 +35,11 @@ export interface TransactionsSummaryDto {
 
 }
 
+export interface TransactionsHistoryDto {
+   transactions: TransactionDto[];
+  summary: TransactionsSummaryDto;
+}
 export interface GetTransactionsResponseDto {
   status: string;
-  data: {
-    transactions: TransactionDto[];
-    summary: TransactionsSummaryDto
-  }
+  data: TransactionsHistoryDto;
 }
