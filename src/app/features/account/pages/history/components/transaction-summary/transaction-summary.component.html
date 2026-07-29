@@ -63,7 +63,7 @@
 
         <strong class="transaction-stat__value">
 
-          284
+          {{summary()?.totalTransactions ?? 0 }}
 
         </strong>
 
@@ -98,7 +98,7 @@
 
         <strong class="transaction-stat__value transaction-stat__value--success">
 
-          + £12,480
+          + ${{summary()?.moneyIn ?? 0}}
 
         </strong>
 
@@ -134,7 +134,7 @@
 
         <strong class="transaction-stat__value transaction-stat__value--danger">
 
-          − £7,920
+          − $ {{summary()?.moneyOut ?? 0}}
 
         </strong>
 
@@ -172,7 +172,7 @@
 
         <strong class="transaction-stat__value">
 
-          £18,392
+          $ {{summary()?.currentBalance ?? 0}}
 
         </strong>
 

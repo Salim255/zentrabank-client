@@ -143,9 +143,27 @@ export class HistoryPage {
     };
 
 
-    transaction = signal<TransactionDto[]>([]);
-    private transactionsSubscription!: Subscription;
+  transaction = signal<TransactionDto[]>([]);
+  private transactionsSubscription!: Subscription;
 
-    constructor(private historyService: HistoryService){}
+  constructor(private historyService: HistoryService){}
+  ngOnInit(): void {
+    this.historyService.getTransactionsHttp().subscribe();
+    this.subscribeToTransactions();
+  }
+
+
+  subscribeToTransactions(){
+    this.transactionsSubscription = this.historyService.getTransactions$.
+    subscribe( trans => {
+
+        //this.transactions.set(trans)
+      }
+    )
+  }
+
+  ngOnDestroy(): void {
+    this.transactionsSubscription?.unsubscribe();
+  }
 
 }

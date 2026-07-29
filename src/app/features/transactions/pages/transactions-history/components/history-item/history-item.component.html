@@ -36,7 +36,7 @@
     [class.history-item__amount--negative]="isNegative(transaction()?.type!)"
     [class.history-item__amount--positive]="isPositive(transaction()?.type!)"
   >
-    {{ transaction()?.amount | currency:'EUR':'symbol':'1.2-2' }}
+    {{ transaction()?.amount | currency:'USD':'symbol':'1.2-2' }}
   </div>
 
 </div>

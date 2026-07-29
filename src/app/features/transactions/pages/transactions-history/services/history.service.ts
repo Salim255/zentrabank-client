@@ -21,6 +21,10 @@ export class HistoryService {
     return this.transactionsSummarySubject.asObservable();
   }
 
+  setTransactionsSummary(summary: TransactionsSummaryDto | null){
+    this.transactionsSummarySubject.next(summary);
+  }
+
   setTransactions(transactions: TransactionDto[]): void{
     this.transactionsHistorySubject.next(transactions);
   }
@@ -29,6 +33,8 @@ export class HistoryService {
     return this.historyHttpService.getTransactionsHttp().pipe(
       tap((response) => {
           const transactionsDto:TransactionDto[] = response.data.transactions;
+          const summary: TransactionsSummaryDto = response.data.summary;
+          this.setTransactionsSummary(summary);
           this.setTransactions(transactionsDto);
       })
     );

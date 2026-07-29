@@ -1,5 +1,6 @@
-import { Component, ElementRef, ViewChild } from "@angular/core";
-import { balanceData } from "../data/data";
+import { Component, OnDestroy, OnInit, signal } from "@angular/core";
+import { Subscription } from "rxjs";
+
 import {
   ApexAxisChartSeries,
   ApexChart,
@@ -9,10 +10,11 @@ import {
   ApexStroke,
   ApexTooltip,
   ApexXAxis,
-  ApexYAxis,
-  ChartComponent
+  ApexYAxis
 } from "ng-apexcharts";
 
+import { HistoryService } from "../../transactions/pages/transactions-history/services/history.service";
+import { TransactionDto } from "../../transactions/pages/transactions-history/dto/transaction.dto";
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -32,50 +34,127 @@ export type ChartOptions = {
   styleUrls: ["./balance-chart.component.scss"],
   standalone: false
 })
-export class BalanceChartComponent{
- @ViewChild('chart') chart!: ChartComponent;
+export class BalanceChartComponent implements OnInit, OnDestroy {
 
-  public chartOptions: Partial<ChartOptions>;
+  transactions = signal<TransactionDto[]>([]);
 
-  constructor() {
+  transactionsSubscription!: Subscription;
+
+  chartOptions: Partial<ChartOptions>;
+
+  constructor(
+    private historyService: HistoryService
+  ) {
+
     this.chartOptions = {
+
       series: [
         {
-          name: 'Balance',
-          data: balanceData.map(d => ({ x: d.time, y: d.balance }))
+          name: "Balance",
+          data: []
         }
       ],
+
       chart: {
-        //type: "donut",
         type: "line",
         height: 350,
-        toolbar: { show: false },
-        zoom: { enabled: false },
+        toolbar: {
+          show: false
+        },
+        zoom: {
+          enabled: false
+        }
       },
+
       stroke: {
-        curve: 'smooth',
+        curve: "smooth",
         width: 3,
         colors: ["#1485c6"]
       },
+
       xaxis: {
-        type: 'category',
-        labels: { rotate: -45 }
+        type: "datetime"
       },
+
       yaxis: {
         labels: {
-          formatter: val => `€${val}`
+          formatter: value => `£${value.toLocaleString()}`
         }
       },
+
       grid: {
-        borderColor: '#f0e6e2',
+        borderColor: "#f0e6e2",
         strokeDashArray: 4
       },
+
       tooltip: {
-        theme: 'light',
+        theme: "light",
         y: {
-          formatter: val => `€${val}`
+          formatter: value => `£${value.toLocaleString()}`
         }
       }
+
     };
+
   }
+
+  ngOnInit(): void {
+
+    this.subscribeToTransactions();
+
+  }
+
+  private subscribeToTransactions(): void {
+
+    this.transactionsSubscription =
+      this.historyService.getTransactions$
+        .subscribe(transactions => {
+
+          this.transactions.set(transactions);
+          if(transactions.length) this.updateChart();
+
+        });
+
+  }
+
+  private updateChart(): void {
+
+    const balanceHistory = [...this.transactions()]
+
+      .sort(
+        (a, b) =>
+          new Date(a.createdAt).getTime() -
+          new Date(b.createdAt).getTime()
+      )
+
+      .map(transaction => ({
+
+        x: new Date(transaction.createdAt).getTime(),
+
+        y: transaction.postTransactionBalance
+
+      }));
+
+
+    this.chartOptions = {
+
+      ...this.chartOptions,
+
+      series: [
+        {
+          name: "Balance",
+          data: balanceHistory
+        }
+      ]
+
+    };
+
+  }
+
+  ngOnDestroy(): void {
+
+    this.transactionsSubscription?.unsubscribe();
+
+  }
+
 }
