@@ -1,5 +1,8 @@
 import { Component, signal } from "@angular/core";
 import { ArrowDownLeft, ArrowRightLeft, ArrowUpRight, Car, Music4, ShoppingBag } from "lucide-angular";
+import { TransactionDto } from "../../../transactions/pages/transactions-history/dto/transaction.dto";
+import { Subscription } from "rxjs";
+import { HistoryService } from "../../../transactions/pages/transactions-history/services/history.service";
 
 @Component({
   selector: "app-history-page",
@@ -16,7 +19,7 @@ export class HistoryPage {
   music4 = Music4;
 
 
-    transactions = signal([
+  transactions = signal([
 
 
         {
@@ -139,5 +142,10 @@ export class HistoryPage {
 
     };
 
+
+    transaction = signal<TransactionDto[]>([]);
+    private transactionsSubscription!: Subscription;
+
+    constructor(private historyService: HistoryService){}
 
 }

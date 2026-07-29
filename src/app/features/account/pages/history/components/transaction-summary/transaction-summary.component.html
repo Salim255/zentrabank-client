@@ -1,84 +1,190 @@
 <section class="transaction-summary">
 
-  <!-- ============================================
+
+  <!-- ======================================================
        HEADER
-  ============================================ -->
+  ======================================================= -->
+
   <header class="transaction-summary__header">
 
+
     <div class="transaction-summary__heading">
+
+
       <h2 class="transaction-summary__title">
+
         Transaction Summary
+
       </h2>
 
+
       <p class="transaction-summary__description">
-        A quick overview of your account activity.
+
+        Overview of your account activity and financial movements.
+
       </p>
+
+
     </div>
+
 
   </header>
 
 
 
-  <!-- ============================================
-       GRID
-  ============================================ -->
+
+
+  <!-- ======================================================
+       SUMMARY GRID
+  ======================================================= -->
+
+
   <div class="transaction-summary__grid">
 
-    <!-- CARD -->
-    <article class="transaction-summary__card">
-      <div class="transaction-summary__icon">
+
+    <article class="transaction-stat">
+
+
+      <div class="transaction-stat__icon">
+
         <lucide-icon [img]="receipt"></lucide-icon>
+
       </div>
 
-      <div class="transaction-summary__content">
-        <span class="transaction-summary__label">Transactions</span>
-        <h3 class="transaction-summary__value">284</h3>
+
+      <div class="transaction-stat__content">
+
+        <span class="transaction-stat__label">
+
+          Transactions
+
+        </span>
+
+
+        <strong class="transaction-stat__value">
+
+          284
+
+        </strong>
+
+
       </div>
+
+
     </article>
 
 
-    <!-- CARD -->
-    <article class="transaction-summary__card">
-      <div class="transaction-summary__icon transaction-summary__icon--success">
+
+
+
+    <article class="transaction-stat">
+
+
+      <div class="transaction-stat__icon transaction-stat__icon--success">
+
         <lucide-icon [img]="arrowDownLeft"></lucide-icon>
+
       </div>
 
-      <div class="transaction-summary__content">
-        <span class="transaction-summary__label">Money In</span>
-        <h3 class="transaction-summary__value transaction-summary__value--success">
+
+      <div class="transaction-stat__content">
+
+        <span class="transaction-stat__label">
+
+          Money In
+
+        </span>
+
+
+        <strong class="transaction-stat__value transaction-stat__value--success">
+
           + £12,480
-        </h3>
+
+        </strong>
+
+
       </div>
+
+
     </article>
 
 
-    <!-- CARD -->
-    <article class="transaction-summary__card">
-      <div class="transaction-summary__icon transaction-summary__icon--danger">
+
+
+
+
+    <article class="transaction-stat">
+
+
+      <div class="transaction-stat__icon transaction-stat__icon--danger">
+
         <lucide-icon [img]="arrowUpRight"></lucide-icon>
+
       </div>
 
-      <div class="transaction-summary__content">
-        <span class="transaction-summary__label">Money Out</span>
-        <h3 class="transaction-summary__value transaction-summary__value--danger">
+
+      <div class="transaction-stat__content">
+
+        <span class="transaction-stat__label">
+
+          Money Out
+
+        </span>
+
+
+        <strong class="transaction-stat__value transaction-stat__value--danger">
+
           − £7,920
-        </h3>
+
+        </strong>
+
+
       </div>
+
+
     </article>
 
 
-    <!-- CARD -->
-    <article class="transaction-summary__card transaction-summary__card--balance">
-      <div class="transaction-summary__icon transaction-summary__icon--primary">
+
+
+
+
+
+    <article class="transaction-stat transaction-stat--primary">
+
+
+      <div class="transaction-stat__icon transaction-stat__icon--primary">
+
         <lucide-icon [img]="wallet"></lucide-icon>
+
       </div>
 
-      <div class="transaction-summary__content">
-        <span class="transaction-summary__label">Current Balance</span>
-        <h3 class="transaction-summary__value">£18,392</h3>
+
+      <div class="transaction-stat__content">
+
+
+        <span class="transaction-stat__label">
+
+          Current Balance
+
+        </span>
+
+
+        <strong class="transaction-stat__value">
+
+          £18,392
+
+        </strong>
+
+
       </div>
+
+
     </article>
+
 
   </div>
+
+
 
 </section>

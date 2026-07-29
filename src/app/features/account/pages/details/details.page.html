@@ -1,119 +1,114 @@
 <section class="account-details">
 
-  <!-- ============================================
-       ACCOUNT PRODUCT HERO
-  ============================================ -->
-  <header class="account-details__hero">
+  <!-- ==========================================================
+       ACCOUNT PRODUCT — HERO BLOCK
+  =========================================================== -->
+  <section class="account-product">
 
-    <div class="account-details__product">
+    <header class="account-product__header">
 
-      <div class="account-details__icon">
-        <lucide-icon [img]="Wallet"></lucide-icon>
+      <!-- IDENTITY -->
+      <div class="account-product__identity">
+
+        <div class="account-product__icon">
+          <lucide-icon [img]="Wallet"></lucide-icon>
+        </div>
+
+        <div class="account-product__content">
+
+          <div class="account-product__title-row">
+
+            <h1 class="account-product__title">
+              {{ account()?.type }} Account
+            </h1>
+
+            <span
+              class="account-product__status"
+              [class.account-product__status--active]="account()?.status === 'ACTIVE'">
+              {{ account()?.status }}
+            </span>
+
+          </div>
+
+          <p class="account-product__number">
+            •••• {{ account()?.accountNumber?.slice(-4) }}
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="account-details__product-info">
+      <!-- BALANCE -->
+      <div class="account-product__balance">
 
-        <h1 class="account-details__product-number">
-          •••• {{ account()?.accountNumber?.slice(-4) }}
-        </h1>
+        <span class="account-product__balance-label">
+          Available balance
+        </span>
 
-        <p class="account-details__product-type">
-          {{ account()?.type }} Account
-        </p>
+        <strong class="account-product__balance-value">
+          {{ account()?.balance | currency:account()?.currency }}
+        </strong>
+
+        <span class="account-product__balance-currency">
+          {{ account()?.currency }}
+        </span>
 
       </div>
 
-    </div>
-
-    <span
-      class="account-details__status"
-      [class.account-details__status--active]="account()?.status === 'ACTIVE'">
-      {{ account()?.status }}
-    </span>
-
-  </header>
-
-
-
-  <!-- ============================================
-       BALANCE — Financial Identity
-  ============================================ -->
-  <section class="account-details__balance">
-
-    <h2 class="account-details__balance-value">
-      {{ account()?.balance | currency:account()?.currency }}
-    </h2>
-
-    <p class="account-details__balance-label">
-      Available Balance
-    </p>
-
-  </section>
-
-
-
-  <!-- ============================================
-       ACCOUNT METADATA — Banking Information
-  ============================================ -->
-  <section class="account-details__section">
-
-    <header class="account-details__section-header">
-      <h3>Account Information</h3>
     </header>
 
-    <div class="account-details__grid">
+    <!-- INFORMATION GRID -->
+    <div class="account-product__information">
 
-      <div class="account-details__field">
-        <label>Account Holder</label>
-        <strong> salim </strong>
-      </div>
+      <article class="account-field">
+        <span>Account holder</span>
+        <strong>Salim Hassan</strong>
+      </article>
 
-      <div class="account-details__field">
-        <label>Account Number</label>
+      <article class="account-field">
+        <span>Account number</span>
         <strong>{{ account()?.accountNumber }}</strong>
-      </div>
+      </article>
 
-      <div class="account-details__field">
-        <label>IBAN</label>
+      <article class="account-field">
+        <span>IBAN</span>
         <strong>{{ account()?.iban }}</strong>
-      </div>
+      </article>
 
-      <div class="account-details__field">
-        <label>BIC / SWIFT</label>
+      <article class="account-field">
+        <span>BIC / SWIFT</span>
         <strong>{{ account()?.bic }}</strong>
-      </div>
+      </article>
 
-      <div class="account-details__field">
-        <label>Currency</label>
+      <article class="account-field">
+        <span>Currency</span>
         <strong>{{ account()?.currency }}</strong>
-      </div>
+      </article>
 
-      <div class="account-details__field">
-        <label>Opened On</label>
+      <article class="account-field">
+        <span>Opened on</span>
         <strong>{{ account()?.createdAt | date:'mediumDate' }}</strong>
-      </div>
+      </article>
 
     </div>
 
   </section>
 
-
-
-  <!-- ============================================
-       ACCOUNT ACTIONS — Banking Operations
-  ============================================ -->
+  <!-- ==========================================================
+       ACTIONS — PRODUCT FOOTER
+  =========================================================== -->
   <footer class="account-details__actions">
 
-    <app-button variant="ghost">
-      View Transactions
+    <app-button variant="secondary">
+      View transactions
     </app-button>
 
     <app-button variant="secondary">
-      Download Statement
+      Download statement
     </app-button>
 
-    <app-button variant="secondary">
-      Manage Account
+    <app-button variant="primary">
+      Manage account
     </app-button>
 
   </footer>

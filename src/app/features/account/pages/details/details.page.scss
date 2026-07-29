@@ -3,9 +3,6 @@
 /* ==========================================================
    ACCOUNT DETAILS — LINEAR PREMIUM++
 ========================================================== */
-/* ==========================================================
-   ACCOUNT DETAILS — BANKING PRODUCT STYLE
-========================================================== */
 
 .account-details {
   display: flex;
@@ -20,59 +17,312 @@
   padding-bottom: var(--space-6);
 }
 
+/* ==========================================================
+   ACCOUNT PRODUCT
+========================================================== */
+
+.account-product {
+
+
+    display:flex;
+
+    flex-direction:column;
+
+
+    gap:
+
+        var(--space-6);
+
+
+
+    padding:
+
+        var(--space-6);
+
+
+
+    background:
+
+        var(--surface-primary);
+
+
+
+    border:
+
+        1px solid
+
+        var(--border-light);
+
+
+
+    border-radius:
+
+        var(--radius-xl);
+
+
+
+    transition:
+
+        border-color var(--motion-fast),
+
+        box-shadow var(--motion-fast);
+
+
+
+    &:hover {
+
+        border-color:
+
+            var(--border-default);
+
+
+    }
+
+}
+
+
+
 
 
 /* ==========================================================
-   HERO — Banking Product
+   HEADER
 ========================================================== */
 
-.account-details__hero {
-  background: var(--surface-primary);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-xl);
-  padding: var(--space-7);
+.account-product__header {
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:space-between;
+
+
+    gap:
+
+        var(--space-6);
+
+
 }
 
-.account-details__product {
-  display: flex;
-  align-items: center;
-  gap: var(--space-5);
+
+
+
+
+
+
+/* ==========================================================
+   IDENTITY
+========================================================== */
+
+
+.account-product__identity {
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:
+
+        var(--space-4);
+
+
+
+    min-width:0;
+
+
 }
 
-.account-details__icon {
-  width: 6rem;
-  height: 6rem;
-  border-radius: var(--radius-lg);
-  background: var(--primary-50);
-  color: var(--primary-700);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+
+
+
+.account-product__icon {
+
+
+    width:
+
+        4.6rem;
+
+
+    height:
+
+        4.6rem;
+
+
+    flex-shrink:0;
+
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+
+    border-radius:
+
+        var(--radius-lg);
+
+
+
+    background:
+
+        var(--surface-tertiary);
+
+
+
+    color:
+
+        var(--primary-600);
+
+
 }
 
-.account-details__product-info {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
+
+
+.account-product__icon lucide-icon {
+
+
+    width:
+
+        2.4rem;
+
+
+    height:
+
+        2.4rem;
+
+
 }
 
-.account-details__product-number {
-  margin: 0;
-  font-size: var(--heading-card-size);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-display);
+
+
+
+
+
+.account-product__content {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:
+
+        var(--space-1);
+
+
+
+    min-width:0;
+
+
 }
 
-.account-details__product-type {
-  margin: 0;
-  font-size: var(--body-sm-size);
-  color: var(--text-secondary);
+
+
+
+
+
+.account-product__title-row {
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    flex-wrap:wrap;
+
+
+    gap:
+
+        var(--space-3);
+
+
 }
+
+
+
+
+
+
+.account-product__title {
+
+
+    margin:0;
+
+
+    color:
+
+        var(--text-display);
+
+
+
+    font-size:
+
+        var(--heading-component-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-semibold);
+
+
+
+    letter-spacing:
+
+        var(--tracking-tight);
+
+    text-transform: uppercase;
+
+}
+
+
+
+
+
+.account-product__number {
+
+
+    margin:0;
+
+
+    color:
+
+        var(--text-secondary);
+
+
+
+    font-size:
+
+        var(--body-sm-size);
+
+
+
+    letter-spacing:
+
+        .08em;
+
+
+}
+
+
+
 
 
 
@@ -80,111 +330,542 @@
    STATUS
 ========================================================== */
 
-.account-details__status {
-  padding: .7rem 1.4rem;
-  border-radius: var(--radius-pill);
-  background: var(--surface-secondary);
-  font-size: var(--label-sm-size);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-secondary);
+
+.account-product__status {
+
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
+    width:fit-content;
+
+
+
+    padding:
+
+        .45rem 1rem;
+
+
+
+    border-radius:
+
+        var(--radius-pill);
+
+
+
+    background:
+
+        var(--surface-tertiary);
+
+
+
+    color:
+
+        var(--text-secondary);
+
+
+
+    font-size:
+
+        var(--label-sm-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-semibold);
+
+
 }
 
-.account-details__status--active {
-  background: var(--success-50);
-  color: var(--success-700);
+
+
+
+.account-product__status--active {
+
+
+    background:
+
+        var(--success-50);
+
+
+
+    color:
+
+        var(--success-700);
+
+
 }
+
+
+
+
 
 
 
 /* ==========================================================
-   BALANCE — Financial Identity
+   BALANCE
 ========================================================== */
 
-.account-details__balance {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
+
+.account-product__balance {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    align-items:flex-end;
+
+
+    gap:
+
+        var(--space-1);
+
+
 }
 
-.account-details__balance-value {
-  margin: 0;
-  font-size: clamp(3.2rem, 3.5vw, 4.2rem);
-  font-weight: var(--font-weight-bold);
-  color: var(--text-display);
-  letter-spacing: -.03em;
+
+
+
+
+.account-product__balance-label {
+
+
+    color:
+
+        var(--text-secondary);
+
+
+
+    font-size:
+
+        var(--body-sm-size);
+
+
 }
 
-.account-details__balance-label {
-  margin: 0;
-  font-size: var(--body-sm-size);
-  color: var(--text-tertiary);
+
+
+
+
+
+.account-product__balance-value {
+
+
+    margin:0;
+
+
+
+    color:
+
+        var(--text-display);
+
+
+
+    font-size:
+
+        3.2rem;
+
+
+
+    line-height:
+
+        1.15;
+
+
+
+    font-weight:
+
+        var(--font-weight-semibold);
+
+
+
+    letter-spacing:
+
+        var(--tracking-tight);
+
+
 }
+
+
+
+
+
+.account-product__balance-currency {
+
+
+    color:
+
+        var(--text-tertiary);
+
+
+
+    font-size:
+
+        var(--label-sm-size);
+
+
+
+    text-transform:
+
+        uppercase;
+
+
+
+    letter-spacing:
+
+        .08em;
+
+
+}
+
+
+
+
 
 
 
 /* ==========================================================
-   SECTION — Banking Metadata
+   INFORMATION
 ========================================================== */
 
-.account-details__section {
-  background: var(--surface-primary);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-xl);
-  padding: var(--space-7);
 
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
+.account-product__information {
+
+
+    display:grid;
+
+
+
+    grid-template-columns:
+
+        repeat(3,minmax(0,1fr));
+
+
+
+    gap:
+
+        var(--space-5);
+
+
+
+    padding-top:
+
+        var(--space-5);
+
+
+
+    border-top:
+
+        1px solid
+
+        var(--border-light);
+
+
 }
 
-.account-details__section-header h3 {
-  margin: 0;
-  font-size: var(--heading-component-size);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-display);
+
+
+
+
+
+
+.account-field {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:
+
+        var(--space-1);
+
+
 }
+
+
+
+
+
+.account-field span {
+
+
+    color:
+
+        var(--text-tertiary);
+
+
+
+    font-size:
+
+        var(--label-sm-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-medium);
+
+
+
+    text-transform:
+
+        uppercase;
+
+
+
+    letter-spacing:
+
+        .07em;
+
+
+}
+
+
+
+
+
+
+.account-field strong {
+
+
+    color:
+
+        var(--text-primary);
+
+
+
+    font-size:
+
+        var(--body-md-size);
+
+
+
+    font-weight:
+
+        var(--font-weight-medium);
+
+
+
+    line-height:
+
+        1.5;
+
+
+
+    word-break:
+
+        break-word;
+
+
+}
+
+
+
+
 
 
 
 /* ==========================================================
-   GRID
+   ACTIONS
 ========================================================== */
 
-.account-details__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-  gap: var(--space-6) var(--space-8);
-}
-
-.account-details__field {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.account-details__field label {
-  font-size: var(--label-sm-size);
-  color: var(--text-tertiary);
-  text-transform: uppercase;
-  letter-spacing: .08em;
-}
-
-.account-details__field strong {
-  font-size: var(--body-md-size);
-  font-weight: var(--font-weight-medium);
-  color: var(--text-primary);
-}
-
-
-
-/* ==========================================================
-   ACTIONS — Banking Operations
-========================================================== */
 
 .account-details__actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: var(--space-4);
-  padding-top: var(--space-6);
-  border-top: 1px solid var(--border-light);
+
+
+    display:flex;
+
+
+    justify-content:flex-end;
+
+
+    align-items:center;
+
+
+    gap:
+
+        var(--space-3);
+
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+
+@include respond(tab-port) {
+
+
+    .account-product__header {
+
+
+        align-items:flex-start;
+
+
+        flex-direction:column;
+
+
+    }
+
+
+
+
+    .account-product__balance {
+
+
+        align-items:flex-start;
+
+
+        width:100%;
+
+
+    }
+
+
+
+
+
+    .account-product__information {
+
+
+        grid-template-columns:
+
+            repeat(2,minmax(0,1fr));
+
+
+    }
+
+
+}
+
+
+
+
+
+@include respond(phone) {
+
+
+
+    .account-product {
+
+
+        padding:
+
+            var(--space-5);
+
+
+    }
+
+
+
+
+
+    .account-product__identity {
+
+
+        align-items:flex-start;
+
+
+    }
+
+
+
+
+
+    .account-product__icon {
+
+
+        width:
+
+            4.2rem;
+
+
+        height:
+
+            4.2rem;
+
+
+    }
+
+
+
+
+
+    .account-product__title {
+
+
+        font-size:
+
+            var(--heading-sm-size);
+
+
+    }
+
+
+
+
+
+    .account-product__balance-value {
+
+
+        font-size:
+
+            2.6rem;
+
+
+    }
+
+
+
+
+
+    .account-product__information {
+
+
+        grid-template-columns:
+
+            1fr;
+
+
+
+        gap:
+
+            var(--space-4);
+
+
+    }
+
+
+
+
+
+    .account-details__actions {
+
+
+        flex-direction:column;
+
+
+        align-items:stretch;
+
+
+    }
+
+
 }

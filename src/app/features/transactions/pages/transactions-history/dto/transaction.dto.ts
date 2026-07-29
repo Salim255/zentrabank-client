@@ -22,9 +22,23 @@ export enum TransferStatus {
     COMPLETED,   // Successfully executed
     FAILED       // Failed (insufficient funds, etc.)
 }
+
+export interface TransactionsSummaryDto {
+
+    totalTransactions: number;
+
+    moneyIn: number;
+
+    moneyOut: number;
+
+    currentBalance: number;
+
+}
+
 export interface GetTransactionsResponseDto {
   status: string;
   data: {
     transactions: TransactionDto[];
+    summary: TransactionsSummaryDto
   }
 }

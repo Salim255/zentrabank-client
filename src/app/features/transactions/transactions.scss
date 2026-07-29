@@ -22,12 +22,10 @@
 ========================================================== */
 
 .transactions-layout__header {
+  @include page-content;
 
-    @include page-content;
-
-    margin-bottom:
-        var(--space-8);
-
+  margin-bottom:
+      var(--space-8);
 }
 
 
