@@ -52,12 +52,8 @@
         label="Recipient Name"
         placeholder="Enter recipient full name"
         [required]="true">
+          <lucide-icon inputPrefix [img]="userCircle"></lucide-icon>
       </app-input>
-
-      <app-form-error
-        [control]="transForm.get('recipientName')"
-        field="recipientName">
-      </app-form-error>
     </div>
 
 
