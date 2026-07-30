@@ -6,4 +6,6 @@ import { Component } from "@angular/core";
   styleUrls: ["./analytics.scss"],
   standalone: false
 })
-export class Analytics {}
+export class Analytics {
+  // Some code
+}
