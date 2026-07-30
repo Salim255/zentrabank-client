@@ -25,7 +25,7 @@
         label="Recipient IBAN"
         placeholder="Enter recipient IBAN"
         [required]="true">
-          <lucide-icon inputPrefix [img]="bank"></lucide-icon>
+        <lucide-icon inputPrefix [img]="bank"></lucide-icon>
       </app-input>
 
     </div>
@@ -39,12 +39,8 @@
         label="Recipient BIC (SWIFT)"
         placeholder="Enter recipient BIC"
         [required]="true">
+        <lucide-icon inputPrefix [img]="building"></lucide-icon>
       </app-input>
-
-      <app-form-error
-        [control]="transForm.get('bic')"
-        field="bic">
-      </app-form-error>
     </div>
 
 
