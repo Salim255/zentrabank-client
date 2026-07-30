@@ -7,7 +7,7 @@ import { AccountService } from "../../../../../../../accounts/services/account.s
 import { Subscription } from "rxjs";
 import { Account } from "../../../../../../../accounts/model/account.model";
 import { SelectOption } from "../../../../../../../../shared/kits/app-select/app-select.component";
-import { BanknoteIcon, Building, Hash, User } from "lucide-angular";
+import { Banknote, BanknoteIcon, BanknoteXIcon, Building, Coins, Hash, User } from "lucide-angular";
 
 @Component({
   selector: "app-transfer-form",
@@ -24,6 +24,7 @@ export class FormComponent implements OnInit {
   bank = Hash;
   building = Building;
   userCircle = User;
+  coins = Banknote;
 
   constructor(
     private accountsService: AccountService,

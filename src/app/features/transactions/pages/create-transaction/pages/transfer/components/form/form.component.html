@@ -69,12 +69,9 @@
         (blur)="finalizeAmount($event)"
         (keydown)="blockInvalidKeys($event)"
         (paste)="blockInvalidPaste($event)">
-      </app-input>
+         <lucide-icon inputPrefix [img]="coins"></lucide-icon>
 
-      <app-form-error
-        [control]="transForm.get('amount')"
-        field="amount">
-      </app-form-error>
+      </app-input>
     </div>
 
 
