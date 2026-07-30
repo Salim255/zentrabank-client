@@ -25,12 +25,9 @@
         label="Recipient IBAN"
         placeholder="Enter recipient IBAN"
         [required]="true">
+          <lucide-icon inputPrefix [img]="bank"></lucide-icon>
       </app-input>
 
-      <app-form-error
-        [control]="transForm.get('iban')"
-        field="iban">
-      </app-form-error>
     </div>
 
 
