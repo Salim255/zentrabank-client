@@ -13,15 +13,15 @@
 
       <div class="transaction-card__content">
         <span class="transaction-card__type">{{ typeLabel }}</span>
-        <h2 class="transaction-card__title">{{ transaction.title }}</h2>
-        <p class="transaction-card__description">{{ transaction.description }}</p>
+        <h2 class="transaction-card__title">{{ transaction?.title }}</h2>
+        <p class="transaction-card__description">{{ transaction?.description }}</p>
       </div>
 
     </div>
 
     <div class="transaction-card__amount-wrapper">
       <span class="transaction-card__amount" [ngClass]="amountClass">
-        {{ transaction.amount | currency:transaction.currency:"symbol" }}
+        {{ transaction.amount | currency:transaction?.currency:"symbol" }}
       </span>
 
       <span class="transaction-card__status">
@@ -46,18 +46,18 @@
 
     <div class="transaction-card__detail">
       <span class="transaction-card__label">Reference</span>
-      <span class="transaction-card__value">{{ transaction.reference }}</span>
+      <span class="transaction-card__value">{{ transaction?.reference }}</span>
     </div>
 
     <div class="transaction-card__detail">
       <span class="transaction-card__label">Method</span>
-      <span class="transaction-card__value">{{ transaction.method }}</span>
+      <span class="transaction-card__value">{{ transaction?.method }}</span>
     </div>
 
     <div class="transaction-card__detail">
       <span class="transaction-card__label">Balance After</span>
       <span class="transaction-card__value">
-        {{ transaction.balanceAfter | currency:transaction.currency:"symbol" }}
+        {{ transaction?.postTransactionBalance | currency:transaction?.currency:"symbol" }}
       </span>
     </div>
 

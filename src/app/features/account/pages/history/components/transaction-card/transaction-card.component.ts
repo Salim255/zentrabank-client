@@ -103,7 +103,7 @@ export class TransactionCardComponent {
 
                 return "Transfer";
             default:
-              return "";
+              return "Transfer";
 
 
         }
@@ -135,7 +135,7 @@ export class TransactionCardComponent {
 
 
     get formattedDate(): string {
-
+        
 
         return new Intl.DateTimeFormat(
             "en-GB",
@@ -144,7 +144,7 @@ export class TransactionCardComponent {
                 timeStyle: "short"
             }
         )
-        .format(this.transaction.createdAt);
+        .format(new Date(this.transaction?.createdAt));
 
     }
 
