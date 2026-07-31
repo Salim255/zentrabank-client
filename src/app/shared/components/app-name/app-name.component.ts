@@ -17,7 +17,7 @@ export class AppNameComponent {
     showName = true;
 
 
-     brandName = "zentrabank";
+     brandName = "zentraBank";
 
 
     get logoSrc(): string {
