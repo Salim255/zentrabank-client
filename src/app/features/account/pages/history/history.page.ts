@@ -1,4 +1,4 @@
-import { Component, signal } from "@angular/core";
+import { Component, OnDestroy, OnInit, signal } from "@angular/core";
 import { ArrowDownLeft, ArrowRightLeft, ArrowUpRight, Car, Music4, ShoppingBag } from "lucide-angular";
 import { TransactionDto } from "../../../transactions/pages/transactions-history/dto/transaction.dto";
 import { Subscription } from "rxjs";
@@ -10,7 +10,7 @@ import { HistoryService } from "../../../transactions/pages/transactions-history
   styleUrls: ["./history.page.scss"],
   standalone: false
 })
-export class HistoryPage {
+export class HistoryPage implements OnInit, OnDestroy{
   shoppingBag = ShoppingBag;
   arrowDownLeft = ArrowDownLeft;
   arrowUpRight = ArrowUpRight;
@@ -24,6 +24,7 @@ export class HistoryPage {
   private transactionsSubscription!: Subscription;
 
   constructor(private historyService: HistoryService){}
+
   ngOnInit(): void {
     this.historyService.getTransactionsHttp().subscribe();
     this.subscribeToTransactions();

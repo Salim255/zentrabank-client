@@ -1,1 +1,21 @@
-<h1 class="app-name">zentrabank</h1>
+<div
+    class="app-brand"
+    [class.app-brand--dark]="isDark"
+>
+
+    @if (showLogo) {
+        <img
+            class="app-brand__logo"
+            [src]="logoSrc"
+            [alt]="brandName + ' logo'"
+        >
+    }
+
+
+    @if (showName) {
+        <h1 class="app-brand__name">
+            {{ brandName }}
+        </h1>
+    }
+
+</div>

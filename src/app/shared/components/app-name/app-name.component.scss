@@ -1,39 +1,121 @@
-.app-name {
-  font-size: 2.4rem;
-  font-weight: 700;
-  text-transform: lowercase;
-  margin: 0;
+/* ==========================================================
+   APP BRAND
+========================================================== */
 
-  /* Gradient rouge → bleu */
-  background: linear-gradient(
-    120deg,
-   #3568e8 30%,
-     #930f0f  20%,
-    #410202 100%
-  );
+.app-brand {
 
-  /* Text clip */
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    display: inline-flex;
 
-  /* Smooth animation */
-  background-size: 200% auto;
-  //animation: gradientShift 8s ease-in-out infinite;
+    align-items: center;
 
-  /* Optional: slight 3D crispness */
-  letter-spacing: -0.5px;
-}
+    gap: 0.75rem;
 
-/* Gradient movement */
-@keyframes gradientShift {
-  0% {
-    background-position: 0% center;
-  }
-  50% {
-    background-position: 100% center;
-  }
-  100% {
-    background-position: 0% center;
-  }
+
+
+    /* ======================================================
+       LOGO
+    ====================================================== */
+
+    &__logo {
+
+        width: 2.75rem;
+
+        height: 2.75rem;
+
+        flex-shrink: 0;
+
+        object-fit: contain;
+
+    }
+
+
+
+    /* ======================================================
+       BRAND NAME
+    ====================================================== */
+
+    &__name {
+
+        margin: 0;
+
+
+        font-size: 2.25rem;
+
+        font-weight: 850;
+
+
+        line-height: 1;
+
+
+        letter-spacing: -0.075em;
+
+
+        text-transform: lowercase;
+
+
+
+        /*
+          Clean diagonal enterprise gradient
+        */
+        background: linear-gradient(
+            120deg,
+            #111827 0%,
+            #111827 35%,
+            #4b5cff 55%,
+            #7c8cff 75%,
+            #a5b4fc 100%
+        );
+
+
+
+        -webkit-background-clip: text;
+
+        background-clip: text;
+
+
+        -webkit-text-fill-color: transparent;
+
+        color: transparent;
+
+
+
+        -webkit-font-smoothing: antialiased;
+
+    }
+
+
+
+    /* ======================================================
+       DARK MODE
+    ====================================================== */
+
+    &--dark {
+
+
+        .app-brand__name {
+
+
+            background: linear-gradient(
+                120deg,
+                #ffffff 0%,
+                #ffffff 35%,
+                #c7d2fe 55%,
+                #818cf8 75%,
+                #4b5cff 100%
+            );
+
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+
+            -webkit-text-fill-color: transparent;
+
+            color: transparent;
+
+        }
+
+    }
+
 }

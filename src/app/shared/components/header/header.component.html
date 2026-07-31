@@ -16,12 +16,7 @@
             class="app-header__brand"
             [routerLink]="routerLink">
 
-
-            <img
-                [src]="logoSrc"
-                [alt]="brandName + brandAccent + ' logo'">
-
-          <app-name></app-name>
+          <app-name [isDark]="headerVariant === 'dark'" ></app-name>
 
         </a>
 

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
   selector: "app-name",
@@ -6,4 +6,24 @@ import { Component } from "@angular/core";
   styleUrls: ["./app-name.component.scss"],
   standalone: false
 })
-export class AppNameComponent {}
+export class AppNameComponent {
+   @Input()
+    isDark = false;
+
+    @Input()
+    showLogo = true;
+
+    @Input()
+    showName = true;
+
+
+     brandName = "zentrabank";
+
+
+    get logoSrc(): string {
+
+        return !this.isDark
+            ? "/brand/logo-dark.png"
+            : "/brand/logo-light.png";
+    }
+}

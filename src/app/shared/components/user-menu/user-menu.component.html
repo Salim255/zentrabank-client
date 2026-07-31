@@ -1,14 +1,13 @@
 <div
-  appClickOutside
- (appClickOutside)="closeDropdown()"
-  class="user-menu">
+    appClickOutside
+    (appClickOutside)="closeDropdown()"
+    class="user-menu">
 
 
     <button
         class="user-menu__trigger"
         type="button"
         (click)="toggle()">
-
 
 
         <span class="user-menu__avatar">
@@ -25,21 +24,15 @@
 
             <strong class="user-menu__name">
 
-                {{  profile()?.firstName }}
-                {{  profile()?.lastName }}
+                {{ profile()?.firstName }}
+                {{ profile()?.lastName }}
 
             </strong>
 
 
-
-            <small class="user-menu__role">
-
-                Customer
-
-            </small>
-
-
         </span>
+
+
     </button>
 
 
@@ -49,7 +42,8 @@
     @if(isOpen) {
 
 
-        <div class="user-menu__dropdown" (click)="toggle()">
+        <div
+            class="user-menu__dropdown">
 
 
             <a
@@ -63,8 +57,8 @@
                     Profile
                 </span>
 
-            </a>
 
+            </a>
 
 
 
@@ -80,8 +74,8 @@
                     Settings
                 </span>
 
-            </a>
 
+            </a>
 
 
 
@@ -97,8 +91,8 @@
                     Security
                 </span>
 
-            </a>
 
+            </a>
 
 
 
@@ -108,12 +102,10 @@
 
 
 
-
             <button
                 class="user-menu__item user-menu__item--danger"
                 type="button"
                 (click)="logout()">
-
 
 
                 <lucide-icon [img]="logoutIcon"></lucide-icon>
@@ -125,7 +117,6 @@
 
 
             </button>
-
 
 
         </div>
